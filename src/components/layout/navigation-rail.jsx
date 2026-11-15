@@ -36,7 +36,7 @@ export function NavigationRail() {
               key={item.href}
               href={item.href}
               className={cn(
-                "w-16 py-2.5 flex flex-col items-center justify-center transition-all duration-150 ease-out border-[1.5px] border-transparent text-muted-foreground rounded-none relative group",
+                "w-16 py-2.5 flex flex-col items-center justify-center transition-all duration-150 ease-out border-[1.5px] border-transparent text-muted-foreground rounded-lg relative group",
                 isActive
                   ? "bg-terracotta text-white font-bold border-ink shadow-hard-xs hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-hard-sm active:translate-x-0.5 active:translate-y-0.5 active:shadow-none hover:text-white"
                   : "hover:border-ink hover:bg-card hover:text-foreground hover:shadow-hard-xs hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
@@ -47,7 +47,7 @@ export function NavigationRail() {
                 {item.label}
               </span>
               {item.badge && !isActive && (
-                <span className="absolute top-1 right-2 px-1 bg-canary text-ink text-[8px] font-bold border border-ink leading-none">
+                <span className="absolute top-1 right-2 px-1 bg-canary text-ink text-[8px] font-bold border border-ink rounded leading-none">
                   {item.badge}
                 </span>
               )}
@@ -60,7 +60,7 @@ export function NavigationRail() {
       <div className="flex flex-col items-center gap-2 px-2 border-t-[1.5px] border-ink/20 pt-3">
         <Link
           href="/support"
-          className="w-16 py-2 flex flex-col items-center justify-center border-[1.5px] border-transparent text-muted-foreground hover:border-ink hover:bg-card hover:text-foreground hover:shadow-hard-xs hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all duration-150 ease-out rounded-none"
+          className="w-16 py-2 flex flex-col items-center justify-center border-[1.5px] border-transparent text-muted-foreground hover:border-ink hover:bg-card hover:text-foreground hover:shadow-hard-xs hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all duration-150 ease-out rounded-lg"
           title="Support"
         >
           <LifeBuoy className="size-5" />

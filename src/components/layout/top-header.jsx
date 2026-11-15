@@ -90,7 +90,7 @@ export function TopHeader() {
       {/* Brand & Mobile Hamburger */}
       <div className="flex items-center gap-3 md:gap-4">
         <button
-          className="md:hidden size-9 border-[1.5px] border-ink bg-card flex items-center justify-center text-foreground shadow-hard-xs hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-hard-sm active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all duration-150"
+          className="md:hidden size-9 border-[1.5px] border-ink bg-card rounded-lg flex items-center justify-center text-foreground shadow-hard-xs hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-hard-sm active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all duration-150"
           type="button"
           aria-label="Open Navigation Menu"
         >
@@ -98,7 +98,7 @@ export function TopHeader() {
         </button>
 
         <Link href="/" className="flex items-center gap-2 group">
-          <div className="size-8 bg-terracotta text-white flex items-center justify-center border-[1.5px] border-ink shadow-hard-xs group-hover:-translate-x-0.5 group-hover:-translate-y-0.5 group-hover:shadow-hard-sm transition-all duration-150">
+          <div className="size-8 bg-terracotta text-white flex items-center justify-center border-[1.5px] border-ink rounded-lg shadow-hard-xs group-hover:-translate-x-0.5 group-hover:-translate-y-0.5 group-hover:shadow-hard-sm transition-all duration-150">
             <Flame className="size-5 fill-white" />
           </div>
           <span className="font-heading text-lg md:text-xl font-bold tracking-tight text-foreground uppercase">
@@ -114,7 +114,7 @@ export function TopHeader() {
             <Search className="size-4" />
           </div>
           <input
-            className="w-full h-9 pl-9 pr-3 bg-canary text-ink border-[1.5px] border-ink font-mono text-xs placeholder:text-ink-muted/80 focus:outline-none focus:bg-card shadow-hard-xs focus:shadow-hard-sm focus:-translate-y-0.5 transition-all duration-150"
+            className="w-full h-9 pl-9 pr-3 bg-canary text-ink border-[1.5px] border-ink rounded-lg font-mono text-xs placeholder:text-ink-muted/80 focus:outline-none focus:bg-card shadow-hard-xs focus:shadow-hard-sm focus:-translate-y-0.5 transition-all duration-150"
             placeholder="Title, author, narrator, or topic..."
             type="text"
           />
@@ -123,12 +123,12 @@ export function TopHeader() {
         {/* AI Story Finder Trigger Button */}
         <Link
           href="/story-finder"
-          className="flex items-center gap-1.5 h-9 px-3 bg-canary text-ink font-sans text-[11px] font-bold uppercase tracking-wider border-[1.5px] border-ink shadow-hard-xs hover:bg-canary-light hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-hard-sm active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all duration-150 group shrink-0"
+          className="flex items-center gap-1.5 h-9 px-3 bg-canary text-ink font-sans text-[11px] font-bold uppercase tracking-wider border-[1.5px] border-ink rounded-lg shadow-hard-xs hover:bg-canary-light hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-hard-sm active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all duration-150 group shrink-0"
           title="Ask AI Story Finder in Bangla or Banglish"
         >
           <Sparkles className="size-3.5 text-terracotta transition-transform group-hover:scale-110" />
           <span className="whitespace-nowrap">Story Finder</span>
-          <span className="px-1 py-0.2 bg-terracotta text-white text-[8px] font-bold border border-ink leading-tight">
+          <span className="px-1 py-0.2 bg-terracotta text-white text-[8px] font-bold border border-ink rounded leading-tight">
             AI
           </span>
         </Link>
@@ -137,7 +137,7 @@ export function TopHeader() {
       {/* Right User Actions & Auth State */}
       <div className="flex items-center gap-3">
         <button
-          className="size-9 border-[1.5px] border-ink bg-card flex items-center justify-center text-foreground hover:bg-muted shadow-hard-xs hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-hard-sm relative active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all duration-150"
+          className="size-9 border-[1.5px] border-ink bg-card rounded-lg flex items-center justify-center text-foreground hover:bg-muted shadow-hard-xs hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-hard-sm relative active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all duration-150"
           type="button"
           aria-label="Notifications"
         >
@@ -148,7 +148,7 @@ export function TopHeader() {
         {/* Auth State Switcher */}
         {loading ? (
           <div className="flex items-center gap-2 pl-3 border-l-[1.5px] border-ink">
-            <div className="size-8 bg-muted border-[1.5px] border-ink animate-pulse" />
+            <div className="size-8 bg-muted border-[1.5px] border-ink rounded-lg animate-pulse" />
             <div className="hidden lg:flex flex-col gap-1">
               <div className="h-3 w-16 bg-muted animate-pulse border border-ink/20" />
               <div className="h-2.5 w-12 bg-muted animate-pulse border border-ink/20" />
@@ -162,7 +162,7 @@ export function TopHeader() {
                 className="flex items-center gap-2 outline-none text-left cursor-pointer group"
                 aria-label="User account menu"
               >
-                <div className="size-8 bg-terracotta border-[1.5px] border-ink flex items-center justify-center text-white font-bold font-mono text-xs shadow-hard-xs group-hover:-translate-x-0.5 group-hover:-translate-y-0.5 group-hover:shadow-hard-sm active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all duration-150">
+                <div className="size-8 bg-terracotta border-[1.5px] border-ink rounded-lg flex items-center justify-center text-white font-bold font-mono text-xs shadow-hard-xs group-hover:-translate-x-0.5 group-hover:-translate-y-0.5 group-hover:shadow-hard-sm active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all duration-150">
                   {initials}
                 </div>
                 <div className="hidden lg:flex flex-col text-left leading-none">

@@ -1,0 +1,382 @@
+[
+  {
+    "title": "Chander Pahar",
+    "title_bengali": "চাঁদের পাহাড়",
+    "slug": "chander-pahar",
+    "author": {
+      "name": "Bibhutibhushan Bandyopadhyay",
+      "slug": "bibhutibhushan-bandyopadhyay",
+      "bio": "Bibhutibhushan Bandyopadhyay (1894–1950) was a celebrated Bengali author, best known for his vivid nature-inspired epics and adventurous realism including Pather Panchali and Chander Pahar.",
+      "born_year": 1894,
+      "died_year": 1950,
+      "era": "Bengal Renaissance & Modernism"
+    },
+    "categorySlug": "adventure-thriller",
+    "narrator_name": "Sabyasachi Chakrabarty",
+    "description": "Young Bengali adventurer Shankar Roy Choudhury leaves the quiet countryside of Bengal to pursue an adventurous career in the wilderness of British East Africa. Guided by Portuguese explorer Diego Alvarez, Shankar embarks on an arduous expedition across the desolate Richtersveld mountains and the scorching Kalahari in search of the legendary diamond mines of the Mountain of the Moon, guarded by the mythical beast Bunyip.",
+    "short_description": "Shankar's perilous quest across the African wilderness in search of the mythical diamond-laden Mountain of the Moon.",
+    "cover_image_url": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=800",
+    "language": "bangla",
+    "tier_requirement": "plus",
+    "is_featured": true,
+    "is_published": true,
+    "total_duration_seconds": 22500,
+    "rating_average": 4.95,
+    "ratings_count": 3890,
+    "publication_year": 1937,
+    "tags": ["adventure", "thriller", "africa", "jungle", "expedition", "diamond", "shankar", "bunyip", "classic bengali", "ভ্রমণ", "রোমাঞ্চ", "চাঁদের পাহাড়"],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "Leaving for Africa",
+        "audio_storage_path": "chander-pahar/chapter-01.mp3",
+        "duration_seconds": 1820,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "The Lion of Salisbury Bridge",
+        "audio_storage_path": "chander-pahar/chapter-02.mp3",
+        "duration_seconds": 2100,
+        "is_preview": false
+      },
+      {
+        "chapter_number": 3,
+        "title": "Meeting Diego Alvarez",
+        "audio_storage_path": "chander-pahar/chapter-03.mp3",
+        "duration_seconds": 2450,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: Chander Pahar (চাঁদের পাহাড়)\nAuthor: Bibhutibhushan Bandyopadhyay\nCategory: Adventure & Thriller, Classic Bengali Literature\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: African wilderness, Uganda railway, Richtersveld mountains, Kalahari desert, dangerous diamond caves\nThemes & Mood: Courage, discovery, survival expedition, mythical monster Bunyip, adrenaline, perseverance, exploration\nSynopsis: Shankar leaves Bengal for Africa, teaming up with explorer Alvarez to locate the hidden diamond mines of the Mountain of the Moon while evading deadly black mambas and the ferocious Bunyip.\nTags: adventure, thriller, africa, jungle, survival, classic bengali, shankar, bunyip, diamonds"
+  },
+  {
+    "title": "Srikanto",
+    "title_bengali": "শ্রীকান্ত",
+    "slug": "srikanto",
+    "author": {
+      "name": "Sarat Chandra Chattopadhyay",
+      "slug": "sarat-chandra-chattopadhyay",
+      "bio": "Sarat Chandra Chattopadhyay (1876–1938) was one of Bengal's most popular novelists, known for his deep emotional insight, romantic realism, and empathetic portrayal of rural society and outcasts.",
+      "born_year": 1876,
+      "died_year": 1938,
+      "era": "Bengal Renaissance"
+    },
+    "categorySlug": "classic-literature",
+    "narrator_name": "Sumanta Mukherjee",
+    "description": "The episodic, reflective memoir of Srikanto, a wandering bohemian traveler navigating the hypocrisies of traditional society, turbulent romantic longings, and friendships with unconventional souls like Indranath and Annadadidi in early 20th-century Bengal.",
+    "short_description": "The wandering reflections and unforgettable encounters of Srikanto, Bengali literature's quintessential bohemian traveler.",
+    "cover_image_url": "https://images.unsplash.com/photo-1495640388908-05fa85288e61?auto=format&fit=crop&q=80&w=800",
+    "language": "bangla",
+    "tier_requirement": "free",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 18600,
+    "rating_average": 4.88,
+    "ratings_count": 2150,
+    "publication_year": 1917,
+    "tags": ["classic", "literature", "bengali", "travel", "bohemian", "romance", "society", "indranath", "ক্লাসিক", "উপন্যাস", "শ্রীকান্ত"],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "Adventures with Indranath",
+        "audio_storage_path": "srikanto/chapter-01.mp3",
+        "duration_seconds": 1680,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "The Night on the Ganges",
+        "audio_storage_path": "srikanto/chapter-02.mp3",
+        "duration_seconds": 1940,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: Srikanto (শ্রীকান্ত)\nAuthor: Sarat Chandra Chattopadhyay\nCategory: Classic Literature, Romance & Drama\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: Rural Bengal, Ganges river banks, bohemian voyages, nocturnal fishing expeditions\nThemes & Mood: Wanderlust, human compassion, rebellion against social orthodoxy, deep unspoken love, nostalgia\nSynopsis: Srikanto chronicles his youth and wanderings, from nocturnal escapades with the fearless Indranath to complex emotional bonds with outcasts and society rebels.\nTags: classic, bengali, sarat chandra, indranath, memoir, river, journey, emotion"
+  },
+  {
+    "title": "Kabuliwala & Selected Stories",
+    "title_bengali": "কাবুলিওয়ালা ও অন্যান্য গল্প",
+    "slug": "kabuliwala-stories",
+    "author": {
+      "name": "Rabindranath Tagore",
+      "slug": "rabindranath-tagore",
+      "bio": "Rabindranath Tagore (1861–1941) was a Nobel laureate polymath whose profound poetry, short stories, and music reshaped Bengali literature and culture.",
+      "born_year": 1861,
+      "died_year": 1941,
+      "era": "Bengal Renaissance"
+    },
+    "categorySlug": "classic-literature",
+    "narrator_name": "Kazi Sabyasachi",
+    "description": "A collection of Rabindranath Tagore's timeless short stories led by Kabuliwala, the poignant tale of Rahamat, a dried-fruit seller from Afghanistan in 19th-century Calcutta, whose paternal bond with little Mini transcends geographic, cultural, and temporal boundaries.",
+    "short_description": "Tagore's timeless masterpieces exploring paternal love, social longing, and the human heart.",
+    "cover_image_url": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=800",
+    "language": "bangla",
+    "tier_requirement": "free",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 14400,
+    "rating_average": 4.96,
+    "ratings_count": 4120,
+    "publication_year": 1892,
+    "tags": ["tagore", "classic", "rabindranath", "short stories", "kabuliwala", "mini", "calcutta", "গল্পগুচ্ছ", "কাবুলিওয়ালা", "রবীন্দ্রনাথ"],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "Kabuliwala",
+        "audio_storage_path": "kabuliwala-stories/chapter-01.mp3",
+        "duration_seconds": 1420,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Postmaster",
+        "audio_storage_path": "kabuliwala-stories/chapter-02.mp3",
+        "duration_seconds": 1580,
+        "is_preview": false
+      },
+      {
+        "chapter_number": 3,
+        "title": "Chhuti (The Homecoming)",
+        "audio_storage_path": "kabuliwala-stories/chapter-03.mp3",
+        "duration_seconds": 1720,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: Kabuliwala & Selected Stories (কাবুলিওয়ালা ও অন্যান্য গল্প)\nAuthor: Rabindranath Tagore\nCategory: Classic Literature, Drama\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: Colonial Calcutta, rural post office, nostalgic Bengal countryside\nThemes & Mood: Paternal affection, homesickness, innocence, separation, social pathos, emotional warmth\nSynopsis: In Kabuliwala, an Afghan dry-fruit merchant forms an innocent bond with a young Bengali girl, reminding him of his own distant daughter in Kabul.\nTags: tagore, kabuliwala, postmaster, chhuti, emotion, family, calcutta, classic bengali"
+  },
+  {
+    "title": "Abol Tabol",
+    "title_bengali": "আবোল তাবোল",
+    "slug": "abol-tabol",
+    "author": {
+      "name": "Sukumar Ray",
+      "slug": "sukumar-ray",
+      "bio": "Sukumar Ray (1887–1923) was Bengal's greatest master of nonsense verse, humorous satire, and children's literature, whose sharp wit and linguistic virtuosity remain peerless.",
+      "born_year": 1887,
+      "died_year": 1923,
+      "era": "Bengal Renaissance"
+    },
+    "categorySlug": "classic-literature",
+    "narrator_name": "Sovan Ganguly",
+    "description": "Sukumar Ray's crowning collection of 46 nonsense rhyming poems and illustrations, blending whimsical imagination, musical rhythm, and sharp political and social satire under the guise of delightful children's verse.",
+    "short_description": "The supreme masterpiece of Bengali nonsense verse, musical rhythm, and whimsical satire.",
+    "cover_image_url": "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=800",
+    "language": "bangla",
+    "tier_requirement": "free",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 7200,
+    "rating_average": 4.97,
+    "ratings_count": 5200,
+    "publication_year": 1923,
+    "tags": ["poetry", "nonsense", "sukumar ray", "humor", "satire", "children", "bengali", "আবোল তাবোল", "সুকুমার রায়", "ছড়া"],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "Khichuri & Kathburo",
+        "audio_storage_path": "abol-tabol/chapter-01.mp3",
+        "duration_seconds": 890,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Gomotharak & Ramgorurer Chhana",
+        "audio_storage_path": "abol-tabol/chapter-02.mp3",
+        "duration_seconds": 960,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: Abol Tabol (আবোল তাবোল)\nAuthor: Sukumar Ray\nCategory: Classic Literature, Humor, Nonsense Verse\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: Whimsical fantasy realms, absurd courtrooms, surreal creatures like Hensho-Hensho and Khichuri\nThemes & Mood: Wit, absurdism, playful musical rhymes, subtle political parody, joy, linguistic mastery\nSynopsis: Sukumar Ray's peerless verses capture creatures that are half-duck half-porcupine (Hasjaru), kings that issue outrageous decrees, and timeless laughter for all ages.\nTags: nonsense, sukumar ray, poetry, satire, humor, bengali classic, children, rhymes"
+  },
+  {
+    "title": "The Hound of the Baskervilles",
+    "title_bengali": "দ্য হাউন্ড অব দ্য বাস্কারভিলস",
+    "slug": "hound-of-baskervilles",
+    "author": {
+      "name": "Arthur Conan Doyle",
+      "slug": "arthur-conan-doyle",
+      "bio": "Sir Arthur Conan Doyle (1859–1930) was a Scottish writer best known for creating the legendary consulting detective Sherlock Holmes and his steadfast chronicler Dr. John Watson.",
+      "born_year": 1859,
+      "died_year": 1930,
+      "era": "Victorian & Edwardian Detective Era"
+    },
+    "categorySlug": "mystery-detective",
+    "narrator_name": "David Clarke",
+    "description": "Sherlock Holmes and Dr. Watson investigate the chilling legend of a diabolical hound terrorizing the wealthy Baskerville family across the grim, fog-drenched moors of Devonshire following the mysterious death of Sir Charles Baskerville.",
+    "short_description": "Sherlock Holmes confronts an ancient supernatural curse and a spectral hound on the desolate Devon moors.",
+    "cover_image_url": "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?auto=format&fit=crop&q=80&w=800",
+    "language": "english",
+    "tier_requirement": "free",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 21600,
+    "rating_average": 4.91,
+    "ratings_count": 3410,
+    "publication_year": 1902,
+    "tags": ["sherlock holmes", "mystery", "detective", "conan doyle", "watson", "hound", "baskervilles", "horror", "gothic", "রহস্য", "গোয়েন্দা"],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "Mr. Sherlock Holmes",
+        "audio_storage_path": "hound-of-baskervilles/chapter-01.mp3",
+        "duration_seconds": 1740,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "The Curse of the Baskervilles",
+        "audio_storage_path": "hound-of-baskervilles/chapter-02.mp3",
+        "duration_seconds": 2050,
+        "is_preview": false
+      },
+      {
+        "chapter_number": 3,
+        "title": "The Problem",
+        "audio_storage_path": "hound-of-baskervilles/chapter-03.mp3",
+        "duration_seconds": 1890,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: The Hound of the Baskervilles\nAuthor: Arthur Conan Doyle\nCategory: Mystery & Detective, Gothic Suspense\nLanguage: English\nSetting & Atmosphere: Grim Devonshire moors, Grimpen Mire, Baskerville Hall, thick swirling fog, eerie nocturnal howls\nThemes & Mood: Deductive reasoning, supernatural fear vs rationalism, ancient familial curses, tension, murder mystery\nSynopsis: Holmes and Watson are summoned when Sir Charles Baskerville is found dead with footprints of a gigantic hound beside him. Watson journeys to Baskerville Hall to guard the young heir from a spectral assassin.\nTags: sherlock holmes, detective, mystery, watson, moor, supernatural, gothic, investigation"
+  },
+  {
+    "title": "The Great Gatsby",
+    "title_bengali": "দ্য গ্রেট গ্যাটসবি",
+    "slug": "the-great-gatsby",
+    "author": {
+      "name": "F. Scott Fitzgerald",
+      "slug": "f-scott-fitzgerald",
+      "bio": "F. Scott Fitzgerald (1896–1940) was an American author whose works defined the Jazz Age, illuminating the glamour, disillusionment, and tragedy of the American Dream.",
+      "born_year": 1896,
+      "died_year": 1940,
+      "era": "The Lost Generation / Jazz Age"
+    },
+    "categorySlug": "classic-literature",
+    "narrator_name": "Jim Dale",
+    "description": "Set in Jazz Age Long Island during the Roaring Twenties, the novel tells the story of mysterious, enigmatic millionaire Jay Gatsby and his obsessive, tragic passion for the captivating Daisy Buchanan.",
+    "short_description": "In 1922 Long Island, mysterious millionaire Jay Gatsby throws extravagant parties in pursuit of lost love.",
+    "cover_image_url": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=800",
+    "language": "english",
+    "tier_requirement": "plus",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 17280,
+    "rating_average": 4.87,
+    "ratings_count": 2890,
+    "publication_year": 1925,
+    "tags": ["gatsby", "classic", "jazz age", "fitzgerald", "roaring twenties", "romance", "tragedy", "american dream", "আমেরিকান ড্রিম"],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "The Green Light",
+        "audio_storage_path": "the-great-gatsby/chapter-01.mp3",
+        "duration_seconds": 1695,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "The Valley of Ashes",
+        "audio_storage_path": "the-great-gatsby/chapter-02.mp3",
+        "duration_seconds": 1830,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: The Great Gatsby\nAuthor: F. Scott Fitzgerald\nCategory: Classic Literature, Romance & Drama\nLanguage: English\nSetting & Atmosphere: Long Island, West Egg, East Egg, lavish Jazz Age parties, Valley of Ashes\nThemes & Mood: Obsessive love, decadence, social class barrier, the corruption of idealism, illusion, melancholia\nSynopsis: Nick Carraway observes his neighbor Jay Gatsby, whose lavish summer galas mask an intense yearning to rekindle love with Daisy Buchanan, leading to reckless confrontation and catastrophe.\nTags: gatsby, fitzgerald, jazz age, romance, tragedy, money, society, classic literature"
+  },
+  {
+    "title": "1984",
+    "title_bengali": "নাইন্টিন এইটি ফোর",
+    "slug": "nineteen-eighty-four",
+    "author": {
+      "name": "George Orwell",
+      "slug": "george-orwell",
+      "bio": "George Orwell (1903–1950) was an English novelist and essayist whose lucid prose delivered prophetic warnings against totalitarian oppression, political manipulation, and surveillance states.",
+      "born_year": 1903,
+      "died_year": 1950,
+      "era": "Modern Dystopian Political Literature"
+    },
+    "categorySlug": "dystopian-sci-fi",
+    "narrator_name": "Simon Prebble",
+    "description": "In the grim superstate of Oceania under the omniscient surveillance of Big Brother and the Thought Police, bureaucrat Winston Smith dares to commit thoughtcrime by keeping a private diary and seeking forbidden love with Julia.",
+    "short_description": "Orwell's chilling prophecy of totalitarian surveillance, thoughtcrime, and the fight for human spirit.",
+    "cover_image_url": "https://images.unsplash.com/photo-1476275466078-4007374efbbe?auto=format&fit=crop&q=80&w=800",
+    "language": "english",
+    "tier_requirement": "premium",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 38400,
+    "rating_average": 4.93,
+    "ratings_count": 4890,
+    "publication_year": 1949,
+    "tags": ["dystopia", "scifi", "orwell", "big brother", "totalitarianism", "thoughtcrime", "surveillance", "classic", "ডিস্টোপিয়া"],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "It Was a Cold Day in April",
+        "audio_storage_path": "nineteen-eighty-four/chapter-01.mp3",
+        "duration_seconds": 2150,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "The Thought Police",
+        "audio_storage_path": "nineteen-eighty-four/chapter-02.mp3",
+        "duration_seconds": 2340,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: 1984\nAuthor: George Orwell\nCategory: Dystopian Sci-Fi, Political Fiction\nLanguage: English\nSetting & Atmosphere: London, Airstrip One, Oceania, dingy flats, Telescreens, Ministry of Truth, Ministry of Love, Room 101\nThemes & Mood: Totalitarian control, Big Brother, Thought Police, Doublethink, censorship, resistance, paranoia, psychological torture\nSynopsis: Winston Smith navigates life under perpetual surveillance, secretly longing for rebellion against the Party while attempting an illicit romance with Julia.\nTags: 1984, orwell, dystopia, big brother, surveillance, political fiction, censorship, science fiction"
+  },
+  {
+    "title": "Pather Panchali",
+    "title_bengali": "পথের পাঁচালী",
+    "slug": "pather-panchali",
+    "author": {
+      "name": "Bibhutibhushan Bandyopadhyay",
+      "slug": "bibhutibhushan-bandyopadhyay",
+      "bio": "Bibhutibhushan Bandyopadhyay (1894–1950) was a celebrated Bengali author, best known for his vivid nature-inspired epics and adventurous realism including Pather Panchali and Chander Pahar.",
+      "born_year": 1894,
+      "died_year": 1950,
+      "era": "Bengal Renaissance & Modernism"
+    },
+    "categorySlug": "classic-literature",
+    "narrator_name": "Sabyasachi Chakrabarty",
+    "description": "The lyrical, heartbreaking depiction of childhood wonder and quiet rural hardship in early 20th-century Bengal through the eyes of young Apu and his free-spirited elder sister Durga in their ancestral village of Nischindipur.",
+    "short_description": "The immortal Bengali masterpiece chronicling the childhood joys and struggles of Apu and Durga in rural Bengal.",
+    "cover_image_url": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&q=80&w=800",
+    "language": "bangla",
+    "tier_requirement": "premium",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 27000,
+    "rating_average": 4.98,
+    "ratings_count": 6120,
+    "publication_year": 1929,
+    "tags": ["classic", "bengali", "apu", "durga", "village", "nature", "childhood", "bibhutibhushan", "পথের পাঁচালী", "অপু", "দুর্গা"],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "The Village of Nischindipur",
+        "audio_storage_path": "pather-panchali/chapter-01.mp3",
+        "duration_seconds": 2100,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Durga and the Guava Orchard",
+        "audio_storage_path": "pather-panchali/chapter-02.mp3",
+        "duration_seconds": 2280,
+        "is_preview": false
+      },
+      {
+        "chapter_number": 3,
+        "title": "The Train Across the Meadows",
+        "audio_storage_path": "pather-panchali/chapter-03.mp3",
+        "duration_seconds": 2420,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: Pather Panchali (পথের পাঁচালী)\nAuthor: Bibhutibhushan Bandyopadhyay\nCategory: Classic Literature, Drama, Rural Life\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: Rural village of Nischindipur, Bengal forest trails, monsoon showers, kash flowers, distant train whistle\nThemes & Mood: Innocent childhood discovery, poverty, familial warmth, Durga's playful spirit, deep communion with nature\nSynopsis: Follows Apu and Durga growing up in rustic Nischindipur, capturing their discovery of the wider world, their grandmother Indir Thakrun, and life's bittersweet beauty.\nTags: pather panchali, apu, durga, bengali classic, bibhutibhushan, rural, nature, nostalgia, childhood"
+  }
+]

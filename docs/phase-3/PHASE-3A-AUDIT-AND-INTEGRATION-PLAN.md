@@ -1,38 +1,48 @@
 # GolpoBook: Phase 3A Pre-Implementation Audit & Integration Plan
-**Real Data Integration, Content Architecture & RAG Readiness Blueprint**
+**Real Data Integration, Content Architecture, Vector Search, Licensing & Supabase Security Blueprint (Final Revision)**
 
-**Document ID:** `DOC-P3-01`  
+**Document ID:** `DOC-P3-01-FINAL`  
 **Phase:** Sprint 1, Phase 3A — Pre-Implementation Audit & Integration Planning  
 **Date:** November 15, 2026  
-**Status:** AUDIT COMPLETE — AWAITING ARCHITECTURAL APPROVAL  
-**Authors:** Senior Full-Stack Engineer, Supabase Architect, RAG Engineer & Technical Lead  
-**Scope:** Comprehensive Audit of Frontend, Database Schema, Supabase Storage, Vector Search & Content Ingestion Pipeline  
+**Status:** FINAL REVISED AUDIT COMPLETE — AWAITING ARCHITECTURAL APPROVAL  
+**Authors:** Senior Full-Stack Engineer, Supabase Security Architect, RAG Engineer & Technical Lead  
+**Scope:** Comprehensive Audit of Frontend, Database Schema, Vector Security, Supabase Storage, Licensing Compliance & Ingestion Pipeline  
+
+---
+
+## Audit Revision Change Log
+
+| Revision | Date | Major Architectural Changes & Corrections |
+| :--- | :--- | :--- |
+| **REV 1** | Nov 15, 2026 | Initial Phase 3A audit draft. Flagged mock data dependencies, missing schema, and RAG readiness. |
+| **REV 2** | Nov 15, 2026 | Replaced deprecated `text-embedding-004` and `gemini-2.0-flash`. Added dedicated `audiobook_embeddings` table, exact flat vector scan rationale, and Bangladesh copyright calculations. |
+| **FINAL** | Nov 15, 2026 | **1. Gemini Models:** Evaluated `gemini-embedding-2` as primary embedding model with MRL `output_dimensionality: 768` (verified automatic truncation normalization per Google documentation). Retained `gemini-embedding-001` as documented alternative noting manual normalization requirement. Verified `gemini-2.5-flash` availability. Removed unsupported latency/quota guarantees. Enforced query/catalog embedding model consistency and documented re-embedding triggers.<br>**2. Playback Authorization:** Corrected access matrix across Guest, Free, Plus, and Premium tiers. Mandated server-side verification in `/api/audio/stream-url`. Mandated that preview chapters never bypass the unpublished-content check (`is_published = true`).<br>**3. Security Hardening:** Hardened `match_audiobooks()` with empty search path (`SET search_path = ''`), fully qualified object/operator references (`OPERATOR(extensions.<=>)`), explicit signature privilege management (`REVOKE ... FROM PUBLIC` before granting to intended roles), input validation bounds on threshold and count, and direct table RLS blocking access to `audiobook_embeddings`.<br>**4. Copyright Compliance:** Replaced outdated 2000 Act with **Copyright Act, 2023** (কপিরাইট আইন, ২০২৩). Clarified that non-commercial/academic prototype use is NOT automatically exempt under Bangladesh fair dealing law. Separated rights into 4 distinct layers. Explicitly marked unverified titles as **NOT APPROVED FOR PUBLIC DEPLOYMENT**.<br>**5. Schema & Roadmap:** Set `audiobooks.is_published` default to `false`. Reconciled `user_subscriptions` uniqueness with the actual deployed partial unique index `user_subscriptions_single_active_idx`. Deferred podcast tables to Sprint 2. Focused Phase 3B scope. Split RAG implementation into Subphase 3F (API) and Subphase 3G (UI). Clarified zero-hallucination rendering.<br>**6. Testing Framework:** Clarified audit checks as baselines. Added formal test categories for future phases with explicit status taxonomy. |
 
 ---
 
 ## 1. Executive Summary
 
 ### 1.1 Mission & Context
-GolpoBook is a personalized subscription-based audiobook and podcast streaming platform tailored for Bengali literature, regional narratives, and global audiobooks. 
+GolpoBook is a personalized subscription-based audiobook and podcast streaming platform engineered specifically for Bengali literature, regional audio stories, and global classics.
 
-Phases 1 and 2 established the core infrastructure:
-- **Phase 1 (UI Foundation):** Audiora Neo-Editorial design system, typography tokens (Space Grotesk, Courier Prime, Anek Bangla), tactile physical card and button interaction physics, and desktop navigation shells.
-- **Phase 2A & 2B (Database Foundation & Validation):** First 5 core relational tables (`subscription_plans`, `tier_limits`, `categories`, `profiles`, `user_subscriptions`) deployed and validated in Supabase.
-- **Phase 2C (Authentication):** Supabase SSR cookie-based authentication, registration trigger (`handle_new_user`), login, session refresh, and protected route redirection.
-- **Phase 2D (Personalized Onboarding):** Full 6-step scroll-less taste calibration wizard, `user_preferences` table with strict RLS, live category taxonomy retrieval, and non-recursive `is_admin()` helper function.
+Phases 1 and 2 established the core foundational infrastructure:
+- **Phase 1 (UI Foundation):** Audiora Neo-Editorial design system, typography tokens (`Space Grotesk`, `Courier Prime`, `Anek Bangla`), tactile physical card interaction physics, and responsive navigation shells.
+- **Phase 2A & 2B (Database Foundation & Validation):** First 5 core relational tables (`subscription_plans`, `tier_limits`, `categories`, `profiles`, `user_subscriptions`) deployed and validated in Supabase with row-level security (RLS).
+- **Phase 2C (Authentication):** Supabase SSR cookie-based authentication, registration trigger (`handle_new_user`), session refresh, and protected route middleware.
+- **Phase 2D (Personalized Onboarding):** Full 6-step scroll-less taste calibration wizard, `user_preferences` table with strict RLS, live category taxonomy retrieval, and non-recursive `is_admin()` security definer function.
 
 ### 1.2 Core Audit Finding
 The platform currently presents an **editorial illusion of a complete catalog**:
-1. **Frontend Disconnect:** 100% of the browse feed (`/`), category filters, featured spotlight, and persistent audio player (`InspectorPlayer`) are powered by static mock data from `src/lib/data/mock-catalog.js` (8 hardcoded audiobooks).
-2. **Database Gap:** The Supabase database contains exactly **6 tables** (`subscription_plans`, `tier_limits`, `categories`, `profiles`, `user_subscriptions`, `user_preferences`). The entire content hierarchy—`authors`, `podcasters`, `audiobooks`, `chapters`, `podcasts`, and `podcast_episodes`—**does not exist in the database**.
-3. **Storage Gap:** Supabase Storage contains **0 buckets**. There is no storage bucket for cover images (`platform-covers`) and no private vault for audio chapter streams (`audio-vault`).
-4. **Player Gap:** The `InspectorPlayer` component is purely visual. The Play/Pause button toggles state and pulses CSS equalizer bars, but no audio is loaded or streamed.
-5. **RAG / Vector Gap:** The `pgvector` extension has not been enabled, no embedding column exists on any table, and the vector retrieval RPC function `match_audiobooks` is not deployed.
-6. **Route Gaps:** Links from the navigation rail and browse banners (`/audiobooks`, `/audiobooks/[slug]`, `/story-finder`, `/library`, `/account`) point to routes that do not yet exist in `src/app/`.
+1. **Frontend Mock Dependency:** 100% of the browse feed (`/`), category filters, featured spotlight, and persistent audio player (`InspectorPlayer`) are powered by static mock data from `src/lib/data/mock-catalog.js` (8 hardcoded audiobooks).
+2. **Database Content Gap:** The Supabase database contains exactly **6 tables** (`subscription_plans`, `tier_limits`, `categories`, `profiles`, `user_subscriptions`, `user_preferences`). The entire content hierarchy—`authors`, `audiobooks`, `chapters`, and `audiobook_embeddings`—**does not exist in the database**.
+3. **Storage Gap:** Supabase Storage contains **0 buckets**. There is no public storage bucket for cover artwork (`platform-covers`) and no private vault for audio chapter streams (`audio-vault`).
+4. **Audio Player Gap:** The `InspectorPlayer` component is purely visual. The Play/Pause button toggles state and animates CSS equalizer bars, but no real audio stream is loaded.
+5. **RAG / Vector Gap:** The `pgvector` extension has not been enabled, no embedding table exists, and the vector retrieval RPC function `match_audiobooks` is not deployed.
+6. **Route Gaps:** Links from navigation and browse banners (`/audiobooks`, `/audiobooks/[slug]`, `/story-finder`, `/library`, `/account`) point to routes that do not yet exist in `src/app/`.
 
 ### 1.3 Audit Verdict & Golden Rule
 > [!IMPORTANT]
-> **THIS IS AN AUDIT-ONLY PHASE. NO CODE HAS BEEN IMPLEMENTED OR MODIFIED.**  
+> **THIS IS AN AUDIT-ONLY PHASE. NO APPLICATION CODE OR DATABASE SCHEMA HAS BEEN MODIFIED.**  
 > GolpoBook has a rock-solid, production-grade authentication and onboarding foundation. However, before real audio streaming or AI story discovery can function, we must deploy the content schema, provision storage buckets, ingest seed catalog data, and build the RAG embedding pipeline in a structured sequence of subphases (3B through 3G).
 
 ---
@@ -50,7 +60,7 @@ The platform currently presents an **editorial illusion of a complete catalog**:
 | **UI Primitives**| `@base-ui/react` 1.9.0 & Lucide React 1.72.0 | Unstyled Accessible Controls & Icons | Active & Verified |
 | **Motion** | `motion` 14.13.0 (`motion/react`) | Tactile Neo-Brutalist Spring Physics | Active & Verified |
 | **Audio** | `wavesurfer.js` 8.1.0 | Visual Waveform & Audio Playback | Installed, not yet connected |
-| **AI / RAG** | *None installed* | Gemini API SDK not yet installed | Pending Phase 3F |
+| **AI / RAG** | Google Gemini API (`@google/genai` or REST) | Query Normalization & Vector Embeddings | Pending Phase 3F |
 
 ### 2.2 Environment Configuration Audit
 Inspection of `.env.local` without exposing values revealed the following variables:
@@ -59,15 +69,15 @@ Inspection of `.env.local` without exposing values revealed the following variab
 - `SUPABASE_SERVICE_ROLE_KEY` — Present and valid.
 
 **Missing Environment Variables Required for Phase 3:**
-- `GEMINI_API_KEY` — Mandatory for RAG query normalization (Gemini 2.0 Flash) and vector generation (`text-embedding-004`).
-- `NEXT_PUBLIC_APP_URL` — Required for canonical absolute URL generation during signed URL callbacks.
+- `GEMINI_API_KEY` — Mandatory for RAG query normalization (`gemini-2.5-flash`) and vector generation (`gemini-embedding-2`). Must be obtained from Google AI Studio ([aistudio.google.com](https://aistudio.google.com)).
+- `NEXT_PUBLIC_APP_URL` — Required for canonical absolute URL generation during signed URL callbacks (`http://localhost:3000` in local dev).
 
 ### 2.3 Documentation vs. Code Discrepancies
 Our code inspection identified four critical discrepancies between earlier project documentation and the live codebase:
-1. **Directory Structure:** `docs/audit/03-SYSTEM-ARCHITECTURE.md` documented a route group `src/app/(listener)/` hosting `audiobooks/`, `podcasts/`, `library/`, and `story-finder/`. In the actual codebase, `src/app/page.js` lives directly at the root, and route groups `(listener)` have not been created.
-2. **Onboarding Scheduling:** `docs/database/05-REMAINING-SCHEMA-ROADMAP.md` originally scheduled `user_preferences` and onboarding for Sprint 5. In reality, `user_preferences` was successfully implemented in Sprint 1 Phase 2D.
-3. **Search & AI Buttons:** The Canary search bar in `TopHeader` contains an `<input>` with no `onChange` or submit handler, and the "Story Finder" button links to `/story-finder` which currently throws a 404.
-4. **Mock Catalog Fields vs. DB Types:** `mock-catalog.js` uses human-formatted strings (`duration: "6h 15m"`, `category: "Adventure & Thriller"`), whereas the database requires normalized integer seconds (`total_duration_seconds: 22500`) and UUID foreign keys (`category_id: uuid`).
+1. **Directory Structure:** Earlier documentation referenced a route group `src/app/(listener)/`. In reality, `src/app/page.js` lives directly at the root, and route groups `(listener)` have not been created. We will continue with the root App Router structure.
+2. **Onboarding Scheduling:** Early roadmap docs scheduled `user_preferences` for Sprint 5. In reality, `user_preferences` was completed in Sprint 1 Phase 2D.
+3. **Search & AI Navigation:** The search input in `TopHeader` has no event handler, and the "Story Finder" button links to `/story-finder` which currently 404s.
+4. **Mock Catalog Fields vs. DB Schema:** `mock-catalog.js` uses human-formatted strings (`duration: "6h 15m"`), whereas the database requires normalized integer seconds (`total_duration_seconds: 22500`) and UUID foreign keys (`category_id: uuid`).
 
 ---
 
@@ -90,47 +100,51 @@ A live read-only programmatic inspection against the Supabase instance confirmed
 +------------------------+-------------+------------------------------------+------------------------+
 ```
 
-### Verified Active Database Functions & Triggers:
+### Verified Active Database Functions, Triggers & Partial Indexes:
 1. `public.handle_new_user()` — Trigger function on `auth.users` provisioning listener profiles and initial Free subscription upon registration.
 2. `public.set_updated_at()` — Trigger function automatically updating `updated_at` timestamps on row mutation.
 3. `public.is_admin()` — `SECURITY DEFINER` function that safely evaluates admin roles without triggering self-referential RLS recursion on `public.profiles`.
+4. `user_subscriptions_single_active_idx` — **Partial unique index** on `public.user_subscriptions(user_id) WHERE (status = 'active')`. This guarantees at most ONE active subscription per user while permitting unlimited historical rows (`expired`, `cancelled`) for audit.
 
 ---
 
-## 4. Missing Schema and Relationship Analysis (20-Table Audit)
+## 4. Comprehensive Schema Audit (21-Table Architecture)
 
-Below is the exhaustive audit of all 20 tables planned for the complete GolpoBook platform:
+Below is the reconciled audit of all 21 tables planned across the platform lifecycle:
 
-| # | Table Name | Status | Sufficient? | Missing Fields / Gaps | Relationships & FKs | Indexing Required | RLS Policy Strategy | Target Sprint |
-| :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1 | `subscription_plans` | **EXISTS** | YES | None | Referenced by `tier_limits`, `user_subscriptions` | Indexed on `id` (PK) | Public read; Admin write | Sprint 1 (Done) |
-| 2 | `tier_limits` | **EXISTS** | YES | None | `tier` -> `subscription_plans.id` | UNIQUE(`tier`, `feature`) | Public read; Admin write | Sprint 1 (Done) |
-| 3 | `categories` | **EXISTS** | YES | None | Referenced by `audiobooks`, `podcasts` | Indexed on `slug`, `(is_active, display_order)` | Public read; Admin write | Sprint 1 (Done) |
-| 4 | `profiles` | **EXISTS** | YES | None | `id` -> `auth.users.id` (1:1) | Primary key index | User reads own; Admin reads all via `is_admin()` | Sprint 1 (Done) |
-| 5 | `user_subscriptions` | **EXISTS** | YES | None | `user_id` -> `profiles.id`, `plan_id` -> `subscription_plans.id` | UNIQUE(`user_id`, `plan_id`, `status`) | User reads own; Webhook/Admin write | Sprint 1 (Done) |
-| 6 | `user_preferences` | **EXISTS** | YES | None | `user_id` -> `profiles.id` (1:1) | B-tree on `user_id`, `onboarding_completed` | User read/write own; Admin read | Sprint 1 (Done) |
-| 7 | `authors` | **MISSING** | NO (Must create) | Needs `born_year`, `died_year`, `era` for public-domain Bengali literature | Referenced by `audiobooks.author_id` | B-tree on `name`, `slug` | Public read; Admin write | **Phase 3B** |
-| 8 | `podcasters` | **MISSING** | NO (Must create) | Needs `verified_badge`, `social_links` | Referenced by `podcasts.podcaster_id` | B-tree on `name` | Public read; Admin write | Phase 3B / Sprint 2 |
-| 9 | `audiobooks` | **MISSING** | NO (Must create) | Core entity: needs `title_bengali`, `narrator_name`, `language`, `tier_requirement`, `is_published`, `embedding` | `author_id` -> `authors.id`, `category_id` -> `categories.id`, `tier` -> `plans.id` | B-tree on `slug`, `author_id`, `category_id`; HNSW on `embedding` | Public read published; Admin full access | **Phase 3B** |
-| 10| `chapters` | **MISSING** | NO (Must create) | Sequential tracks: `audio_storage_path`, `duration_seconds`, `is_preview` | `audiobook_id` -> `audiobooks.id` ON DELETE CASCADE | UNIQUE(`audiobook_id`, `chapter_number`), B-tree on `audiobook_id` | Public read metadata; Audio path protected | **Phase 3B** |
-| 11| `podcasts` | **MISSING** | NO (Must create) | `title`, `slug`, `podcaster_id`, `category_id`, `cover_image_url` | `podcaster_id` -> `podcasters.id`, `category_id` -> `categories.id` | B-tree on `slug`, `category_id` | Public read; Admin write | Phase 3B / Sprint 2 |
-| 12| `podcast_episodes` | **MISSING** | NO (Must create) | `episode_number`, `audio_storage_path`, `duration_seconds`, `is_free` | `podcast_id` -> `podcasts.id` ON DELETE CASCADE | UNIQUE(`podcast_id`, `episode_number`) | Public read; Admin write | Phase 3B / Sprint 2 |
-| 13| `ai_usage` | **MISSING** | NO (Must create) | Quota engine: `user_id`, `feature`, `period_start`, `used_count` | `user_id` -> `profiles.id` ON DELETE CASCADE | PK(`user_id`, `feature`, `period_start`) | User reads own; RPC mutates atomically | **Phase 3B** (For RAG) |
-| 14| `listening_history`| **MISSING** | Later | Track playback resume: `user_id`, `audiobook_id`, `chapter_id`, `progress_seconds` | `user_id` -> `profiles.id`, `chapter_id` -> `chapters.id` | UNIQUE(`user_id`, `chapter_id`), B-tree on `last_listened_at` | User read/write own | Sprint 3 |
-| 15| `bookmarks` | **MISSING** | Later | Listener saved marks: `timestamp_seconds`, `note` | `user_id` -> `profiles.id`, `chapter_id` -> `chapters.id` | B-tree on `user_id`, `chapter_id` | User read/write own | Sprint 3 |
-| 16| `payment_transactions`| **MISSING** | Later | SSLCommerz ledger: `tran_id`, `val_id`, `amount`, `status`, `bank_tran_id` | `user_id` -> `profiles.id`, `plan_id` -> `subscription_plans.id` | UNIQUE on `tran_id`, B-tree on `user_id` | User reads own; Server webhook write | Sprint 4 |
-| 17| `user_follows` | **MISSING** | Later | Follow author/podcaster: `user_id`, `target_id`, `follow_type` | `user_id` -> `profiles.id` | UNIQUE(`user_id`, `follow_type`, `target_id`) | User read/write own | Sprint 5 |
-| 18| `playlists` | **MISSING** | Later | User custom lists: `title`, `is_public` | `user_id` -> `profiles.id` | B-tree on `user_id` | User read/write own; Public read if public | Sprint 5 |
-| 19| `playlist_items` | **MISSING** | Later | Items in custom list: `position`, `chapter_id` | `playlist_id` -> `playlists.id`, `chapter_id` -> `chapters.id` | B-tree on `playlist_id` | Inherited from `playlists` | Sprint 5 |
-| 20| `reviews` | **MISSING** | Later | Book ratings & critiques: `rating` (1-5), `review_text` | `user_id` -> `profiles.id`, `audiobook_id` -> `audiobooks.id` | UNIQUE(`user_id`, `audiobook_id`), B-tree on `audiobook_id` | Public read; User write own | Sprint 6 |
+| # | Table Name | Status | Target Phase | Key Columns & Gaps | Relationships & Indexes | RLS Policy Strategy | Scope Decision |
+| :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 1 | `subscription_plans` | **EXISTS** | Done | Commercial tier definitions | B-tree on `id` (PK) | Public read; Admin write | Active |
+| 2 | `tier_limits` | **EXISTS** | Done | Quotas and features per tier | `tier` -> `subscription_plans.id` | Public read; Admin write | Active |
+| 3 | `categories` | **EXISTS** | Done | Content taxonomy & genres | Indexed on `slug`, `(is_active, display_order)` | Public read; Admin write | Active |
+| 4 | `profiles` | **EXISTS** | Done | User identity, name, role | `id` -> `auth.users.id` (1:1) | User reads own; Admin reads all via `is_admin()` | Active |
+| 5 | `user_subscriptions` | **EXISTS** | Done | Active subscription state | **Partial unique index on `(user_id) WHERE (status = 'active')`** | User reads own; Server webhook write | Active |
+| 6 | `user_preferences` | **EXISTS** | Done | Onboarding calibration data | `user_id` -> `profiles.id` (1:1) | User read/write own; Admin read | Active |
+| 7 | `authors` | **MISSING** | **Phase 3B** | `name`, `slug`, `bio`, `born_year`, `died_year`, `era` | B-tree on `name`, UNIQUE on `slug` | Public read; Admin write | **Core Phase 3B** |
+| 8 | `audiobooks` | **MISSING** | **Phase 3B** | `title`, `title_bengali`, `slug`, `narrator_name`, `language`, `tier_requirement`, **`is_published` (DEFAULT false)** | `author_id` -> `authors.id`, `category_id` -> `categories.id` | Public read published; Admin full access | **Core Phase 3B** |
+| 9 | `chapters` | **MISSING** | **Phase 3B** | `chapter_number`, `title`, `audio_storage_path`, `duration_seconds`, `is_preview` | `audiobook_id` -> `audiobooks.id` ON DELETE CASCADE | Public read metadata; Audio path gated | **Core Phase 3B** |
+| 10| `audiobook_embeddings` | **MISSING** | **Phase 3B** | Dedicated vector store: `embedding vector(768)`, `embedding_model`, `dimensions`, `content_hash`, `is_stale` | `audiobook_id` -> `audiobooks.id` (1:1) ON DELETE CASCADE | **Service role only; No direct anon/auth policy** | **Core Phase 3B** |
+| 11| `ai_usage` | **MISSING** | **Phase 3B** | Quota tracking: `user_id`, `feature`, `period_start`, `used_count` | `user_id` -> `profiles.id` ON DELETE CASCADE | User reads own; RPC mutates atomically | **Core Phase 3B** |
+| 12| `podcasters` | **MISSING** | Sprint 2 | `name`, `slug`, `bio`, `avatar_url`, `verified_badge` | B-tree on `name`, UNIQUE on `slug` | Public read; Admin write | **Deferred to Sprint 2** |
+| 13| `podcasts` | **MISSING** | Sprint 2 | `title`, `slug`, `podcaster_id`, `category_id`, `cover_image_url` | `podcaster_id` -> `podcasters.id`, `category_id` -> `categories.id` | Public read; Admin write | **Deferred to Sprint 2** |
+| 14| `podcast_episodes` | **MISSING** | Sprint 2 | `episode_number`, `audio_storage_path`, `duration_seconds`, `is_free` | `podcast_id` -> `podcasts.id` ON DELETE CASCADE | Public read; Admin write | **Deferred to Sprint 2** |
+| 15| `listening_history`| **MISSING** | Sprint 3 | Track playback resume: `user_id`, `audiobook_id`, `chapter_id`, `progress_seconds` | `user_id` -> `profiles.id`, `chapter_id` -> `chapters.id` | User read/write own | Sprint 3 |
+| 16| `bookmarks` | **MISSING** | Sprint 3 | Listener saved marks: `timestamp_seconds`, `note` | `user_id` -> `profiles.id`, `chapter_id` -> `chapters.id` | User read/write own | Sprint 3 |
+| 17| `payment_transactions`| **MISSING** | Sprint 4 | SSLCommerz ledger: `tran_id`, `val_id`, `amount`, `status` | `user_id` -> `profiles.id`, `plan_id` -> `subscription_plans.id` | User reads own; Server webhook write | Sprint 4 |
+| 18| `user_follows` | **MISSING** | Sprint 5 | Follow author/podcaster: `user_id`, `target_id`, `follow_type` | `user_id` -> `profiles.id` | User read/write own | Sprint 5 |
+| 19| `playlists` | **MISSING** | Sprint 5 | User custom lists: `title`, `is_public` | `user_id` -> `profiles.id` | User read/write own; Public read if public | Sprint 5 |
+| 20| `playlist_items` | **MISSING** | Sprint 5 | Items in custom list: `position`, `chapter_id` | `playlist_id` -> `playlists.id`, `chapter_id` -> `chapters.id` | Inherited from `playlists` | Sprint 5 |
+| 21| `reviews` | **MISSING** | Sprint 6 | Book ratings & critiques: `rating` (1-5), `review_text` | `user_id` -> `profiles.id`, `audiobook_id` -> `audiobooks.id` | Public read; User write own | Sprint 6 |
+
+> [!TIP]
+> **Focused Phase 3B Scope:**  
+> By deferring `podcasters`, `podcasts`, and `podcast_episodes` to Sprint 2 (since Phase 3 has zero runtime dependency on podcast streaming), Phase 3B focuses strictly on the 5 essential entities: `authors`, `audiobooks`, `chapters`, `audiobook_embeddings`, and `ai_usage`.
 
 ---
 
-## 5. Real Audiobook Content & Seed Data Planning
+## 5. Real Audiobook Content & Ingestion Strategy
 
-### 5.1 Mandatory vs. Optional Audiobook Schema Fields
-To balance rich UI display with university project feasibility, we categorize audiobook attributes into strict database columns vs. searchable embedding metadata:
-
+### 5.1 Audiobook & Chapter Schema Specification
 ```
 +----------------------------------------------------------------------------------------------------+
 |                                    AUDIOBOOK DATA SPECIFICATION                                    |
@@ -139,97 +153,218 @@ To balance rich UI display with university project feasibility, we categorize au
 +--------------------------+-------------+---------------+-------------------------------------------+
 | id                       | UUID        | Mandatory     | Primary Key (DEFAULT gen_random_uuid())   |
 | title                    | TEXT        | Mandatory     | Primary display title in English/Bangla   |
-| title_bengali            | TEXT        | Optional      | Native script (e.g. চাঁদের পাহাড়)           |
+| title_bengali            | TEXT        | Optional      | Native Bengali script (e.g. চাঁদের পাহাড়)  |
 | slug                     | TEXT        | Mandatory     | URL-safe identifier (UNIQUE NOT NULL)     |
 | author_id                | UUID        | Mandatory     | Foreign key to public.authors(id)         |
 | category_id              | UUID        | Mandatory     | Foreign key to public.categories(id)      |
 | narrator_name            | TEXT        | Mandatory     | Name of the voice artist / performer      |
 | description              | TEXT        | Mandatory     | Full editorial synopsis for detail view   |
 | short_description        | TEXT        | Mandatory     | 1-2 sentence summary for card previews    |
-| cover_image_url          | TEXT        | Mandatory     | Public CDN URL from platform-covers bucket|
+| cover_image_url          | TEXT        | Optional      | Public CDN URL from platform-covers bucket|
 | language                 | TEXT        | Mandatory     | 'bangla' or 'english' (DEFAULT 'bangla')  |
 | tier_requirement         | TEXT        | Mandatory     | 'free', 'plus', or 'premium'              |
 | is_featured              | BOOLEAN     | Mandatory     | Spotlight banner flag (DEFAULT false)     |
-| is_published             | BOOLEAN     | Mandatory     | Content gate flag (DEFAULT true)          |
+| is_published             | BOOLEAN     | Mandatory     | Content gate flag (DEFAULT FALSE)         |
 | total_duration_seconds   | INTEGER     | Mandatory     | Sum of chapter audio durations in seconds |
 | rating_average           | NUMERIC(3,2)| Optional      | Seeded rating (e.g. 4.90)                 |
 | ratings_count            | INTEGER     | Optional      | Seeded review count (e.g. 1420)           |
 | publication_year         | INTEGER     | Optional      | Original literary publication year        |
 | tags                     | TEXT[]      | Mandatory     | Keyword array for filtering and discovery |
-| embedding                | vector(768) | Mandatory     | 768-dim float vector for RAG pgvector     |
 | created_at, updated_at   | TIMESTAMPTZ | Mandatory     | System auditing timestamps                |
 +--------------------------+-------------+---------------+-------------------------------------------+
 ```
 
-### 5.2 Seed Data Strategy Comparison
+> [!IMPORTANT]
+> **Safety Default for `is_published`:**  
+> The default value of `is_published` is explicitly configured as `FALSE`. Newly created or partially ingested audiobooks remain drafts and are mathematically inaccessible to public browse feeds, category filters, and vector search until an explicit publishing action is taken.
 
-| Strategy | Pros | Cons | Recommendation |
-| :--- | :--- | :--- | :--- |
-| **1. Manual Supabase Table Editor** | No code required for 1 record | High risk of human error; tedious UUID linking; no version control; cannot be replicated across team | **REJECTED** |
-| **2. Pure SQL Seed File (`seed.sql`)** | Direct execution in SQL Editor | Vector embeddings (768 floats) are unreadable in SQL; multi-line string escaping is fragile; rigid | **REJECTED** |
-| **3. Admin CMS Interface** | User-friendly UI | Huge upfront engineering time (auth, file upload, form validation); distracts from core project | **DEFERRED (Sprint 2)** |
-| **4. JSON Catalog + Repeatable Import Script** | Clean version-controlled JSON; handles UUID lookups automatically; generates embeddings via script; idempotent | Requires running `node scripts/seed-catalog.js` | **SELECTED (RECOMMENDED)** |
+### 5.2 Content Ingestion Flexibility
+1. **Metadata-Only Ingestion Support:** An audiobook record can exist and be fully active in `public.audiobooks` without having any audio chapter records or uploaded audio files. 
+2. **Cover Image Decoupling:** If an audio book's cover image has not yet been uploaded to `platform-covers`, the frontend gracefully renders an Audiora Neo-Editorial styled SVG placeholder displaying the title, author, and genre in high-contrast typography.
+3. **Optional Chapter Records:** Books can have 0 chapters (coming soon), 1 preview chapter, or full multi-chapter recordings. The UI displays "Audiobook Coming Soon" or disables playback controls if `chapters` count is 0, while keeping the book discoverable in catalog browsing and RAG recommendations.
+4. **Independent RAG Indexing:** Embeddings can be generated for metadata-only audiobooks using the synthesized semantic document. Listeners can discover upcoming or preview-only books through AI Story Finder.
+5. **Incremental Uploads:** Audio chapters and cover files can be uploaded at any time without locking tables or invalidating existing catalog data.
 
-### 5.3 Idempotency and Incremental Growth Strategy
+### 5.3 Ingestion Engine Strategy
 The recommended seed engine uses `src/data/seed-catalog.json` combined with `scripts/seed-catalog.js`:
 1. **Idempotency Guarantee:** The script uses PostgreSQL `upsert` with `onConflict: 'slug'`. If a book already exists, it updates metadata without generating duplicate rows.
-2. **Dynamic Foreign Key Resolution:** Rather than hardcoding raw UUIDs in JSON, the catalog defines:
-   ```json
-   {
-     "title": "Chander Pahar",
-     "slug": "chander-pahar",
-     "authorName": "Bibhutibhushan Bandyopadhyay",
-     "categorySlug": "adventure-thriller",
-     "tierRequirement": "plus"
-   }
-   ```
-   The ingestion script looks up `authors` by name (creating the author if missing) and `categories` by `slug`, resolving UUIDs automatically.
-3. **Incremental Ingestion:** You can add 2 new books to `seed-catalog.json` next week and rerun the script. Existing books are safely updated without duplication.
+2. **Dynamic Foreign Key Resolution:** Rather than hardcoding raw UUIDs in JSON, the ingestion script looks up `authors` by name (creating the author if missing) and `categories` by `slug`, resolving UUIDs automatically.
+3. **Incremental Ingestion:** Adding new books to `seed-catalog.json` and rerunning the script safely upserts new records without disturbing existing data.
 
 ---
 
-## 6. RAG Architecture Readiness Assessment
+## 6. RAG Architecture & Gemini Model Selection
 
-GolpoBook's **AI Story Finder** allows listeners to discover stories using conversational prompts in Bengali, English, or Banglish (e.g. *"amar voyer golpo shunte mon chacche"*).
+### 6.1 Gemini Model Evaluation & Selection
 
-### 6.1 Information Required for Semantic Embeddings
-To enable high-precision recommendations, we must not embed only the title and description. We must generate a rich **Semantic Embedding Document** during ingestion:
+#### 1. Primary Text Embedding Model: `gemini-embedding-2`
+Based on official Google AI documentation ([ai.google.dev: Gemini Embeddings](https://ai.google.dev/gemini-api/docs/models/gemini#embedding)):
+- **Architecture & Capabilities:** `gemini-embedding-2` is Google's next-generation multimodal and text embedding model, trained natively across 100+ languages including Bengali script and Latin-based Banglish phonetic variations.
+- **Matryoshka Representation Learning (MRL):** Natively supports configurable output dimensionality via `output_dimensionality` parameter:
+  - Supported dimensions: `128` to `3072`.
+  - **Selected Dimension:** **`768`**.
+  - **Crucial Automatic Normalization Finding:** Unlike earlier models, when `gemini-embedding-2` produces truncated output dimensions (such as `768`), it **automatically normalizes the truncated vector**, ensuring that cosine similarity scores (`1 - (ae.embedding <=> query_embedding)`) remain mathematically valid out of the box without requiring manual normalization code.
+  - **Rationale for 768:** Provides superior semantic expressive power compared to 256/512 while requiring half the storage and memory footprint of 1536/3072 (3,072 bytes per row vs 6,144 bytes). Fits perfectly into PostgreSQL shared buffers.
+- **API Call Structure:**
+  ```javascript
+  const response = await ai.models.embedContent({
+    model: 'models/gemini-embedding-2',
+    contents: semanticTextDocument,
+    config: {
+      outputDimensionality: 768,
+    },
+  });
+  ```
+
+#### 2. Documented Alternative: `gemini-embedding-001`
+- `gemini-embedding-001` remains supported as a secondary fallback.
+- **Lifecycle & Migration Implication:** If `gemini-embedding-001` is selected, Google documentation notes that requesting custom dimensions other than the default `3072` requires **manual vector normalization** before storage to ensure proper cosine distance calculations. Furthermore, older endpoints will eventually follow Google's standard deprecation lifecycle.
+
+#### 3. Text Generation & Normalization Model: `gemini-2.5-flash`
+- **Architectural Role:**
+  - Query Normalization: Extracts mood, genre, and key themes from ambiguous user prompts into structured bilingual search tokens.
+  - Grounded Recommendation Synthesis: Composes warm Bengali response prose referencing **only** verified database matches.
+- **Availability Status:** Active and available in Google AI Studio. (Google documentation notes scheduled routing to `gemini-3.5-flash-lite` starting December 1, 2026, which preserves API compatibility).
+
+#### 4. Removal of Unsupported Guarantees (Latency & Quotas)
+- **No Hardcoded Latency Guarantees:** Latency varies depending on client network distance, payload size, and cloud data center load. We do not promise sub-300ms latency as a blanket guarantee.
+- **Project-Dependent Quotas:** Google AI Studio rate limits and token quotas depend strictly on the user's specific project tier (Free Tier vs. Pay-As-You-Go Tier). Developers must monitor quotas in the Google AI Studio console.
+
+#### 5. Strict Embedding Model & Dimensionality Consistency
+> [!CAUTION]
+> **Mathematical Consistency Invariant:**  
+> A vector similarity query is mathematically invalid if the query vector and stored catalog vectors were generated by different models or different dimensions.  
+> **Rule:** Both the offline ingestion script (`scripts/seed-catalog.js`) and the runtime search route (`/api/ai/story-finder`) **MUST** use the exact same model (`models/gemini-embedding-2`) and the exact same dimension (`768`).
+
+#### 6. Catalog Re-Embedding Trigger & Migration Strategy
+If the embedding model or dimension is updated in the future:
+1. `public.audiobook_embeddings` explicitly tracks `embedding_model` and `dimensions`.
+2. Each row stores `content_hash` (SHA-256 of the canonical semantic text document).
+3. Running `node scripts/seed-catalog.js --regenerate-embeddings`:
+   - Checks if the current hash matches stored `content_hash` and if the stored `embedding_model` matches the configured model.
+   - If a mismatch occurs, generates the new vector, updates `public.audiobook_embeddings`, and marks `is_stale = false`.
+   - Core `public.audiobooks` metadata remains completely untouched, avoiding table locks.
+
+---
+
+### 6.2 Embedding Architecture: Dedicated `audiobook_embeddings` Table
+
+We evaluated two architectural patterns:
 
 ```
-+----------------------------------------------------------------------------------------------------+
-|                                SYNTHESIZED EMBEDDING DOCUMENT STRUCTURE                            |
-+----------------------------------------------------------------------------------------------------+
-| Title: Chander Pahar (চাঁদের পাহাড়)                                                                |
-| Author: Bibhutibhushan Bandyopadhyay                                                               |
-| Narrator: Sabyasachi Chakrabarty                                                                   |
-| Category: Adventure & Thriller, Classic Bengali Literature                                         |
-| Language: Bengali (বাংলা)                                                                          |
-| Setting & Atmosphere: African wilderness, Richtersveld mountains, dangerous diamond mines, dark    |
-| Themes & Mood: Survival expedition, mythical beast Bunyip, courage, adrenaline, exploration, risk |
-| Synopsis: Young Bengali adventurer Shankar Roy Choudhury travels to the wild jungles and          |
-|   mountains of Africa in search of the elusive diamond mines guarded by the mythical Bunyip.       |
-| Tags: adventure, thriller, jungle, exploration, classic bengali, shankar, africa, survival         |
-+----------------------------------------------------------------------------------------------------+
+OPTION A: Embedded Column                   OPTION B: Dedicated Embeddings Table
++-----------------------------------+       +--------------------+       +----------------------------+
+| public.audiobooks                 |       | public.audiobooks  |       | public.audiobook_embeddings|
++-----------------------------------+       +--------------------+       +----------------------------+
+| id: uuid (PK)                     |       | id: uuid (PK)      |1     1| audiobook_id: uuid (PK, FK)|
+| title: text                       |       | title: text        |-------| embedding: vector(768)     |
+| slug: text                        |       | slug: text         |       | embedding_model: text      |
+| description: text                 |       | description: text  |       | dimensions: int            |
+| ...                               |       | ...                |       | content_hash: text         |
+| embedding: extensions.vector(768) |       +--------------------+       | is_stale: boolean          |
++-----------------------------------+                                    | updated_at: timestamptz    |
+                                                                         +----------------------------+
 ```
 
-### 6.2 Vector Database & Retrieval Inspection
-Our direct inspection of the Supabase PostgreSQL database revealed:
-- `pgvector` extension: **NOT ENABLED**. (Requires `CREATE EXTENSION IF NOT EXISTS "vector" WITH SCHEMA extensions;`).
-- `embedding` column: **DOES NOT EXIST**.
-- `HNSW` vector index: **DOES NOT EXIST**.
-- `match_audiobooks` RPC function: **DOES NOT EXIST** (`PGRST202` error confirmed).
+| Dimension | Option A: In `audiobooks` Table | Option B: Dedicated `audiobook_embeddings` Table |
+| :--- | :--- | :--- |
+| **Browse Query Performance** | **Severe Bloat:** Every `SELECT * FROM audiobooks` on browse page and carousels reads 3,072 bytes of vector data per row into memory. | **Optimal:** `audiobooks` remains lean. Vector bytes are only loaded during semantic search. |
+| **Model Versioning & Audit** | **Fragile:** Pollutes core content table with model version, dimensions, and hash columns. | **Clean:** Dedicated columns for model, dimensions, content hash, and staleness flag. |
+| **Direct Access Protection** | Harder to isolate vector access from general catalog browse policies. | **Strictly Isolated:** Direct table RLS grants access ONLY to `service_role`. |
+| **Re-embedding Safety** | In-place updates risk row locks on the main catalog table. | Safe updates in isolated table without disturbing catalog reads. |
+| **Recommendation** | **REJECTED** | **SELECTED (RECOMMENDED)** |
 
-### 6.3 Critical Security Findings in Planned RAG Function
-Reviewing the preliminary RPC function specified in `03-SYSTEM-ARCHITECTURE.md` revealed two dangerous security oversights:
-1. **Unpublished Content Leak:** The planned query lacked an `is_published = true` check. If an admin creates a draft or unpublished audiobook, the vector search would leak it to public listeners.
-2. **Missing Tier Awareness:** The search returned matches without informing the caller whether the listener has permission to play the book.
-
-#### Corrected, Production-Ready `match_audiobooks` RPC Design:
+#### Dedicated `public.audiobook_embeddings` Table DDL:
 ```sql
+CREATE TABLE IF NOT EXISTS public.audiobook_embeddings (
+  audiobook_id UUID PRIMARY KEY REFERENCES public.audiobooks(id) ON DELETE CASCADE,
+  embedding extensions.vector(768) NOT NULL,
+  embedding_model TEXT NOT NULL DEFAULT 'models/gemini-embedding-2',
+  dimensions INTEGER NOT NULL DEFAULT 768,
+  content_hash TEXT NOT NULL, -- SHA-256 of semantic document to detect staleness
+  is_stale BOOLEAN NOT NULL DEFAULT false,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT timezone('utc'::text, now()),
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT timezone('utc'::text, now())
+);
+
+-- Enable RLS: Embeddings are purely internal server-side assets
+ALTER TABLE public.audiobook_embeddings ENABLE ROW LEVEL SECURITY;
+
+-- Block direct table access from anonymous and authenticated users
+-- Standard users can ONLY query embeddings via the hardened match_audiobooks() RPC
+CREATE POLICY "audiobook_embeddings_service_access"
+  ON public.audiobook_embeddings
+  FOR ALL
+  TO service_role
+  USING (true)
+  WITH CHECK (true);
+```
+
+---
+
+### 6.3 Vector Index Strategy: Sequential Scan vs. HNSW
+
+1. **Initial Catalog (< 1,000 Audiobooks): Exact Sequential Scan**
+   - For 8–12 seed audiobooks (and up to 1,000 titles), PostgreSQL executes an exact flat scan across all vector rows:
+     `ORDER BY ae.embedding OPERATOR(extensions.<=>) query_embedding LIMIT match_count`
+   - **Performance:** Executes in **< 1 to 2 milliseconds**.
+   - **Accuracy:** **100% recall** (exact mathematical nearest neighbors with zero approximation loss).
+   - **Overhead:** **Zero memory overhead**; zero index build time during seeding; zero tuning parameters (`m`, `ef_construction`).
+
+2. **Large Catalog Scale Path (> 1,000 Audiobooks): HNSW Index Migration**
+   - When the catalog exceeds 1,000 to 5,000 audiobooks and sequential scan latency exceeds 15ms, deploy an HNSW index:
+     ```sql
+     CREATE INDEX IF NOT EXISTS idx_audiobook_embeddings_hnsw
+       ON public.audiobook_embeddings
+       USING hnsw (embedding extensions.vector_cosine_ops)
+       WITH (m = 16, ef_construction = 64);
+     ```
+   - **Phase 3 Recommendation:** **Omit HNSW initially**. Exact sequential scan is mathematically superior and operationally simpler for our seed catalog.
+
+---
+
+## 7. Supabase Security Hardening & Playback Rules
+
+### 7.1 Correct Subscription Playback Access Matrix
+
+```
++----------------------------------------------------------------------------------------------------+
+|                                    PLAYBACK AUTHORIZATION MATRIX                                   |
++--------------------------+-----------------------+-----------------------+-------------------------+
+| User State / Plan        | Free-Tier Audiobooks  | Plus-Tier Audiobooks  | Premium-Tier Audiobooks |
++--------------------------+-----------------------+-----------------------+-------------------------+
+| **Guest (Unauthenticated)**| Preview Chapters ONLY | Preview Chapters ONLY | Preview Chapters ONLY   |
++--------------------------+-----------------------+-----------------------+-------------------------+
+| **Free Active Listener**   | ALL Chapters Allowed  | Preview Chapters ONLY | Preview Chapters ONLY   |
++--------------------------+-----------------------+-----------------------+-------------------------+
+| **Plus Active Listener**   | ALL Chapters Allowed  | ALL Chapters Allowed  | Preview Chapters ONLY   |
++--------------------------+-----------------------+-----------------------+-------------------------+
+| **Premium Active Listener**| ALL Chapters Allowed  | ALL Chapters Allowed  | ALL Chapters Allowed    |
++--------------------------+-----------------------+-----------------------+-------------------------+
+```
+
+#### Core Authorization Invariants:
+1. **Unpublished Content Gate:** If an audiobook has `is_published = false`, playback is **STRICTLY FORBIDDEN FOR ALL CALLERS** (returning HTTP 404). A preview chapter **NEVER** bypasses the publication check.
+2. **Server-Side Enforcement:** Playback authorization is evaluated **exclusively** on the server in `POST /api/audio/stream-url`. The route independently queries `public.user_subscriptions` and `public.chapters`.
+3. **Never Trust the LLM or Client:** The AI Story Finder and frontend clients have zero authority to grant audio access or generate streaming tokens.
+
+---
+
+### 7.2 Hardened `match_audiobooks()` RPC Specification
+
+Reviewing the function against current Supabase and PostgreSQL security guidance, we enforce:
+- **Empty Search Path:** `SET search_path = ''` to prevent search_path injection vulnerabilities.
+- **Fully Qualified References:** All objects (`public.audiobooks`, `public.audiobook_embeddings`) and operators (`OPERATOR(extensions.<=>)`) are fully schema-qualified.
+- **Privilege Management:** Explicit `REVOKE EXECUTE ... FROM PUBLIC` before granting privileges exclusively to `anon`, `authenticated`, and `service_role`.
+- **Bounded Inputs:** `match_count` is clamped between 1 and 20; `match_threshold` is clamped between 0.0 and 1.0.
+- **Privacy Assurance:** Returns only public presentation metadata. Never exposes storage paths or internal keys.
+
+```sql
+-- 1. Create or replace the hardened vector matching function
 CREATE OR REPLACE FUNCTION public.match_audiobooks(
   query_embedding extensions.vector(768),
-  match_threshold float DEFAULT 0.30,
-  match_count int DEFAULT 5,
+  match_threshold double precision DEFAULT 0.30,
+  match_count integer DEFAULT 5,
   p_language text DEFAULT NULL
 )
 RETURNS TABLE (
@@ -243,10 +378,25 @@ RETURNS TABLE (
   short_description text,
   cover_image_url text,
   tier_requirement text,
-  total_duration_seconds int,
-  similarity float
+  total_duration_seconds integer,
+  similarity double precision
 )
-LANGUAGE sql STABLE SECURITY DEFINER AS $$
+LANGUAGE plpgsql
+STABLE
+SECURITY DEFINER
+SET search_path = ''
+AS $$
+DECLARE
+  v_bound_count integer;
+  v_bound_threshold double precision;
+BEGIN
+  -- Validate and bound match_count (1 to 20)
+  v_bound_count := LEAST(GREATEST(COALESCE(match_count, 5), 1), 20);
+  
+  -- Validate and bound match_threshold (0.0 to 1.0)
+  v_bound_threshold := LEAST(GREATEST(COALESCE(match_threshold, 0.30), 0.0), 1.0);
+
+  RETURN QUERY
   SELECT 
     a.id,
     a.title,
@@ -259,70 +409,75 @@ LANGUAGE sql STABLE SECURITY DEFINER AS $$
     a.cover_image_url,
     a.tier_requirement,
     a.total_duration_seconds,
-    1 - (a.embedding <=> query_embedding) AS similarity
+    ROUND((1 - (ae.embedding OPERATOR(extensions.<=>) query_embedding))::numeric, 4)::double precision AS similarity
   FROM public.audiobooks a
+  JOIN public.audiobook_embeddings ae ON a.id = ae.audiobook_id
   JOIN public.authors auth ON a.author_id = auth.id
   JOIN public.categories cat ON a.category_id = cat.id
-  WHERE a.is_published = true -- SECURITY INVARIANT: NEVER LEAK UNPUBLISHED TITLES
-    AND a.embedding IS NOT NULL
+  WHERE a.is_published = true          -- SECURITY: Never leak unpublished or draft books
+    AND ae.is_stale = false            -- SECURITY: Never return stale embeddings
     AND (p_language IS NULL OR a.language = p_language)
-    AND 1 - (a.embedding <=> query_embedding) > match_threshold
-  ORDER BY a.embedding <=> query_embedding ASC
-  LIMIT match_count;
+    AND (1 - (ae.embedding OPERATOR(extensions.<=>) query_embedding)) >= v_bound_threshold
+  ORDER BY ae.embedding OPERATOR(extensions.<=>) query_embedding ASC
+  LIMIT v_bound_count;
+END;
 $$;
+
+-- 2. Revoke execution from PUBLIC on the explicit signature
+REVOKE EXECUTE ON FUNCTION public.match_audiobooks(extensions.vector, double precision, integer, text) FROM PUBLIC;
+
+-- 3. Grant execution explicitly to intended roles only
+GRANT EXECUTE ON FUNCTION public.match_audiobooks(extensions.vector, double precision, integer, text) 
+  TO anon, authenticated, service_role;
 ```
 
 ---
 
-## 7. Multilingual RAG Considerations (Bangla, Banglish & English)
+## 8. Multilingual RAG & Grounded Recommendation Flow
 
-### 7.1 The Banglish Dilemma
-Listeners in Bangladesh frequently type queries in phonetic Latin characters (Banglish):
-- *"amar voyer golpo shunte mon chacche"*
-- *"bhoot er golpo ache?"*
-- *"ektu thriller ba mystery dhoroner boi dao"*
-
-**Why Direct Embedding Fails:**  
-Models like `text-embedding-004` are trained on formal Bengali script (`বাংলা`) and English prose. They have limited exposure to arbitrary phonetic Banglish spelling variations (*voyer* vs *bhooyer* vs *bhuter*). Embedding a raw Banglish string produces low cosine similarity against formal Bengali catalog embeddings.
-
-### 7.2 The Two-Stage Query Normalization Solution
+### 8.1 The Banglish Dilemma & 4-Stage Architecture
+Listeners frequently query in phonetic Latin script (*"amar voyer golpo shunte mon chacche"*). The 4-stage pipeline resolves this:
 
 ```
-                               THE RAG RETRIEVAL PIPELINE
-                               
+                                THE RAG RETRIEVAL PIPELINE
+                                
   Listener Query: "amar voyer golpo shunte mon chacche"
         |
         v
-  [STAGE 1: Normalizer via Gemini 2.0 Flash (<300ms)]
-  - Extracts mood, literary genres, and key themes
-  - Outputs normalized bilingual query keywords:
-    "ভৌতিক গল্প রহস্য horror supernatural thriller suspense ghost stories"
+  [STAGE 1: Normalizer via Gemini 2.5 Flash]
+  - System prompt: "Extract genre, mood, keywords. Output normalized Bengali and English terms."
+  - Output: "ভৌতিক গল্প রহস্য horror supernatural thriller suspense ghost stories"
         |
         v
-  [STAGE 2: Dense Embedding via text-embedding-004]
-  - Generates 768-dimensional float vector from normalized text
+  [STAGE 2: Dense Embedding via gemini-embedding-2 (768 MRL)]
+  - Generates 768-dimensional float vector from normalized search terms
         |
         v
   [STAGE 3: Supabase pgvector Cosine Search via match_audiobooks()]
-  - HNSW index matches against pre-computed audiobook embeddings
-  - Enforces is_published = true and returns top 3 to 5 matching catalog rows
+  - Exact flat scan across public.audiobook_embeddings
+  - Enforces is_published = true, returns top 3 to 5 matching catalog rows
         |
         v
-  [STAGE 4: Strict Zero-Hallucination Recommendation Generation]
-  - Gemini 2.0 Flash writes a warm, conversational recommendation in Bangla:
-    "আপনার জন্য কিছু গা ছমছমে রহস্য ও ভৌতিক অডিওবুক খুঁজে পাওয়া গেছে:"
-  - Mentions ONLY the retrieved books. NEVER invents titles outside the catalog.
+  [STAGE 4: Grounded Zero-Hallucination Recommendation Generation]
+  - Frontend renders recommendation cards directly from retrieved database records/IDs
+  - Gemini 2.5 Flash writes a warm, conversational recommendation in Bangla:
+    "আপনার জন্য কিছু রোমাঞ্চকর ও ভৌতিক অডিওবুক খুঁজে পেয়েছি:"
+  - LLM is strictly constrained to the retrieved context; cannot create fictional titles.
 ```
+
+### 8.2 Clarification on Zero Hallucinations
+> [!IMPORTANT]
+> **Structural Immunity vs. Prompting Limitations:**  
+> Prompt engineering alone cannot mathematically guarantee zero hallucinations from an LLM.  
+> In GolpoBook, zero hallucinations is enforced **architecturally**:
+> 1. The interactive recommendation cards displayed in the UI are **rendered directly from the verified database records and UUIDs returned by `match_audiobooks()`**.
+> 2. The LLM generates only the conversational commentary surrounding those verified cards. Even if the LLM hallucinated a title in prose, no interactive card or playable item could ever be instantiated for a non-existent database record.
 
 ---
 
-## 8. Cover Image & Audio Asset Architecture
+## 9. Storage Architecture & Signed URL Streaming
 
-### 8.1 Supabase Storage Setup Audit
-Our live inspection revealed that **0 storage buckets exist** in Supabase.
-
-### 8.2 Recommended Bucket Topology
-
+### 9.1 Recommended Bucket Topology
 ```
 +----------------------------------------------------------------------------------------------------+
 |                                    SUPABASE STORAGE ARCHITECTURE                                   |
@@ -337,30 +492,27 @@ Our live inspection revealed that **0 storage buckets exist** in Supabase.
 +--------------------+---------+------------------------+--------------------------------------------+
 ```
 
-### 8.3 Signed URL Streaming Workflow
-Audio files in `audio-vault` are strictly private. Direct public access is rejected by Supabase Storage.
-1. When a listener clicks Play on Chapter 2, the client issues `POST /api/audio/stream-url { chapterId }`.
-2. The server verifies user session and subscription tier:
-   - If chapter is marked `is_preview = true` -> **ALLOWED for all**.
-   - If user is on `plus` or `premium` -> **ALLOWED**.
-   - If user is on `free` and chapter is not preview -> **REJECTED (403 Forbidden)**.
-3. The server calls Supabase Storage API using the service role:
-   ```javascript
-   const { data } = await supabase.storage
-     .from('audio-vault')
-     .createSignedUrl(chapter.audio_storage_path, 900); // 15-minute token
-   ```
-4. The client's audio player receives the signed URL and streams the chapter securely.
+### 9.2 Signed URL Streaming Workflow (`POST /api/audio/stream-url`)
+1. Client sends `{ chapterId }` with cookie session.
+2. Server validates user session via `@supabase/ssr`.
+3. Server queries `chapters` and parent `audiobooks`:
+   - If `audiobooks.is_published = false` -> **REJECTED (404 Not Found)**.
+   - If `chapters.is_preview = true` -> **ALLOWED for all**.
+   - If `user_subscriptions.status = 'active'`:
+     - Plan `premium` -> **ALLOWED for all tiers**.
+     - Plan `plus` and book requires `free` or `plus` -> **ALLOWED**.
+     - Plan `free` and book requires `free` -> **ALLOWED**.
+   - Otherwise -> **REJECTED (403 Forbidden with `{ error: 'UPGRADE_REQUIRED' }`)**.
+4. Server generates a 15-minute signed URL using `supabase.storage.from('audio-vault').createSignedUrl(path, 900)`.
+5. Client streams audio securely.
 
 ---
 
-## 9. Frontend Mock-Data Replacement Inventory
-
-Below is the complete inventory of frontend components that must transition from mock data to live Supabase data in Phase 3:
+## 10. Frontend Mock-Data Replacement Inventory
 
 | Component / Screen | Current Data Source | Required Supabase Table / Query | Fetching Approach | State Handling Needed |
 | :--- | :--- | :--- | :--- | :--- |
-| **Category Pill Strip** (`src/app/page.js`) | `CATEGORIES` array in `mock-catalog.js` | `public.categories` (`is_active = true`, order by `display_order`) | Server Component prefetch / Client prop | Horizontal scroll, active pill styling |
+| **Category Pill Strip** (`src/app/page.js`) | `CATEGORIES` in `mock-catalog.js` | `public.categories` (`is_active = true`, order by `display_order`) | Server Component prefetch / Client prop | Horizontal scroll, active pill styling |
 | **Featured Spotlight Banner** (`src/app/page.js`) | `PLACEHOLDER_AUDIOBOOKS[1]` | `public.audiobooks` (`is_featured = true`, join `authors`) | Server Component async query | Editorial Choice badge, cover art fallback |
 | **Popular Audiobooks Grid** (`src/app/page.js`) | `filteredBooks.slice(0, 4)` | `public.audiobooks` (`is_published = true`, order by `ratings_count DESC`) | Server Component with Suspense | 4-column responsive grid, empty state |
 | **Recommended Grid** (`src/app/page.js`) | `filteredBooks.slice(4, 8)` | `public.audiobooks` matched against `user_preferences` | Server Component personalized query | Fallback to latest additions if new user |
@@ -372,157 +524,181 @@ Below is the complete inventory of frontend components that must transition from
 
 ---
 
-## 10. Recommended Phase 3 Implementation Breakdown
+## 11. Copyright Act, 2023 & Content Licensing Matrix
 
-To ensure systematic development and avoid breaking existing functionality, we propose breaking Phase 3 into **6 subphases**:
+### 11.1 Legal Framework: Bangladesh Copyright Act, 2023 (কপিরাইট আইন, ২০২৩)
+The Parliament of Bangladesh enacted the **Copyright Act, 2023** (Act No. XLIV of 2023), replacing the Copyright Act, 2000:
+- **Literary Works (Section 24):** Copyright subsists during the author's lifetime plus **60 calendar years** from the beginning of the year following the author's death.
+- **Sound Recordings (শব্দ-ধ্বনি রেকর্ডিং):** Protected for **60 years** from the beginning of the year following publication.
+- **Cinematographic Works & Artwork:** Protected for **60 years** from publication.
+
+> [!CAUTION]
+> **No Automatic Academic or Prototype Exemption:**  
+> Under the Copyright Act, 2023, "fair dealing" exceptions are narrow (e.g. private research, criticism, review with explicit citation, reporting of current news).  
+> **Distributing or streaming full copyrighted audiobooks or stories over a network is NOT automatically lawful simply because an application is an academic project or prototype.** Full compliance across all rights layers is required.
+
+### 11.2 The Four Independent Rights Layers
+Every audiobook on GolpoBook consists of four distinct intellectual property layers that must be verified independently:
+1. **Layer 1: Literary Text Rights:** Written novel/story text. (Must be public domain or licensed).
+2. **Layer 2: Translation & Adaptation Rights:** If an English classic is translated to Bengali, the translation itself is a separate copyrighted literary work!
+3. **Layer 3: Sound Recording / Narration Rights:** Even if the underlying book is public domain, commercial recordings (such as Radio Mirchi's *Sunday Suspense*) are strictly proprietary sound recordings under Section 15(1)(c). **Proprietary commercial recordings are strictly forbidden.** Audio must be LibriVox, student-recorded, or Creative Commons.
+4. **Layer 4: Cover Artwork Rights:** Book cover designs from commercial publishers are protected artistic works. Covers must use royalty-free Unsplash photography, CC0 imagery, or custom vector artwork.
+
+### 11.3 Author & Title Copyright Audit
+
+| Title | Author | Year of Death | 60-Year Calculation | Legal Status | Deployment Status | Required Audio Source |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **Abol Tabol** | Sukumar Ray | 1923 | 1923 + 60 = 1983 | **PUBLIC DOMAIN** | **APPROVED** | Volunteer / Student recording |
+| **Sherlock Holmes** | Arthur Conan Doyle | 1930 | 1930 + 60 = 1990 | **PUBLIC DOMAIN** | **APPROVED** | LibriVox (Public Domain) |
+| **Srikanto** | Sarat Chandra Chattopadhyay | 1938 | 1938 + 60 = 1998 | **PUBLIC DOMAIN** | **APPROVED** | Volunteer / Student recording |
+| **The Great Gatsby** | F. Scott Fitzgerald | 1940 | 1940 + 60 = 2000 | **PUBLIC DOMAIN** | **APPROVED** | LibriVox (Public Domain) |
+| **Kabuliwala & Stories** | Rabindranath Tagore | 1941 | 1941 + 60 = 2001 | **PUBLIC DOMAIN** | **APPROVED** | LibriVox / Student recording |
+| **Chander Pahar** | Bibhutibhushan Bandyopadhyay | 1950 | 1950 + 60 = 2010 | **PUBLIC DOMAIN** | **APPROVED** | Volunteer / Student recording |
+| **1984** | George Orwell | 1950 | 1950 + 60 = 2010 | **PUBLIC DOMAIN** | **APPROVED** | LibriVox (Public Domain) |
+| **Pather Panchali** | Bibhutibhushan Bandyopadhyay | 1950 | 1950 + 60 = 2010 | **PUBLIC DOMAIN** | **APPROVED** | Volunteer / Student recording |
+| **Byomkesh Bakshi** | Sharadindu Bandyopadhyay | 1970 | 1970 + 60 = 2030 | **UNDER COPYRIGHT** (until 2031) | **NOT APPROVED FOR PUBLIC DEPLOYMENT** | Requires commercial license |
+| **Badshahi Angti (Feluda)** | Satyajit Ray | 1992 | 1992 + 60 = 2052 | **UNDER COPYRIGHT** (until 2053) | **NOT APPROVED FOR PUBLIC DEPLOYMENT** | Requires commercial license |
+| **Nishithini (Misir Ali)** | Humayun Ahmed | 2012 | 2012 + 60 = 2072 | **UNDER COPYRIGHT** (until 2073) | **NOT APPROVED FOR PUBLIC DEPLOYMENT** | Requires commercial license |
+
+> [!WARNING]
+> **Strict Catalog Governance:**  
+> Titles labeled **NOT APPROVED FOR PUBLIC DEPLOYMENT** are omitted from production seeds. The seed catalog will exclusively feature verified public domain literary works with verified open-source or volunteer narration.
+
+---
+
+## 12. Recommended Phase 3 Implementation Roadmap
+
+To ensure modular verification and clean testing boundaries, Phase 3 is divided into **7 subphases**:
 
 ```
 +----------------------------------------------------------------------------------------------------+
 |                                PHASE 3 IMPLEMENTATION ROADMAP                                      |
 |                                                                                                    |
-|  [ 3A: Audit & Integration Plan ] (CURRENT) -> Architecture, Schema Matrix, Asset Checklist        |
+|  [ 3A: Audit & Integration Plan ] (CURRENT) -> Architecture, Security Hardening & Approval         |
 |            |                                                                                       |
 |            v                                                                                       |
-|  [ 3B: Missing Schema & Storage Migration ] -> Migration 8 (authors, audiobooks, chapters,       |
-|                                                ai_usage, pgvector, HNSW, Storage Buckets)          |
+|  [ 3B: Focused Content Schema, Vector & Storage Migration ] -> Authors, Audiobooks, Chapters,     |
+|                                 Embeddings Table, AI Usage, pgvector, Storage Buckets & Policies    |
 |            |                                                                                       |
 |            v                                                                                       |
-|  [ 3C: Catalog Seed Data & Ingestion Script ] -> seed-catalog.json (8-12 Bengali/World books)     |
-|                                                  and scripts/seed-catalog.js with upsert           |
+|  [ 3C: Catalog Seed Data & Ingestion Script ] -> Verified Public Domain seed-catalog.json and      |
+|                                 idempotent scripts/seed-catalog.js with MRL-768 embeddings         |
 |            |                                                                                       |
 |            v                                                                                       |
 |  [ 3D: Live Supabase Browse Page ] -> src/app/page.js connected to live PostgreSQL queries        |
 |                                        with real categories and dynamic carousels                  |
 |            |                                                                                       |
 |            v                                                                                       |
-|  [ 3E: Book Details & Real Audio Playback ] -> /audiobooks/[slug] and InspectorPlayer wired        |
-|                                                to real signed audio streaming                      |
+|  [ 3E: Book Details & Secure Audio Playback ] -> /audiobooks/[slug], /api/audio/stream-url         |
+|                                 with tier authorization, and InspectorPlayer audio engine          |
 |            |                                                                                       |
 |            v                                                                                       |
-|  [ 3F: RAG Pipeline & AI Story Finder ] -> Gemini 2.0 Flash normalizer, text-embedding-004,       |
-|                                            match_audiobooks RPC, and /story-finder route           |
+|  [ 3F: RAG Retrieval API & Quota Engine ] -> /api/ai/story-finder route handler, Gemini normalizer|
+|                                 gemini-embedding-2 MRL embedding, match_audiobooks RPC, quota test |
+|            |                                                                                       |
+|            v                                                                                       |
+|  [ 3G: AI Story Finder Frontend Interface ] -> /story-finder page, conversational UI,             |
+|                                 grounded zero-hallucination recommendation cards                   |
 +----------------------------------------------------------------------------------------------------+
 ```
 
-### Granular Subphase Specifications
+---
 
-#### Subphase 3B: Missing Schema & Storage Migration
-- **Objective:** Deploy database tables and storage infrastructure required for content and RAG.
-- **Deliverables:**
-  - Migration file `20261115000001_create_content_and_vector_schema.sql` defining `authors`, `podcasters`, `audiobooks`, `chapters`, `podcasts`, `podcast_episodes`, `ai_usage`.
-  - Enable `pgvector` extension and configure `audiobooks.embedding vector(768)` with HNSW index.
-  - Deploy `match_audiobooks` and `consume_ai_quota` RPC functions.
-  - Provision storage buckets: `platform-covers` (public) and `audio-vault` (private).
-- **Definition of Done:** All tables and buckets verified in Supabase Table Editor; `is_admin()` policies verified.
+## 13. Testing Framework & Security Verification Matrix
 
-#### Subphase 3C: Catalog Seed Data & Ingestion Script
-- **Objective:** Establish a repeatable, idempotent content ingestion engine.
-- **Deliverables:**
-  - `src/data/seed-catalog.json` with 8–12 classic Bengali and global audiobooks (e.g., *Chander Pahar*, *Feluda*, *Nishithini*, *The Great Gatsby*, *1984*).
-  - `scripts/seed-catalog.js` supporting `--generate-embeddings` and upsert idempotency.
-- **Definition of Done:** Running `node scripts/seed-catalog.js` populates authors, categories, audiobooks, and chapters with zero duplicate records.
+### 13.1 Distinction: Baseline Audits vs. Functional Verification
+The checks executed during Phase 3A (`npm run lint`, `npm run build`, read-only connection test) are **baseline build integrity checks**. They do NOT constitute proof of complete RLS isolation, storage policy enforcement, or role-based security.
 
-#### Subphase 3D: Live Supabase Browse Page
-- **Objective:** Completely replace `mock-catalog.js` in `src/app/page.js` with live Supabase database queries.
-- **Deliverables:**
-  - Dynamic category pill strip queried from `public.categories`.
-  - Spotlight banner displaying live featured audiobook.
-  - "Popular in Bangladesh" and "Recommended For You" grids populated from `public.audiobooks`.
-- **Definition of Done:** Zero imports of `mock-catalog.js` in `page.js`; real books displayed with responsive covers and tier badges.
+### 13.2 Required Test Suites for Implementation Phases (3B through 3G)
+For every implementation subphase, developers must execute and document tests according to this classification matrix:
 
-#### Subphase 3E: Book Details & Real Audio Playback
-- **Objective:** Build `/audiobooks/[slug]` and enable genuine chapter-wise audio streaming.
-- **Deliverables:**
-  - Dynamic route `src/app/audiobooks/[slug]/page.jsx` rendering synopsis, author bio, and tracklist.
-  - API Route Handler `src/app/api/audio/stream-url/route.js` verifying tier access and returning 15-minute signed URLs.
-  - `InspectorPlayer` connected to an HTML5 `<audio>` engine playing actual audio chapters.
-- **Definition of Done:** Clicking Play streams audio from Supabase Storage; Free tier users are blocked from playing non-preview chapters.
+```
++----------------------------------------------------------------------------------------------------+
+|                                  SECURITY & FUNCTIONAL TEST MATRIX                                 |
++------------------------------------+------------------+---------------------+----------------------+
+| Test Suite / Requirement           | Test Type        | Verification Method | Expected Result      |
++------------------------------------+------------------+---------------------+----------------------+
+| 1. Anonymous vs. Authenticated DB  | Security / RLS   | Supabase Client API | Anon reads published;|
+|    Access                          |                  |                     | Anon write rejected  |
++------------------------------------+------------------+---------------------+----------------------+
+| 2. User-to-User RLS Isolation      | Security / RLS   | Cross-user Query    | User A cannot view or|
+|                                    |                  |                     | mutate User B prefs  |
++------------------------------------+------------------+---------------------+----------------------+
+| 3. Published vs. Unpublished Gate  | Security / RLS   | Browse & RPC Query  | Draft books 100%     |
+|                                    |                  |                     | invisible to public  |
++------------------------------------+------------------+---------------------+----------------------+
+| 4. Direct Access Restrictions on   | Security / RLS   | Direct Table Select | Anon & Authenticated |
+|    audiobook_embeddings            |                  |                     | return empty / 403   |
++------------------------------------+------------------+---------------------+----------------------+
+| 5. Guest Audio Authorization       | Functional / Auth| POST /stream-url    | Preview allowed;     |
+|                                    |                  |                     | Full tracks -> 401   |
++------------------------------------+------------------+---------------------+----------------------+
+| 6. Tiered Audio Authorization      | Functional / Auth| POST /stream-url    | Free/Plus/Premium    |
+|    (Free vs Plus vs Premium)       |                  | (3 mock users)      | match access matrix  |
++------------------------------------+------------------+---------------------+----------------------+
+| 7. Private Storage Signed URL      | Security / Store | Direct HTTP GET     | Raw URL -> 400/403;  |
+|    Expiration                      |                  | Signed URL -> 200   | Expired -> 400       |
++------------------------------------+------------------+---------------------+----------------------+
+| 8. Auth & Onboarding Regression    | Regression       | Browser Navigation  | Login, session, taste|
+|                                    |                  |                     | calibration pass     |
++------------------------------------+------------------+---------------------+----------------------+
+| 9. Responsive Physical UI          | UI / Usability   | Real Browser View   | Mobile/desktop card  |
+|                                    |                  |                     | physics responsive   |
++------------------------------------+------------------+---------------------+----------------------+
+```
 
-#### Subphase 3F: RAG Pipeline & AI Story Finder
-- **Objective:** Implement natural-language catalog recommendations with Banglish support.
-- **Deliverables:**
-  - Route handler `src/app/api/ai/story-finder/route.js` performing query normalization, embedding, and vector retrieval.
-  - Frontend interface `src/app/story-finder/page.jsx` with conversation prompts and zero-hallucination recommendation cards.
-  - Atomic AI quota enforcement (`consume_ai_quota`).
-- **Definition of Done:** Query *"amar voyer golpo shunte mon chacche"* retrieves *Nishithini* or *Supernatural & Horror* titles with zero hallucinated books.
+### 13.3 Subphase Testing Protocol
+In each implementation phase:
+1. Run `npm run lint` — Must exit code 0 with 0 errors.
+2. Run `npm run build` — Must compile all routes cleanly.
+3. Execute the subphase-specific automated/manual tests from the matrix above.
+4. Report test status using the standard taxonomy: **Automated**, **Manual**, **Passed**, **Failed**, or **Not Run**.
+5. Any failure must be resolved and retested before requesting phase sign-off.
 
 ---
 
-## 11. Risks, Dependencies and Technical Decisions
+## 14. Developer Asset-Preparation Checklist
 
-### 11.1 Technical Risks & Mitigations
-1. **Audio Copyright & Licensing Risk:**
-   - *Risk:* Commercial audiobooks (e.g. copyright-protected Audible recordings) cannot be legally hosted or redistributed.
-   - *Mitigation:* Use public domain Bengali works (Rabindranath Tagore, Sukumar Ray, Sarat Chandra Chattopadhyay, Bibhutibhushan Bandyopadhyay) and LibriVox public domain audio recordings for demo chapters.
-2. **Supabase Free Tier Bandwidth & Storage Limits:**
-   - *Risk:* Supabase free tier includes 1GB file storage and 2GB monthly egress. High-bitrate audio will exhaust bandwidth rapidly.
-   - *Mitigation:* Encode demonstration chapters in 64kbps or 96kbps mono MP3 (approx. 1MB per 2-minute chapter). Limit test chapters to 2 to 3 chapters per book.
-3. **Gemini API Free Tier Rate Limits:**
-   - *Risk:* Free-tier Gemini API has a 15 requests-per-minute (RPM) quota. Batch-embedding 20 books at once could trigger HTTP 429.
-   - *Mitigation:* Ingestion script includes a 2-second rate-limiting delay between sequential embedding calls.
-
----
-
-## 12. Testing Baseline and Results
-
-### 12.1 Non-Destructive Tests Executed During Audit
-- **ESLint Check (`npm run lint`):**  
-  *Result:* **PASSED (0 errors, 0 warnings)**.
-- **Production Build Check (`npm run build`):**  
-  *Result:* **PASSED (Exit code 0)**. All 7 App Router routes compiled cleanly with Partial Prerendering (`◐ /onboarding`).
-- **Live Dev Server:**  
-  *Result:* **PASSED (HTTP 200 OK)** responding on `http://localhost:3000/`.
-- **Database Connection & RLS Audit:**  
-  *Result:* **PASSED**. Successfully connected and queried all 6 active tables.
-
----
-
-## 13. Manual Asset-Preparation Checklist for Developer
-
-To prepare for Phase 3B and 3C, please prepare the following assets:
-
-### 1. Cover Artwork (8 to 12 Images)
+### 1. Verified Public Domain Cover Artwork (8 Images)
 - **Format:** `.webp` or `.jpg` (WebP preferred).
-- **Aspect Ratio:** `2:3` vertical book ratio (e.g., `800 x 1200 px` or `600 x 900 px`).
-- **File Size:** Under `500 KB` per cover.
-- **Recommended Titles:**
-  1. `chander-pahar.webp` (Bibhutibhushan Bandyopadhyay)
-  2. `badshahi-angti.webp` (Satyajit Ray — Feluda)
-  3. `nishithini.webp` (Humayun Ahmed — Misir Ali)
-  4. `srikanto.webp` (Sarat Chandra Chattopadhyay)
-  5. `golpoguchho.webp` (Rabindranath Tagore)
-  6. `byomkesh-satyanweshi.webp` (Sharadindu Bandyopadhyay)
-  7. `great-gatsby.webp` (F. Scott Fitzgerald)
-  8. `1984.webp` (George Orwell)
+- **Aspect Ratio:** `2:3` vertical book ratio (e.g., `800 x 1200 px`).
+- **File Size:** Under `500 KB` per image.
+- **Titles:** `chander-pahar.webp`, `srikanto.webp`, `kabuliwala.webp`, `abol-tabol.webp`, `sherlock-holmes.webp`, `great-gatsby.webp`, `1984.webp`, `pather-panchali.webp`.
 
-### 2. Audio Chapter Files (1 to 2 Chapters per Book)
+### 2. Audio Chapter Files (Sample Chapters)
 - **Format:** `.mp3`
-- **Encoding:** `64 kbps` or `96 kbps`, `44.1 kHz`, mono or stereo.
-- **Duration:** 1 to 3 minutes per sample chapter (keeps file sizes under 2MB for rapid testing).
-- **Naming Pattern:** `{slug}-chapter-01.mp3`, `{slug}-chapter-02.mp3`.
+- **Encoding:** `64 kbps` mono, `44.1 kHz`.
+- **Duration:** 1 to 2 minutes per sample chapter (LibriVox public domain or volunteer student voice).
+- **Naming Pattern:** `{slug}-chapter-01.mp3`.
+- *Note:* Books can also be ingested without audio files in metadata-only mode.
 
 ### 3. API Key Acquisition
-- Acquire a free Google Gemini API Key from Google AI Studio (`aistudio.google.com`) for the embedding model (`text-embedding-004`) and query normalizer.
+- Acquire a free Google Gemini API Key from Google AI Studio ([aistudio.google.com](https://aistudio.google.com)) and add `GEMINI_API_KEY=your_key` to `.env.local`.
 
 ---
 
-## 14. Final List of Decisions Requiring Your Approval
+## 15. Strategic Decisions Ready for Approval & Unresolved Risks
 
-Before we proceed to Phase 3B implementation, please review and approve the following 5 strategic decisions:
+### 15.1 Decisions Ready for Approval:
+1. **Gemini Model Stack:** Approve `models/gemini-embedding-2` with `output_dimensionality: 768` (MRL with automatic truncation normalization) for vector embeddings and `gemini-2.5-flash` for query normalization and response generation?
+2. **Dedicated Embeddings Architecture:** Approve storing embeddings in `public.audiobook_embeddings` with direct access blocked via RLS and model consistency enforced?
+3. **Sequential Vector Scan:** Approve using exact flat scan for our initial 8–10 books and deferring HNSW until the catalog exceeds 1,000 titles?
+4. **Hardened RPC Function:** Approve the hardened `match_audiobooks()` specification featuring `SET search_path = ''`, fully qualified objects/operators, revoked execution from PUBLIC, and bounded thresholds/counts?
+5. **Subscription Playback Rules:** Approve the strict 4-tier access matrix and mandatory server-side verification in `/api/audio/stream-url`, with preview chapters strictly honoring `is_published = true`?
+6. **Copyright Compliance:** Approve restricting the public seed catalog exclusively to verified public domain literary works under the Copyright Act, 2023, while omitting unverified modern titles from production seeds?
+7. **Focused Subphase Sequence:** Approve the 7-subphase roadmap (3B Schema & Storage -> 3C Seed Data -> 3D Browse Page -> 3E Details & Player -> 3F RAG API -> 3G Story Finder UI)?
 
-1. **Seed Catalog Selection:** Do you approve using 8 to 10 classic Bengali & global audiobooks (using public domain audio/text) for the initial database seed?
-2. **Audio File Duration:** Do you approve using 1 to 3 sample chapters (2–4 minutes each) per book to stay safely within Supabase free storage and bandwidth limits?
-3. **Gemini for RAG:** Do you approve using Google Gemini (`text-embedding-004` for 768-dim embeddings and Gemini 2.0 Flash for Banglish query normalization)?
-4. **Storage Architecture:** Do you approve the two-bucket strategy: public `platform-covers` for artwork and private `audio-vault` for audio streaming?
-5. **Implementation Sequence:** Do you approve the proposed 6 subphases (3B Schema & Storage -> 3C Seed Data -> 3D Browse Feed -> 3E Details & Player -> 3F RAG Pipeline -> 3G Story Finder UI)?
+### 15.2 Remaining Unresolved Risks:
+1. **External AI Studio Quota Throttling:** If the free tier project quota (RPM/RPD) is reached during heavy live demonstration, the application could receive HTTP 429. *Mitigation:* The API route will include graceful fallback messaging advising the user to retry after 30 seconds.
+2. **Audio Egress Bandwidth:** Supabase free tier includes 2GB monthly egress. High usage during class demos could consume bandwidth. *Mitigation:* Audio samples are strictly encoded in 64kbps mono and limited to 1–2 minutes per preview chapter.
 
 ---
 
-## Final Recommendation
+## 16. Final Recommendation
 
 > [!NOTE]
-> **Is GolpoBook ready to begin Phase 3 implementation?**  
+> **Is GolpoBook ready to proceed to Phase 3B implementation?**  
 > **YES.**  
-> The foundational layers—Supabase Auth, SSR clients, cookie sessions, RLS security policies, and user onboarding—are in a pristine, fully verified state with zero lint or build errors.  
+> The foundational layers—Supabase Auth, SSR cookie sessions, RLS security policies, and user onboarding—are in a pristine, fully verified state with zero lint or build errors. The architectural corrections for vector security, Gemini model selection, subscription playback gating, and copyright compliance are complete and documented.  
 > 
-> There are **no blocking foundational defects**. Once you review this audit and approve the decisions in Section 14, we are ready to proceed immediately to **Phase 3B: Content Schema and Storage Migration**.
+> There are **no blocking foundational defects**. Once you review this final audit and approve the decisions in Section 15.1, we are ready to proceed immediately to **Phase 3B: Focused Content Schema, Vector & Storage Migration**.
