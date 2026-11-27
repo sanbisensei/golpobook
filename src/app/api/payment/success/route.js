@@ -26,7 +26,9 @@ async function handleSuccess(request) {
     });
   }
 
-  return NextResponse.redirect(new URL(`/account?payment=success&tran_id=${tranId || ""}`, request.url));
+  return NextResponse.redirect(new URL(`/account?payment=success&tran_id=${tranId || ""}`, request.url), {
+    status: 303,
+  });
 }
 
 export async function GET(request) {

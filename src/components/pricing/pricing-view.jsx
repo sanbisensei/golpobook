@@ -59,19 +59,6 @@ const PLANS = [
   },
 ];
 
-const COMPARISON_ROWS = [
-  { feature: "Advertisements", free: "With ads", plus: "Ad-free", premium: "Ad-free" },
-  { feature: "Playback Speed", free: "1x only", plus: "Up to 1.5x", premium: "Up to 2x" },
-  { feature: "Offline Downloads", free: "Not available", plus: "1 download", premium: "Chapter-wise" },
-  { feature: "Audiobook Access", free: "Free + previews", plus: "Full included", premium: "Full included" },
-  { feature: "Sleep Timer", free: "Not available", plus: "Yes", premium: "Yes" },
-  { feature: "Bookmarks & Playlists", free: "Limited", plus: "Unlimited", premium: "Unlimited" },
-  { feature: "Cross-Device Sync", free: "Not available", plus: "Yes", premium: "Yes" },
-  { feature: "AI Book Summaries", free: "Not available", plus: "5 / month", premium: "30 / month" },
-  { feature: "Exclusive Content", free: "Not available", plus: "Limited", premium: "Full access" },
-  { feature: "AI Story Finder (RAG)", free: "1 search / day", plus: "10 searches / day", premium: "Unlimited" },
-];
-
 export function PricingView({ currentPlan = "free", isLoggedIn = false, paymentStatus = null }) {
   const router = useRouter();
   const [cycle, setCycle] = useState("monthly");
@@ -109,7 +96,10 @@ export function PricingView({ currentPlan = "free", isLoggedIn = false, paymentS
         } else {
           window.location.assign(data.gatewayUrl);
         }
+        return;
       }
+      setErrorMsg(data.message || "Payment gateway did not return a checkout URL.");
+      setLoadingPlan(null);
     } catch (err) {
       setErrorMsg(err.message || "Network error initiating payment.");
       setLoadingPlan(null);
@@ -226,10 +216,11 @@ export function PricingView({ currentPlan = "free", isLoggedIn = false, paymentS
 
                   <div className="pt-6">
                     <Button
+                      type="button"
                       onClick={() => handleCheckout(plan.id)}
                       disabled={isCurrent || loadingPlan === plan.id}
                       variant={plan.id === "free" ? "outline" : "primary"}
-                      className="w-full h-11 gap-2"
+                      className="w-full h-11 gap-2 cursor-pointer"
                     >
                       {loadingPlan === plan.id ? (
                         <>
@@ -257,40 +248,6 @@ export function PricingView({ currentPlan = "free", isLoggedIn = false, paymentS
             <ShieldCheck className="size-4 text-terracotta" />
             <span>Secured by SSLCommerz Sandbox • Instant subscription activation via IPN</span>
           </div>
-
-          {/* Full Proposal Feature Comparison Table */}
-          <section className="border-[1.5px] border-ink bg-card rounded-xl shadow-hard-sm overflow-hidden">
-            <div className="p-5 border-b-[1.5px] border-ink bg-canary/30">
-              <h2 className="font-heading text-xl font-bold uppercase tracking-tight">
-                Compare All Tier Benefits
-              </h2>
-              <p className="font-sans text-sm text-foreground/80 mt-0.5">
-                Side-by-side breakdown of Free, Plus (৳20/mo), and Premium (৳120/mo).
-              </p>
-            </div>
-            <div className="overflow-x-auto">
-              <table className="w-full text-left border-collapse">
-                <thead>
-                  <tr className="border-b-[1.5px] border-ink bg-muted/40 font-heading text-xs uppercase tracking-wider">
-                    <th className="p-3.5">Feature</th>
-                    <th className="p-3.5">Free (৳0)</th>
-                    <th className="p-3.5 text-terracotta">Plus (৳20/mo)</th>
-                    <th className="p-3.5 text-ink">Premium (৳120/mo)</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-ink/15 font-sans text-sm">
-                  {COMPARISON_ROWS.map((row) => (
-                    <tr key={row.feature} className="hover:bg-muted/20">
-                      <td className="p-3.5 font-bold text-foreground">{row.feature}</td>
-                      <td className="p-3.5 text-muted-foreground">{row.free}</td>
-                      <td className="p-3.5 font-semibold text-terracotta">{row.plus}</td>
-                      <td className="p-3.5 font-bold text-foreground">{row.premium}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </section>
         </main>
       </div>
 

@@ -137,17 +137,16 @@ export function TopHeader() {
 
   // Derive display initials and name
   const fullName =
-    user?.user_metadata?.full_name ||
-    user?.email?.split("@")[0] ||
-    "Listener";
+    user?.user_metadata?.full_name || user?.email?.split("@")[0] || "Listener";
 
-  const initials = fullName
-    .split(" ")
-    .map((word) => word[0])
-    .filter(Boolean)
-    .slice(0, 2)
-    .join("")
-    .toUpperCase() || "GB";
+  const initials =
+    fullName
+      .split(" ")
+      .map((word) => word[0])
+      .filter(Boolean)
+      .slice(0, 2)
+      .join("")
+      .toUpperCase() || "GB";
 
   return (
     <header className="fixed top-0 left-0 right-0 h-16 bg-background z-50 border-b border-ink px-4 md:px-6 flex items-center justify-between select-none">
@@ -159,7 +158,11 @@ export function TopHeader() {
           type="button"
           aria-label="Open Navigation Menu"
         >
-          {mobileMenuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
+          {mobileMenuOpen ? (
+            <X className="size-5" />
+          ) : (
+            <Menu className="size-5" />
+          )}
         </button>
 
         <Link href="/" className="flex items-center gap-2 group">
@@ -175,7 +178,10 @@ export function TopHeader() {
       {/* Center Search Strip (Vivid Canary Yellow) with Click-to-Filter Categories */}
       <div className="flex-1 max-w-xl mx-4 hidden md:flex items-center gap-2">
         <div ref={searchBoxRef} className="relative flex-1">
-          <form onSubmit={handleSearchSubmit} className="relative flex items-center">
+          <form
+            onSubmit={handleSearchSubmit}
+            className="relative flex items-center"
+          >
             <div className="absolute left-3 pointer-events-none flex items-center text-ink-muted">
               <Search className="size-4" />
             </div>
@@ -247,10 +253,14 @@ export function TopHeader() {
               <div className="flex items-center justify-between pt-2 border-t border-ink/15 gap-2">
                 <button
                   type="button"
-                  onClick={() => navigateToSearch(searchQuery, selectedCategory)}
+                  onClick={() =>
+                    navigateToSearch(searchQuery, selectedCategory)
+                  }
                   className="px-3 py-1.5 rounded-lg bg-terracotta text-white border-[1.5px] border-ink font-sans text-[10px] font-bold uppercase tracking-wider shadow-hard-2xs hover:bg-terracotta-dark cursor-pointer"
                 >
-                  {searchQuery.trim() ? `Search "${searchQuery.trim()}"` : "Browse Selected Genre"}
+                  {searchQuery.trim()
+                    ? `Search "${searchQuery.trim()}"`
+                    : "Browse Selected Genre"}
                 </button>
                 <Link
                   href="/story-finder"
@@ -322,16 +332,24 @@ export function TopHeader() {
                   onClick={() => setNotifOpen(false)}
                   className="block p-2 rounded-lg bg-canary/25 border border-ink/20 hover:bg-canary/45 transition-colors"
                 >
-                  <span className="font-bold text-foreground block">69 Audiobooks Live</span>
-                  <span className="text-muted-foreground text-[10px]">Explore all 10 genres in Browse.</span>
+                  <span className="font-bold text-foreground block">
+                    69 Audiobooks Live
+                  </span>
+                  <span className="text-muted-foreground text-[10px]">
+                    Explore all 10 genres in Browse.
+                  </span>
                 </Link>
                 <Link
                   href="/story-finder"
                   onClick={() => setNotifOpen(false)}
                   className="block p-2 rounded-lg bg-muted/40 border border-ink/20 hover:bg-muted transition-colors"
                 >
-                  <span className="font-bold text-foreground block">AI Story Finder Ready</span>
-                  <span className="text-muted-foreground text-[10px]">Try searching in Bangla or Banglish.</span>
+                  <span className="font-bold text-foreground block">
+                    AI Story Finder Ready
+                  </span>
+                  <span className="text-muted-foreground text-[10px]">
+                    Try searching in Bangla or Banglish.
+                  </span>
                 </Link>
               </div>
             </div>
@@ -366,8 +384,8 @@ export function TopHeader() {
                     {planId === "premium"
                       ? "GolpoBook Premium"
                       : planId === "plus"
-                      ? "GolpoBook Plus"
-                      : "Free Explorer"}
+                        ? "GolpoBook Plus"
+                        : "Free Explorer"}
                   </span>
                 </div>
                 <ChevronDown className="size-3.5 text-muted-foreground group-hover:text-foreground hidden sm:block transition-colors" />
@@ -385,8 +403,8 @@ export function TopHeader() {
                     {planId === "premium"
                       ? "GolpoBook Premium"
                       : planId === "plus"
-                      ? "GolpoBook Plus"
-                      : "Free Explorer"}
+                        ? "GolpoBook Plus"
+                        : "Free Explorer"}
                   </span>
                 </DropdownMenuLabel>
 

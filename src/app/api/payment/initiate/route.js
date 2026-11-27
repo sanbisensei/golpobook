@@ -57,8 +57,8 @@ export async function POST(request) {
       );
     }
 
-    const storeId = process.env.SSLCZ_STORE_ID;
-    const storePass = process.env.SSLCZ_STORE_PASSWORD;
+    const storeId = process.env.SSLCZ_STORE_ID?.trim();
+    const storePass = process.env.SSLCZ_STORE_PASSWORD?.trim();
 
     // Live SSLCommerz Sandbox when credentials are configured
     if (storeId && storePass) {
@@ -98,6 +98,14 @@ export async function POST(request) {
           mode: "sslcommerz_sandbox",
         });
       }
+
+      return NextResponse.json(
+        {
+          error: "GATEWAY_ERROR",
+          message: sslData?.failedreason || "SSLCommerz Sandbox rejected the session.",
+        },
+        { status: 502 }
+      );
     }
 
     // Built-in SSLCommerz Sandbox Simulator fallback when store keys are not set

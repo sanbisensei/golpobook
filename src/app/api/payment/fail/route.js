@@ -16,7 +16,9 @@ async function handleFail(request) {
       .eq("tran_id", tranId)
       .eq("status", "pending");
   }
-  return NextResponse.redirect(new URL(`/pricing?payment=failed&tran_id=${tranId || ""}`, request.url));
+  return NextResponse.redirect(new URL(`/pricing?payment=failed&tran_id=${tranId || ""}`, request.url), {
+    status: 303,
+  });
 }
 
 export async function GET(request) {

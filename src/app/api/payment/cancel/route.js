@@ -16,7 +16,9 @@ async function handleCancel(request) {
       .eq("tran_id", tranId)
       .eq("status", "pending");
   }
-  return NextResponse.redirect(new URL(`/pricing?payment=cancelled&tran_id=${tranId || ""}`, request.url));
+  return NextResponse.redirect(new URL(`/pricing?payment=cancelled&tran_id=${tranId || ""}`, request.url), {
+    status: 303,
+  });
 }
 
 export async function GET(request) {
