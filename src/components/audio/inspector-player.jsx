@@ -547,15 +547,25 @@ export function InspectorPlayer({ book }) {
                   }`}
                 >
                   <div className="flex items-center gap-2 min-w-0 pr-2">
-                    {ch.is_preview ? (
-                      <span className="px-1.5 py-0.2 bg-canary text-ink border border-ink rounded-md font-mono text-[9px] font-bold uppercase shrink-0">
-                        PREVIEW
-                      </span>
-                    ) : displayBook.tier !== "free" ? (
-                      <Lock className="size-3 text-muted-foreground shrink-0" />
-                    ) : (
-                      <span className="size-1.5 bg-ink inline-block shrink-0" />
-                    )}
+                    {(() => {
+                      const rank = { guest: 0, free: 0, plus: 1, premium: 2 };
+                      const hasAccess =
+                        (rank[audio.tierCapabilities?.plan] ?? 0) >=
+                        (rank[displayBook.tier] ?? 0);
+                      if (hasAccess) {
+                        return (
+                          <span className="size-1.5 bg-emerald-600 rounded-full inline-block shrink-0" />
+                        );
+                      }
+                      if (ch.is_preview) {
+                        return (
+                          <span className="px-1.5 py-0.2 bg-canary text-ink border border-ink rounded-md font-mono text-[9px] font-bold uppercase shrink-0">
+                            PREVIEW
+                          </span>
+                        );
+                      }
+                      return <Lock className="size-3 text-muted-foreground shrink-0" />;
+                    })()}
                     <span className="truncate font-sans text-xs">
                       {ch.chapter_number}. {ch.title}
                     </span>

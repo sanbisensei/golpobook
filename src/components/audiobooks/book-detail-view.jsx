@@ -483,19 +483,31 @@ export function BookDetailView({ book }) {
                       </div>
 
                       <div className="flex items-center gap-2 shrink-0">
-                        {ch.is_preview ? (
-                          <span className="px-2 py-0.5 bg-canary text-ink border border-ink rounded-md font-mono text-[9px] font-bold uppercase tracking-wider">
-                            PREVIEW FREE
-                          </span>
-                        ) : book.tier !== "free" ? (
-                          <span className="px-2 py-0.5 bg-muted text-muted-foreground border border-ink/30 rounded-md font-mono text-[9px] font-bold uppercase tracking-wider">
-                            {book.tier.toUpperCase()} ONLY
-                          </span>
-                        ) : (
-                          <span className="px-2 py-0.5 bg-emerald-100 text-emerald-800 border border-ink/30 rounded-md font-mono text-[9px] font-bold uppercase tracking-wider">
-                            INCLUDED
-                          </span>
-                        )}
+                        {(() => {
+                          const rank = { guest: 0, free: 0, plus: 1, premium: 2 };
+                          const hasAccess =
+                            (rank[audio?.tierCapabilities?.plan] ?? 0) >=
+                            (rank[book.tier] ?? 0);
+                          if (hasAccess) {
+                            return (
+                              <span className="px-2 py-0.5 bg-emerald-100 text-emerald-800 border border-ink/30 rounded-md font-mono text-[9px] font-bold uppercase tracking-wider">
+                                INCLUDED
+                              </span>
+                            );
+                          }
+                          if (ch.is_preview) {
+                            return (
+                              <span className="px-2 py-0.5 bg-canary text-ink border border-ink rounded-md font-mono text-[9px] font-bold uppercase tracking-wider">
+                                PREVIEW FREE
+                              </span>
+                            );
+                          }
+                          return (
+                            <span className="px-2 py-0.5 bg-muted text-muted-foreground border border-ink/30 rounded-md font-mono text-[9px] font-bold uppercase tracking-wider">
+                              {book.tier.toUpperCase()} ONLY
+                            </span>
+                          );
+                        })()}
                       </div>
                     </div>
                   ))}

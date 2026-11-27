@@ -14,6 +14,7 @@ import {
   isChapterCachedOffline,
   getOfflineCachedCount,
 } from "@/lib/offline-audio";
+import { createClient } from "@/lib/supabase/client";
 
 const AudioContext = createContext(null);
 
@@ -47,6 +48,43 @@ export function AudioProvider({ children }) {
       ? activeBook.chapters
       : [];
   const currentChapter = chapters[activeChapterIndex] || null;
+
+  // Hydrate tierCapabilities from active Supabase subscription on mount & auth changes
+  useEffect(() => {
+    const supabase = createClient();
+    const hydratePlan = async (uid) => {
+      if (!uid) {
+        setTierCapabilities({
+          plan: "guest",
+          maxSpeed: 1.0,
+          allowSleepTimer: false,
+          allowFullSeeking: true,
+        });
+        return;
+      }
+      const { data: sub } = await supabase
+        .from("user_subscriptions")
+        .select("plan_id")
+        .eq("user_id", uid)
+        .eq("status", "active")
+        .maybeSingle();
+      const plan = sub?.plan_id || "free";
+      setTierCapabilities({
+        plan,
+        maxSpeed: plan === "premium" ? 2.0 : plan === "plus" ? 1.5 : 1.0,
+        allowSleepTimer: plan === "plus" || plan === "premium",
+        allowFullSeeking: true,
+      });
+    };
+
+    supabase.auth.getUser().then(({ data: { user } }) => hydratePlan(user?.id)).catch(() => {});
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_e, session) => {
+      hydratePlan(session?.user?.id);
+    });
+    return () => subscription.unsubscribe();
+  }, []);
 
   // Save playback progress to /api/audio/progress
   const syncProgress = useCallback(
