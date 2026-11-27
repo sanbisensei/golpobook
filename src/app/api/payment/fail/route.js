@@ -1,0 +1,27 @@
+import { NextResponse } from "next/server";
+import { createAdminClient } from "@/lib/supabase/admin";
+
+async function handleFail(request) {
+  const { searchParams } = new URL(request.url);
+  let tranId = searchParams.get("tran_id");
+  if (request.method === "POST") {
+    const form = await request.formData().catch(() => null);
+    if (form) tranId = form.get("tran_id") || tranId;
+  }
+  if (tranId) {
+    const admin = createAdminClient();
+    await admin
+      .from("payment_transactions")
+      .update({ status: "failed", updated_at: new Date().toISOString() })
+      .eq("tran_id", tranId)
+      .eq("status", "pending");
+  }
+  return NextResponse.redirect(new URL(`/pricing?payment=failed&tran_id=${tranId || ""}`, request.url));
+}
+
+export async function GET(request) {
+  return handleFail(request);
+}
+export async function POST(request) {
+  return handleFail(request);
+}

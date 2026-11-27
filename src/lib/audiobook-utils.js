@@ -29,6 +29,7 @@ export function mapAudiobookRecord(b) {
     titleBengali: b.title_bengali || null,
     slug: b.slug,
     author: b.author?.name || "Unknown Author",
+    authorId: b.author?.id || b.author_id || null,
     authorSlug: b.author?.slug || null,
     narrator: b.narrator_name,
     duration: formatDurationSeconds(b.total_duration_seconds),

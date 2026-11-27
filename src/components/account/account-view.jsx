@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { User, Crown, Sparkles, Check, Loader2, LogOut, Sliders } from "lucide-react";
+import { User, Crown, Sparkles, Check, Loader2, LogOut, Sliders, Receipt, CheckCircle2 } from "lucide-react";
 import { TopHeader } from "@/components/layout/top-header";
 import { NavigationRail } from "@/components/layout/navigation-rail";
 import { BottomNav } from "@/components/layout/bottom-nav";
@@ -11,7 +11,14 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { createClient } from "@/lib/supabase/client";
 
-export function AccountView({ user, profile, subscription, preferences }) {
+export function AccountView({
+  user,
+  profile,
+  subscription,
+  preferences,
+  transactions = [],
+  paymentStatus = null,
+}) {
   const router = useRouter();
   const [fullName, setFullName] = useState(
     profile?.full_name || user?.user_metadata?.full_name || ""
@@ -19,6 +26,26 @@ export function AccountView({ user, profile, subscription, preferences }) {
   const [saving, setSaving] = useState(false);
   const [savedMsg, setSavedMsg] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
+  const [bannerDismissed, setBannerDismissed] = useState(false);
+
+  const paymentBanner = bannerDismissed
+    ? null
+    : paymentStatus === "success"
+    ? {
+        type: "success",
+        message: "Payment verified! Your GolpoBook subscription is now active.",
+      }
+    : paymentStatus === "failed"
+    ? {
+        type: "error",
+        message: "Payment failed or could not be verified. No charge was applied.",
+      }
+    : paymentStatus === "cancelled"
+    ? {
+        type: "info",
+        message: "Checkout was cancelled. You can upgrade anytime from Pricing.",
+      }
+    : null;
 
   const activePlan = subscription?.plan_id || "free";
 
@@ -56,6 +83,30 @@ export function AccountView({ user, profile, subscription, preferences }) {
 
       <div className="md:pl-20 min-h-screen pt-16 pb-24 md:pb-10 flex flex-col">
         <main className="flex-1 max-w-4xl w-full mx-auto p-4 md:p-8 space-y-6">
+          {paymentBanner && (
+            <div
+              className={`border-[1.5px] border-ink rounded-xl p-4 shadow-hard-2xs flex items-center justify-between gap-3 ${
+                paymentBanner.type === "success"
+                  ? "bg-emerald-50 text-emerald-950"
+                  : paymentBanner.type === "error"
+                  ? "bg-red-50 text-red-950"
+                  : "bg-canary/40 text-ink"
+              }`}
+            >
+              <div className="flex items-center gap-2.5 font-mono text-xs font-bold">
+                <CheckCircle2 className="size-4 shrink-0" />
+                <span>{paymentBanner.message}</span>
+              </div>
+              <button
+                type="button"
+                onClick={() => setBannerDismissed(true)}
+                className="font-mono text-[11px] uppercase underline cursor-pointer shrink-0"
+              >
+                Dismiss
+              </button>
+            </div>
+          )}
+
           <div className="flex flex-wrap items-center justify-between gap-3 border-b-[1.5px] border-ink pb-4">
             <div className="flex items-center gap-3">
               <div className="size-10 bg-terracotta text-white flex items-center justify-center border-[1.5px] border-ink rounded-lg shadow-hard-2xs">
@@ -186,15 +237,64 @@ export function AccountView({ user, profile, subscription, preferences }) {
                   <span>Edit Taste Profile</span>
                 </Link>
                 <Link
-                  href="/support"
+                  href="/pricing"
                   className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-canary text-ink border-[1.5px] border-ink font-sans text-xs font-bold uppercase shadow-hard-2xs"
                 >
                   <Sparkles className="size-3.5 text-terracotta" />
-                  <span>Compare Tiers</span>
+                  <span>Upgrade / Compare Plans</span>
                 </Link>
               </div>
             </section>
           </div>
+
+          {transactions.length > 0 && (
+            <section className="border-[1.5px] border-ink bg-card p-6 rounded-xl shadow-hard-xs space-y-4">
+              <div className="flex items-center justify-between border-b border-ink/15 pb-3">
+                <h2 className="font-heading text-lg font-bold uppercase tracking-wider flex items-center gap-2">
+                  <Receipt className="size-4 text-terracotta" />
+                  <span>Payment Receipts</span>
+                </h2>
+                <span className="font-mono text-[11px] text-muted-foreground">
+                  {transactions.length} recent
+                </span>
+              </div>
+
+              <div className="divide-y divide-ink/15 border-[1.5px] border-ink rounded-lg overflow-hidden">
+                {transactions.map((tx) => (
+                  <div
+                    key={tx.id}
+                    className="p-3.5 flex flex-wrap items-center justify-between gap-3 bg-background/40 font-mono text-xs"
+                  >
+                    <div className="space-y-0.5">
+                      <p className="font-bold text-foreground uppercase">
+                        GolpoBook {tx.plan_id} ({tx.billing_cycle})
+                      </p>
+                      <p className="text-[11px] text-muted-foreground">
+                        Ref: {tx.tran_id}
+                        {tx.payment_method ? ` • ${tx.payment_method}` : ""}
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <span className="font-bold text-foreground">
+                        ৳{Number(tx.amount).toLocaleString()} {tx.currency}
+                      </span>
+                      <span
+                        className={`px-2 py-0.5 rounded-md border border-ink/30 text-[10px] font-bold uppercase ${
+                          tx.status === "valid"
+                            ? "bg-emerald-100 text-emerald-900"
+                            : tx.status === "pending"
+                            ? "bg-canary text-ink"
+                            : "bg-red-100 text-red-900"
+                        }`}
+                      >
+                        {tx.status}
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
         </main>
       </div>
 

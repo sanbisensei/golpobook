@@ -27,13 +27,13 @@ export function HouseAdBanner({ plan = "free" }) {
               Go Ad-Free &amp; Unlock 2.0x Speed + Offline Listening
             </h4>
             <p className="font-mono text-xs text-muted-foreground">
-              Upgrade to GolpoBook Plus or Premium starting at ৳149/month via bKash, Nagad, or Card.
+              Upgrade to GolpoBook Plus or Premium starting at ৳20/month via bKash, Nagad, or Card.
             </p>
           </div>
         </div>
 
         <Link
-          href="/account"
+          href="/pricing"
           className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-canary text-ink border-[1.5px] border-ink font-sans text-xs font-bold uppercase tracking-wider shadow-hard-2xs hover:bg-canary-light shrink-0"
         >
           <Sparkles className="size-3.5 text-terracotta" />

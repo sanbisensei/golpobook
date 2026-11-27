@@ -51,7 +51,7 @@ async function BookDataLoader({ params }) {
       ratings_count,
       publication_year,
       tags,
-      author:authors (name, slug, bio, born_year, died_year, era),
+      author:authors (id, name, slug, bio, born_year, died_year, era),
       category:categories (name, slug),
       chapters (id, chapter_number, title, audio_storage_path, duration_seconds, is_preview)
     `)

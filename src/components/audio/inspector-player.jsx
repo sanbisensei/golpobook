@@ -244,7 +244,7 @@ export function InspectorPlayer({ book }) {
               </Link>
             ) : (
               <Link
-                href="/account"
+                href="/pricing"
                 className="px-3 py-1 bg-terracotta text-white font-sans text-[11px] font-bold uppercase tracking-wider border-[1.5px] border-ink rounded-lg shadow-hard-2xs hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-hard-xs active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all"
               >
                 Upgrade to{" "}
