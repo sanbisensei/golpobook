@@ -1,4 +1,5 @@
 import { Suspense } from "react";
+import { connection } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { PricingView } from "@/components/pricing/pricing-view";
 
@@ -8,6 +9,7 @@ export const metadata = {
 };
 
 async function PricingDataLoader({ searchParams }) {
+  await connection();
   const supabase = await createClient();
   const {
     data: { user },

@@ -280,7 +280,7 @@ export function AccountView({
                       </span>
                       <span
                         className={`px-2 py-0.5 rounded-md border border-ink/30 text-[10px] font-bold uppercase ${
-                          tx.status === "valid"
+                          tx.status === "valid" || tx.status === "validated"
                             ? "bg-emerald-100 text-emerald-900"
                             : tx.status === "pending"
                             ? "bg-canary text-ink"

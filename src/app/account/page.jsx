@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import { redirect } from "next/navigation";
+import { connection } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { AccountView } from "@/components/account/account-view";
 
@@ -9,6 +10,7 @@ export const metadata = {
 };
 
 async function AccountDataLoader({ searchParams }) {
+  await connection();
   const sp = searchParams ? await searchParams : {};
   const supabase = await createClient();
   const {
@@ -40,7 +42,7 @@ async function AccountDataLoader({ searchParams }) {
       .maybeSingle(),
     supabase
       .from("payment_transactions")
-      .select("id, tran_id, plan_id, billing_cycle, amount, currency, status, payment_method, bank_tran_id, created_at, verified_at")
+      .select("id, tran_id, plan_id, billing_cycle, amount, currency, status, payment_method, val_id, created_at, updated_at")
       .eq("user_id", user.id)
       .order("created_at", { ascending: false })
       .limit(10),

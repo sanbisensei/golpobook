@@ -94,8 +94,8 @@ BEGIN
   SET status = 'cancelled', updated_at = now()
   WHERE user_id = v_tx.user_id AND status = 'active';
 
-  INSERT INTO public.user_subscriptions (user_id, plan_id, status, started_at, expires_at)
-  VALUES (v_tx.user_id, v_tx.plan_id, 'active', now(), v_expires_at);
+  INSERT INTO public.user_subscriptions (user_id, plan_id, billing_cycle, status, starts_at, expires_at)
+  VALUES (v_tx.user_id, v_tx.plan_id, v_tx.billing_cycle, 'active', now(), v_expires_at);
 
   RETURN jsonb_build_object(
     'ok', true,
