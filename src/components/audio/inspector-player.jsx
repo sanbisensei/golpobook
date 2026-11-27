@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -12,219 +12,134 @@ import {
   Bookmark,
   Share2,
   Clock,
-  Sliders,
-  CheckCircle2,
   Lock,
   Loader2,
   AlertCircle,
   Volume2,
   VolumeX,
+  Check,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { formatChapterDuration } from "@/lib/audiobook-utils";
+import { useAudio } from "@/context/audio-context";
 
 export function InspectorPlayer({ book }) {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const [currentTime, setCurrentTime] = useState(0);
-  const [duration, setDuration] = useState(0);
-  const [playbackSpeed, setPlaybackSpeed] = useState("1.0x");
-  const [activeChapterIndex, setActiveChapterIndex] = useState(0);
-  const [streamError, setStreamError] = useState(null); // { type: 'AUTH_REQUIRED' | 'UPGRADE_REQUIRED' | 'GENERIC', message }
-  const [isMuted, setIsMuted] = useState(false);
-
-  const audioRef = useRef(null);
+  const audio = useAudio();
   const progressBarRef = useRef(null);
 
-  const chapters = book?.chapters && book.chapters.length > 0 ? book.chapters : [];
-  const currentChapter = chapters[activeChapterIndex] || null;
+  const [isBookmarked, setIsBookmarked] = useState(false);
+  const [bookmarkLoading, setBookmarkLoading] = useState(false);
+  const [showTimerMenu, setShowTimerMenu] = useState(false);
+  const [shareCopied, setShareCopied] = useState(false);
 
-  const [prevBookId, setPrevBookId] = useState(book?.id);
-  if (book?.id !== prevBookId) {
-    setPrevBookId(book?.id);
-    setIsPlaying(false);
-    setCurrentTime(0);
-    setDuration(0);
-    setActiveChapterIndex(0);
-    setStreamError(null);
-  }
-
-  // Pause previous audio when active book changes
+  // Sync incoming book prop into global AudioProvider when it changes
   useEffect(() => {
-    if (audioRef.current) {
-      audioRef.current.pause();
-      audioRef.current.src = "";
+    if (book && audio && audio.activeBook?.id !== book.id && !audio.isPlaying) {
+      audio.selectBook(book, false);
     }
-  }, [book?.id]);
+  }, [book, audio]);
 
-  // Load and play audio stream for a specific chapter
-  const loadAndPlayChapter = useCallback(async (chapter, autoPlay = true) => {
-    if (!chapter) return;
-    setIsLoading(true);
-    setStreamError(null);
+  // Display either the incoming selected book or the currently playing global book
+  const displayBook = book || audio?.activeBook || null;
 
-    try {
-      const response = await fetch("/api/audio/stream-url", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ chapterId: chapter.id }),
-      });
+  // Check bookmark status when displayed book changes
+  useEffect(() => {
+    if (!displayBook?.id) return;
+    let cancelled = false;
+    fetch(`/api/bookmarks?audiobookId=${displayBook.id}`)
+      .then((r) => (r.ok ? r.json() : { bookmarked: false }))
+      .then((d) => {
+        if (!cancelled) setIsBookmarked(Boolean(d.bookmarked));
+      })
+      .catch(() => {});
+    return () => {
+      cancelled = true;
+    };
+  }, [displayBook?.id]);
 
-      const data = await response.json();
+  if (!displayBook || !audio) return null;
 
-      if (!response.ok) {
-        setIsLoading(false);
-        setIsPlaying(false);
-        setStreamError({
-          type: data.error || "GENERIC_ERROR",
-          message: data.message || "Unable to play this chapter.",
-          requiredTier: data.requiredTier,
-        });
-        return;
-      }
+  const isSameAsActive = audio.activeBook?.id === displayBook.id;
+  const chapters =
+    displayBook.chapters && displayBook.chapters.length > 0
+      ? displayBook.chapters
+      : [];
+  const activeChapterIndex = isSameAsActive ? audio.activeChapterIndex : 0;
+  const currentChapter = chapters[activeChapterIndex] || null;
+  const isPlaying = isSameAsActive ? audio.isPlaying : false;
+  const isLoading = isSameAsActive ? audio.isLoading : false;
+  const currentTime = isSameAsActive ? audio.currentTime : 0;
+  const duration = isSameAsActive ? audio.duration : 0;
+  const progressPercentage =
+    duration > 0 ? Math.min(100, (currentTime / duration) * 100) : 0;
 
-      if (audioRef.current && data.streamUrl) {
-        audioRef.current.src = data.streamUrl;
-        audioRef.current.playbackRate = parseFloat(playbackSpeed) || 1.0;
-        audioRef.current.load();
-
-        if (autoPlay) {
-          try {
-            await audioRef.current.play();
-            setIsPlaying(true);
-          } catch (playErr) {
-            console.warn("Autoplay blocked or playback interrupted:", playErr);
-            setIsPlaying(false);
-          }
-        }
-      }
-    } catch (err) {
-      console.error("Stream loading error:", err);
-      setStreamError({
-        type: "NETWORK_ERROR",
-        message: "Failed to connect to audio service.",
-      });
-    } finally {
-      setIsLoading(false);
-    }
-  }, [playbackSpeed]);
-
-  // Handle Play/Pause button toggle
-  const togglePlayPause = async () => {
-    if (!audioRef.current) return;
-
-    if (isPlaying) {
-      audioRef.current.pause();
-      setIsPlaying(false);
-      return;
-    }
-
-    // If audio is already loaded and paused, resume playback
-    if (audioRef.current.src && audioRef.current.src !== window.location.href) {
-      try {
-        await audioRef.current.play();
-        setIsPlaying(true);
-      } catch (err) {
-        console.warn("Playback resume error:", err);
-      }
-      return;
-    }
-
-    // Otherwise, fetch stream URL for active chapter and play
-    if (currentChapter) {
-      await loadAndPlayChapter(currentChapter, true);
+  const handlePlayToggle = async () => {
+    if (!isSameAsActive) {
+      await audio.selectBook(displayBook, true);
+    } else {
+      await audio.togglePlayPause();
     }
   };
 
-  // Chapter selection from tracklist
-  const handleSelectChapter = async (index) => {
-    if (index === activeChapterIndex && isPlaying) return;
-    setActiveChapterIndex(index);
-    const chapter = chapters[index];
-    if (chapter) {
-      await loadAndPlayChapter(chapter, true);
+  const handleSelectChapter = async (idx) => {
+    if (!isSameAsActive) {
+      await audio.selectBook(displayBook, false);
     }
+    await audio.selectChapter(idx);
   };
 
-  // Skip Forward 15 seconds
-  const handleSkipForward = () => {
-    if (!audioRef.current) return;
-    audioRef.current.currentTime = Math.min(
-      duration || 9999,
-      audioRef.current.currentTime + 15
-    );
-  };
-
-  // Replay Backward 15 seconds
-  const handleSkipBack = () => {
-    if (!audioRef.current) return;
-    audioRef.current.currentTime = Math.max(0, audioRef.current.currentTime - 15);
-  };
-
-  // Next Chapter
-  const handleNextChapter = () => {
-    if (activeChapterIndex < chapters.length - 1) {
-      handleSelectChapter(activeChapterIndex + 1);
-    }
-  };
-
-  // Previous Chapter
-  const handlePrevChapter = () => {
-    if (activeChapterIndex > 0) {
-      handleSelectChapter(activeChapterIndex - 1);
-    }
-  };
-
-  // Playback speed cycle: 1.0x -> 1.25x -> 1.5x -> 2.0x
-  const toggleSpeed = () => {
-    const speeds = ["1.0x", "1.25x", "1.5x", "2.0x"];
-    const currentIndex = speeds.indexOf(playbackSpeed);
-    const nextSpeed = speeds[(currentIndex + 1) % speeds.length];
-    setPlaybackSpeed(nextSpeed);
-    if (audioRef.current) {
-      audioRef.current.playbackRate = parseFloat(nextSpeed);
-    }
-  };
-
-  // Audio Progress Bar click/scrub
   const handleScrub = (e) => {
-    if (!audioRef.current || !progressBarRef.current || !duration) return;
+    if (!isSameAsActive || !progressBarRef.current || !duration) return;
     const rect = progressBarRef.current.getBoundingClientRect();
     const clickX = e.clientX - rect.left;
-    const percentage = Math.max(0, Math.min(1, clickX / rect.width));
-    audioRef.current.currentTime = percentage * duration;
-    setCurrentTime(percentage * duration);
+    audio.seekToRatio(clickX / rect.width);
   };
 
-  const progressPercentage = duration > 0 ? (currentTime / duration) * 100 : 0;
+  const handleToggleBookmark = async () => {
+    if (!displayBook?.id || bookmarkLoading) return;
+    setBookmarkLoading(true);
+    try {
+      const res = await fetch("/api/bookmarks", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ audiobookId: displayBook.id }),
+      });
+      const data = await res.json();
+      if (res.status === 401) {
+        audio.setStreamError({
+          type: "AUTH_REQUIRED",
+          message: data.message || "Sign in to save audiobooks to your shelf.",
+        });
+      } else if (res.ok) {
+        setIsBookmarked(Boolean(data.bookmarked));
+      }
+    } catch {
+      // Ignore network error
+    } finally {
+      setBookmarkLoading(false);
+    }
+  };
 
-  if (!book) return null;
+  const handleShare = async () => {
+    const shareUrl = `${window.location.origin}/audiobooks/${displayBook.slug}`;
+    try {
+      await navigator.clipboard.writeText(shareUrl);
+      setShareCopied(true);
+      setTimeout(() => setShareCopied(false), 2000);
+    } catch {
+      // Clipboard fallback ignored
+    }
+  };
+
+  const sleepLabel =
+    audio.sleepMode === "end_of_chapter"
+      ? "Ch End"
+      : audio.sleepMode === "countdown" && audio.sleepSecondsLeft > 0
+      ? formatChapterDuration(audio.sleepSecondsLeft)
+      : "Timer";
 
   return (
     <aside className="w-full lg:w-96 bg-card border-t lg:border-t-0 lg:border-l-[1.5px] border-ink p-5 lg:p-6 flex flex-col justify-start select-none overflow-y-auto">
-      {/* Hidden HTML5 Audio Element */}
-      <audio
-        ref={audioRef}
-        onTimeUpdate={() => {
-          if (audioRef.current) {
-            setCurrentTime(audioRef.current.currentTime);
-          }
-        }}
-        onLoadedMetadata={() => {
-          if (audioRef.current) {
-            setDuration(audioRef.current.duration);
-          }
-        }}
-        onEnded={() => {
-          setIsPlaying(false);
-          handleNextChapter();
-        }}
-        onError={() => {
-          setIsLoading(false);
-          setIsPlaying(false);
-        }}
-      />
-
       {/* Inspector Header */}
       <div className="flex items-center justify-between border-b-[1.5px] border-ink pb-3 mb-5">
         <div className="flex items-center gap-2">
@@ -234,13 +149,13 @@ export function InspectorPlayer({ book }) {
           </span>
         </div>
         <div className="flex items-center gap-1.5">
-          {book.tier === "premium" && (
+          {displayBook.tier === "premium" && (
             <Badge variant="premium">PREMIUM ONLY</Badge>
           )}
-          {book.tier === "plus" && (
+          {displayBook.tier === "plus" && (
             <Badge variant="plus">PLUS TIER</Badge>
           )}
-          {book.tier === "free" && (
+          {displayBook.tier === "free" && (
             <Badge variant="free">FREE STREAM</Badge>
           )}
         </div>
@@ -250,8 +165,8 @@ export function InspectorPlayer({ book }) {
       <div className="flex gap-4 items-start">
         <div className="w-24 sm:w-28 aspect-[2/3] relative bg-muted border-[1.5px] border-ink rounded-lg overflow-hidden shadow-hard-xs hover:-translate-x-0.5 hover:-translate-y-1 hover:shadow-hard-sm transition-all duration-200 shrink-0">
           <Image
-            src={book.coverUrl}
-            alt={book.title}
+            src={displayBook.coverUrl}
+            alt={displayBook.title}
             fill
             sizes="120px"
             className="object-cover"
@@ -260,41 +175,49 @@ export function InspectorPlayer({ book }) {
 
         <div className="flex-1 min-w-0">
           <div className="inline-block px-1.5 py-0.5 bg-canary text-ink border border-ink rounded-md font-mono text-[9px] font-bold uppercase tracking-wider mb-1">
-            {book.category}
+            {displayBook.category}
           </div>
           <h2 className="font-heading text-sm sm:text-base font-bold text-foreground leading-snug line-clamp-2">
-            {book.title}
+            {displayBook.title}
           </h2>
           <p className="font-mono text-xs text-muted-foreground mt-1 truncate">
-            By: <span className="text-foreground font-semibold underline">{book.author}</span>
+            By:{" "}
+            <span className="text-foreground font-semibold underline">
+              {displayBook.author}
+            </span>
           </p>
           <p className="font-mono text-[11px] text-muted-foreground mt-0.5 truncate">
-            Narrator: <span className="text-foreground font-medium">{book.narrator}</span>
+            Narrator:{" "}
+            <span className="text-foreground font-medium">
+              {displayBook.narrator}
+            </span>
           </p>
         </div>
       </div>
 
       {/* Stream Authorization Warning Banner */}
-      {streamError && (
+      {audio.streamError && (
         <div className="mt-4 p-3.5 border-[1.5px] border-ink rounded-xl bg-amber-50 dark:bg-amber-950/40 shadow-hard-xs flex flex-col gap-2">
           <div className="flex items-start gap-2">
-            {streamError.type === "AUTH_REQUIRED" ? (
+            {audio.streamError.type === "AUTH_REQUIRED" ? (
               <Lock className="size-4 text-terracotta shrink-0 mt-0.5" />
             ) : (
               <AlertCircle className="size-4 text-terracotta shrink-0 mt-0.5" />
             )}
             <div className="flex-1 min-w-0">
               <h5 className="font-heading text-xs font-bold text-ink dark:text-foreground uppercase">
-                {streamError.type === "AUTH_REQUIRED" ? "Sign In Required" : "Subscription Required"}
+                {audio.streamError.type === "AUTH_REQUIRED"
+                  ? "Sign In Required"
+                  : "Subscription Required"}
               </h5>
               <p className="font-mono text-[11px] text-muted-foreground mt-0.5 leading-relaxed">
-                {streamError.message}
+                {audio.streamError.message}
               </p>
             </div>
           </div>
 
           <div className="flex items-center gap-2 pt-1">
-            {streamError.type === "AUTH_REQUIRED" ? (
+            {audio.streamError.type === "AUTH_REQUIRED" ? (
               <Link
                 href="/login?redirectTo=/"
                 className="px-3 py-1 bg-terracotta text-white font-sans text-[11px] font-bold uppercase tracking-wider border-[1.5px] border-ink rounded-lg shadow-hard-2xs hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-hard-xs active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all"
@@ -306,11 +229,12 @@ export function InspectorPlayer({ book }) {
                 href="/account"
                 className="px-3 py-1 bg-terracotta text-white font-sans text-[11px] font-bold uppercase tracking-wider border-[1.5px] border-ink rounded-lg shadow-hard-2xs hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-hard-xs active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all"
               >
-                Upgrade to {streamError.requiredTier?.toUpperCase() || "PLUS"}
+                Upgrade to{" "}
+                {audio.streamError.requiredTier?.toUpperCase() || "PLUS"}
               </Link>
             )}
             <button
-              onClick={() => setStreamError(null)}
+              onClick={() => audio.setStreamError(null)}
               className="px-2.5 py-1 text-[11px] font-mono text-muted-foreground hover:text-foreground cursor-pointer"
             >
               Dismiss
@@ -326,29 +250,30 @@ export function InspectorPlayer({ book }) {
           <div className="flex items-center gap-1.5 min-w-0 pr-2">
             <span className="size-2 bg-terracotta border border-ink inline-block" />
             <span className="font-sans text-[11px] uppercase tracking-wider text-foreground font-bold truncate">
-              {currentChapter ? `CH ${currentChapter.chapter_number}: ${currentChapter.title}` : "READY"}
+              {currentChapter
+                ? `CH ${currentChapter.chapter_number}: ${currentChapter.title}`
+                : "READY"}
             </span>
           </div>
 
           <div className="flex items-center gap-1.5 shrink-0">
             <button
-              onClick={toggleSpeed}
+              onClick={audio.cycleSpeed}
               className="px-2 py-0.5 border-[1.5px] border-ink bg-muted rounded-md font-sans text-[10px] font-bold uppercase hover:bg-canary shadow-hard-xs hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-hard-sm active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all duration-150 cursor-pointer"
               title="Toggle Playback Speed"
             >
-              {playbackSpeed}
+              {audio.playbackSpeed}
             </button>
             <button
-              onClick={() => {
-                if (audioRef.current) {
-                  audioRef.current.muted = !isMuted;
-                  setIsMuted(!isMuted);
-                }
-              }}
+              onClick={audio.toggleMute}
               className="size-6 flex items-center justify-center border-[1.5px] border-ink bg-muted rounded-md hover:bg-canary shadow-hard-xs hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-hard-sm active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all duration-150 cursor-pointer"
-              title={isMuted ? "Unmute" : "Mute"}
+              title={audio.isMuted ? "Unmute" : "Mute"}
             >
-              {isMuted ? <VolumeX className="size-3" /> : <Volume2 className="size-3" />}
+              {audio.isMuted ? (
+                <VolumeX className="size-3" />
+              ) : (
+                <Volume2 className="size-3" />
+              )}
             </button>
           </div>
         </div>
@@ -373,11 +298,31 @@ export function InspectorPlayer({ book }) {
 
             {/* Hardware Equalizer Bars */}
             <div className="flex items-end gap-1 h-3 px-2">
-              <span className={`w-0.5 bg-ink transition-all ${isPlaying ? "h-2.5 animate-pulse" : "h-1"}`} />
-              <span className={`w-0.5 bg-terracotta transition-all ${isPlaying ? "h-3 animate-pulse" : "h-2"}`} />
-              <span className={`w-0.5 bg-ink transition-all ${isPlaying ? "h-1.5" : "h-1"}`} />
-              <span className={`w-0.5 bg-terracotta transition-all ${isPlaying ? "h-3.5 animate-pulse" : "h-2"}`} />
-              <span className={`w-0.5 bg-ink transition-all ${isPlaying ? "h-2" : "h-1"}`} />
+              <span
+                className={`w-0.5 bg-ink transition-all ${
+                  isPlaying ? "h-2.5 animate-pulse" : "h-1"
+                }`}
+              />
+              <span
+                className={`w-0.5 bg-terracotta transition-all ${
+                  isPlaying ? "h-3 animate-pulse" : "h-2"
+                }`}
+              />
+              <span
+                className={`w-0.5 bg-ink transition-all ${
+                  isPlaying ? "h-1.5" : "h-1"
+                }`}
+              />
+              <span
+                className={`w-0.5 bg-terracotta transition-all ${
+                  isPlaying ? "h-3.5 animate-pulse" : "h-2"
+                }`}
+              />
+              <span
+                className={`w-0.5 bg-ink transition-all ${
+                  isPlaying ? "h-2" : "h-1"
+                }`}
+              />
             </div>
 
             <span>
@@ -385,7 +330,7 @@ export function InspectorPlayer({ book }) {
                 ? formatChapterDuration(Math.floor(duration))
                 : currentChapter
                 ? formatChapterDuration(currentChapter.duration_seconds)
-                : book.chapterDuration || "00:00"}
+                : displayBook.chapterDuration || "00:00"}
             </span>
           </div>
         </div>
@@ -393,7 +338,9 @@ export function InspectorPlayer({ book }) {
         {/* Playback Controls Row */}
         <div className="flex items-center justify-between pt-1 gap-2">
           <button
-            onClick={handlePrevChapter}
+            onClick={() =>
+              activeChapterIndex > 0 && handleSelectChapter(activeChapterIndex - 1)
+            }
             disabled={activeChapterIndex === 0}
             className="size-9 border-[1.5px] border-ink bg-muted text-foreground rounded-lg hover:bg-canary hover:shadow-hard-sm hover:-translate-x-0.5 hover:-translate-y-0.5 shadow-hard-xs active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all duration-150 flex items-center justify-center shrink-0 cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
             title="Previous Chapter"
@@ -402,7 +349,7 @@ export function InspectorPlayer({ book }) {
           </button>
 
           <button
-            onClick={handleSkipBack}
+            onClick={() => audio.skipBy(-15)}
             className="size-9 border-[1.5px] border-ink bg-muted text-foreground rounded-lg hover:bg-canary hover:shadow-hard-sm hover:-translate-x-0.5 hover:-translate-y-0.5 shadow-hard-xs active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all duration-150 flex items-center justify-center shrink-0 cursor-pointer"
             title="Replay 15s"
           >
@@ -410,7 +357,7 @@ export function InspectorPlayer({ book }) {
           </button>
 
           <button
-            onClick={togglePlayPause}
+            onClick={handlePlayToggle}
             disabled={isLoading}
             className="flex-1 h-10 px-4 bg-terracotta text-white border-[1.5px] border-ink rounded-lg font-sans text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-terracotta-dark shadow-hard-xs hover:shadow-hard-sm hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all duration-150 cursor-pointer disabled:opacity-70"
             title="Play / Pause"
@@ -434,7 +381,7 @@ export function InspectorPlayer({ book }) {
           </button>
 
           <button
-            onClick={handleSkipForward}
+            onClick={() => audio.skipBy(15)}
             className="size-9 border-[1.5px] border-ink bg-muted text-foreground rounded-lg hover:bg-canary hover:shadow-hard-sm hover:-translate-x-0.5 hover:-translate-y-0.5 shadow-hard-xs active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all duration-150 flex items-center justify-center shrink-0 cursor-pointer"
             title="Skip 15s"
           >
@@ -442,7 +389,10 @@ export function InspectorPlayer({ book }) {
           </button>
 
           <button
-            onClick={handleNextChapter}
+            onClick={() =>
+              activeChapterIndex < chapters.length - 1 &&
+              handleSelectChapter(activeChapterIndex + 1)
+            }
             disabled={activeChapterIndex >= chapters.length - 1}
             className="size-9 border-[1.5px] border-ink bg-muted text-foreground rounded-lg hover:bg-canary hover:shadow-hard-sm hover:-translate-x-0.5 hover:-translate-y-0.5 shadow-hard-xs active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all duration-150 flex items-center justify-center shrink-0 cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
             title="Next Chapter"
@@ -452,20 +402,80 @@ export function InspectorPlayer({ book }) {
         </div>
       </div>
 
-      {/* Triple Segmented Utility Strip */}
-      <div className="mt-4 grid grid-cols-3 border-[1.5px] border-ink bg-card rounded-lg overflow-hidden text-center text-xs divide-x-[1.5px] divide-ink shadow-hard-xs hover:shadow-hard-sm transition-all duration-150">
-        <button className="py-2 hover:bg-muted font-sans font-bold text-[10px] uppercase flex items-center justify-center gap-1 cursor-pointer transition-colors active:bg-muted/80">
-          <Bookmark className="size-3.5" />
-          <span>Save</span>
-        </button>
-        <button className="py-2 hover:bg-muted font-sans font-bold text-[10px] uppercase flex items-center justify-center gap-1 cursor-pointer transition-colors active:bg-muted/80">
-          <Clock className="size-3.5" />
-          <span>Timer</span>
-        </button>
-        <button className="py-2 hover:bg-muted font-sans font-bold text-[10px] uppercase flex items-center justify-center gap-1 cursor-pointer transition-colors active:bg-muted/80">
-          <Share2 className="size-3.5" />
-          <span>Share</span>
-        </button>
+      {/* Triple Segmented Utility Strip (Wired: Save, Sleep Timer, Share) */}
+      <div className="mt-4 relative">
+        <div className="grid grid-cols-3 border-[1.5px] border-ink bg-card rounded-lg overflow-hidden text-center text-xs divide-x-[1.5px] divide-ink shadow-hard-xs hover:shadow-hard-sm transition-all duration-150">
+          <button
+            type="button"
+            onClick={handleToggleBookmark}
+            disabled={bookmarkLoading}
+            className={`py-2 font-sans font-bold text-[10px] uppercase flex items-center justify-center gap-1 cursor-pointer transition-colors ${
+              isBookmarked
+                ? "bg-canary text-ink"
+                : "hover:bg-muted active:bg-muted/80"
+            }`}
+          >
+            <Bookmark
+              className={`size-3.5 ${isBookmarked ? "fill-terracotta text-terracotta" : ""}`}
+            />
+            <span>{isBookmarked ? "Saved" : "Save"}</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setShowTimerMenu((v) => !v)}
+            className={`py-2 font-sans font-bold text-[10px] uppercase flex items-center justify-center gap-1 cursor-pointer transition-colors ${
+              audio.sleepMode
+                ? "bg-terracotta/15 text-terracotta"
+                : "hover:bg-muted active:bg-muted/80"
+            }`}
+          >
+            <Clock className="size-3.5" />
+            <span>{sleepLabel}</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={handleShare}
+            className="py-2 hover:bg-muted font-sans font-bold text-[10px] uppercase flex items-center justify-center gap-1 cursor-pointer transition-colors active:bg-muted/80"
+          >
+            {shareCopied ? (
+              <>
+                <Check className="size-3.5 text-emerald-600" />
+                <span>Copied</span>
+              </>
+            ) : (
+              <>
+                <Share2 className="size-3.5" />
+                <span>Share</span>
+              </>
+            )}
+          </button>
+        </div>
+
+        {/* Sleep Timer Menu */}
+        {showTimerMenu && (
+          <div className="mt-2 p-2.5 border-[1.5px] border-ink bg-card rounded-lg shadow-hard-sm flex items-center justify-between gap-1.5">
+            {[
+              { id: "off", label: "Off" },
+              { id: "15", label: "15m" },
+              { id: "30", label: "30m" },
+              { id: "end_of_chapter", label: "Ch End" },
+            ].map((opt) => (
+              <button
+                key={opt.id}
+                type="button"
+                onClick={() => {
+                  audio.setSleepTimer(opt.id);
+                  setShowTimerMenu(false);
+                }}
+                className="flex-1 py-1 rounded-md border border-ink/40 hover:bg-canary font-mono text-[10px] font-bold uppercase cursor-pointer transition-colors"
+              >
+                {opt.label}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* Chapter Index Section */}
@@ -502,7 +512,7 @@ export function InspectorPlayer({ book }) {
                       <span className="px-1.5 py-0.2 bg-canary text-ink border border-ink rounded-md font-mono text-[9px] font-bold uppercase shrink-0">
                         PREVIEW
                       </span>
-                    ) : book.tier !== "free" ? (
+                    ) : displayBook.tier !== "free" ? (
                       <Lock className="size-3 text-muted-foreground shrink-0" />
                     ) : (
                       <span className="size-1.5 bg-ink inline-block shrink-0" />
@@ -527,7 +537,7 @@ export function InspectorPlayer({ book }) {
           Synopsis & Specs
         </h4>
         <p className="font-mono text-xs leading-relaxed text-muted-foreground bg-muted/40 p-3 border-[1.5px] border-ink rounded-lg shadow-hard-xs">
-          {book.synopsis}
+          {displayBook.synopsis}
         </p>
       </div>
     </aside>

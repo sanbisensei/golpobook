@@ -1,5 +1,7 @@
 import { Space_Grotesk, Courier_Prime, Anek_Bangla } from "next/font/google";
 import "./globals.css";
+import { AudioProvider } from "@/context/audio-context";
+import { MobileMiniPlayer } from "@/components/audio/mobile-mini-player";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -38,7 +40,10 @@ export default function RootLayout({ children }) {
         suppressHydrationWarning
         className="min-h-full flex flex-col bg-background text-foreground font-sans"
       >
-        {children}
+        <AudioProvider>
+          {children}
+          <MobileMiniPlayer />
+        </AudioProvider>
       </body>
     </html>
   );

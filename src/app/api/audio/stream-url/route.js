@@ -68,13 +68,24 @@ export async function POST(request) {
     const isPreview = Boolean(chapter.is_preview);
     const bookTier = chapter.audiobook.tier_requirement || "free";
 
+    // Resolve user & active subscription tier (needed for both access gate & player capabilities)
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+
+    let userPlan = "guest";
+    if (user) {
+      const { data: subscription } = await supabase
+        .from("user_subscriptions")
+        .select("plan_id, status")
+        .eq("user_id", user.id)
+        .eq("status", "active")
+        .maybeSingle();
+      userPlan = subscription?.plan_id || "free";
+    }
+
     // 3. 4-Tier Access Authorization Evaluation
     if (!isPreview) {
-      // Full non-preview chapter: Requires authenticated session
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
-
       if (!user) {
         return NextResponse.json(
           {
@@ -86,16 +97,6 @@ export async function POST(request) {
           { status: 401 }
         );
       }
-
-      // Query active subscription tier
-      const { data: subscription } = await supabase
-        .from("user_subscriptions")
-        .select("plan_id, status")
-        .eq("user_id", user.id)
-        .eq("status", "active")
-        .maybeSingle();
-
-      const userPlan = subscription?.plan_id || "free";
 
       let isAllowed = false;
       if (userPlan === "premium") {
@@ -120,6 +121,13 @@ export async function POST(request) {
         );
       }
     }
+
+    const tierCapabilities = {
+      plan: userPlan,
+      maxSpeed: userPlan === "premium" ? 2.0 : userPlan === "plus" ? 1.5 : 1.0,
+      allowSleepTimer: userPlan === "plus" || userPlan === "premium",
+      allowFullSeeking: userPlan !== "guest",
+    };
 
     // 4. Generate 15-minute Signed URL from Supabase Storage 'audio-vault'
     let streamUrl = null;
@@ -151,6 +159,7 @@ export async function POST(request) {
       streamUrl,
       isVaultAudio,
       expiresIn: 900,
+      tierCapabilities,
       chapter: {
         id: chapter.id,
         chapterNumber: chapter.chapter_number,

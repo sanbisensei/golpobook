@@ -9,7 +9,7 @@ export function AudiobookCard({ book, onSelect, isSelected = false }) {
   return (
     <article
       onClick={() => onSelect?.(book)}
-      className={`group flex flex-col cursor-pointer select-none transition-all duration-150 ${
+      className={`group flex flex-col cursor-pointer select-none rounded-xl transition-all duration-150 ${
         isSelected ? "ring-2 ring-terracotta ring-offset-2 p-1 bg-muted/40" : ""
       }`}
     >
