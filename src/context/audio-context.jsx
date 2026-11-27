@@ -269,11 +269,22 @@ export function AudioProvider({ children }) {
   const seekToRatio = useCallback(
     (ratio) => {
       if (!audioRef.current || !duration) return;
-      const target = Math.max(0, Math.min(1, ratio)) * duration;
+      let target = Math.max(0, Math.min(1, ratio)) * duration;
+
+      // REQ-13: Free/Guest tier allows rewind, but caps forward seeking to +15s
+      if (!tierCapabilities.allowFullSeeking && target > audioRef.current.currentTime + 15) {
+        target = Math.min(duration, audioRef.current.currentTime + 15);
+        setStreamError({
+          type: "UPGRADE_REQUIRED",
+          requiredTier: "plus",
+          message: "Free tier limits forward seeking to +15s. Upgrade to Plus for unrestricted scrubbing.",
+        });
+      }
+
       audioRef.current.currentTime = target;
       setCurrentTime(target);
     },
-    [duration]
+    [duration, tierCapabilities.allowFullSeeking]
   );
 
   const cycleSpeed = useCallback(() => {

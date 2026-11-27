@@ -21,6 +21,7 @@ import { InspectorPlayer } from "@/components/audio/inspector-player";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useAudio } from "@/context/audio-context";
+import { HouseAdBanner } from "@/components/browse/house-ad-banner";
 
 export function BrowseFeed({ initialCategories = [], initialAudiobooks = [], userPreferences = null }) {
   const audio = useAudio();
@@ -421,6 +422,9 @@ export function BrowseFeed({ initialCategories = [], initialAudiobooks = [], use
                     </Link>
                   </div>
                 </section>
+
+                {/* Free-Tier House Ad Banner (REQ-32) */}
+                <HouseAdBanner plan={audio?.tierCapabilities?.plan || "free"} />
 
                 {/* Recommended / Explore More Grid */}
                 {filteredBooks.length > 8 && (

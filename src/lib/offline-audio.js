@@ -101,3 +101,25 @@ export async function removeOfflineChapter(chapterId) {
     tx.onerror = () => reject(tx.error);
   });
 }
+
+export async function getAllOfflineChapters() {
+  try {
+    const db = await openOfflineDb();
+    return await new Promise((resolve) => {
+      const tx = db.transaction(STORE_NAME, "readonly");
+      const req = tx.objectStore(STORE_NAME).getAll();
+      req.onsuccess = () => {
+        const items = (req.result || []).map((r) => ({
+          chapterId: r.chapterId,
+          audiobookId: r.audiobookId,
+          title: r.title,
+          cachedAt: r.cachedAt,
+        }));
+        resolve(items);
+      };
+      req.onerror = () => resolve([]);
+    });
+  } catch {
+    return [];
+  }
+}

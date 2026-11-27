@@ -48,6 +48,8 @@ export function TopHeader() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [notifOpen, setNotifOpen] = useState(false);
   const searchBoxRef = useRef(null);
 
   useEffect(() => {
@@ -133,11 +135,12 @@ export function TopHeader() {
       {/* Brand & Mobile Hamburger */}
       <div className="flex items-center gap-3 md:gap-4">
         <button
-          className="md:hidden size-9 border-[1.5px] border-ink bg-card rounded-lg flex items-center justify-center text-foreground shadow-hard-xs hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-hard-sm active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all duration-150"
+          onClick={() => setMobileMenuOpen((v) => !v)}
+          className="md:hidden size-9 border-[1.5px] border-ink bg-card rounded-lg flex items-center justify-center text-foreground shadow-hard-xs hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-hard-sm active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all duration-150 cursor-pointer"
           type="button"
           aria-label="Open Navigation Menu"
         >
-          <Menu className="size-5" />
+          {mobileMenuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
         </button>
 
         <Link href="/" className="flex items-center gap-2 group">
@@ -259,14 +262,52 @@ export function TopHeader() {
 
       {/* Right User Actions & Auth State */}
       <div className="flex items-center gap-3">
-        <button
-          className="size-9 border-[1.5px] border-ink bg-card rounded-lg flex items-center justify-center text-foreground hover:bg-muted shadow-hard-xs hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-hard-sm relative active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all duration-150"
-          type="button"
-          aria-label="Notifications"
-        >
-          <Bell className="size-4" />
-          <span className="absolute top-1.5 right-1.5 size-1.5 bg-terracotta border border-ink" />
-        </button>
+        <div className="relative">
+          <button
+            onClick={() => setNotifOpen((v) => !v)}
+            className="size-9 border-[1.5px] border-ink bg-card rounded-lg flex items-center justify-center text-foreground hover:bg-muted shadow-hard-xs hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-hard-sm relative active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all duration-150 cursor-pointer"
+            type="button"
+            aria-label="Notifications"
+          >
+            <Bell className="size-4" />
+            <span className="absolute top-1.5 right-1.5 size-1.5 bg-terracotta border border-ink" />
+          </button>
+
+          {notifOpen && (
+            <div className="absolute right-0 top-11 w-72 bg-card border-[1.5px] border-ink rounded-xl shadow-hard-md p-3.5 z-50 space-y-2.5">
+              <div className="flex items-center justify-between border-b border-ink/15 pb-1.5">
+                <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-foreground">
+                  Notifications
+                </span>
+                <button
+                  type="button"
+                  onClick={() => setNotifOpen(false)}
+                  className="text-muted-foreground hover:text-foreground cursor-pointer"
+                >
+                  <X className="size-3.5" />
+                </button>
+              </div>
+              <div className="space-y-2 font-mono text-[11px]">
+                <Link
+                  href="/audiobooks"
+                  onClick={() => setNotifOpen(false)}
+                  className="block p-2 rounded-lg bg-canary/25 border border-ink/20 hover:bg-canary/45 transition-colors"
+                >
+                  <span className="font-bold text-foreground block">69 Audiobooks Live</span>
+                  <span className="text-muted-foreground text-[10px]">Explore all 10 genres in Browse.</span>
+                </Link>
+                <Link
+                  href="/story-finder"
+                  onClick={() => setNotifOpen(false)}
+                  className="block p-2 rounded-lg bg-muted/40 border border-ink/20 hover:bg-muted transition-colors"
+                >
+                  <span className="font-bold text-foreground block">AI Story Finder Ready</span>
+                  <span className="text-muted-foreground text-[10px]">Try searching in Bangla or Banglish.</span>
+                </Link>
+              </div>
+            </div>
+          )}
+        </div>
 
         {/* Auth State Switcher */}
         {loading ? (
@@ -366,6 +407,49 @@ export function TopHeader() {
           </div>
         )}
       </div>
+
+      {/* Mobile Slide-Down Navigation Drawer */}
+      {mobileMenuOpen && (
+        <div className="md:hidden fixed top-16 left-0 right-0 bg-card border-b-[1.5px] border-ink shadow-hard-md p-4 z-50 space-y-3">
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              setMobileMenuOpen(false);
+              navigateToSearch(searchQuery, selectedCategory);
+            }}
+            className="relative flex items-center"
+          >
+            <Search className="absolute left-3 size-4 text-ink-muted pointer-events-none" />
+            <input
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Search titles, authors..."
+              className="w-full h-9 pl-9 pr-3 bg-canary text-ink border-[1.5px] border-ink rounded-lg font-mono text-xs"
+            />
+          </form>
+
+          <nav className="grid grid-cols-2 gap-2 font-sans text-xs font-bold uppercase">
+            {[
+              { href: "/", label: "Home" },
+              { href: "/audiobooks", label: "Browse Genres" },
+              { href: "/story-finder", label: "AI Story Finder" },
+              { href: "/library", label: "Library" },
+              { href: "/saved", label: "Saved Shelf" },
+              { href: "/account", label: "Account" },
+              { href: "/support", label: "Help & Support" },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="px-3 py-2 rounded-lg border-[1.5px] border-ink bg-background hover:bg-canary text-foreground"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+      )}
     </header>
   );
 }
