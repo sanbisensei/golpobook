@@ -1,332 +1,68 @@
 [
   {
     "title": "Chander Pahar",
-    "title_bengali": "চাঁদের পাহাড়",
+    "title_bengali": "চাঁদের পাহাড়",
     "slug": "chander-pahar",
     "author": {
       "name": "Bibhutibhushan Bandyopadhyay",
       "slug": "bibhutibhushan-bandyopadhyay",
-      "bio": "Bibhutibhushan Bandyopadhyay (1894–1950) was a celebrated Bengali author, best known for his vivid nature-inspired epics and adventurous realism including Pather Panchali and Chander Pahar.",
+      "bio": "Bibhutibhushan Bandyopadhyay (1894–1950) was a celebrated Bengali author, best known for his nature-inspired epics and adventurous realism including Pather Panchali and Chander Pahar.",
       "born_year": 1894,
       "died_year": 1950,
       "era": "Bengal Renaissance & Modernism"
     },
     "categorySlug": "adventure-thriller",
     "narrator_name": "Sabyasachi Chakrabarty",
-    "description": "Young Bengali adventurer Shankar Roy Choudhury leaves the quiet countryside of Bengal to pursue an adventurous career in the wilderness of British East Africa. Guided by Portuguese explorer Diego Alvarez, Shankar embarks on an arduous expedition across the desolate Richtersveld mountains and the scorching Kalahari in search of the legendary diamond mines of the Mountain of the Moon, guarded by the mythical beast Bunyip.",
+    "description": "Young Bengali adventurer Shankar Roy Choudhury leaves the quiet countryside of Bengal to pursue a daring career in the wilderness of British East Africa. Guided by Portuguese explorer Diego Alvarez, Shankar embarks on an arduous expedition across the desolate Richtersveld mountains and the scorching Kalahari in search of the legendary diamond mines of the Mountain of the Moon, guarded by the mythical beast Bunyip.",
     "short_description": "Shankar's perilous quest across the African wilderness in search of the mythical diamond-laden Mountain of the Moon.",
-    "cover_image_url": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=800",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/chander-pahar.webp",
     "language": "bangla",
-    "tier_requirement": "plus",
+    "tier_requirement": "free",
     "is_featured": true,
     "is_published": true,
-    "total_duration_seconds": 22500,
+    "total_duration_seconds": 6370,
     "rating_average": 4.95,
     "ratings_count": 3890,
     "publication_year": 1937,
-    "tags": ["adventure", "thriller", "africa", "jungle", "expedition", "diamond", "shankar", "bunyip", "classic bengali", "ভ্রমণ", "রোমাঞ্চ", "চাঁদের পাহাড়"],
+    "tags": ["adventure", "thriller", "africa", "jungle", "expedition", "diamond", "shankar", "bunyip", "survival", "ভ্রমণ", "রোমাঞ্চ", "চাঁদের পাহাড়", "avijan"],
     "chapters": [
-      {
-        "chapter_number": 1,
-        "title": "Leaving for Africa",
-        "audio_storage_path": "chander-pahar/chapter-01.mp3",
-        "duration_seconds": 1820,
-        "is_preview": true
-      },
-      {
-        "chapter_number": 2,
-        "title": "The Lion of Salisbury Bridge",
-        "audio_storage_path": "chander-pahar/chapter-02.mp3",
-        "duration_seconds": 2100,
-        "is_preview": false
-      },
-      {
-        "chapter_number": 3,
-        "title": "Meeting Diego Alvarez",
-        "audio_storage_path": "chander-pahar/chapter-03.mp3",
-        "duration_seconds": 2450,
-        "is_preview": false
-      }
+      { "chapter_number": 1, "title": "Leaving for Africa", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1820, "is_preview": true },
+      { "chapter_number": 2, "title": "The Lion of Salisbury Bridge", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 2100, "is_preview": false },
+      { "chapter_number": 3, "title": "The Mountain of the Moon", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 2450, "is_preview": false }
     ],
-    "semanticDocument": "Title: Chander Pahar (চাঁদের পাহাড়)\nAuthor: Bibhutibhushan Bandyopadhyay\nCategory: Adventure & Thriller, Classic Bengali Literature\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: African wilderness, Uganda railway, Richtersveld mountains, Kalahari desert, dangerous diamond caves\nThemes & Mood: Courage, discovery, survival expedition, mythical monster Bunyip, adrenaline, perseverance, exploration\nSynopsis: Shankar leaves Bengal for Africa, teaming up with explorer Alvarez to locate the hidden diamond mines of the Mountain of the Moon while evading deadly black mambas and the ferocious Bunyip.\nTags: adventure, thriller, africa, jungle, survival, classic bengali, shankar, bunyip, diamonds"
+    "semanticDocument": "Title: Chander Pahar (চাঁদের পাহাড়)\nAuthor: Bibhutibhushan Bandyopadhyay | Category: Adventure & Thriller\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: African wilderness, Uganda railway, Richtersveld mountains, Kalahari desert, volcanic caves, dense jungle\nMood & Feelings: Adrenaline, courage, survival peril, wanderlust, exploration, রোমাঞ্চকর অভিযান, ভ্রমণ কাহিনি, rohomanchokor, adventure\nThemes: Diamond mines, mythical beast Bunyip, black mambas, wilderness survival, friendship\nSynopsis: Young Shankar leaves rural Bengal for East Africa, teaming up with Portuguese explorer Diego Alvarez to find hidden diamond mines while surviving ferocious predators and the legendary Bunyip."
   },
   {
-    "title": "Srikanto",
-    "title_bengali": "শ্রীকান্ত",
-    "slug": "srikanto",
+    "title": "Sundarbaner Atanko",
+    "title_bengali": "সুন্দরবনের আতঙ্ক",
+    "slug": "sundarbaner-atanko",
     "author": {
-      "name": "Sarat Chandra Chattopadhyay",
-      "slug": "sarat-chandra-chattopadhyay",
-      "bio": "Sarat Chandra Chattopadhyay (1876–1938) was one of Bengal's most popular novelists, known for his deep emotional insight, romantic realism, and empathetic portrayal of rural society and outcasts.",
-      "born_year": 1876,
-      "died_year": 1938,
-      "era": "Bengal Renaissance"
+      "name": "Hemendra Kumar Roy",
+      "slug": "hemendra-kumar-roy",
+      "bio": "Hemendra Kumar Roy (1888–1963) was a pioneering Bengali writer of juvenile adventure, mystery, and thrilling expedition fiction.",
+      "born_year": 1888,
+      "died_year": 1963,
+      "era": "Golden Age of Bengali Adventure"
     },
-    "categorySlug": "classic-literature",
-    "narrator_name": "Sumanta Mukherjee",
-    "description": "The episodic, reflective memoir of Srikanto, a wandering bohemian traveler navigating the hypocrisies of traditional society, turbulent romantic longings, and friendships with unconventional souls like Indranath and Annadadidi in early 20th-century Bengal.",
-    "short_description": "The wandering reflections and unforgettable encounters of Srikanto, Bengali literature's quintessential bohemian traveler.",
-    "cover_image_url": "https://images.unsplash.com/photo-1495640388908-05fa85288e61?auto=format&fit=crop&q=80&w=800",
+    "categorySlug": "adventure-thriller",
+    "narrator_name": "Mir Afsar Ali",
+    "description": "Deep inside the treacherous tidal creeks and dense mangrove forests of the Sundarbans, explorers Bimal and Kumar embark on a perilous boat expedition to uncover a lost pirate treasure. Navigating sudden river storms, treacherous crocodiles, and the silent stalk of the Royal Bengal Tiger, every bend in the delta hides a deadly ambush.",
+    "short_description": "A gripping mangrove delta expedition through the Sundarbans filled with lost treasure, river storms, and tiger territory.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/sundarbaner-atanko.webp",
     "language": "bangla",
-    "tier_requirement": "free",
-    "is_featured": false,
-    "is_published": true,
-    "total_duration_seconds": 18600,
-    "rating_average": 4.88,
-    "ratings_count": 2150,
-    "publication_year": 1917,
-    "tags": ["classic", "literature", "bengali", "travel", "bohemian", "romance", "society", "indranath", "ক্লাসিক", "উপন্যাস", "শ্রীকান্ত"],
-    "chapters": [
-      {
-        "chapter_number": 1,
-        "title": "Adventures with Indranath",
-        "audio_storage_path": "srikanto/chapter-01.mp3",
-        "duration_seconds": 1680,
-        "is_preview": true
-      },
-      {
-        "chapter_number": 2,
-        "title": "The Night on the Ganges",
-        "audio_storage_path": "srikanto/chapter-02.mp3",
-        "duration_seconds": 1940,
-        "is_preview": false
-      }
-    ],
-    "semanticDocument": "Title: Srikanto (শ্রীকান্ত)\nAuthor: Sarat Chandra Chattopadhyay\nCategory: Classic Literature, Romance & Drama\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: Rural Bengal, Ganges river banks, bohemian voyages, nocturnal fishing expeditions\nThemes & Mood: Wanderlust, human compassion, rebellion against social orthodoxy, deep unspoken love, nostalgia\nSynopsis: Srikanto chronicles his youth and wanderings, from nocturnal escapades with the fearless Indranath to complex emotional bonds with outcasts and society rebels.\nTags: classic, bengali, sarat chandra, indranath, memoir, river, journey, emotion"
-  },
-  {
-    "title": "Kabuliwala & Selected Stories",
-    "title_bengali": "কাবুলিওয়ালা ও অন্যান্য গল্প",
-    "slug": "kabuliwala-stories",
-    "author": {
-      "name": "Rabindranath Tagore",
-      "slug": "rabindranath-tagore",
-      "bio": "Rabindranath Tagore (1861–1941) was a Nobel laureate polymath whose profound poetry, short stories, and music reshaped Bengali literature and culture.",
-      "born_year": 1861,
-      "died_year": 1941,
-      "era": "Bengal Renaissance"
-    },
-    "categorySlug": "classic-literature",
-    "narrator_name": "Kazi Sabyasachi",
-    "description": "A collection of Rabindranath Tagore's timeless short stories led by Kabuliwala, the poignant tale of Rahamat, a dried-fruit seller from Afghanistan in 19th-century Calcutta, whose paternal bond with little Mini transcends geographic, cultural, and temporal boundaries.",
-    "short_description": "Tagore's timeless masterpieces exploring paternal love, social longing, and the human heart.",
-    "cover_image_url": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=800",
-    "language": "bangla",
-    "tier_requirement": "free",
-    "is_featured": false,
-    "is_published": true,
-    "total_duration_seconds": 14400,
-    "rating_average": 4.96,
-    "ratings_count": 4120,
-    "publication_year": 1892,
-    "tags": ["tagore", "classic", "rabindranath", "short stories", "kabuliwala", "mini", "calcutta", "গল্পগুচ্ছ", "কাবুলিওয়ালা", "রবীন্দ্রনাথ"],
-    "chapters": [
-      {
-        "chapter_number": 1,
-        "title": "Kabuliwala",
-        "audio_storage_path": "kabuliwala-stories/chapter-01.mp3",
-        "duration_seconds": 1420,
-        "is_preview": true
-      },
-      {
-        "chapter_number": 2,
-        "title": "Postmaster",
-        "audio_storage_path": "kabuliwala-stories/chapter-02.mp3",
-        "duration_seconds": 1580,
-        "is_preview": false
-      },
-      {
-        "chapter_number": 3,
-        "title": "Chhuti (The Homecoming)",
-        "audio_storage_path": "kabuliwala-stories/chapter-03.mp3",
-        "duration_seconds": 1720,
-        "is_preview": false
-      }
-    ],
-    "semanticDocument": "Title: Kabuliwala & Selected Stories (কাবুলিওয়ালা ও অন্যান্য গল্প)\nAuthor: Rabindranath Tagore\nCategory: Classic Literature, Drama\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: Colonial Calcutta, rural post office, nostalgic Bengal countryside\nThemes & Mood: Paternal affection, homesickness, innocence, separation, social pathos, emotional warmth\nSynopsis: In Kabuliwala, an Afghan dry-fruit merchant forms an innocent bond with a young Bengali girl, reminding him of his own distant daughter in Kabul.\nTags: tagore, kabuliwala, postmaster, chhuti, emotion, family, calcutta, classic bengali"
-  },
-  {
-    "title": "Abol Tabol",
-    "title_bengali": "আবোল তাবোল",
-    "slug": "abol-tabol",
-    "author": {
-      "name": "Sukumar Ray",
-      "slug": "sukumar-ray",
-      "bio": "Sukumar Ray (1887–1923) was Bengal's greatest master of nonsense verse, humorous satire, and children's literature, whose sharp wit and linguistic virtuosity remain peerless.",
-      "born_year": 1887,
-      "died_year": 1923,
-      "era": "Bengal Renaissance"
-    },
-    "categorySlug": "classic-literature",
-    "narrator_name": "Sovan Ganguly",
-    "description": "Sukumar Ray's crowning collection of 46 nonsense rhyming poems and illustrations, blending whimsical imagination, musical rhythm, and sharp political and social satire under the guise of delightful children's verse.",
-    "short_description": "The supreme masterpiece of Bengali nonsense verse, musical rhythm, and whimsical satire.",
-    "cover_image_url": "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=800",
-    "language": "bangla",
-    "tier_requirement": "free",
-    "is_featured": false,
-    "is_published": true,
-    "total_duration_seconds": 7200,
-    "rating_average": 4.97,
-    "ratings_count": 5200,
-    "publication_year": 1923,
-    "tags": ["poetry", "nonsense", "sukumar ray", "humor", "satire", "children", "bengali", "আবোল তাবোল", "সুকুমার রায়", "ছড়া"],
-    "chapters": [
-      {
-        "chapter_number": 1,
-        "title": "Khichuri & Kathburo",
-        "audio_storage_path": "abol-tabol/chapter-01.mp3",
-        "duration_seconds": 890,
-        "is_preview": true
-      },
-      {
-        "chapter_number": 2,
-        "title": "Gomotharak & Ramgorurer Chhana",
-        "audio_storage_path": "abol-tabol/chapter-02.mp3",
-        "duration_seconds": 960,
-        "is_preview": false
-      }
-    ],
-    "semanticDocument": "Title: Abol Tabol (আবোল তাবোল)\nAuthor: Sukumar Ray\nCategory: Classic Literature, Humor, Nonsense Verse\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: Whimsical fantasy realms, absurd courtrooms, surreal creatures like Hensho-Hensho and Khichuri\nThemes & Mood: Wit, absurdism, playful musical rhymes, subtle political parody, joy, linguistic mastery\nSynopsis: Sukumar Ray's peerless verses capture creatures that are half-duck half-porcupine (Hasjaru), kings that issue outrageous decrees, and timeless laughter for all ages.\nTags: nonsense, sukumar ray, poetry, satire, humor, bengali classic, children, rhymes"
-  },
-  {
-    "title": "The Hound of the Baskervilles",
-    "title_bengali": "দ্য হাউন্ড অব দ্য বাস্কারভিলস",
-    "slug": "hound-of-baskervilles",
-    "author": {
-      "name": "Arthur Conan Doyle",
-      "slug": "arthur-conan-doyle",
-      "bio": "Sir Arthur Conan Doyle (1859–1930) was a Scottish writer best known for creating the legendary consulting detective Sherlock Holmes and his steadfast chronicler Dr. John Watson.",
-      "born_year": 1859,
-      "died_year": 1930,
-      "era": "Victorian & Edwardian Detective Era"
-    },
-    "categorySlug": "mystery-detective",
-    "narrator_name": "David Clarke",
-    "description": "Sherlock Holmes and Dr. Watson investigate the chilling legend of a diabolical hound terrorizing the wealthy Baskerville family across the grim, fog-drenched moors of Devonshire following the mysterious death of Sir Charles Baskerville.",
-    "short_description": "Sherlock Holmes confronts an ancient supernatural curse and a spectral hound on the desolate Devon moors.",
-    "cover_image_url": "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?auto=format&fit=crop&q=80&w=800",
-    "language": "english",
-    "tier_requirement": "free",
-    "is_featured": false,
-    "is_published": true,
-    "total_duration_seconds": 21600,
-    "rating_average": 4.91,
-    "ratings_count": 3410,
-    "publication_year": 1902,
-    "tags": ["sherlock holmes", "mystery", "detective", "conan doyle", "watson", "hound", "baskervilles", "horror", "gothic", "রহস্য", "গোয়েন্দা"],
-    "chapters": [
-      {
-        "chapter_number": 1,
-        "title": "Mr. Sherlock Holmes",
-        "audio_storage_path": "hound-of-baskervilles/chapter-01.mp3",
-        "duration_seconds": 1740,
-        "is_preview": true
-      },
-      {
-        "chapter_number": 2,
-        "title": "The Curse of the Baskervilles",
-        "audio_storage_path": "hound-of-baskervilles/chapter-02.mp3",
-        "duration_seconds": 2050,
-        "is_preview": false
-      },
-      {
-        "chapter_number": 3,
-        "title": "The Problem",
-        "audio_storage_path": "hound-of-baskervilles/chapter-03.mp3",
-        "duration_seconds": 1890,
-        "is_preview": false
-      }
-    ],
-    "semanticDocument": "Title: The Hound of the Baskervilles\nAuthor: Arthur Conan Doyle\nCategory: Mystery & Detective, Gothic Suspense\nLanguage: English\nSetting & Atmosphere: Grim Devonshire moors, Grimpen Mire, Baskerville Hall, thick swirling fog, eerie nocturnal howls\nThemes & Mood: Deductive reasoning, supernatural fear vs rationalism, ancient familial curses, tension, murder mystery\nSynopsis: Holmes and Watson are summoned when Sir Charles Baskerville is found dead with footprints of a gigantic hound beside him. Watson journeys to Baskerville Hall to guard the young heir from a spectral assassin.\nTags: sherlock holmes, detective, mystery, watson, moor, supernatural, gothic, investigation"
-  },
-  {
-    "title": "The Great Gatsby",
-    "title_bengali": "দ্য গ্রেট গ্যাটসবি",
-    "slug": "the-great-gatsby",
-    "author": {
-      "name": "F. Scott Fitzgerald",
-      "slug": "f-scott-fitzgerald",
-      "bio": "F. Scott Fitzgerald (1896–1940) was an American author whose works defined the Jazz Age, illuminating the glamour, disillusionment, and tragedy of the American Dream.",
-      "born_year": 1896,
-      "died_year": 1940,
-      "era": "The Lost Generation / Jazz Age"
-    },
-    "categorySlug": "classic-literature",
-    "narrator_name": "Jim Dale",
-    "description": "Set in Jazz Age Long Island during the Roaring Twenties, the novel tells the story of mysterious, enigmatic millionaire Jay Gatsby and his obsessive, tragic passion for the captivating Daisy Buchanan.",
-    "short_description": "In 1922 Long Island, mysterious millionaire Jay Gatsby throws extravagant parties in pursuit of lost love.",
-    "cover_image_url": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=800",
-    "language": "english",
     "tier_requirement": "plus",
     "is_featured": false,
     "is_published": true,
-    "total_duration_seconds": 17280,
-    "rating_average": 4.87,
-    "ratings_count": 2890,
-    "publication_year": 1925,
-    "tags": ["gatsby", "classic", "jazz age", "fitzgerald", "roaring twenties", "romance", "tragedy", "american dream", "আমেরিকান ড্রিম"],
+    "total_duration_seconds": 4200,
+    "rating_average": 4.82,
+    "ratings_count": 1420,
+    "publication_year": 1938,
+    "tags": ["sundarbans", "adventure", "thriller", "tiger", "treasure", "mangrove", "boat", "expedition", "সুন্দরবন", "অভিযান", "বাঘ", "romanchokor"],
     "chapters": [
-      {
-        "chapter_number": 1,
-        "title": "The Green Light",
-        "audio_storage_path": "the-great-gatsby/chapter-01.mp3",
-        "duration_seconds": 1695,
-        "is_preview": true
-      },
-      {
-        "chapter_number": 2,
-        "title": "The Valley of Ashes",
-        "audio_storage_path": "the-great-gatsby/chapter-02.mp3",
-        "duration_seconds": 1830,
-        "is_preview": false
-      }
+      { "chapter_number": 1, "title": "Into the Tidal Creeks", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1950, "is_preview": true },
+      { "chapter_number": 2, "title": "Roar in the Mangroves", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 2250, "is_preview": false }
     ],
-    "semanticDocument": "Title: The Great Gatsby\nAuthor: F. Scott Fitzgerald\nCategory: Classic Literature, Romance & Drama\nLanguage: English\nSetting & Atmosphere: Long Island, West Egg, East Egg, lavish Jazz Age parties, Valley of Ashes\nThemes & Mood: Obsessive love, decadence, social class barrier, the corruption of idealism, illusion, melancholia\nSynopsis: Nick Carraway observes his neighbor Jay Gatsby, whose lavish summer galas mask an intense yearning to rekindle love with Daisy Buchanan, leading to reckless confrontation and catastrophe.\nTags: gatsby, fitzgerald, jazz age, romance, tragedy, money, society, classic literature"
-  },
-  {
-    "title": "1984",
-    "title_bengali": "নাইন্টিন এইটি ফোর",
-    "slug": "nineteen-eighty-four",
-    "author": {
-      "name": "George Orwell",
-      "slug": "george-orwell",
-      "bio": "George Orwell (1903–1950) was an English novelist and essayist whose lucid prose delivered prophetic warnings against totalitarian oppression, political manipulation, and surveillance states.",
-      "born_year": 1903,
-      "died_year": 1950,
-      "era": "Modern Dystopian Political Literature"
-    },
-    "categorySlug": "dystopian-sci-fi",
-    "narrator_name": "Simon Prebble",
-    "description": "In the grim superstate of Oceania under the omniscient surveillance of Big Brother and the Thought Police, bureaucrat Winston Smith dares to commit thoughtcrime by keeping a private diary and seeking forbidden love with Julia.",
-    "short_description": "Orwell's chilling prophecy of totalitarian surveillance, thoughtcrime, and the fight for human spirit.",
-    "cover_image_url": "https://images.unsplash.com/photo-1476275466078-4007374efbbe?auto=format&fit=crop&q=80&w=800",
-    "language": "english",
-    "tier_requirement": "premium",
-    "is_featured": false,
-    "is_published": true,
-    "total_duration_seconds": 38400,
-    "rating_average": 4.93,
-    "ratings_count": 4890,
-    "publication_year": 1949,
-    "tags": ["dystopia", "scifi", "orwell", "big brother", "totalitarianism", "thoughtcrime", "surveillance", "classic", "ডিস্টোপিয়া"],
-    "chapters": [
-      {
-        "chapter_number": 1,
-        "title": "It Was a Cold Day in April",
-        "audio_storage_path": "nineteen-eighty-four/chapter-01.mp3",
-        "duration_seconds": 2150,
-        "is_preview": true
-      },
-      {
-        "chapter_number": 2,
-        "title": "The Thought Police",
-        "audio_storage_path": "nineteen-eighty-four/chapter-02.mp3",
-        "duration_seconds": 2340,
-        "is_preview": false
-      }
-    ],
-    "semanticDocument": "Title: 1984\nAuthor: George Orwell\nCategory: Dystopian Sci-Fi, Political Fiction\nLanguage: English\nSetting & Atmosphere: London, Airstrip One, Oceania, dingy flats, Telescreens, Ministry of Truth, Ministry of Love, Room 101\nThemes & Mood: Totalitarian control, Big Brother, Thought Police, Doublethink, censorship, resistance, paranoia, psychological torture\nSynopsis: Winston Smith navigates life under perpetual surveillance, secretly longing for rebellion against the Party while attempting an illicit romance with Julia.\nTags: 1984, orwell, dystopia, big brother, surveillance, political fiction, censorship, science fiction"
+    "semanticDocument": "Title: Sundarbaner Atanko (সুন্দরবনের আতঙ্ক)\nAuthor: Hemendra Kumar Roy | Category: Adventure & Thriller\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: Sundarbans mangrove forest, misty river creeks, wooden expedition boat, Royal Bengal Tiger territory, Bengal delta\nMood & Feelings: High suspense, wilderness danger, treasure hunt excitement, রোমাঞ্চ, আতঙ্ক, সুন্দরবনের গল্প, tiger, jungle boat\nThemes: Pirate treasure, survival in mangrove swamps, comradeship, wild nature\nSynopsis: Explorers Bimal and Kumar sail into the uncharted Sundarbans delta seeking a sunken treasure while evading ruthless rivals, river tempests, and man-eating tigers."
   },
   {
     "title": "Pather Panchali",
@@ -335,48 +71,576 @@
     "author": {
       "name": "Bibhutibhushan Bandyopadhyay",
       "slug": "bibhutibhushan-bandyopadhyay",
-      "bio": "Bibhutibhushan Bandyopadhyay (1894–1950) was a celebrated Bengali author, best known for his vivid nature-inspired epics and adventurous realism including Pather Panchali and Chander Pahar.",
+      "bio": "Bibhutibhushan Bandyopadhyay (1894–1950) was a celebrated Bengali author, best known for his nature-inspired epics and adventurous realism including Pather Panchali and Chander Pahar.",
       "born_year": 1894,
       "died_year": 1950,
       "era": "Bengal Renaissance & Modernism"
     },
     "categorySlug": "classic-literature",
+    "narrator_name": "Soumitra Chatterjee",
+    "description": "In the quiet village of Nischindipur, young Apu and his spirited sister Durga discover wonder amidst everyday poverty. From chasing sweet-sellers through bamboo groves and watching the first monsoon rains to running through white kash fields to catch a glimpse of a steaming train, Pather Panchali is an immortal celebration of rural Bengal's innocence and quiet resilience.",
+    "short_description": "An immortal coming-of-age classic capturing rural Bengal childhood, sibling love, and bittersweet nostalgia.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/pather-panchali.webp",
+    "language": "bangla",
+    "tier_requirement": "free",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 5400,
+    "rating_average": 4.97,
+    "ratings_count": 5120,
+    "publication_year": 1929,
+    "tags": ["classic", "village", "childhood", "nostalgia", "apu", "durga", "monsoon", "kash", "rural bengal", "পথের পাঁচালী", "শৈশব", "গ্রাম", "nostalgic"],
+    "chapters": [
+      { "chapter_number": 1, "title": "The Village of Nischindipur", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1700, "is_preview": true },
+      { "chapter_number": 2, "title": "The Train in the Kash Fields", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1850, "is_preview": false },
+      { "chapter_number": 3, "title": "Monsoon & Farewell", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1850, "is_preview": false }
+    ],
+    "semanticDocument": "Title: Pather Panchali (পথের পাঁচালী)\nAuthor: Bibhutibhushan Bandyopadhyay | Category: Classic Literature\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: Rural Bengal village Nischindipur, bamboo groves, blooming white kash flower fields, monsoon rain, distant steam locomotive\nMood & Feelings: Nostalgic, tender, emotional, innocent childhood, bittersweet sorrow, শৈশবের স্মৃতি, গ্রামের গল্প, বৃষ্টি, brishti, gramer golpo\nThemes: Sibling bond between Apu and Durga, poverty with dignity, wonder of nature, growing up\nSynopsis: Follow young Apu and his sister Durga through the joys, hardships, and unforgettable seasonal beauty of rural Bengal."
+  },
+  {
+    "title": "Gora",
+    "title_bengali": "গোরা",
+    "slug": "gora",
+    "author": {
+      "name": "Rabindranath Tagore",
+      "slug": "rabindranath-tagore",
+      "bio": "Rabindranath Tagore (1861–1941) was a Nobel Prize-winning polymath, poet, novelist, and philosopher who reshaped Bengali literature and music.",
+      "born_year": 1861,
+      "died_year": 1941,
+      "era": "Bengal Renaissance"
+    },
+    "categorySlug": "classic-literature",
+    "narrator_name": "Debshankar Halder",
+    "description": "Set in 19th-century colonial Calcutta amidst intense debates between orthodox Hinduism and the reformist Brahmo Samaj, Gora follows the passionate young nationalist Gourmohan. As philosophical clashes collide with romance and a shocking secret about his own birth, Gora must redefine what it truly means to belong to India.",
+    "short_description": "Tagore's sweeping philosophical epic of identity, nationalism, and love in 19th-century colonial Calcutta.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/gora.webp",
+    "language": "bangla",
+    "tier_requirement": "plus",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 4800,
+    "rating_average": 4.88,
+    "ratings_count": 2150,
+    "publication_year": 1910,
+    "tags": ["tagore", "classic", "philosophy", "identity", "kolkata", "renaissance", "intellectual", "রবীন্দ্রনাথ", "গোরা", "ক্লাসিক"],
+    "chapters": [
+      { "chapter_number": 1, "title": "Debates on the Hooghly", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 2300, "is_preview": true },
+      { "chapter_number": 2, "title": "The Truth of Identity", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 2500, "is_preview": false }
+    ],
+    "semanticDocument": "Title: Gora (গোরা)\nAuthor: Rabindranath Tagore | Category: Classic Literature\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: 19th-century Calcutta colonial salons, Hooghly riverbanks, Bengal Renaissance intellectual circles\nMood & Feelings: Thought-provoking, philosophical, passionate, dignified, গভীর জীবনবোধ, ক্লাসিক উপন্যাস, rabindranath, intellectual\nThemes: Cultural identity, nationalism vs humanism, social reform, spiritual awakening, love across ideological divides\nSynopsis: Passionate idealist Gora champions strict tradition until love and a hidden truth about his origins shatter his worldview and awaken a broader humanity."
+  },
+  {
+    "title": "Byomkesh Bakshi: Satyanweshi",
+    "title_bengali": "ব্যোমকেশ বক্সী: সত্যান্বেষী",
+    "slug": "byomkesh-satyanweshi",
+    "author": {
+      "name": "Sharadindu Bandyopadhyay",
+      "slug": "sharadindu-bandyopadhyay",
+      "bio": "Sharadindu Bandyopadhyay (1899–1970) was a master Bengali storyteller, creator of the iconic truth-seeker detective Byomkesh Bakshi.",
+      "born_year": 1899,
+      "died_year": 1970,
+      "era": "Bengal Renaissance & Modernism"
+    },
+    "categorySlug": "mystery-detective",
+    "narrator_name": "Jagannath Basu",
+    "description": "In 1930s gaslit Calcutta, young writer Ajit moves into a boarding house on Harrison Road—only to be drawn into a chilling series of secret murders tied to an underground drug syndicate. Alongside his sharp-witted, trench-coated roommate Byomkesh Bakshi, the 'Truth-Seeker' unravels the clues behind every locked door.",
+    "short_description": "The iconic debut case of Byomkesh Bakshi investigating a deadly boarding-house conspiracy in 1930s Calcutta.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/byomkesh-satyanweshi.webp",
+    "language": "bangla",
+    "tier_requirement": "free",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 4100,
+    "rating_average": 4.93,
+    "ratings_count": 3420,
+    "publication_year": 1932,
+    "tags": ["detective", "mystery", "byomkesh", "murder", "kolkata", "noir", "whodunit", "crime", "গোয়েন্দা", "ব্যোমকেশ", "রহস্য", "goyenda"],
+    "chapters": [
+      { "chapter_number": 1, "title": "The Boarding House on Harrison Road", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 2000, "is_preview": true },
+      { "chapter_number": 2, "title": "The Truth-Seeker's Trap", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 2100, "is_preview": false }
+    ],
+    "semanticDocument": "Title: Byomkesh Bakshi: Satyanweshi (ব্যোমকেশ বক্সী: সত্যান্বেষী)\nAuthor: Sharadindu Bandyopadhyay | Category: Mystery & Detective\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: 1930s colonial Calcutta, foggy Harrison Road, vintage trams, gaslit alleyways, boarding house\nMood & Feelings: Cerebral, suspenseful, noir detective intrigue, গোয়েন্দা গল্প, খুনের রহস্য, goyenda golpo, detective murder mystery\nThemes: Deductive reasoning, crime syndicate, disguise, truth-seeking partnership between Byomkesh and Ajit\nSynopsis: When murders strike a Calcutta mess house, Byomkesh Bakshi uses razor-sharp psychology and deduction to unmask a cunning drug lord."
+  },
+  {
+    "title": "Feluda: Sonar Kella",
+    "title_bengali": "ফেলুদা: সোনার কেল্লা",
+    "slug": "feluda-sonar-kella",
+    "author": {
+      "name": "Satyajit Ray",
+      "slug": "satyajit-ray",
+      "bio": "Satyajit Ray (1921–1992) was an Academy Award-winning filmmaker and iconic Bengali author who created Feluda and Professor Shonku.",
+      "born_year": 1921,
+      "died_year": 1992,
+      "era": "Modern Bengali Literature"
+    },
+    "categorySlug": "mystery-detective",
     "narrator_name": "Sabyasachi Chakrabarty",
-    "description": "The lyrical, heartbreaking depiction of childhood wonder and quiet rural hardship in early 20th-century Bengal through the eyes of young Apu and his free-spirited elder sister Durga in their ancestral village of Nischindipur.",
-    "short_description": "The immortal Bengali masterpiece chronicling the childhood joys and struggles of Apu and Durga in rural Bengal.",
-    "cover_image_url": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&q=80&w=800",
+    "description": "When a young boy named Mukul claims to remember a past life inside a golden fortress filled with precious gems, ruthless kidnappers set their sights on Rajasthan. Master sleuth Prodosh C. Mitter (Feluda), joined by Topshe and Jatayu, races across desert trains and ancient forts to rescue Mukul and crack the mystery of Sonar Kella.",
+    "short_description": "Feluda's thrilling desert chase across Rajasthan to protect a boy with past-life memories of a golden fortress.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/Feluda-sonar-kella.webp",
+    "language": "bangla",
+    "tier_requirement": "plus",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 4950,
+    "rating_average": 4.96,
+    "ratings_count": 4650,
+    "publication_year": 1971,
+    "tags": ["feluda", "detective", "mystery", "rajasthan", "jaisalmer", "adventure", "satyajit ray", "ফেলুদা", "সোনার কেল্লা", "গোয়েন্দা", "goyenda"],
+    "chapters": [
+      { "chapter_number": 1, "title": "The Boy Who Remembered", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1600, "is_preview": true },
+      { "chapter_number": 2, "title": "Train Through the Thar Desert", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1650, "is_preview": false },
+      { "chapter_number": 3, "title": "Inside the Golden Fortress", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1700, "is_preview": false }
+    ],
+    "semanticDocument": "Title: Feluda: Sonar Kella (ফেলুদা: সোনার কেল্লা)\nAuthor: Satyajit Ray | Category: Mystery & Detective\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: Kolkata to Jodhpur and Jaisalmer desert, camel rides, ancient sandstone golden fortress, night train\nMood & Feelings: Clever, exciting, witty camaraderie, brain-teasing sleuth chase, ফেলুদা, গোয়েন্দা অভিযান, mystery thriller\nThemes: Parapsychology, reincarnation memories, kidnapping, hidden gems, sharp observation\nSynopsis: Detective Feluda, Topshe, and thriller writer Jatayu travel across Rajasthan's Thar desert to outsmart criminals hunting a boy's past-life treasure."
+  },
+  {
+    "title": "Nishithini: The Midnight Mansion",
+    "title_bengali": "নিশীথিনী ও অপচ্ছায়া",
+    "slug": "nishithini",
+    "author": {
+      "name": "Trailokyanath Mukhopadhyay",
+      "slug": "trailokyanath-mukhopadhyay",
+      "bio": "Trailokyanath Mukhopadhyay (1847–1919) was a master of Bengali supernatural fantasy, eerie folklore, and dark satirical ghost stories.",
+      "born_year": 1847,
+      "died_year": 1919,
+      "era": "Bengal Renaissance"
+    },
+    "categorySlug": "supernatural-horror",
+    "narrator_name": "Mir Afsar Ali",
+    "description": "In a crumbling, banyan-choked zamindar estate on the edge of a foggy Bengal marsh, travelers who seek shelter after midnight hear footsteps in locked corridors and soft whispers from the courtyard well. Blending classic Bengali folklore ghosts with spine-chilling psychological dread, Nishithini brings the darkest legends of rural Bengal to terrifying life.",
+    "short_description": "Spine-chilling Bengali folk horror inside a haunted zamindar mansion where midnight whispers never sleep.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/Nishithini.webp",
+    "language": "bangla",
+    "tier_requirement": "plus",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 3800,
+    "rating_average": 4.89,
+    "ratings_count": 2340,
+    "publication_year": 1895,
+    "tags": ["horror", "ghost", "haunted", "supernatural", "spooky", "scary", "folklore", "ভৌতিক", "ভূতের গল্প", "ভয়", "bhoot", "voyer golpo"],
+    "chapters": [
+      { "chapter_number": 1, "title": "The Locked Courtyard", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1850, "is_preview": true },
+      { "chapter_number": 2, "title": "Whispers by the Banyan Tree", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1950, "is_preview": false }
+    ],
+    "semanticDocument": "Title: Nishithini: The Midnight Mansion (নিশীথিনী ও অপচ্ছায়া)\nAuthor: Trailokyanath Mukhopadhyay | Category: Supernatural & Horror\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: Haunted abandoned Bengali zamindar palace, banyan roots, foggy midnight swamp, flickering oil lamp, creaking doors\nMood & Feelings: Terrifying, eerie, spine-chilling dread, creepy night fear, ভৌতিক, গা ছমছমে, ভূতের গল্প, ভয়ের গল্প, bhooter golpo, voyer golpo, scary ghost story\nThemes: Bengali folk ghosts, curses, nocturnal apparitions, haunted village legends\nSynopsis: Stranded at a decaying zamindar mansion during a dark storm, a traveler uncovers the terrifying spectral curse haunting the estate."
+  },
+  {
+    "title": "Taranath Tantrik: The Dark Rituals",
+    "title_bengali": "তারানাথ তান্ত্রিক",
+    "slug": "taranath-tantrik",
+    "author": {
+      "name": "Taradas Bandyopadhyay",
+      "slug": "taradas-bandyopadhyay",
+      "bio": "Taradas Bandyopadhyay (1947–2010), son of Bibhutibhushan Bandyopadhyay, famously expanded the eerie occult chronicles of Taranath Tantrik.",
+      "born_year": 1947,
+      "died_year": 2010,
+      "era": "Modern Bengali Literature"
+    },
+    "categorySlug": "supernatural-horror",
+    "narrator_name": "Mir Afsar Ali",
+    "description": "Inside a dimly lit room in North Calcutta, aging mystic Taranath recounts his terrifying youthful encounters with forbidden tantric rituals, haunted cremation grounds, and spirits summoned on moonless Amavasya nights. Each tale peels back the thin veil between our world and the dark occult unknown.",
+    "short_description": "Bone-chilling occult confessions of forbidden rituals, cremation grounds, and dark supernatural forces.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/taranath-tantrik.webp",
     "language": "bangla",
     "tier_requirement": "premium",
     "is_featured": false,
     "is_published": true,
-    "total_duration_seconds": 27000,
-    "rating_average": 4.98,
-    "ratings_count": 6120,
-    "publication_year": 1929,
-    "tags": ["classic", "bengali", "apu", "durga", "village", "nature", "childhood", "bibhutibhushan", "পথের পাঁচালী", "অপু", "দুর্গা"],
+    "total_duration_seconds": 4400,
+    "rating_average": 4.94,
+    "ratings_count": 2980,
+    "publication_year": 1985,
+    "tags": ["occult", "horror", "tantrik", "dark", "supernatural", "mystery", "shmashan", "তারানাথ তান্ত্রিক", "ভৌতিক", "অলৌকিক", "bhoot", "horror"],
     "chapters": [
-      {
-        "chapter_number": 1,
-        "title": "The Village of Nischindipur",
-        "audio_storage_path": "pather-panchali/chapter-01.mp3",
-        "duration_seconds": 2100,
-        "is_preview": true
-      },
-      {
-        "chapter_number": 2,
-        "title": "Durga and the Guava Orchard",
-        "audio_storage_path": "pather-panchali/chapter-02.mp3",
-        "duration_seconds": 2280,
-        "is_preview": false
-      },
-      {
-        "chapter_number": 3,
-        "title": "The Train Across the Meadows",
-        "audio_storage_path": "pather-panchali/chapter-03.mp3",
-        "duration_seconds": 2420,
-        "is_preview": false
-      }
+      { "chapter_number": 1, "title": "The Moonless Night at the Shmashan", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 2150, "is_preview": true },
+      { "chapter_number": 2, "title": "The Forbidden Mantra", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 2250, "is_preview": false }
     ],
-    "semanticDocument": "Title: Pather Panchali (পথের পাঁচালী)\nAuthor: Bibhutibhushan Bandyopadhyay\nCategory: Classic Literature, Drama, Rural Life\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: Rural village of Nischindipur, Bengal forest trails, monsoon showers, kash flowers, distant train whistle\nThemes & Mood: Innocent childhood discovery, poverty, familial warmth, Durga's playful spirit, deep communion with nature\nSynopsis: Follows Apu and Durga growing up in rustic Nischindipur, capturing their discovery of the wider world, their grandmother Indir Thakrun, and life's bittersweet beauty.\nTags: pather panchali, apu, durga, bengali classic, bibhutibhushan, rural, nature, nostalgia, childhood"
+    "semanticDocument": "Title: Taranath Tantrik: The Dark Rituals (তারানাথ তান্ত্রিক)\nAuthor: Taradas Bandyopadhyay | Category: Supernatural & Horror\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: North Calcutta parlor, midnight cremation ground shmashan, sacred ritual fire, Amavasya darkness, swirling smoke\nMood & Feelings: Dark occult dread, eerie mysticism, intense supernatural suspense, অলৌকিক, তন্ত্রমন্ত্র, ভয়ের গল্প, voyer golpo, black magic, dark horror\nThemes: Tantric mysticism, ghosts, curses, supernatural encounters, esoteric secrets\nSynopsis: Mystic Taranath shares chilling firsthand accounts of dark esoteric rituals, haunted riverbanks, and terrifying encounters beyond the mortal realm."
+  },
+  {
+    "title": "Abol Tabol: Rhymes of the Absurd",
+    "title_bengali": "আবোল তাবোল",
+    "slug": "abol-tabol",
+    "author": {
+      "name": "Sukumar Ray",
+      "slug": "sukumar-ray",
+      "bio": "Sukumar Ray (1887–1923) was Bengal's beloved master of whimsical nonsense verse, playful surrealism, and witty children's literature.",
+      "born_year": 1887,
+      "died_year": 1923,
+      "era": "Bengal Renaissance"
+    },
+    "categorySlug": "magical-realism",
+    "narrator_name": "Bratati Bandyopadhyay",
+    "description": "Step into a topsy-turvy wonderland where half-duck half-porcupine creatures argue philosophy, kings outlaw sneezing, and clocks tick backward on floating teapots. Sukumar Ray's Abol Tabol is a joyous burst of surreal imagination, musical wordplay, and gentle satire loved by children and adults alike.",
+    "short_description": "A joyous, whimsical world of surreal hybrid creatures, playful wordplay, and timeless Bengali nonsense fantasy.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/abol-tabol.webp",
+    "language": "bangla",
+    "tier_requirement": "free",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 2800,
+    "rating_average": 4.92,
+    "ratings_count": 3100,
+    "publication_year": 1923,
+    "tags": ["comedy", "fantasy", "surreal", "whimsical", "children", "funny", "poetry", "আবোল তাবোল", "হাসির গল্প", "ছোটদের", "mojar golpo"],
+    "chapters": [
+      { "chapter_number": 1, "title": "The Hansjaru & Friends", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1350, "is_preview": true },
+      { "chapter_number": 2, "title": "Kingdom of Crazy Rules", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1450, "is_preview": false }
+    ],
+    "semanticDocument": "Title: Abol Tabol: Rhymes of the Absurd (আবোল তাবোল)\nAuthor: Sukumar Ray | Category: Magical Realism\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: Surreal dreamland, floating teapots, upside-down skies, whimsical mythical creatures\nMood & Feelings: Cheerful, hilarious, whimsical, lighthearted joy, stress-relief laughter, মজার গল্প, হাসির ছড়া, mojar golpo, funny lighthearted\nThemes: Nonsense humor, gentle social satire, boundless imagination, playful wordplay\nSynopsis: A delightful audio performance of Sukumar Ray's surreal world of bizarre hybrid animals, eccentric uncles, and hilarious absurdities."
+  },
+  {
+    "title": "Thakumar Jhuli",
+    "title_bengali": "ঠাকুরমার ঝুলি",
+    "slug": "thakumar-jhuli",
+    "author": {
+      "name": "Dakshinaranjan Mitra Majumder",
+      "slug": "dakshinaranjan-mitra-majumder",
+      "bio": "Dakshinaranjan Mitra Majumder (1877–1957) preserved Bengal's oral folk heritage in the beloved fairy-tale anthology Thakumar Jhuli.",
+      "born_year": 1877,
+      "died_year": 1957,
+      "era": "Bengal Renaissance"
+    },
+    "categorySlug": "magical-realism",
+    "narrator_name": "Bratati Bandyopadhyay",
+    "description": "Open Grandmother's magical satchel of timeless Bengali fairy tales—filled with brave princes riding winged Pakkhiraj steeds, clever princesses, talking Shuk-Sari birds, golden wands, and enchanted palaces guarded by Rakshasas. Warm, magical, and deeply comforting for bedtime listening.",
+    "short_description": "Grandmother's enchanted Bengali fairy tales of winged horses, talking birds, and magical kingdoms.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/thakumar-jhuli.webp",
+    "language": "bangla",
+    "tier_requirement": "free",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 3600,
+    "rating_average": 4.91,
+    "ratings_count": 2870,
+    "publication_year": 1907,
+    "tags": ["fairytale", "folklore", "magic", "kids", "bedtime", "fantasy", "rupkotha", "ঠাকুরমার ঝুলি", "রূপকথা", "ছোটদের গল্প"],
+    "chapters": [
+      { "chapter_number": 1, "title": "Kiranmala & the Golden Palace", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1800, "is_preview": true },
+      { "chapter_number": 2, "title": "The Winged Pakkhiraj", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1800, "is_preview": false }
+    ],
+    "semanticDocument": "Title: Thakumar Jhuli (ঠাকুরমার ঝুলি)\nAuthor: Dakshinaranjan Mitra Majumder | Category: Magical Realism\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: Enchanted fairy-tale kingdoms, floating crystal palaces, magical forests, starry bedtime skies\nMood & Feelings: Magical, cozy, nostalgic bedtime comfort, wonder, রূপকথার গল্প, ছোটদের গল্প, rupkotha, fairy tale, magic\nThemes: Good triumphing over evil, talking birds, golden and silver wands, mythical Rakshasas\nSynopsis: Classic Bengali folk fairy tales brought alive with princes, enchanted princesses, winged horses, and heartwarming moral magic."
+  },
+  {
+    "title": "Professor Shonku: Byomjatrir Diary",
+    "title_bengali": "প্রফেসর শঙ্কু: ব্যোমযাত্রীর ডায়েরি",
+    "slug": "professor-shonku-byomjatrir-diary",
+    "author": {
+      "name": "Satyajit Ray",
+      "slug": "satyajit-ray",
+      "bio": "Satyajit Ray (1921–1992) was an Academy Award-winning filmmaker and iconic Bengali author who created Feluda and Professor Shonku.",
+      "born_year": 1921,
+      "died_year": 1992,
+      "era": "Modern Bengali Literature"
+    },
+    "categorySlug": "dystopian-sci-fi",
+    "narrator_name": "Koushik Sen",
+    "description": "Inside a mysteriously preserved diary recovered from the Sundarbans, eccentric genius scientist Professor Trilokeshwar Shonku chronicles his secret homemade rocket voyage from Giridih to Mars. Accompanied by his faithful servant Prahlad, his cat Newton, and the witty mechanical robot Bidhushekhar, Shonku confronts alien landscapes and cosmic wonders.",
+    "short_description": "Eccentric Bengali scientist Professor Shonku's thrilling space voyage to Mars with his talking robot Bidhushekhar.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/professor-shonku-byomjatrir-diary.webp",
+    "language": "bangla",
+    "tier_requirement": "premium",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 4300,
+    "rating_average": 4.94,
+    "ratings_count": 3210,
+    "publication_year": 1961,
+    "tags": ["sci-fi", "space", "mars", "robot", "scientist", "shonku", "invention", "কল্পবিজ্ঞান", "শঙ্কু", "মহাকাশ", "science fiction"],
+    "chapters": [
+      { "chapter_number": 1, "title": "The Rocket in Giridih", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 2100, "is_preview": true },
+      { "chapter_number": 2, "title": "Landing on the Red Planet", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 2200, "is_preview": false }
+    ],
+    "semanticDocument": "Title: Professor Shonku: Byomjatrir Diary (প্রফেসর শঙ্কু: ব্যোমযাত্রীর ডায়েরি)\nAuthor: Satyajit Ray | Category: Dystopian Sci-Fi\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: Giridih laboratory, deep outer space, red planet Mars, glowing stars, futuristic rocket cockpit\nMood & Feelings: Curious, futuristic wonder, inventive excitement, cosmic mystery, কল্পবিজ্ঞান, মহাকাশ যাত্রা, sci-fi, space rocket, robot\nThemes: Space exploration, artificial intelligence robot Bidhushekhar, alien encounter, scientific curiosity\nSynopsis: Professor Shonku builds a rocket in his backyard and blasts off to Mars alongside his sentient robot Bidhushekhar in Satyajit Ray's beloved sci-fi debut."
+  },
+  {
+    "title": "Dhaka 2099: The Flooded Spire",
+    "title_bengali": "ঢাকা ২০৯৯",
+    "slug": "dhaka-2099-the-flooded-spire",
+    "author": {
+      "name": "Arafat Rahman",
+      "slug": "arafat-rahman",
+      "bio": "Arafat Rahman is a contemporary Bangladeshi speculative fiction writer exploring climate-futurism and cyberpunk South Asia.",
+      "born_year": 1990,
+      "died_year": null,
+      "era": "Contemporary Bangladeshi Sci-Fi"
+    },
+    "categorySlug": "dystopian-sci-fi",
+    "narrator_name": "Koushik Sen",
+    "description": "In the year 2099, rising seas have turned Dhaka into a neon-lit vertical archipelago connected by glowing sky-bridges and hydro-rickshaws. When a rogue civic AI controlling the city's floodgates begins erasing memories of the old city, courier Zara teams up with an underground hacker to save the submerged districts before the next super-cyclone hits.",
+    "short_description": "A gripping cyberpunk climate-dystopia set in a neon, half-submerged future Dhaka ruled by a rogue AI.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/dhaka-2099-the-flooded-spire.webp",
+    "language": "english",
+    "tier_requirement": "plus",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 4600,
+    "rating_average": 4.86,
+    "ratings_count": 1190,
+    "publication_year": 2025,
+    "tags": ["cyberpunk", "dystopia", "sci-fi", "future", "dhaka", "ai", "climate", "futuristic", "ভবিষ্যৎ", "সাইবারপাঙ্ক", "ঢাকা"],
+    "chapters": [
+      { "chapter_number": 1, "title": "Neon Over the Buriganga", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 2250, "is_preview": true },
+      { "chapter_number": 2, "title": "Breaking the Floodgate AI", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 2350, "is_preview": false }
+    ],
+    "semanticDocument": "Title: Dhaka 2099: The Flooded Spire (ঢাকা ২০৯৯)\nAuthor: Arafat Rahman | Category: Dystopian Sci-Fi\nLanguage: English\nSetting & Atmosphere: Futuristic submerged Dhaka 2099, bioluminescent canals, neon sky-bridges, cyberpunk towers, hydro-rickshaws\nMood & Feelings: Dystopian tension, futuristic grit, high-tech rebellion, cyberpunk thriller, future dhaka, artificial intelligence\nThemes: Climate change survival, rogue AI tyranny, underground resistance, urban memory\nSynopsis: A fearless courier and an underground hacker fight a rogue civic AI to save submerged future Dhaka from a catastrophic engineered flood."
+  },
+  {
+    "title": "Midnight Adda: Urban Legends of Old Dhaka",
+    "title_bengali": "মিডনাইট আড্ডা",
+    "slug": "midnight-adda-urban-legends-of-old-dhaka",
+    "author": {
+      "name": "GolpoBook Originals",
+      "slug": "golpobook-originals",
+      "bio": "GolpoBook Originals produces immersive audio shows, cultural roundtables, and late-night storytelling podcasts from Dhaka and Kolkata.",
+      "born_year": null,
+      "died_year": null,
+      "era": "Contemporary Audio"
+    },
+    "categorySlug": "podcasts",
+    "narrator_name": "Rafi & Tasnim",
+    "description": "Pour a steaming cup of cha and join hosts Rafi and Tasnim on an Old Dhaka rooftop after midnight. Each episode dives into centuries-old street legends, forgotten Mughal alleys, eerie local folklore, and candid listener call-ins about unexplained mysteries across Bangladesh.",
+    "short_description": "Late-night rooftop podcast exploring Old Dhaka's forgotten alleys, street legends, and eerie urban folklore.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/midnight-adda-urban-legends-of-old-dhaka.webp",
+    "language": "bangla",
+    "tier_requirement": "free",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 3200,
+    "rating_average": 4.88,
+    "ratings_count": 1760,
+    "publication_year": 2026,
+    "tags": ["podcast", "adda", "dhaka", "urban legends", "talk show", "cha", "night", "পডকাস্ট", "আড্ডা", "পুরান ঢাকা", "podcast"],
+    "chapters": [
+      { "chapter_number": 1, "title": "Ep 01: Whispers of Lalbagh", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1600, "is_preview": true },
+      { "chapter_number": 2, "title": "Ep 02: The Midnight Rickshaw", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1600, "is_preview": false }
+    ],
+    "semanticDocument": "Title: Midnight Adda: Urban Legends of Old Dhaka (মিডনাইট আড্ডা)\nAuthor: GolpoBook Originals | Category: Podcasts\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: Old Dhaka rooftop at midnight, warm string lights, steaming cups of tea cha, studio mic, city nightscape\nMood & Feelings: Cozy, conversational, intriguing, late-night chilling hangout, আড্ডা, পডকাস্ট, পুরান ঢাকার গল্প, talk show, urban legend\nThemes: Oral history, city folklore, conversational storytelling, late-night culture\nSynopsis: A cozy late-night conversational podcast unpacking Old Dhaka's urban legends, hidden history, and listener-submitted mysteries."
+  },
+  {
+    "title": "Bangla Beat: Indie Music & Cinema",
+    "title_bengali": "বাংলা বিট",
+    "slug": "bangla-beat",
+    "author": {
+      "name": "GolpoBook Originals",
+      "slug": "golpobook-originals",
+      "bio": "GolpoBook Originals produces immersive audio shows, cultural roundtables, and late-night storytelling podcasts from Dhaka and Kolkata.",
+      "born_year": null,
+      "died_year": null,
+      "era": "Contemporary Audio"
+    },
+    "categorySlug": "podcasts",
+    "narrator_name": "Nabila Chowdhury",
+    "description": "From underground Dhaka rock bands and folk-fusion pioneers to independent Bengali filmmakers, Bangla Beat goes behind the scenes with the artists shaping modern Bengali pop culture. Expect candid studio stories, vinyl nostalgia, and creative inspiration.",
+    "short_description": "Candid podcast conversations with indie musicians, sound designers, and filmmakers shaping modern Bengali culture.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/bangla-beat.webp",
+    "language": "bangla",
+    "tier_requirement": "free",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 3000,
+    "rating_average": 4.79,
+    "ratings_count": 980,
+    "publication_year": 2026,
+    "tags": ["podcast", "music", "cinema", "indie", "culture", "interview", "band", "গান", "সিনেমা", "পডকাস্ট", "talk show"],
+    "chapters": [
+      { "chapter_number": 1, "title": "Ep 01: Soundtracks of Dhaka", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1500, "is_preview": true },
+      { "chapter_number": 2, "title": "Ep 02: New Wave Bengali Cinema", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1500, "is_preview": false }
+    ],
+    "semanticDocument": "Title: Bangla Beat: Indie Music & Cinema (বাংলা বিট)\nAuthor: GolpoBook Originals | Category: Podcasts\nLanguage: Banglish & English\nSetting & Atmosphere: Recording studio, vinyl records, headphones, acoustic guitars, indie film editing room\nMood & Feelings: Upbeat, creative, inspiring, cultural energy, গান, সিনেমা, পডকাস্ট, indie music, interviews, chill talk\nThemes: Independent Bengali bands, film scoring, creative process, youth culture\nSynopsis: An energetic cultural podcast featuring candid interviews with indie Bengali musicians and filmmakers about creativity and sound."
+  },
+  {
+    "title": "Moner Shokti: Mindfulness & Deep Focus",
+    "title_bengali": "মনের শক্তি",
+    "slug": "moner-shokti",
+    "author": {
+      "name": "Dr. Anirban Sen",
+      "slug": "dr-anirban-sen",
+      "bio": "Dr. Anirban Sen is a cognitive psychologist and mindfulness educator helping students and professionals overcome digital burnout.",
+      "born_year": 1978,
+      "died_year": null,
+      "era": "Contemporary Self-Development"
+    },
+    "categorySlug": "e-learning",
+    "narrator_name": "Dr. Anirban Sen",
+    "description": "Struggling with endless scrolling, exam stress, or mental fatigue? Moner Shokti blends practical neuroscience with calming Bengali mindfulness exercises to help you rebuild deep concentration, manage anxiety, and form sustainable daily study and work habits.",
+    "short_description": "Practical Bengali audio guide to beating distraction, calming anxiety, and mastering deep daily focus.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/moner-shokti.webp",
+    "language": "bangla",
+    "tier_requirement": "free",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 3400,
+    "rating_average": 4.85,
+    "ratings_count": 2110,
+    "publication_year": 2024,
+    "tags": ["self-help", "mindfulness", "focus", "study", "mental health", "habits", "calm", "অনুপ্রেরণা", "মনোযোগ", "মানসিক শান্তি", "e-learning"],
+    "chapters": [
+      { "chapter_number": 1, "title": "Breaking Digital Distraction", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1700, "is_preview": true },
+      { "chapter_number": 2, "title": "The 25-Minute Deep Focus Ritual", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1700, "is_preview": false }
+    ],
+    "semanticDocument": "Title: Moner Shokti: Mindfulness & Deep Focus (মনের শক্তি)\nAuthor: Dr. Anirban Sen | Category: E-Learning\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: Peaceful morning study space, calm breathing, quiet focus, mental clarity\nMood & Feelings: Calming, motivating, stress-relieving, clear-headed, মানসিক শান্তি, পড়াশোনায় মনোযোগ, self help, productivity, anxiety relief\nThemes: Attention span recovery, study habits, stress management, mindfulness, personal growth\nSynopsis: An actionable Bengali audio course teaching evidence-based focus techniques, habit loops, and calm mindfulness for students and creators."
+  },
+  {
+    "title": "Startup Bangladesh: Zero to Scale",
+    "title_bengali": "স্টার্টআপ বাংলাদেশ",
+    "slug": "startup-bangladesh",
+    "author": {
+      "name": "Tanvir Hasan",
+      "slug": "tanvir-hasan",
+      "bio": "Tanvir Hasan is a Dhaka-based venture advisor and technology strategist documenting South Asia's digital economy.",
+      "born_year": 1985,
+      "died_year": null,
+      "era": "Contemporary Business"
+    },
+    "categorySlug": "e-learning",
+    "narrator_name": "Tanvir Hasan",
+    "description": "How do founders build resilient tech products from scratch in emerging markets? Startup Bangladesh breaks down real-world lessons on product-market fit, mobile fintech, unit economics, fundraising, and team leadership tailored for aspiring Bangladeshi builders and university entrepreneurs.",
+    "short_description": "Actionable lessons on building, funding, and scaling tech startups in Bangladesh's digital economy.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/startup-bangladesh.webp",
+    "language": "english",
+    "tier_requirement": "plus",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 3900,
+    "rating_average": 4.81,
+    "ratings_count": 1340,
+    "publication_year": 2025,
+    "tags": ["startup", "business", "entrepreneurship", "fintech", "career", "tech", "bangladesh", "ব্যবসা", "স্টার্টআপ", "e-learning"],
+    "chapters": [
+      { "chapter_number": 1, "title": "Finding Real Local Problems", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1950, "is_preview": true },
+      { "chapter_number": 2, "title": "Unit Economics & First 1,000 Users", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1950, "is_preview": false }
+    ],
+    "semanticDocument": "Title: Startup Bangladesh: Zero to Scale (স্টার্টআপ বাংলাদেশ)\nAuthor: Tanvir Hasan | Category: E-Learning\nLanguage: English\nSetting & Atmosphere: Dhaka tech hubs, founder whiteboards, product launches, modern digital economy\nMood & Feelings: Ambitious, practical, entrepreneurial, career-boosting, ব্যবসা, উদ্যোক্তা, startup, business strategy, learning\nThemes: Product-market fit, fintech, bootstrapping, pitching investors, leadership\nSynopsis: A practical audiobook for founders and students explaining how to validate ideas, build lean products, and scale startups in Bangladesh."
+  },
+  {
+    "title": "Ekattorer Dinguli",
+    "title_bengali": "একাত্তরের দিনগুলি",
+    "slug": "ekattorer-dinguli",
+    "author": {
+      "name": "Jahanara Imam",
+      "slug": "jahanara-imam",
+      "bio": "Jahanara Imam (1929–1994), revered as 'Shaheed Janani', authored the iconic 1971 Liberation War memoir Ekattorer Dinguli.",
+      "born_year": 1929,
+      "died_year": 1994,
+      "era": "Bangladesh Liberation Era"
+    },
+    "categorySlug": "historical-liberation-war",
+    "narrator_name": "Bratati Bandyopadhyay",
+    "description": "Written as an intimate daily diary in occupied Dhaka from March to December 1971, Jahanara Imam chronicles the terror of curfews, the secret courage of guerrilla freedom fighters, and the heart-wrenching sacrifice of her young son Rumi. A deeply moving testament to the birth of Bangladesh.",
+    "short_description": "Shaheed Janani Jahanara Imam's unforgettable, deeply moving 1971 diary of courage, sacrifice, and freedom.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/ekattorer-dinguli.webp",
+    "language": "bangla",
+    "tier_requirement": "free",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 5200,
+    "rating_average": 4.98,
+    "ratings_count": 4890,
+    "publication_year": 1986,
+    "tags": ["1971", "liberation war", "history", "bangladesh", "muktijuddho", "diary", "patriotism", "মুক্তিযুদ্ধ", "একাত্তরের দিনগুলি", "ইতিহাস"],
+    "chapters": [
+      { "chapter_number": 1, "title": "March 1971: The Storm Begins", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1700, "is_preview": true },
+      { "chapter_number": 2, "title": "Rumi's Courage", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1750, "is_preview": false },
+      { "chapter_number": 3, "title": "December Dawn of Victory", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1750, "is_preview": false }
+    ],
+    "semanticDocument": "Title: Ekattorer Dinguli (একাত্তরের দিনগুলি)\nAuthor: Jahanara Imam | Category: Historical & Liberation War\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: Occupied Dhaka 1971, Elephant Road home, krishnochura trees, secret radio broadcasts, curfews\nMood & Feelings: Deeply emotional, patriotic, courageous, heartbreaking sacrifice, মুক্তিযুদ্ধ, স্বাধীনতার ইতিহাস, 1971 war, muktijuddho\nThemes: Bangladesh Liberation War 1971, mother's sacrifice, freedom fighters, resilience under occupation\nSynopsis: Jahanara Imam's poignant wartime diary capturing daily life in 1971 Dhaka, guerrilla resistance, and the ultimate sacrifice for Bangladesh's independence."
+  },
+  {
+    "title": "Anandamath",
+    "title_bengali": "আনন্দমঠ",
+    "slug": "anandamath",
+    "author": {
+      "name": "Bankim Chandra Chattopadhyay",
+      "slug": "bankim-chandra-chattopadhyay",
+      "bio": "Bankim Chandra Chattopadhyay (1838–1894) was a towering pioneer of the Bengali novel and author of Anandamath and Durgeshnandini.",
+      "born_year": 1838,
+      "died_year": 1894,
+      "era": "Bengal Renaissance"
+    },
+    "categorySlug": "historical-liberation-war",
+    "narrator_name": "Soumitra Chatterjee",
+    "description": "Set during the devastating Bengal famine of 1770, Anandamath follows a secret brotherhood of warrior-ascetics known as the Santans who retreat into deep sal forests to rise against colonial tyranny. Powerful, dramatic, and historic, this landmark novel inspired generations of freedom fighters.",
+    "short_description": "Bankim Chandra's stirring historical epic of the 18th-century Sannyasi rebellion amidst the Bengal famine.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/anandamath.webp",
+    "language": "bangla",
+    "tier_requirement": "premium",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 4700,
+    "rating_average": 4.90,
+    "ratings_count": 2670,
+    "publication_year": 1882,
+    "tags": ["historical", "rebellion", "freedom", "famine", "bankim", "classic", "epic", "আনন্দমঠ", "ইতিহাস", "বিদ্রোহ"],
+    "chapters": [
+      { "chapter_number": 1, "title": "The Forest Sanctuary", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 2300, "is_preview": true },
+      { "chapter_number": 2, "title": "The Song of the Motherland", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 2400, "is_preview": false }
+    ],
+    "semanticDocument": "Title: Anandamath (আনন্দমঠ)\nAuthor: Bankim Chandra Chattopadhyay | Category: Historical & Liberation War\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: 1770 Bengal famine, ancient sal forests, stone forest temple, colonial battlefields\nMood & Feelings: Heroic, patriotic, intense historical drama, rebellion, ইতিহাস, স্বাধীনতার লড়াই, sannyasi rebellion, historical epic\nThemes: Anti-colonial uprising, selfless sacrifice, brotherhood, patriotism\nSynopsis: Amidst the 1770 famine, warrior-ascetics unite inside a hidden forest sanctuary to fight colonial oppression in a landmark Bengali historical epic."
+  },
+  {
+    "title": "Shesher Kabita",
+    "title_bengali": "শেষের কবিতা",
+    "slug": "shesher-kabita",
+    "author": {
+      "name": "Rabindranath Tagore",
+      "slug": "rabindranath-tagore",
+      "bio": "Rabindranath Tagore (1861–1941) was a Nobel Prize-winning polymath, poet, novelist, and philosopher who reshaped Bengali literature and music.",
+      "born_year": 1861,
+      "died_year": 1941,
+      "era": "Bengal Renaissance"
+    },
+    "categorySlug": "romance-drama",
+    "narrator_name": "Bratati Bandyopadhyay",
+    "description": "When Oxford-educated, razor-tongued barrister Amit Ray collides—literally—with the graceful, fiercely independent Labanya on a misty winding road in Shillong, sparkling literary banter soon deepens into an unforgettable romance. Yet their love faces the bittersweet truth that some bonds shine brightest when left unbound.",
+    "short_description": "Tagore's lyrical, bittersweet romance of sparkling wit and timeless longing in the misty hills of Shillong.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/shesher-kabita.webp",
+    "language": "bangla",
+    "tier_requirement": "plus",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 4100,
+    "rating_average": 4.95,
+    "ratings_count": 4310,
+    "publication_year": 1929,
+    "tags": ["romance", "poetry", "love", "tagore", "shillong", "drama", "bittersweet", "প্রেমের গল্প", "শেষের কবিতা", "ভালোবাসা", "premer golpo"],
+    "chapters": [
+      { "chapter_number": 1, "title": "Collision in the Shillong Mist", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 2000, "is_preview": true },
+      { "chapter_number": 2, "title": "The Last Poem", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 2100, "is_preview": false }
+    ],
+    "semanticDocument": "Title: Shesher Kabita (শেষের কবিতা)\nAuthor: Rabindranath Tagore | Category: Romance & Drama\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: Misty Shillong pine hills, winding mountain roads, 1920s convertible, poetic evenings\nMood & Feelings: Romantic, lyrical, bittersweet longing, intellectual banter, প্রেমের গল্প, ভালোবাসা, বিরহ, premer golpo, poetic love story\nThemes: Ideal love vs practical marriage, independence, poetic soul-mates, graceful farewell\nSynopsis: Brilliant barrister Amit Ray and thoughtful Labanya fall deeply in love in the misty hills of Shillong, immortalized in Tagore's most poetic romance."
+  },
+  {
+    "title": "Devdas",
+    "title_bengali": "দেবদাস",
+    "slug": "devdas",
+    "author": {
+      "name": "Sarat Chandra Chattopadhyay",
+      "slug": "sarat-chandra-chattopadhyay",
+      "bio": "Sarat Chandra Chattopadhyay (1876–1938) was one of Bengal's most popular novelists, famed for his deep emotional realism and romantic tragedies.",
+      "born_year": 1876,
+      "died_year": 1938,
+      "era": "Bengal Renaissance & Modernism"
+    },
+    "categorySlug": "romance-drama",
+    "narrator_name": "Partha Ghosh",
+    "description": "Childhood sweethearts Devdas and Paro are torn apart by rigid zamindari pride and social class. Consumed by regret after failing to stand up for their love, Devdas spirals into heartbreak in the alleys of Calcutta, finding quiet solace only in the selfless devotion of Chandramukhi.",
+    "short_description": "Bengal's most iconic tragic love story of pride, unrequited devotion, and heartbreaking regret.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/devdas.webp",
+    "language": "bangla",
+    "tier_requirement": "free",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 4500,
+    "rating_average": 4.91,
+    "ratings_count": 3980,
+    "publication_year": 1917,
+    "tags": ["tragedy", "romance", "heartbreak", "sad", "devdas", "paro", "love", "বিরহ", "দুঃখের গল্প", "দেবদাস", "sad love story"],
+    "chapters": [
+      { "chapter_number": 1, "title": "Childhood in Talshonapur", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 2200, "is_preview": true },
+      { "chapter_number": 2, "title": "The Final Journey to Paro's Gate", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 2300, "is_preview": false }
+    ],
+    "semanticDocument": "Title: Devdas (দেবদাস)\nAuthor: Sarat Chandra Chattopadhyay | Category: Romance & Drama\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: Rural zamindar mansion, colonial Calcutta twilight courtyards, train journey, monsoon night\nMood & Feelings: Heartbreaking, deeply sad, tragic romance, intense longing and regret, মন খারাপ, দুঃখের প্রেমের গল্প, বিরহ, sad love story, emotional cry\nThemes: Unrequited love, social class pride, self-destruction, selfless devotion\nSynopsis: Separated from his childhood love Paro by family pride, Devdas descends into tragic sorrow while Chandramukhi watches over him with silent devotion."
   }
 ]

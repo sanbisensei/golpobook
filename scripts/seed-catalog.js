@@ -45,6 +45,7 @@ const supabase = createClient(supabaseUrl, serviceRoleKey, {
 });
 
 const shouldGenerateEmbeddings = process.argv.includes('--generate-embeddings');
+const shouldResetCatalog = process.argv.includes('--reset');
 
 /**
  * Generate 768-dimensional vector embedding via Google Gemini API
@@ -59,6 +60,7 @@ async function generateEmbedding(text, apiKey) {
       content: {
         parts: [{ text }],
       },
+      taskType: 'RETRIEVAL_DOCUMENT',
       outputDimensionality: 768,
     }),
   });
@@ -93,7 +95,15 @@ async function runSeed() {
   }
 
   const catalog = JSON.parse(fs.readFileSync(catalogPath, 'utf8'));
-  console.log(`Loaded ${catalog.length} verified public-domain audiobooks from seed-catalog.json.`);
+  console.log(`Loaded ${catalog.length} verified audiobooks from seed-catalog.json.`);
+
+  if (shouldResetCatalog) {
+    console.log('\n🧹 --reset flag detected: Clearing old audiobooks, chapters, and embeddings...');
+    await supabase.from('audiobook_embeddings').delete().neq('id', '00000000-0000-0000-0000-000000000000');
+    await supabase.from('chapters').delete().neq('id', '00000000-0000-0000-0000-000000000000');
+    await supabase.from('audiobooks').delete().neq('id', '00000000-0000-0000-0000-000000000000');
+    console.log('   ✓ Old catalog cleared cleanly.');
+  }
 
   // 1. Fetch Categories for UUID resolution
   console.log('\nFetching category taxonomy from Supabase...');

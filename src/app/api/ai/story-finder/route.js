@@ -109,14 +109,15 @@ export async function POST(request) {
     }
 
     // --------------------------------------------------------------------------
-    // STAGE 1: Query Normalization via Gemini 2.5 Flash
+    // STAGE 1: Query Normalization via Gemini 3.5 Flash Lite
     // --------------------------------------------------------------------------
     let normalizedKeywords = trimmedQuery;
     try {
-      const normalizerUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${geminiApiKey}`;
+      const normalizerUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent?key=${geminiApiKey}`;
       const normalizerRes = await fetch(normalizerUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        signal: AbortSignal.timeout(8000),
         body: JSON.stringify({
           contents: [
             {
@@ -161,6 +162,7 @@ Output: ভৌতিক রহস্য গা ছমছমে horror supernatur
         content: {
           parts: [{ text: normalizedKeywords }],
         },
+        taskType: "RETRIEVAL_QUERY",
         outputDimensionality: 768,
       }),
     });
@@ -189,7 +191,7 @@ Output: ভৌতিক রহস্য গা ছমছমে horror supernatur
     // --------------------------------------------------------------------------
     const { data: matchedRows, error: rpcErr } = await supabase.rpc("match_audiobooks", {
       query_embedding: queryVector,
-      match_threshold: 0.15,
+      match_threshold: 0.25,
       match_count: 4,
       p_language: language,
     });
@@ -252,10 +254,11 @@ Output: ভৌতিক রহস্য গা ছমছমে horror supernatur
         .map((b, idx) => `${idx + 1}. "${b.title}" (${b.title_bengali || ""}) by ${b.author_name} - ${b.short_description}`)
         .join("\n");
 
-      const synthesisUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${geminiApiKey}`;
+      const synthesisUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent?key=${geminiApiKey}`;
       const synthesisRes = await fetch(synthesisUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        signal: AbortSignal.timeout(8000),
         body: JSON.stringify({
           contents: [
             {
