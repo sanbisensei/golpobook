@@ -20,8 +20,10 @@ import { AudiobookCard } from "@/components/cards/audiobook-card";
 import { InspectorPlayer } from "@/components/audio/inspector-player";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { useAudio } from "@/context/audio-context";
 
 export function BrowseFeed({ initialCategories = [], initialAudiobooks = [], userPreferences = null }) {
+  const audio = useAudio();
   const [selectedCategory, setSelectedCategory] = useState("Everything");
   const hasOnboarding = Boolean(userPreferences?.onboarding_completed);
   const [onlyPreferredLanguages, setOnlyPreferredLanguages] = useState(hasOnboarding);
@@ -317,7 +319,10 @@ export function BrowseFeed({ initialCategories = [], initialAudiobooks = [], use
 
                     <div className="flex items-center gap-3 mt-4 pt-2">
                       <Button
-                        onClick={() => setSelectedBook(featuredBook)}
+                        onClick={() => {
+                          setSelectedBook(featuredBook);
+                          audio?.selectBook(featuredBook, true);
+                        }}
                         variant="primary"
                         size="default"
                         className="gap-2 cursor-pointer"

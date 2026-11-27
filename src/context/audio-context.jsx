@@ -8,6 +8,12 @@ import {
   useEffect,
   useCallback,
 } from "react";
+import {
+  getOfflineChapterBlobUrl,
+  saveChapterOffline,
+  isChapterCachedOffline,
+  getOfflineCachedCount,
+} from "@/lib/offline-audio";
 
 const AudioContext = createContext(null);
 
@@ -75,6 +81,28 @@ export function AudioProvider({ children }) {
       setStreamError(null);
 
       try {
+        // 1. Check IndexedDB offline cache first (REQ-30)
+        const offlineUrl = await getOfflineChapterBlobUrl(chapter.id);
+        if (offlineUrl && audioRef.current) {
+          audioRef.current.src = offlineUrl;
+          audioRef.current.playbackRate = parseFloat(playbackSpeed) || 1.0;
+          audioRef.current.load();
+          if (resumeAtSeconds > 0) {
+            audioRef.current.currentTime = resumeAtSeconds;
+            setCurrentTime(resumeAtSeconds);
+          }
+          if (autoPlay) {
+            try {
+              await audioRef.current.play();
+              setIsPlaying(true);
+            } catch {
+              setIsPlaying(false);
+            }
+          }
+          setIsLoading(false);
+          return;
+        }
+
         const response = await fetch("/api/audio/stream-url", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -297,6 +325,63 @@ export function AudioProvider({ children }) {
     }
   }, []);
 
+  // Cache authorized chapter in IndexedDB for offline playback (REQ-30)
+  const downloadChapterOffline = useCallback(async (book, chapter) => {
+    if (!book || !chapter) return { ok: false };
+    try {
+      const already = await isChapterCachedOffline(chapter.id);
+      if (already) return { ok: true, cached: true };
+
+      const res = await fetch("/api/audio/stream-url", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ chapterId: chapter.id }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setStreamError({
+          type: data.error || "GENERIC_ERROR",
+          message: data.message || "Sign in to download chapters.",
+          requiredTier: data.requiredTier,
+        });
+        return { ok: false };
+      }
+
+      const plan = data.tierCapabilities?.plan || "guest";
+      if (plan === "guest" || plan === "free") {
+        setStreamError({
+          type: "UPGRADE_REQUIRED",
+          requiredTier: "plus",
+          message: "Offline caching requires Plus (1 chapter) or Premium (unlimited).",
+        });
+        return { ok: false };
+      }
+      if (plan === "plus") {
+        const count = await getOfflineCachedCount();
+        if (count >= 1) {
+          setStreamError({
+            type: "UPGRADE_REQUIRED",
+            requiredTier: "premium",
+            message: "Plus allows 1 offline chapter at a time. Upgrade to Premium for unlimited offline chapters.",
+          });
+          return { ok: false };
+        }
+      }
+
+      const audioRes = await fetch(data.streamUrl);
+      const blob = await audioRes.blob();
+      await saveChapterOffline({
+        chapterId: chapter.id,
+        audiobookId: book.id,
+        title: chapter.title,
+        blob,
+      });
+      return { ok: true, cached: true };
+    } catch {
+      return { ok: false };
+    }
+  }, []);
+
   // Sleep Timer 1-second tick
   useEffect(() => {
     if (sleepMode !== "countdown" || !isPlaying) return;
@@ -339,6 +424,7 @@ export function AudioProvider({ children }) {
         cycleSpeed,
         toggleMute,
         setSleepTimer,
+        downloadChapterOffline,
       }}
     >
       {/* Persistent Hidden HTML5 Audio Element */}

@@ -18,6 +18,7 @@ import { InspectorPlayer } from "@/components/audio/inspector-player";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { formatDurationSeconds } from "@/lib/audiobook-utils";
+import { useAudio } from "@/context/audio-context";
 
 const QUICK_MOODS = [
   "voyer golpo",
@@ -28,6 +29,7 @@ const QUICK_MOODS = [
 ];
 
 export default function StoryFinderPage() {
+  const audio = useAudio();
   const [query, setQuery] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [results, setResults] = useState(null);
@@ -233,7 +235,7 @@ export default function StoryFinderPage() {
                           <div className="mt-3.5 pt-3 border-t border-ink/15 flex items-center gap-2">
                             <button
                               onClick={() => {
-                                setSelectedBook({
+                                const mapped = {
                                   id: book.id,
                                   title: book.title,
                                   titleBengali: book.title_bengali,
@@ -245,7 +247,9 @@ export default function StoryFinderPage() {
                                   category: book.category_name,
                                   tier: book.tier_requirement,
                                   synopsis: book.short_description,
-                                });
+                                };
+                                setSelectedBook(mapped);
+                                audio?.selectBook(mapped, true);
                               }}
                               className="flex-1 py-1.5 bg-terracotta text-white font-sans text-[11px] font-bold uppercase tracking-wider border-[1.5px] border-ink rounded-lg shadow-hard-2xs hover:shadow-hard-xs hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all flex items-center justify-center gap-1 cursor-pointer"
                             >

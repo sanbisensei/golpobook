@@ -12,8 +12,8 @@ import {
   Calendar,
   ChevronLeft,
   Headphones,
-  CheckCircle,
   Share2,
+  Check,
 } from "lucide-react";
 import { TopHeader } from "@/components/layout/top-header";
 import { NavigationRail } from "@/components/layout/navigation-rail";
@@ -22,11 +22,50 @@ import { InspectorPlayer } from "@/components/audio/inspector-player";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { formatChapterDuration } from "@/lib/audiobook-utils";
+import { useAudio } from "@/context/audio-context";
 
 export function BookDetailView({ book }) {
   const [selectedBook, setSelectedBook] = useState(book);
+  const [copied, setCopied] = useState(false);
+  const [saved, setSaved] = useState(false);
+  const audio = useAudio();
 
   if (!book) return null;
+
+  const handlePlayChapter = async (idx = 0) => {
+    setSelectedBook({ ...book });
+    if (audio) {
+      await audio.selectBook(book, false);
+      await audio.selectChapter(idx);
+    }
+  };
+
+  const handleBookmark = async () => {
+    try {
+      const res = await fetch("/api/bookmarks", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ audiobookId: book.id }),
+      });
+      if (res.status === 401 && audio) {
+        audio.setStreamError({
+          type: "AUTH_REQUIRED",
+          message: "Sign in to save audiobooks to your library.",
+        });
+      } else if (res.ok) {
+        const d = await res.json();
+        setSaved(Boolean(d.bookmarked));
+      }
+    } catch {}
+  };
+
+  const handleShare = async () => {
+    try {
+      await navigator.clipboard.writeText(`${window.location.origin}/audiobooks/${book.slug}`);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {}
+  };
 
   return (
     <div className="min-h-screen bg-background flex flex-col font-sans">
@@ -144,7 +183,7 @@ export function BookDetailView({ book }) {
                   {/* Primary Action Buttons */}
                   <div className="flex flex-wrap items-center gap-3 mt-6">
                     <Button
-                      onClick={() => setSelectedBook({ ...book })}
+                      onClick={() => handlePlayChapter(0)}
                       variant="primary"
                       size="default"
                       className="gap-2 shadow-hard-xs hover:shadow-hard-sm cursor-pointer"
@@ -154,21 +193,23 @@ export function BookDetailView({ book }) {
                     </Button>
 
                     <Button
+                      onClick={handleBookmark}
                       variant="outline"
                       size="default"
                       className="gap-2 shadow-hard-xs hover:shadow-hard-sm cursor-pointer"
                     >
-                      <Bookmark className="size-4" />
-                      <span>Add to Library</span>
+                      <Bookmark className={`size-4 ${saved ? "fill-terracotta text-terracotta" : ""}`} />
+                      <span>{saved ? "Saved in Library" : "Add to Library"}</span>
                     </Button>
 
                     <Button
+                      onClick={handleShare}
                       variant="ghost"
                       size="default"
                       className="gap-2 cursor-pointer"
                     >
-                      <Share2 className="size-4" />
-                      <span>Share</span>
+                      {copied ? <Check className="size-4 text-emerald-600" /> : <Share2 className="size-4" />}
+                      <span>{copied ? "Copied" : "Share"}</span>
                     </Button>
                   </div>
                 </div>
@@ -219,7 +260,7 @@ export function BookDetailView({ book }) {
                     <div
                       key={ch.id || idx}
                       className="p-3.5 flex items-center justify-between hover:bg-muted/40 transition-colors group cursor-pointer"
-                      onClick={() => setSelectedBook({ ...book })}
+                      onClick={() => handlePlayChapter(idx)}
                     >
                       <div className="flex items-center gap-3 min-w-0 pr-3">
                         <span className="font-mono text-xs font-bold text-muted-foreground w-6 text-right shrink-0">

@@ -18,10 +18,12 @@ import {
   Volume2,
   VolumeX,
   Check,
+  Download,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { formatChapterDuration } from "@/lib/audiobook-utils";
 import { useAudio } from "@/context/audio-context";
+import { isChapterCachedOffline } from "@/lib/offline-audio";
 
 export function InspectorPlayer({ book }) {
   const audio = useAudio();
@@ -31,6 +33,8 @@ export function InspectorPlayer({ book }) {
   const [bookmarkLoading, setBookmarkLoading] = useState(false);
   const [showTimerMenu, setShowTimerMenu] = useState(false);
   const [shareCopied, setShareCopied] = useState(false);
+  const [isOfflineCached, setIsOfflineCached] = useState(false);
+  const [isDownloading, setIsDownloading] = useState(false);
 
   // Sync incoming book prop into global AudioProvider when it changes
   useEffect(() => {
@@ -57,15 +61,29 @@ export function InspectorPlayer({ book }) {
     };
   }, [displayBook?.id]);
 
-  if (!displayBook || !audio) return null;
-
-  const isSameAsActive = audio.activeBook?.id === displayBook.id;
+  const isSameAsActive = audio?.activeBook?.id === displayBook?.id;
   const chapters =
-    displayBook.chapters && displayBook.chapters.length > 0
+    displayBook?.chapters && displayBook.chapters.length > 0
       ? displayBook.chapters
       : [];
   const activeChapterIndex = isSameAsActive ? audio.activeChapterIndex : 0;
   const currentChapter = chapters[activeChapterIndex] || null;
+
+  // Check if current chapter is cached offline in IndexedDB
+  useEffect(() => {
+    if (!currentChapter?.id) return;
+    isChapterCachedOffline(currentChapter.id).then(setIsOfflineCached).catch(() => {});
+  }, [currentChapter?.id]);
+
+  if (!displayBook || !audio) return null;
+
+  const handleDownloadOffline = async () => {
+    if (!currentChapter || isDownloading) return;
+    setIsDownloading(true);
+    const res = await audio.downloadChapterOffline(displayBook, currentChapter);
+    if (res?.ok) setIsOfflineCached(true);
+    setIsDownloading(false);
+  };
   const isPlaying = isSameAsActive ? audio.isPlaying : false;
   const isLoading = isSameAsActive ? audio.isLoading : false;
   const currentTime = isSameAsActive ? audio.currentTime : 0;
@@ -139,7 +157,7 @@ export function InspectorPlayer({ book }) {
       : "Timer";
 
   return (
-    <aside className="w-full lg:w-96 bg-card border-t lg:border-t-0 lg:border-l-[1.5px] border-ink p-5 lg:p-6 flex flex-col justify-start select-none overflow-y-auto">
+    <aside className="w-full lg:w-96 bg-card border-t lg:border-t-0 lg:border-l-[1.5px] border-ink p-5 lg:p-6 flex flex-col justify-start select-none lg:sticky lg:top-16 lg:h-[calc(100vh-4rem)] lg:overflow-y-auto shrink-0">
       {/* Inspector Header */}
       <div className="flex items-center justify-between border-b-[1.5px] border-ink pb-3 mb-5">
         <div className="flex items-center gap-2">
@@ -402,9 +420,9 @@ export function InspectorPlayer({ book }) {
         </div>
       </div>
 
-      {/* Triple Segmented Utility Strip (Wired: Save, Sleep Timer, Share) */}
+      {/* Quad Segmented Utility Strip (Wired: Save, Offline Download, Sleep Timer, Share) */}
       <div className="mt-4 relative">
-        <div className="grid grid-cols-3 border-[1.5px] border-ink bg-card rounded-lg overflow-hidden text-center text-xs divide-x-[1.5px] divide-ink shadow-hard-xs hover:shadow-hard-sm transition-all duration-150">
+        <div className="grid grid-cols-4 border-[1.5px] border-ink bg-card rounded-lg overflow-hidden text-center text-xs divide-x-[1.5px] divide-ink shadow-hard-xs hover:shadow-hard-sm transition-all duration-150">
           <button
             type="button"
             onClick={handleToggleBookmark}
@@ -419,6 +437,27 @@ export function InspectorPlayer({ book }) {
               className={`size-3.5 ${isBookmarked ? "fill-terracotta text-terracotta" : ""}`}
             />
             <span>{isBookmarked ? "Saved" : "Save"}</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={handleDownloadOffline}
+            disabled={isDownloading}
+            className={`py-2 font-sans font-bold text-[10px] uppercase flex items-center justify-center gap-1 cursor-pointer transition-colors ${
+              isOfflineCached
+                ? "bg-emerald-500/15 text-emerald-700 dark:text-emerald-400"
+                : "hover:bg-muted active:bg-muted/80"
+            }`}
+            title="Cache chapter in browser IndexedDB for offline listening"
+          >
+            {isDownloading ? (
+              <Loader2 className="size-3.5 animate-spin" />
+            ) : isOfflineCached ? (
+              <Check className="size-3.5" />
+            ) : (
+              <Download className="size-3.5" />
+            )}
+            <span>{isOfflineCached ? "Cached" : "Offline"}</span>
           </button>
 
           <button
