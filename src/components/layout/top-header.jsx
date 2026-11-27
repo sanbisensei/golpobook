@@ -44,6 +44,7 @@ const HEADER_CATEGORIES = [
 export function TopHeader() {
   const router = useRouter();
   const [user, setUser] = useState(null);
+  const [planId, setPlanId] = useState("free");
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -79,15 +80,31 @@ export function TopHeader() {
   useEffect(() => {
     const supabase = createClient();
 
+    const fetchPlan = async (uid) => {
+      if (!uid) {
+        setPlanId("free");
+        return;
+      }
+      const { data: sub } = await supabase
+        .from("user_subscriptions")
+        .select("plan_id")
+        .eq("user_id", uid)
+        .eq("status", "active")
+        .maybeSingle();
+      setPlanId(sub?.plan_id || "free");
+    };
+
     // 1. Initial user session check
     supabase.auth
       .getUser()
       .then(({ data: { user } }) => {
         setUser(user);
+        fetchPlan(user?.id);
         setLoading(false);
       })
       .catch(() => {
         setUser(null);
+        setPlanId("free");
         setLoading(false);
       });
 
@@ -95,7 +112,9 @@ export function TopHeader() {
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((_event, session) => {
-      setUser(session?.user ?? null);
+      const nextUser = session?.user ?? null;
+      setUser(nextUser);
+      fetchPlan(nextUser?.id);
       setLoading(false);
     });
 
@@ -262,6 +281,16 @@ export function TopHeader() {
 
       {/* Right User Actions & Auth State */}
       <div className="flex items-center gap-3">
+        {planId === "free" && (
+          <Link
+            href="/pricing"
+            className="inline-flex items-center gap-1.5 h-9 px-3 bg-terracotta text-white font-sans text-xs font-bold uppercase tracking-wider border-[1.5px] border-ink rounded-lg shadow-hard-xs hover:bg-terracotta-dark hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-hard-sm transition-all duration-150 shrink-0"
+          >
+            <Sparkles className="size-3.5 fill-white" />
+            <span>Upgrade</span>
+          </Link>
+        )}
+
         <div className="relative">
           <button
             onClick={() => setNotifOpen((v) => !v)}
@@ -334,7 +363,11 @@ export function TopHeader() {
                     {fullName}
                   </span>
                   <span className="font-mono text-[10px] text-terracotta font-bold uppercase mt-0.5">
-                    Free Explorer
+                    {planId === "premium"
+                      ? "GolpoBook Premium"
+                      : planId === "plus"
+                      ? "GolpoBook Plus"
+                      : "Free Explorer"}
                   </span>
                 </div>
                 <ChevronDown className="size-3.5 text-muted-foreground group-hover:text-foreground hidden sm:block transition-colors" />
@@ -349,7 +382,11 @@ export function TopHeader() {
                     {user.email}
                   </span>
                   <span className="inline-block mt-1 px-1.5 py-0.5 bg-canary text-ink border border-ink font-mono text-[9px] font-bold uppercase">
-                    Free Explorer
+                    {planId === "premium"
+                      ? "GolpoBook Premium"
+                      : planId === "plus"
+                      ? "GolpoBook Plus"
+                      : "Free Explorer"}
                   </span>
                 </DropdownMenuLabel>
 

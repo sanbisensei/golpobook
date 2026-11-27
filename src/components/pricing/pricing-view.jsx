@@ -16,13 +16,13 @@ const PLANS = [
     badge: "FREE",
     monthly: 0,
     yearly: 0,
-    desc: "Start listening to Free-tier Bengali & English classics and Chapter 1 previews.",
+    desc: "Explore Free catalog + Chapter 1 previews with ads.",
     features: [
-      "All Free-tier audiobooks & podcasts",
-      "Chapter 1 previews of Plus & Premium books",
-      "1.0x standard playback speed",
-      "1 AI Story Finder search / day",
-      "Includes house sponsor banners",
+      "Free catalog + Chapter 1 previews of paid books",
+      "1.0x playback speed (no offline downloads)",
+      "1 AI Story Finder (RAG) search / day",
+      "Limited bookmarks & playlists (no cross-device sync)",
+      "Includes house sponsor ads",
     ],
   },
   {
@@ -31,14 +31,14 @@ const PLANS = [
     badge: "POPULAR",
     monthly: 20,
     yearly: 200,
-    desc: "Ad-free listening, Plus catalog, faster playback speeds, Sleep Timer, and offline caching.",
+    desc: "Ad-free listening, 1.5x speed, 1 offline download & AI summaries.",
     features: [
-      "Everything in Free + Full Plus catalog",
-      "Ad-free experience across the app",
-      "Up to 1.5x playback speed + unrestricted scrubbing",
-      "Sleep Timer (15m / 30m / Chapter End)",
-      "1 chapter cached offline + 10 AI searches/day",
-      "5 AI Book Summaries / month",
+      "Full Plus catalog + limited Exclusive titles",
+      "100% Ad-free listening across the app",
+      "Up to 1.5x playback speed + Sleep Timer",
+      "Offline download: 1 chapter/podcast cached",
+      "Unlimited bookmarks + Cross-device sync",
+      "10 AI Story Finder searches/day + 5 AI Summaries/mo",
     ],
   },
   {
@@ -47,16 +47,29 @@ const PLANS = [
     badge: "BEST VALUE",
     monthly: 120,
     yearly: 1200,
-    desc: "Unlimited access to every title, 2.0x speed, unlimited offline chapters, and maximum AI.",
+    desc: "Everything unlocked: 2.0x speed, chapter-wise downloads & unlimited AI.",
     features: [
-      "Unlimited access to ALL 69+ books & exclusives",
+      "Full catalog + ALL Exclusive audiobooks & podcasts",
+      "100% Ad-free listening experience",
       "Up to 2.0x playback speed + Sleep Timer",
-      "Unlimited offline cached chapters (IndexedDB)",
-      "50 AI Story Finder searches / day",
-      "30 AI Book Summaries / month",
-      "Priority access to new releases",
+      "Chapter-wise offline downloads (unlimited)",
+      "Unlimited bookmarks + Cross-device sync",
+      "Unlimited AI Story Finder + 30 AI Summaries/mo",
     ],
   },
+];
+
+const COMPARISON_ROWS = [
+  { feature: "Advertisements", free: "With ads", plus: "Ad-free", premium: "Ad-free" },
+  { feature: "Playback Speed", free: "1x only", plus: "Up to 1.5x", premium: "Up to 2x" },
+  { feature: "Offline Downloads", free: "Not available", plus: "1 download", premium: "Chapter-wise" },
+  { feature: "Audiobook Access", free: "Free + previews", plus: "Full included", premium: "Full included" },
+  { feature: "Sleep Timer", free: "Not available", plus: "Yes", premium: "Yes" },
+  { feature: "Bookmarks & Playlists", free: "Limited", plus: "Unlimited", premium: "Unlimited" },
+  { feature: "Cross-Device Sync", free: "Not available", plus: "Yes", premium: "Yes" },
+  { feature: "AI Book Summaries", free: "Not available", plus: "5 / month", premium: "30 / month" },
+  { feature: "Exclusive Content", free: "Not available", plus: "Limited", premium: "Full access" },
+  { feature: "AI Story Finder (RAG)", free: "1 search / day", plus: "10 searches / day", premium: "Unlimited" },
 ];
 
 export function PricingView({ currentPlan = "free", isLoggedIn = false, paymentStatus = null }) {
@@ -195,15 +208,17 @@ export function PricingView({ currentPlan = "free", isLoggedIn = false, paymentS
                       </span>
                     </div>
 
-                    <p className="font-mono text-xs text-muted-foreground leading-relaxed">
+                    <p className="font-sans text-sm text-foreground/80 font-medium leading-snug">
                       {plan.desc}
                     </p>
 
-                    <ul className="space-y-2 pt-3 border-t border-ink/15 font-mono text-xs">
+                    <ul className="space-y-3 pt-4 border-t-[1.5px] border-ink/20 font-sans text-sm font-semibold text-foreground">
                       {plan.features.map((f) => (
-                        <li key={f} className="flex items-start gap-2">
-                          <Check className="size-4 text-terracotta shrink-0 mt-0.5" />
-                          <span>{f}</span>
+                        <li key={f} className="flex items-start gap-2.5">
+                          <span className="size-5 rounded-md bg-terracotta/15 border border-ink/30 flex items-center justify-center shrink-0 mt-0.5">
+                            <Check className="size-3.5 text-terracotta stroke-[2.5]" />
+                          </span>
+                          <span className="leading-snug">{f}</span>
                         </li>
                       ))}
                     </ul>
@@ -242,6 +257,40 @@ export function PricingView({ currentPlan = "free", isLoggedIn = false, paymentS
             <ShieldCheck className="size-4 text-terracotta" />
             <span>Secured by SSLCommerz Sandbox • Instant subscription activation via IPN</span>
           </div>
+
+          {/* Full Proposal Feature Comparison Table */}
+          <section className="border-[1.5px] border-ink bg-card rounded-xl shadow-hard-sm overflow-hidden">
+            <div className="p-5 border-b-[1.5px] border-ink bg-canary/30">
+              <h2 className="font-heading text-xl font-bold uppercase tracking-tight">
+                Compare All Tier Benefits
+              </h2>
+              <p className="font-sans text-sm text-foreground/80 mt-0.5">
+                Side-by-side breakdown of Free, Plus (৳20/mo), and Premium (৳120/mo).
+              </p>
+            </div>
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse">
+                <thead>
+                  <tr className="border-b-[1.5px] border-ink bg-muted/40 font-heading text-xs uppercase tracking-wider">
+                    <th className="p-3.5">Feature</th>
+                    <th className="p-3.5">Free (৳0)</th>
+                    <th className="p-3.5 text-terracotta">Plus (৳20/mo)</th>
+                    <th className="p-3.5 text-ink">Premium (৳120/mo)</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-ink/15 font-sans text-sm">
+                  {COMPARISON_ROWS.map((row) => (
+                    <tr key={row.feature} className="hover:bg-muted/20">
+                      <td className="p-3.5 font-bold text-foreground">{row.feature}</td>
+                      <td className="p-3.5 text-muted-foreground">{row.free}</td>
+                      <td className="p-3.5 font-semibold text-terracotta">{row.plus}</td>
+                      <td className="p-3.5 font-bold text-foreground">{row.premium}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
         </main>
       </div>
 
