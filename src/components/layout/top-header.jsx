@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
@@ -13,6 +13,7 @@ import {
   LogOut,
   BookOpen,
   ChevronDown,
+  X,
 } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import { Button } from "@/components/ui/button";
@@ -26,10 +27,52 @@ import {
   DropdownMenuLabel,
 } from "@/components/ui/dropdown-menu";
 
+const HEADER_CATEGORIES = [
+  { slug: "all", name: "All Genres" },
+  { slug: "adventure-thriller", name: "Adventure & Thriller" },
+  { slug: "classic-literature", name: "Classic Literature" },
+  { slug: "mystery-detective", name: "Mystery & Detective" },
+  { slug: "supernatural-horror", name: "Supernatural & Horror" },
+  { slug: "magical-realism", name: "Magical Realism" },
+  { slug: "dystopian-sci-fi", name: "Dystopian Sci-Fi" },
+  { slug: "podcasts", name: "Podcasts" },
+  { slug: "e-learning", name: "E-Learning" },
+  { slug: "historical-liberation-war", name: "Historical & 1971" },
+  { slug: "romance-drama", name: "Romance & Drama" },
+];
+
 export function TopHeader() {
   const router = useRouter();
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const searchBoxRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (searchBoxRef.current && !searchBoxRef.current.contains(e.target)) {
+        setIsSearchOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const navigateToSearch = (q = searchQuery, cat = selectedCategory) => {
+    const params = new URLSearchParams();
+    if (q.trim()) params.set("q", q.trim());
+    if (cat && cat !== "all") params.set("category", cat);
+    const qs = params.toString();
+    setIsSearchOpen(false);
+    router.push(qs ? `/audiobooks?${qs}` : "/audiobooks");
+  };
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    navigateToSearch(searchQuery, selectedCategory);
+  };
 
   useEffect(() => {
     const supabase = createClient();
@@ -107,17 +150,97 @@ export function TopHeader() {
         </Link>
       </div>
 
-      {/* Center Search Strip (Vivid Canary Yellow) */}
+      {/* Center Search Strip (Vivid Canary Yellow) with Click-to-Filter Categories */}
       <div className="flex-1 max-w-xl mx-4 hidden md:flex items-center gap-2">
-        <div className="relative flex-1 flex items-center">
-          <div className="absolute left-3 pointer-events-none flex items-center text-ink-muted">
-            <Search className="size-4" />
-          </div>
-          <input
-            className="w-full h-9 pl-9 pr-3 bg-canary text-ink border-[1.5px] border-ink rounded-lg font-mono text-xs placeholder:text-ink-muted/80 focus:outline-none focus:bg-card shadow-hard-xs focus:shadow-hard-sm focus:-translate-y-0.5 transition-all duration-150"
-            placeholder="Title, author, narrator, or topic..."
-            type="text"
-          />
+        <div ref={searchBoxRef} className="relative flex-1">
+          <form onSubmit={handleSearchSubmit} className="relative flex items-center">
+            <div className="absolute left-3 pointer-events-none flex items-center text-ink-muted">
+              <Search className="size-4" />
+            </div>
+            <input
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              onFocus={() => setIsSearchOpen(true)}
+              onClick={() => setIsSearchOpen(true)}
+              className="w-full h-9 pl-9 pr-8 bg-canary text-ink border-[1.5px] border-ink rounded-lg font-mono text-xs placeholder:text-ink-muted/80 focus:outline-none focus:bg-card shadow-hard-xs focus:shadow-hard-sm focus:-translate-y-0.5 transition-all duration-150"
+              placeholder="Search title, author, or click to filter genres..."
+              type="text"
+            />
+            {(searchQuery || selectedCategory !== "all") && (
+              <button
+                type="button"
+                onClick={() => {
+                  setSearchQuery("");
+                  setSelectedCategory("all");
+                }}
+                aria-label="Clear search"
+                className="absolute right-2.5 text-ink-muted hover:text-ink cursor-pointer"
+              >
+                <X className="size-3.5" />
+              </button>
+            )}
+          </form>
+
+          {/* Click-to-Filter Category Popover */}
+          {isSearchOpen && (
+            <div className="absolute left-0 right-0 top-11 z-50 bg-card border-[1.5px] border-ink rounded-xl shadow-hard-md p-3.5 space-y-3">
+              <div className="flex items-center justify-between border-b border-ink/15 pb-2">
+                <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+                  Filter by Genre
+                </span>
+                {selectedCategory !== "all" && (
+                  <button
+                    type="button"
+                    onClick={() => setSelectedCategory("all")}
+                    className="font-mono text-[10px] text-terracotta hover:underline cursor-pointer"
+                  >
+                    Reset Genre
+                  </button>
+                )}
+              </div>
+
+              <div className="flex flex-wrap gap-1.5">
+                {HEADER_CATEGORIES.map((cat) => {
+                  const active = selectedCategory === cat.slug;
+                  return (
+                    <button
+                      key={cat.slug}
+                      type="button"
+                      onClick={() => {
+                        setSelectedCategory(cat.slug);
+                        navigateToSearch(searchQuery, cat.slug);
+                      }}
+                      className={`px-2.5 py-1 rounded-md border-[1.5px] border-ink font-sans text-[10px] font-bold uppercase tracking-wider transition-all cursor-pointer ${
+                        active
+                          ? "bg-terracotta text-white shadow-hard-2xs"
+                          : "bg-muted/60 text-foreground hover:bg-canary hover:text-ink"
+                      }`}
+                    >
+                      {cat.name}
+                    </button>
+                  );
+                })}
+              </div>
+
+              <div className="flex items-center justify-between pt-2 border-t border-ink/15 gap-2">
+                <button
+                  type="button"
+                  onClick={() => navigateToSearch(searchQuery, selectedCategory)}
+                  className="px-3 py-1.5 rounded-lg bg-terracotta text-white border-[1.5px] border-ink font-sans text-[10px] font-bold uppercase tracking-wider shadow-hard-2xs hover:bg-terracotta-dark cursor-pointer"
+                >
+                  {searchQuery.trim() ? `Search "${searchQuery.trim()}"` : "Browse Selected Genre"}
+                </button>
+                <Link
+                  href="/story-finder"
+                  onClick={() => setIsSearchOpen(false)}
+                  className="inline-flex items-center gap-1 font-mono text-[10px] font-bold text-terracotta hover:underline"
+                >
+                  <Sparkles className="size-3" />
+                  <span>Try AI Mood Search</span>
+                </Link>
+              </div>
+            </div>
+          )}
         </div>
 
         {/* AI Story Finder Trigger Button */}

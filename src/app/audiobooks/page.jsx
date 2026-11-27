@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { createClient } from "@/lib/supabase/server";
-import { BrowseFeed } from "@/components/browse/browse-feed";
+import { BrowseCatalog } from "@/components/browse/browse-catalog";
 import { mapAudiobookRecord } from "@/lib/audiobook-utils";
 
 export const metadata = {
@@ -29,6 +29,7 @@ async function AudiobooksDataLoader() {
       short_description,
       cover_image_url,
       language,
+      category_id,
       tier_requirement,
       is_featured,
       is_published,
@@ -48,7 +49,7 @@ async function AudiobooksDataLoader() {
   const audiobooks = (audiobooksData || []).map(mapAudiobookRecord);
 
   return (
-    <BrowseFeed
+    <BrowseCatalog
       initialCategories={categories}
       initialAudiobooks={audiobooks}
     />

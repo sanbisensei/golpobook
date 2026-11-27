@@ -126,11 +126,16 @@ export async function POST(request) {
                   text: `You are a search query normalizer for GolpoBook, a Bengali & English audiobook platform.
 The user submitted this search query in English, Bengali, or phonetic Banglish: "${trimmedQuery}".
 Analyze the mood, feeling, themes, and literary genres implied by this query.
-Output ONLY a concise, space-separated string of search keywords in both Bengali script and English.
-Do NOT include explanations or punctuation.
+Output ONLY a concise, space-separated string of high-signal genre, theme, and mood keywords in both English and Bengali script.
+CRITICAL RULES:
+1. Do NOT include generic filler words like "audiobook", "book", "story", "golpo", "অডিওবুক", or "গল্প".
+2. Focus strictly on the specific genre, emotion, and topic (e.g., self-help, habits, focus, leadership, horror, sci-fi, romance, war).
+3. Do NOT include explanations or punctuation.
 Example:
 Input: "amar voyer golpo shunte mon chacche"
-Output: ভৌতিক রহস্য গা ছমছমে horror supernatural thriller ghost mystery suspense`,
+Output: horror supernatural ghost haunted dread thriller ভৌতিক ভূতের গা-ছমছমে রহস্য ভয়
+Input: "amar self help audio books shunte mon chacche"
+Output: self-help personal-development habits productivity focus leadership motivation আত্মউন্নয়ন স্বনির্ভরতা অনুপ্রেরণা অভ্যাস মনোযোগ`,
                 },
               ],
             },
@@ -192,7 +197,7 @@ Output: ভৌতিক রহস্য গা ছমছমে horror supernatur
     const { data: matchedRows, error: rpcErr } = await supabase.rpc("match_audiobooks", {
       query_embedding: queryVector,
       match_threshold: 0.25,
-      match_count: 4,
+      match_count: 6,
       p_language: language,
     });
 

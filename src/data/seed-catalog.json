@@ -24,11 +24,43 @@
     "rating_average": 4.95,
     "ratings_count": 3890,
     "publication_year": 1937,
-    "tags": ["adventure", "thriller", "africa", "jungle", "expedition", "diamond", "shankar", "bunyip", "survival", "ভ্রমণ", "রোমাঞ্চ", "চাঁদের পাহাড়", "avijan"],
+    "tags": [
+      "adventure",
+      "thriller",
+      "africa",
+      "jungle",
+      "expedition",
+      "diamond",
+      "shankar",
+      "bunyip",
+      "survival",
+      "ভ্রমণ",
+      "রোমাঞ্চ",
+      "চাঁদের পাহাড়",
+      "avijan"
+    ],
     "chapters": [
-      { "chapter_number": 1, "title": "Leaving for Africa", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1820, "is_preview": true },
-      { "chapter_number": 2, "title": "The Lion of Salisbury Bridge", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 2100, "is_preview": false },
-      { "chapter_number": 3, "title": "The Mountain of the Moon", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 2450, "is_preview": false }
+      {
+        "chapter_number": 1,
+        "title": "Leaving for Africa",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1820,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "The Lion of Salisbury Bridge",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2100,
+        "is_preview": false
+      },
+      {
+        "chapter_number": 3,
+        "title": "The Mountain of the Moon",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2450,
+        "is_preview": false
+      }
     ],
     "semanticDocument": "Title: Chander Pahar (চাঁদের পাহাড়)\nAuthor: Bibhutibhushan Bandyopadhyay | Category: Adventure & Thriller\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: African wilderness, Uganda railway, Richtersveld mountains, Kalahari desert, volcanic caves, dense jungle\nMood & Feelings: Adrenaline, courage, survival peril, wanderlust, exploration, রোমাঞ্চকর অভিযান, ভ্রমণ কাহিনি, rohomanchokor, adventure\nThemes: Diamond mines, mythical beast Bunyip, black mambas, wilderness survival, friendship\nSynopsis: Young Shankar leaves rural Bengal for East Africa, teaming up with Portuguese explorer Diego Alvarez to find hidden diamond mines while surviving ferocious predators and the legendary Bunyip."
   },
@@ -57,10 +89,35 @@
     "rating_average": 4.82,
     "ratings_count": 1420,
     "publication_year": 1938,
-    "tags": ["sundarbans", "adventure", "thriller", "tiger", "treasure", "mangrove", "boat", "expedition", "সুন্দরবন", "অভিযান", "বাঘ", "romanchokor"],
+    "tags": [
+      "sundarbans",
+      "adventure",
+      "thriller",
+      "tiger",
+      "treasure",
+      "mangrove",
+      "boat",
+      "expedition",
+      "সুন্দরবন",
+      "অভিযান",
+      "বাঘ",
+      "romanchokor"
+    ],
     "chapters": [
-      { "chapter_number": 1, "title": "Into the Tidal Creeks", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1950, "is_preview": true },
-      { "chapter_number": 2, "title": "Roar in the Mangroves", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 2250, "is_preview": false }
+      {
+        "chapter_number": 1,
+        "title": "Into the Tidal Creeks",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1950,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Roar in the Mangroves",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2250,
+        "is_preview": false
+      }
     ],
     "semanticDocument": "Title: Sundarbaner Atanko (সুন্দরবনের আতঙ্ক)\nAuthor: Hemendra Kumar Roy | Category: Adventure & Thriller\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: Sundarbans mangrove forest, misty river creeks, wooden expedition boat, Royal Bengal Tiger territory, Bengal delta\nMood & Feelings: High suspense, wilderness danger, treasure hunt excitement, রোমাঞ্চ, আতঙ্ক, সুন্দরবনের গল্প, tiger, jungle boat\nThemes: Pirate treasure, survival in mangrove swamps, comradeship, wild nature\nSynopsis: Explorers Bimal and Kumar sail into the uncharted Sundarbans delta seeking a sunken treasure while evading ruthless rivals, river tempests, and man-eating tigers."
   },
@@ -89,11 +146,43 @@
     "rating_average": 4.97,
     "ratings_count": 5120,
     "publication_year": 1929,
-    "tags": ["classic", "village", "childhood", "nostalgia", "apu", "durga", "monsoon", "kash", "rural bengal", "পথের পাঁচালী", "শৈশব", "গ্রাম", "nostalgic"],
+    "tags": [
+      "classic",
+      "village",
+      "childhood",
+      "nostalgia",
+      "apu",
+      "durga",
+      "monsoon",
+      "kash",
+      "rural bengal",
+      "পথের পাঁচালী",
+      "শৈশব",
+      "গ্রাম",
+      "nostalgic"
+    ],
     "chapters": [
-      { "chapter_number": 1, "title": "The Village of Nischindipur", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1700, "is_preview": true },
-      { "chapter_number": 2, "title": "The Train in the Kash Fields", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1850, "is_preview": false },
-      { "chapter_number": 3, "title": "Monsoon & Farewell", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1850, "is_preview": false }
+      {
+        "chapter_number": 1,
+        "title": "The Village of Nischindipur",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1700,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "The Train in the Kash Fields",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1850,
+        "is_preview": false
+      },
+      {
+        "chapter_number": 3,
+        "title": "Monsoon & Farewell",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1850,
+        "is_preview": false
+      }
     ],
     "semanticDocument": "Title: Pather Panchali (পথের পাঁচালী)\nAuthor: Bibhutibhushan Bandyopadhyay | Category: Classic Literature\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: Rural Bengal village Nischindipur, bamboo groves, blooming white kash flower fields, monsoon rain, distant steam locomotive\nMood & Feelings: Nostalgic, tender, emotional, innocent childhood, bittersweet sorrow, শৈশবের স্মৃতি, গ্রামের গল্প, বৃষ্টি, brishti, gramer golpo\nThemes: Sibling bond between Apu and Durga, poverty with dignity, wonder of nature, growing up\nSynopsis: Follow young Apu and his sister Durga through the joys, hardships, and unforgettable seasonal beauty of rural Bengal."
   },
@@ -122,10 +211,33 @@
     "rating_average": 4.88,
     "ratings_count": 2150,
     "publication_year": 1910,
-    "tags": ["tagore", "classic", "philosophy", "identity", "kolkata", "renaissance", "intellectual", "রবীন্দ্রনাথ", "গোরা", "ক্লাসিক"],
+    "tags": [
+      "tagore",
+      "classic",
+      "philosophy",
+      "identity",
+      "kolkata",
+      "renaissance",
+      "intellectual",
+      "রবীন্দ্রনাথ",
+      "গোরা",
+      "ক্লাসিক"
+    ],
     "chapters": [
-      { "chapter_number": 1, "title": "Debates on the Hooghly", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 2300, "is_preview": true },
-      { "chapter_number": 2, "title": "The Truth of Identity", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 2500, "is_preview": false }
+      {
+        "chapter_number": 1,
+        "title": "Debates on the Hooghly",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2300,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "The Truth of Identity",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2500,
+        "is_preview": false
+      }
     ],
     "semanticDocument": "Title: Gora (গোরা)\nAuthor: Rabindranath Tagore | Category: Classic Literature\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: 19th-century Calcutta colonial salons, Hooghly riverbanks, Bengal Renaissance intellectual circles\nMood & Feelings: Thought-provoking, philosophical, passionate, dignified, গভীর জীবনবোধ, ক্লাসিক উপন্যাস, rabindranath, intellectual\nThemes: Cultural identity, nationalism vs humanism, social reform, spiritual awakening, love across ideological divides\nSynopsis: Passionate idealist Gora champions strict tradition until love and a hidden truth about his origins shatter his worldview and awaken a broader humanity."
   },
@@ -154,10 +266,35 @@
     "rating_average": 4.93,
     "ratings_count": 3420,
     "publication_year": 1932,
-    "tags": ["detective", "mystery", "byomkesh", "murder", "kolkata", "noir", "whodunit", "crime", "গোয়েন্দা", "ব্যোমকেশ", "রহস্য", "goyenda"],
+    "tags": [
+      "detective",
+      "mystery",
+      "byomkesh",
+      "murder",
+      "kolkata",
+      "noir",
+      "whodunit",
+      "crime",
+      "গোয়েন্দা",
+      "ব্যোমকেশ",
+      "রহস্য",
+      "goyenda"
+    ],
     "chapters": [
-      { "chapter_number": 1, "title": "The Boarding House on Harrison Road", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 2000, "is_preview": true },
-      { "chapter_number": 2, "title": "The Truth-Seeker's Trap", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 2100, "is_preview": false }
+      {
+        "chapter_number": 1,
+        "title": "The Boarding House on Harrison Road",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2000,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "The Truth-Seeker's Trap",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2100,
+        "is_preview": false
+      }
     ],
     "semanticDocument": "Title: Byomkesh Bakshi: Satyanweshi (ব্যোমকেশ বক্সী: সত্যান্বেষী)\nAuthor: Sharadindu Bandyopadhyay | Category: Mystery & Detective\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: 1930s colonial Calcutta, foggy Harrison Road, vintage trams, gaslit alleyways, boarding house\nMood & Feelings: Cerebral, suspenseful, noir detective intrigue, গোয়েন্দা গল্প, খুনের রহস্য, goyenda golpo, detective murder mystery\nThemes: Deductive reasoning, crime syndicate, disguise, truth-seeking partnership between Byomkesh and Ajit\nSynopsis: When murders strike a Calcutta mess house, Byomkesh Bakshi uses razor-sharp psychology and deduction to unmask a cunning drug lord."
   },
@@ -186,11 +323,41 @@
     "rating_average": 4.96,
     "ratings_count": 4650,
     "publication_year": 1971,
-    "tags": ["feluda", "detective", "mystery", "rajasthan", "jaisalmer", "adventure", "satyajit ray", "ফেলুদা", "সোনার কেল্লা", "গোয়েন্দা", "goyenda"],
+    "tags": [
+      "feluda",
+      "detective",
+      "mystery",
+      "rajasthan",
+      "jaisalmer",
+      "adventure",
+      "satyajit ray",
+      "ফেলুদা",
+      "সোনার কেল্লা",
+      "গোয়েন্দা",
+      "goyenda"
+    ],
     "chapters": [
-      { "chapter_number": 1, "title": "The Boy Who Remembered", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1600, "is_preview": true },
-      { "chapter_number": 2, "title": "Train Through the Thar Desert", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1650, "is_preview": false },
-      { "chapter_number": 3, "title": "Inside the Golden Fortress", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1700, "is_preview": false }
+      {
+        "chapter_number": 1,
+        "title": "The Boy Who Remembered",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1600,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Train Through the Thar Desert",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1650,
+        "is_preview": false
+      },
+      {
+        "chapter_number": 3,
+        "title": "Inside the Golden Fortress",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1700,
+        "is_preview": false
+      }
     ],
     "semanticDocument": "Title: Feluda: Sonar Kella (ফেলুদা: সোনার কেল্লা)\nAuthor: Satyajit Ray | Category: Mystery & Detective\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: Kolkata to Jodhpur and Jaisalmer desert, camel rides, ancient sandstone golden fortress, night train\nMood & Feelings: Clever, exciting, witty camaraderie, brain-teasing sleuth chase, ফেলুদা, গোয়েন্দা অভিযান, mystery thriller\nThemes: Parapsychology, reincarnation memories, kidnapping, hidden gems, sharp observation\nSynopsis: Detective Feluda, Topshe, and thriller writer Jatayu travel across Rajasthan's Thar desert to outsmart criminals hunting a boy's past-life treasure."
   },
@@ -219,10 +386,35 @@
     "rating_average": 4.89,
     "ratings_count": 2340,
     "publication_year": 1895,
-    "tags": ["horror", "ghost", "haunted", "supernatural", "spooky", "scary", "folklore", "ভৌতিক", "ভূতের গল্প", "ভয়", "bhoot", "voyer golpo"],
+    "tags": [
+      "horror",
+      "ghost",
+      "haunted",
+      "supernatural",
+      "spooky",
+      "scary",
+      "folklore",
+      "ভৌতিক",
+      "ভূতের গল্প",
+      "ভয়",
+      "bhoot",
+      "voyer golpo"
+    ],
     "chapters": [
-      { "chapter_number": 1, "title": "The Locked Courtyard", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1850, "is_preview": true },
-      { "chapter_number": 2, "title": "Whispers by the Banyan Tree", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1950, "is_preview": false }
+      {
+        "chapter_number": 1,
+        "title": "The Locked Courtyard",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1850,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Whispers by the Banyan Tree",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1950,
+        "is_preview": false
+      }
     ],
     "semanticDocument": "Title: Nishithini: The Midnight Mansion (নিশীথিনী ও অপচ্ছায়া)\nAuthor: Trailokyanath Mukhopadhyay | Category: Supernatural & Horror\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: Haunted abandoned Bengali zamindar palace, banyan roots, foggy midnight swamp, flickering oil lamp, creaking doors\nMood & Feelings: Terrifying, eerie, spine-chilling dread, creepy night fear, ভৌতিক, গা ছমছমে, ভূতের গল্প, ভয়ের গল্প, bhooter golpo, voyer golpo, scary ghost story\nThemes: Bengali folk ghosts, curses, nocturnal apparitions, haunted village legends\nSynopsis: Stranded at a decaying zamindar mansion during a dark storm, a traveler uncovers the terrifying spectral curse haunting the estate."
   },
@@ -251,10 +443,35 @@
     "rating_average": 4.94,
     "ratings_count": 2980,
     "publication_year": 1985,
-    "tags": ["occult", "horror", "tantrik", "dark", "supernatural", "mystery", "shmashan", "তারানাথ তান্ত্রিক", "ভৌতিক", "অলৌকিক", "bhoot", "horror"],
+    "tags": [
+      "occult",
+      "horror",
+      "tantrik",
+      "dark",
+      "supernatural",
+      "mystery",
+      "shmashan",
+      "তারানাথ তান্ত্রিক",
+      "ভৌতিক",
+      "অলৌকিক",
+      "bhoot",
+      "horror"
+    ],
     "chapters": [
-      { "chapter_number": 1, "title": "The Moonless Night at the Shmashan", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 2150, "is_preview": true },
-      { "chapter_number": 2, "title": "The Forbidden Mantra", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 2250, "is_preview": false }
+      {
+        "chapter_number": 1,
+        "title": "The Moonless Night at the Shmashan",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2150,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "The Forbidden Mantra",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2250,
+        "is_preview": false
+      }
     ],
     "semanticDocument": "Title: Taranath Tantrik: The Dark Rituals (তারানাথ তান্ত্রিক)\nAuthor: Taradas Bandyopadhyay | Category: Supernatural & Horror\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: North Calcutta parlor, midnight cremation ground shmashan, sacred ritual fire, Amavasya darkness, swirling smoke\nMood & Feelings: Dark occult dread, eerie mysticism, intense supernatural suspense, অলৌকিক, তন্ত্রমন্ত্র, ভয়ের গল্প, voyer golpo, black magic, dark horror\nThemes: Tantric mysticism, ghosts, curses, supernatural encounters, esoteric secrets\nSynopsis: Mystic Taranath shares chilling firsthand accounts of dark esoteric rituals, haunted riverbanks, and terrifying encounters beyond the mortal realm."
   },
@@ -283,10 +500,34 @@
     "rating_average": 4.92,
     "ratings_count": 3100,
     "publication_year": 1923,
-    "tags": ["comedy", "fantasy", "surreal", "whimsical", "children", "funny", "poetry", "আবোল তাবোল", "হাসির গল্প", "ছোটদের", "mojar golpo"],
+    "tags": [
+      "comedy",
+      "fantasy",
+      "surreal",
+      "whimsical",
+      "children",
+      "funny",
+      "poetry",
+      "আবোল তাবোল",
+      "হাসির গল্প",
+      "ছোটদের",
+      "mojar golpo"
+    ],
     "chapters": [
-      { "chapter_number": 1, "title": "The Hansjaru & Friends", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1350, "is_preview": true },
-      { "chapter_number": 2, "title": "Kingdom of Crazy Rules", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1450, "is_preview": false }
+      {
+        "chapter_number": 1,
+        "title": "The Hansjaru & Friends",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1350,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Kingdom of Crazy Rules",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1450,
+        "is_preview": false
+      }
     ],
     "semanticDocument": "Title: Abol Tabol: Rhymes of the Absurd (আবোল তাবোল)\nAuthor: Sukumar Ray | Category: Magical Realism\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: Surreal dreamland, floating teapots, upside-down skies, whimsical mythical creatures\nMood & Feelings: Cheerful, hilarious, whimsical, lighthearted joy, stress-relief laughter, মজার গল্প, হাসির ছড়া, mojar golpo, funny lighthearted\nThemes: Nonsense humor, gentle social satire, boundless imagination, playful wordplay\nSynopsis: A delightful audio performance of Sukumar Ray's surreal world of bizarre hybrid animals, eccentric uncles, and hilarious absurdities."
   },
@@ -315,10 +556,33 @@
     "rating_average": 4.91,
     "ratings_count": 2870,
     "publication_year": 1907,
-    "tags": ["fairytale", "folklore", "magic", "kids", "bedtime", "fantasy", "rupkotha", "ঠাকুরমার ঝুলি", "রূপকথা", "ছোটদের গল্প"],
+    "tags": [
+      "fairytale",
+      "folklore",
+      "magic",
+      "kids",
+      "bedtime",
+      "fantasy",
+      "rupkotha",
+      "ঠাকুরমার ঝুলি",
+      "রূপকথা",
+      "ছোটদের গল্প"
+    ],
     "chapters": [
-      { "chapter_number": 1, "title": "Kiranmala & the Golden Palace", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1800, "is_preview": true },
-      { "chapter_number": 2, "title": "The Winged Pakkhiraj", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1800, "is_preview": false }
+      {
+        "chapter_number": 1,
+        "title": "Kiranmala & the Golden Palace",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1800,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "The Winged Pakkhiraj",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1800,
+        "is_preview": false
+      }
     ],
     "semanticDocument": "Title: Thakumar Jhuli (ঠাকুরমার ঝুলি)\nAuthor: Dakshinaranjan Mitra Majumder | Category: Magical Realism\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: Enchanted fairy-tale kingdoms, floating crystal palaces, magical forests, starry bedtime skies\nMood & Feelings: Magical, cozy, nostalgic bedtime comfort, wonder, রূপকথার গল্প, ছোটদের গল্প, rupkotha, fairy tale, magic\nThemes: Good triumphing over evil, talking birds, golden and silver wands, mythical Rakshasas\nSynopsis: Classic Bengali folk fairy tales brought alive with princes, enchanted princesses, winged horses, and heartwarming moral magic."
   },
@@ -347,10 +611,34 @@
     "rating_average": 4.94,
     "ratings_count": 3210,
     "publication_year": 1961,
-    "tags": ["sci-fi", "space", "mars", "robot", "scientist", "shonku", "invention", "কল্পবিজ্ঞান", "শঙ্কু", "মহাকাশ", "science fiction"],
+    "tags": [
+      "sci-fi",
+      "space",
+      "mars",
+      "robot",
+      "scientist",
+      "shonku",
+      "invention",
+      "কল্পবিজ্ঞান",
+      "শঙ্কু",
+      "মহাকাশ",
+      "science fiction"
+    ],
     "chapters": [
-      { "chapter_number": 1, "title": "The Rocket in Giridih", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 2100, "is_preview": true },
-      { "chapter_number": 2, "title": "Landing on the Red Planet", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 2200, "is_preview": false }
+      {
+        "chapter_number": 1,
+        "title": "The Rocket in Giridih",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2100,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Landing on the Red Planet",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2200,
+        "is_preview": false
+      }
     ],
     "semanticDocument": "Title: Professor Shonku: Byomjatrir Diary (প্রফেসর শঙ্কু: ব্যোমযাত্রীর ডায়েরি)\nAuthor: Satyajit Ray | Category: Dystopian Sci-Fi\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: Giridih laboratory, deep outer space, red planet Mars, glowing stars, futuristic rocket cockpit\nMood & Feelings: Curious, futuristic wonder, inventive excitement, cosmic mystery, কল্পবিজ্ঞান, মহাকাশ যাত্রা, sci-fi, space rocket, robot\nThemes: Space exploration, artificial intelligence robot Bidhushekhar, alien encounter, scientific curiosity\nSynopsis: Professor Shonku builds a rocket in his backyard and blasts off to Mars alongside his sentient robot Bidhushekhar in Satyajit Ray's beloved sci-fi debut."
   },
@@ -379,10 +667,34 @@
     "rating_average": 4.86,
     "ratings_count": 1190,
     "publication_year": 2025,
-    "tags": ["cyberpunk", "dystopia", "sci-fi", "future", "dhaka", "ai", "climate", "futuristic", "ভবিষ্যৎ", "সাইবারপাঙ্ক", "ঢাকা"],
+    "tags": [
+      "cyberpunk",
+      "dystopia",
+      "sci-fi",
+      "future",
+      "dhaka",
+      "ai",
+      "climate",
+      "futuristic",
+      "ভবিষ্যৎ",
+      "সাইবারপাঙ্ক",
+      "ঢাকা"
+    ],
     "chapters": [
-      { "chapter_number": 1, "title": "Neon Over the Buriganga", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 2250, "is_preview": true },
-      { "chapter_number": 2, "title": "Breaking the Floodgate AI", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 2350, "is_preview": false }
+      {
+        "chapter_number": 1,
+        "title": "Neon Over the Buriganga",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2250,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Breaking the Floodgate AI",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2350,
+        "is_preview": false
+      }
     ],
     "semanticDocument": "Title: Dhaka 2099: The Flooded Spire (ঢাকা ২০৯৯)\nAuthor: Arafat Rahman | Category: Dystopian Sci-Fi\nLanguage: English\nSetting & Atmosphere: Futuristic submerged Dhaka 2099, bioluminescent canals, neon sky-bridges, cyberpunk towers, hydro-rickshaws\nMood & Feelings: Dystopian tension, futuristic grit, high-tech rebellion, cyberpunk thriller, future dhaka, artificial intelligence\nThemes: Climate change survival, rogue AI tyranny, underground resistance, urban memory\nSynopsis: A fearless courier and an underground hacker fight a rogue civic AI to save submerged future Dhaka from a catastrophic engineered flood."
   },
@@ -411,10 +723,34 @@
     "rating_average": 4.88,
     "ratings_count": 1760,
     "publication_year": 2026,
-    "tags": ["podcast", "adda", "dhaka", "urban legends", "talk show", "cha", "night", "পডকাস্ট", "আড্ডা", "পুরান ঢাকা", "podcast"],
+    "tags": [
+      "podcast",
+      "adda",
+      "dhaka",
+      "urban legends",
+      "talk show",
+      "cha",
+      "night",
+      "পডকাস্ট",
+      "আড্ডা",
+      "পুরান ঢাকা",
+      "podcast"
+    ],
     "chapters": [
-      { "chapter_number": 1, "title": "Ep 01: Whispers of Lalbagh", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1600, "is_preview": true },
-      { "chapter_number": 2, "title": "Ep 02: The Midnight Rickshaw", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1600, "is_preview": false }
+      {
+        "chapter_number": 1,
+        "title": "Ep 01: Whispers of Lalbagh",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1600,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Ep 02: The Midnight Rickshaw",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1600,
+        "is_preview": false
+      }
     ],
     "semanticDocument": "Title: Midnight Adda: Urban Legends of Old Dhaka (মিডনাইট আড্ডা)\nAuthor: GolpoBook Originals | Category: Podcasts\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: Old Dhaka rooftop at midnight, warm string lights, steaming cups of tea cha, studio mic, city nightscape\nMood & Feelings: Cozy, conversational, intriguing, late-night chilling hangout, আড্ডা, পডকাস্ট, পুরান ঢাকার গল্প, talk show, urban legend\nThemes: Oral history, city folklore, conversational storytelling, late-night culture\nSynopsis: A cozy late-night conversational podcast unpacking Old Dhaka's urban legends, hidden history, and listener-submitted mysteries."
   },
@@ -443,10 +779,34 @@
     "rating_average": 4.79,
     "ratings_count": 980,
     "publication_year": 2026,
-    "tags": ["podcast", "music", "cinema", "indie", "culture", "interview", "band", "গান", "সিনেমা", "পডকাস্ট", "talk show"],
+    "tags": [
+      "podcast",
+      "music",
+      "cinema",
+      "indie",
+      "culture",
+      "interview",
+      "band",
+      "গান",
+      "সিনেমা",
+      "পডকাস্ট",
+      "talk show"
+    ],
     "chapters": [
-      { "chapter_number": 1, "title": "Ep 01: Soundtracks of Dhaka", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1500, "is_preview": true },
-      { "chapter_number": 2, "title": "Ep 02: New Wave Bengali Cinema", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1500, "is_preview": false }
+      {
+        "chapter_number": 1,
+        "title": "Ep 01: Soundtracks of Dhaka",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1500,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Ep 02: New Wave Bengali Cinema",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1500,
+        "is_preview": false
+      }
     ],
     "semanticDocument": "Title: Bangla Beat: Indie Music & Cinema (বাংলা বিট)\nAuthor: GolpoBook Originals | Category: Podcasts\nLanguage: Banglish & English\nSetting & Atmosphere: Recording studio, vinyl records, headphones, acoustic guitars, indie film editing room\nMood & Feelings: Upbeat, creative, inspiring, cultural energy, গান, সিনেমা, পডকাস্ট, indie music, interviews, chill talk\nThemes: Independent Bengali bands, film scoring, creative process, youth culture\nSynopsis: An energetic cultural podcast featuring candid interviews with indie Bengali musicians and filmmakers about creativity and sound."
   },
@@ -475,10 +835,34 @@
     "rating_average": 4.85,
     "ratings_count": 2110,
     "publication_year": 2024,
-    "tags": ["self-help", "mindfulness", "focus", "study", "mental health", "habits", "calm", "অনুপ্রেরণা", "মনোযোগ", "মানসিক শান্তি", "e-learning"],
+    "tags": [
+      "self-help",
+      "mindfulness",
+      "focus",
+      "study",
+      "mental health",
+      "habits",
+      "calm",
+      "অনুপ্রেরণা",
+      "মনোযোগ",
+      "মানসিক শান্তি",
+      "e-learning"
+    ],
     "chapters": [
-      { "chapter_number": 1, "title": "Breaking Digital Distraction", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1700, "is_preview": true },
-      { "chapter_number": 2, "title": "The 25-Minute Deep Focus Ritual", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1700, "is_preview": false }
+      {
+        "chapter_number": 1,
+        "title": "Breaking Digital Distraction",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1700,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "The 25-Minute Deep Focus Ritual",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1700,
+        "is_preview": false
+      }
     ],
     "semanticDocument": "Title: Moner Shokti: Mindfulness & Deep Focus (মনের শক্তি)\nAuthor: Dr. Anirban Sen | Category: E-Learning\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: Peaceful morning study space, calm breathing, quiet focus, mental clarity\nMood & Feelings: Calming, motivating, stress-relieving, clear-headed, মানসিক শান্তি, পড়াশোনায় মনোযোগ, self help, productivity, anxiety relief\nThemes: Attention span recovery, study habits, stress management, mindfulness, personal growth\nSynopsis: An actionable Bengali audio course teaching evidence-based focus techniques, habit loops, and calm mindfulness for students and creators."
   },
@@ -507,10 +891,33 @@
     "rating_average": 4.81,
     "ratings_count": 1340,
     "publication_year": 2025,
-    "tags": ["startup", "business", "entrepreneurship", "fintech", "career", "tech", "bangladesh", "ব্যবসা", "স্টার্টআপ", "e-learning"],
+    "tags": [
+      "startup",
+      "business",
+      "entrepreneurship",
+      "fintech",
+      "career",
+      "tech",
+      "bangladesh",
+      "ব্যবসা",
+      "স্টার্টআপ",
+      "e-learning"
+    ],
     "chapters": [
-      { "chapter_number": 1, "title": "Finding Real Local Problems", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1950, "is_preview": true },
-      { "chapter_number": 2, "title": "Unit Economics & First 1,000 Users", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1950, "is_preview": false }
+      {
+        "chapter_number": 1,
+        "title": "Finding Real Local Problems",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1950,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Unit Economics & First 1,000 Users",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1950,
+        "is_preview": false
+      }
     ],
     "semanticDocument": "Title: Startup Bangladesh: Zero to Scale (স্টার্টআপ বাংলাদেশ)\nAuthor: Tanvir Hasan | Category: E-Learning\nLanguage: English\nSetting & Atmosphere: Dhaka tech hubs, founder whiteboards, product launches, modern digital economy\nMood & Feelings: Ambitious, practical, entrepreneurial, career-boosting, ব্যবসা, উদ্যোক্তা, startup, business strategy, learning\nThemes: Product-market fit, fintech, bootstrapping, pitching investors, leadership\nSynopsis: A practical audiobook for founders and students explaining how to validate ideas, build lean products, and scale startups in Bangladesh."
   },
@@ -539,11 +946,40 @@
     "rating_average": 4.98,
     "ratings_count": 4890,
     "publication_year": 1986,
-    "tags": ["1971", "liberation war", "history", "bangladesh", "muktijuddho", "diary", "patriotism", "মুক্তিযুদ্ধ", "একাত্তরের দিনগুলি", "ইতিহাস"],
+    "tags": [
+      "1971",
+      "liberation war",
+      "history",
+      "bangladesh",
+      "muktijuddho",
+      "diary",
+      "patriotism",
+      "মুক্তিযুদ্ধ",
+      "একাত্তরের দিনগুলি",
+      "ইতিহাস"
+    ],
     "chapters": [
-      { "chapter_number": 1, "title": "March 1971: The Storm Begins", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1700, "is_preview": true },
-      { "chapter_number": 2, "title": "Rumi's Courage", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1750, "is_preview": false },
-      { "chapter_number": 3, "title": "December Dawn of Victory", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 1750, "is_preview": false }
+      {
+        "chapter_number": 1,
+        "title": "March 1971: The Storm Begins",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1700,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Rumi's Courage",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1750,
+        "is_preview": false
+      },
+      {
+        "chapter_number": 3,
+        "title": "December Dawn of Victory",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1750,
+        "is_preview": false
+      }
     ],
     "semanticDocument": "Title: Ekattorer Dinguli (একাত্তরের দিনগুলি)\nAuthor: Jahanara Imam | Category: Historical & Liberation War\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: Occupied Dhaka 1971, Elephant Road home, krishnochura trees, secret radio broadcasts, curfews\nMood & Feelings: Deeply emotional, patriotic, courageous, heartbreaking sacrifice, মুক্তিযুদ্ধ, স্বাধীনতার ইতিহাস, 1971 war, muktijuddho\nThemes: Bangladesh Liberation War 1971, mother's sacrifice, freedom fighters, resilience under occupation\nSynopsis: Jahanara Imam's poignant wartime diary capturing daily life in 1971 Dhaka, guerrilla resistance, and the ultimate sacrifice for Bangladesh's independence."
   },
@@ -569,13 +1005,36 @@
     "is_featured": false,
     "is_published": true,
     "total_duration_seconds": 4700,
-    "rating_average": 4.90,
+    "rating_average": 4.9,
     "ratings_count": 2670,
     "publication_year": 1882,
-    "tags": ["historical", "rebellion", "freedom", "famine", "bankim", "classic", "epic", "আনন্দমঠ", "ইতিহাস", "বিদ্রোহ"],
+    "tags": [
+      "historical",
+      "rebellion",
+      "freedom",
+      "famine",
+      "bankim",
+      "classic",
+      "epic",
+      "আনন্দমঠ",
+      "ইতিহাস",
+      "বিদ্রোহ"
+    ],
     "chapters": [
-      { "chapter_number": 1, "title": "The Forest Sanctuary", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 2300, "is_preview": true },
-      { "chapter_number": 2, "title": "The Song of the Motherland", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 2400, "is_preview": false }
+      {
+        "chapter_number": 1,
+        "title": "The Forest Sanctuary",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2300,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "The Song of the Motherland",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2400,
+        "is_preview": false
+      }
     ],
     "semanticDocument": "Title: Anandamath (আনন্দমঠ)\nAuthor: Bankim Chandra Chattopadhyay | Category: Historical & Liberation War\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: 1770 Bengal famine, ancient sal forests, stone forest temple, colonial battlefields\nMood & Feelings: Heroic, patriotic, intense historical drama, rebellion, ইতিহাস, স্বাধীনতার লড়াই, sannyasi rebellion, historical epic\nThemes: Anti-colonial uprising, selfless sacrifice, brotherhood, patriotism\nSynopsis: Amidst the 1770 famine, warrior-ascetics unite inside a hidden forest sanctuary to fight colonial oppression in a landmark Bengali historical epic."
   },
@@ -604,10 +1063,34 @@
     "rating_average": 4.95,
     "ratings_count": 4310,
     "publication_year": 1929,
-    "tags": ["romance", "poetry", "love", "tagore", "shillong", "drama", "bittersweet", "প্রেমের গল্প", "শেষের কবিতা", "ভালোবাসা", "premer golpo"],
+    "tags": [
+      "romance",
+      "poetry",
+      "love",
+      "tagore",
+      "shillong",
+      "drama",
+      "bittersweet",
+      "প্রেমের গল্প",
+      "শেষের কবিতা",
+      "ভালোবাসা",
+      "premer golpo"
+    ],
     "chapters": [
-      { "chapter_number": 1, "title": "Collision in the Shillong Mist", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 2000, "is_preview": true },
-      { "chapter_number": 2, "title": "The Last Poem", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 2100, "is_preview": false }
+      {
+        "chapter_number": 1,
+        "title": "Collision in the Shillong Mist",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2000,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "The Last Poem",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2100,
+        "is_preview": false
+      }
     ],
     "semanticDocument": "Title: Shesher Kabita (শেষের কবিতা)\nAuthor: Rabindranath Tagore | Category: Romance & Drama\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: Misty Shillong pine hills, winding mountain roads, 1920s convertible, poetic evenings\nMood & Feelings: Romantic, lyrical, bittersweet longing, intellectual banter, প্রেমের গল্প, ভালোবাসা, বিরহ, premer golpo, poetic love story\nThemes: Ideal love vs practical marriage, independence, poetic soul-mates, graceful farewell\nSynopsis: Brilliant barrister Amit Ray and thoughtful Labanya fall deeply in love in the misty hills of Shillong, immortalized in Tagore's most poetic romance."
   },
@@ -636,11 +1119,2581 @@
     "rating_average": 4.91,
     "ratings_count": 3980,
     "publication_year": 1917,
-    "tags": ["tragedy", "romance", "heartbreak", "sad", "devdas", "paro", "love", "বিরহ", "দুঃখের গল্প", "দেবদাস", "sad love story"],
+    "tags": [
+      "tragedy",
+      "romance",
+      "heartbreak",
+      "sad",
+      "devdas",
+      "paro",
+      "love",
+      "বিরহ",
+      "দুঃখের গল্প",
+      "দেবদাস",
+      "sad love story"
+    ],
     "chapters": [
-      { "chapter_number": 1, "title": "Childhood in Talshonapur", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 2200, "is_preview": true },
-      { "chapter_number": 2, "title": "The Final Journey to Paro's Gate", "audio_storage_path": "demo/sample-chapter.mp3", "duration_seconds": 2300, "is_preview": false }
+      {
+        "chapter_number": 1,
+        "title": "Childhood in Talshonapur",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2200,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "The Final Journey to Paro's Gate",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2300,
+        "is_preview": false
+      }
     ],
     "semanticDocument": "Title: Devdas (দেবদাস)\nAuthor: Sarat Chandra Chattopadhyay | Category: Romance & Drama\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: Rural zamindar mansion, colonial Calcutta twilight courtyards, train journey, monsoon night\nMood & Feelings: Heartbreaking, deeply sad, tragic romance, intense longing and regret, মন খারাপ, দুঃখের প্রেমের গল্প, বিরহ, sad love story, emotional cry\nThemes: Unrequited love, social class pride, self-destruction, selfless devotion\nSynopsis: Separated from his childhood love Paro by family pride, Devdas descends into tragic sorrow while Chandramukhi watches over him with silent devotion."
+  },
+  {
+    "title": "Jade City",
+    "title_bengali": "জেড সিটি",
+    "slug": "jade-city",
+    "author": {
+      "name": "Fonda Lee",
+      "slug": "fonda-lee",
+      "bio": "Fonda Lee is a World Fantasy Award-winning author celebrated for the Green Bone Saga.",
+      "born_year": 1979,
+      "died_year": null,
+      "era": "Contemporary Fantasy Thriller"
+    },
+    "categorySlug": "adventure-thriller",
+    "narrator_name": "Andrew Kishino",
+    "description": "On the island metropolis of Kekon, magical bioenergetic jade grants superhuman martial prowess to the rival criminal clans who control it. As a deadly new drug threatens the fragile truce between the Kaul and Ayt families, loyalty, honor, and ruthless street warfare collide.",
+    "short_description": "A gripping urban-fantasy crime thriller of rival martial-arts clans fighting over magical jade.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/jade-city.jpg",
+    "language": "english",
+    "tier_requirement": "plus",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 4400,
+    "rating_average": 4.92,
+    "ratings_count": 3150,
+    "publication_year": 2017,
+    "tags": [
+      "thriller",
+      "urban fantasy",
+      "crime",
+      "clans",
+      "martial arts",
+      "jade city",
+      "action",
+      "mafia",
+      "english"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "The Green Bone Legacy",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2100,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Blood on the Docks",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2300,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: Jade City\nAuthor: Fonda Lee | Category: Adventure & Thriller\nLanguage: English\nSetting & Atmosphere: Rain-slicked neon Asian-inspired metropolis Kekon, clan teahouses, street duels, mafia crime syndicates\nMood & Feelings: Intense, gritty, high-stakes family honor, ruthless action thriller, Godfather meets martial arts\nThemes: Magical jade, organized crime clans, sibling loyalty, betrayal, urban warfare\nSynopsis: The Kaul siblings defend their clan's honor and magical jade territory against a ruthless rival syndicate in an unforgettable urban fantasy thriller.\nBilingual Context (জেড সিটি): অভিযান রোমাঞ্চ থ্রিলার ভ্রমণ অ্যাকশন adventure thriller survival expedition\nTags: thriller, urban fantasy, crime, clans, martial arts, jade city, action, mafia, english"
+  },
+  {
+    "title": "The Count of Monte Cristo",
+    "title_bengali": "দ্য কাউন্ট অব মন্টে ক্রিস্টো",
+    "slug": "the-count-of-monte-cristo",
+    "author": {
+      "name": "Alexandre Dumas",
+      "slug": "alexandre-dumas",
+      "bio": "Alexandre Dumas (1802–1870) was a French literary titan famous for sweeping historical adventures.",
+      "born_year": 1802,
+      "died_year": 1870,
+      "era": "19th-Century Classic"
+    },
+    "categorySlug": "adventure-thriller",
+    "narrator_name": "Bill Homewood",
+    "description": "Falsely accused of treason on his wedding day and locked away in the grim island fortress of Château d'If for fourteen years, young sailor Edmond Dantès escapes, claims a hidden fortune on Monte Cristo, and returns to Paris as a mysterious nobleman to exact calculated justice.",
+    "short_description": "The ultimate tale of betrayal, daring prison escape, hidden treasure, and grand calculated revenge.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/the-count-of-monte-cristo.jpg",
+    "language": "english",
+    "tier_requirement": "free",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 5100,
+    "rating_average": 4.96,
+    "ratings_count": 4210,
+    "publication_year": 1844,
+    "tags": [
+      "adventure",
+      "revenge",
+      "classic",
+      "treasure",
+      "prison escape",
+      "thriller",
+      "english"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "The Fortress of Château d'If",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2500,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "The Treasure of Monte Cristo",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2600,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: The Count of Monte Cristo\nAuthor: Alexandre Dumas | Category: Adventure & Thriller\nLanguage: English\nSetting & Atmosphere: Mediterranean sea, dark island dungeon, 19th-century Parisian high society, hidden cavern treasure\nMood & Feelings: Epic, suspenseful, triumphant, dramatic revenge, thrilling adventure\nThemes: Betrayal, patience, prison escape, hidden fortune, justice and mercy\nSynopsis: Wrongly imprisoned for 14 years, Edmond Dantès escapes, discovers a vast treasure, and orchestrates a brilliant reckoning against those who betrayed him.\nBilingual Context (দ্য কাউন্ট অব মন্টে ক্রিস্টো): অভিযান রোমাঞ্চ থ্রিলার ভ্রমণ অ্যাকশন adventure thriller survival expedition\nTags: adventure, revenge, classic, treasure, prison escape, thriller, english"
+  },
+  {
+    "title": "Treasure Island",
+    "title_bengali": "ট্রেজার আইল্যান্ড",
+    "slug": "treasure-island",
+    "author": {
+      "name": "Robert Louis Stevenson",
+      "slug": "robert-louis-stevenson",
+      "bio": "Robert Louis Stevenson (1850–1894) was a Scottish novelist celebrated for classic sea adventures.",
+      "born_year": 1850,
+      "died_year": 1894,
+      "era": "Victorian Adventure"
+    },
+    "categorySlug": "adventure-thriller",
+    "narrator_name": "Alfred Molina",
+    "description": "When young Jim Hawkins discovers an old pirate's sea chest containing a map to buried gold, he sets sail aboard the Hispaniola—unaware that the ship's charismatic one-legged cook, Long John Silver, is plotting a ruthless mutiny.",
+    "short_description": "Pirates, a mysterious treasure map, and high-seas mutiny in the classic swashbuckling adventure.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/treasure-island.jpg",
+    "language": "english",
+    "tier_requirement": "free",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 3800,
+    "rating_average": 4.84,
+    "ratings_count": 2650,
+    "publication_year": 1883,
+    "tags": [
+      "pirates",
+      "treasure",
+      "island",
+      "adventure",
+      "sea",
+      "classic",
+      "english"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "The Old Sea-Dog at the Admiral Benbow",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1900,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Long John Silver's Mutiny",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1900,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: Treasure Island\nAuthor: Robert Louis Stevenson | Category: Adventure & Thriller\nLanguage: English\nSetting & Atmosphere: Coastal inn, wooden sailing ship Hispaniola, tropical uncharted island, buried pirate gold\nMood & Feelings: Swashbuckling, adventurous, suspenseful, nostalgic sea voyage\nThemes: Courage, pirate mutiny, treasure hunt, coming of age\nSynopsis: Young Jim Hawkins joins a sea voyage for buried pirate gold, only to face Long John Silver's cunning mutiny.\nBilingual Context (ট্রেজার আইল্যান্ড): অভিযান রোমাঞ্চ থ্রিলার ভ্রমণ অ্যাকশন adventure thriller survival expedition\nTags: pirates, treasure, island, adventure, sea, classic, english"
+  },
+  {
+    "title": "The Martian",
+    "title_bengali": "দ্য মার্শিয়ান",
+    "slug": "the-martian",
+    "author": {
+      "name": "Andy Weir",
+      "slug": "andy-weir",
+      "bio": "Andy Weir is an American novelist known for gripping, scientifically grounded space survival thrillers.",
+      "born_year": 1972,
+      "died_year": null,
+      "era": "Contemporary Sci-Fi Thriller"
+    },
+    "categorySlug": "adventure-thriller",
+    "narrator_name": "R.C. Bray",
+    "description": "Presumed dead after a fierce dust storm forces his crew to evacuate Mars, astronaut Mark Watney is stranded completely alone on the Red Planet. Armed with wit, engineering, and duct tape, he must figure out how to grow food and signal Earth before supplies run out.",
+    "short_description": "A stranded astronaut uses science, grit, and humor to survive alone on Mars.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/the-martian.jpg",
+    "language": "english",
+    "tier_requirement": "plus",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 4300,
+    "rating_average": 4.94,
+    "ratings_count": 3890,
+    "publication_year": 2011,
+    "tags": [
+      "mars",
+      "survival",
+      "thriller",
+      "space",
+      "science",
+      "astronaut",
+      "english"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "Sol 6: Stranded on Mars",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2100,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Science the Impossible",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2200,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: The Martian\nAuthor: Andy Weir | Category: Adventure & Thriller\nLanguage: English\nSetting & Atmosphere: Red desert plains of Mars, pressurized Hab dome, NASA mission control, solar-powered rover\nMood & Feelings: Thrilling survival tension, witty optimism, problem-solving adrenaline, inspiring grit\nThemes: Space survival, engineering ingenuity, isolation, rescue mission\nSynopsis: Left behind on Mars after a storm, astronaut Mark Watney battles impossible odds using botany, physics, and sheer determination to stay alive.\nBilingual Context (দ্য মার্শিয়ান): অভিযান রোমাঞ্চ থ্রিলার ভ্রমণ অ্যাকশন adventure thriller survival expedition\nTags: mars, survival, thriller, space, science, astronaut, english"
+  },
+  {
+    "title": "Kakababu: Sabuj Dwiper Raja",
+    "title_bengali": "কাকাবাবু: সবুজ দ্বীপের রাজা",
+    "slug": "kakababu-sabuj-dwiper-raja",
+    "author": {
+      "name": "Sunil Gangopadhyay",
+      "slug": "sunil-gangopadhyay",
+      "bio": "Sunil Gangopadhyay (1934–2012) was a towering Bengali poet and novelist, creator of the fearless adventurer Kakababu.",
+      "born_year": 1934,
+      "died_year": 2012,
+      "era": "Modern Bengali Literature"
+    },
+    "categorySlug": "adventure-thriller",
+    "narrator_name": "Sabyasachi Chakrabarty",
+    "description": "Fearless archaeologist Raja Roy Chowdhury (Kakababu) and his young nephew Shontu travel to the remote Andaman Islands to investigate mysterious tribal legends and a hidden volcanic crater—uncovering smugglers, ancient secrets, and thrilling peril.",
+    "short_description": "Kakababu and Shontu's thrilling island expedition across the Andaman jungles and volcanic seas.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/Kakababu-sabuj-dwiper-raja.jpg",
+    "language": "bangla",
+    "tier_requirement": "plus",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 3900,
+    "rating_average": 4.91,
+    "ratings_count": 2740,
+    "publication_year": 1979,
+    "tags": [
+      "kakababu",
+      "adventure",
+      "andaman",
+      "island",
+      "thriller",
+      "কাকাবাবু",
+      "সবুজ দ্বীপের রাজা",
+      "রোমাঞ্চ"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "Voyage to Port Blair",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1950,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Secret of the Green Island",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1950,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: Kakababu: Sabuj Dwiper Raja (কাকাবাবু: সবুজ দ্বীপের রাজা)\nAuthor: Sunil Gangopadhyay | Category: Adventure & Thriller\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: Andaman Islands, emerald rainforests, Bay of Bengal, tribal shores, volcanic crater\nMood & Feelings: Thrilling expedition, fearless adventure, mystery, কাকাবাবু, সবুজ দ্বীপ, রোমাঞ্চকর অভিযান\nThemes: Archaeology, island survival, uncle-nephew camaraderie, courage\nSynopsis: Kakababu and Shontu venture into the restricted Andaman Islands to solve a dangerous mystery amidst dense jungles and ocean storms."
+  },
+  {
+    "title": "The Great Gatsby",
+    "title_bengali": "দ্য গ্রেট গ্যাটসবি",
+    "slug": "the-great-gatsby",
+    "author": {
+      "name": "F. Scott Fitzgerald",
+      "slug": "f-scott-fitzgerald",
+      "bio": "F. Scott Fitzgerald (1896–1940) was an American novelist famed as the chronicler of the Jazz Age.",
+      "born_year": 1896,
+      "died_year": 1940,
+      "era": "Modernist Classic"
+    },
+    "categorySlug": "classic-literature",
+    "narrator_name": "Jake Gyllenhaal",
+    "description": "In the glittering summer of 1922 on Long Island, mysterious millionaire Jay Gatsby throws dazzling jazz parties in pursuit of his lost love, Daisy Buchanan—revealing the hollow tragedy beneath the American Dream.",
+    "short_description": "A shimmering Jazz Age classic of obsessive love, lavish wealth, and shattered illusions.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/the-great-gatsby.jpg",
+    "language": "english",
+    "tier_requirement": "free",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 3600,
+    "rating_average": 4.86,
+    "ratings_count": 3420,
+    "publication_year": 1925,
+    "tags": [
+      "classic",
+      "jazz age",
+      "romance",
+      "tragedy",
+      "gatsby",
+      "english"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "The Green Light",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1800,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Gatsby's Mansion",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1800,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: The Great Gatsby\nAuthor: F. Scott Fitzgerald | Category: Classic Literature\nLanguage: English\nSetting & Atmosphere: 1920s Long Island West Egg, lavish champagne jazz parties, glowing green dock light\nMood & Feelings: Melancholic, glamorous, tragic longing, lyrical classic\nThemes: American Dream, wealth and class, obsessive love, nostalgia\nSynopsis: Nick Carraway witnesses millionaire Jay Gatsby's tragic obsession to win back Daisy Buchanan amidst the roaring 1920s.\nBilingual Context (দ্য গ্রেট গ্যাটসবি): ক্লাসিক সাহিত্য কালজয়ী উপন্যাস বাংলা ও বিশ্বসাহিত্য classic literature masterpiece\nTags: classic, jazz age, romance, tragedy, gatsby, english"
+  },
+  {
+    "title": "To Kill a Mockingbird",
+    "title_bengali": "টু কিল আ মকিংবার্ড",
+    "slug": "to-kill-a-mockingbird",
+    "author": {
+      "name": "Harper Lee",
+      "slug": "harper-lee",
+      "bio": "Harper Lee (1926–2016) won the Pulitzer Prize for her timeless novel on justice and empathy.",
+      "born_year": 1926,
+      "died_year": 2016,
+      "era": "American Classic"
+    },
+    "categorySlug": "classic-literature",
+    "narrator_name": "Sissy Spacek",
+    "description": "Seen through the eyes of young Scout Finch in 1930s Alabama, her principled lawyer father Atticus defends a falsely accused Black man—teaching his children unforgettable lessons in moral courage and human empathy.",
+    "short_description": "A deeply moving Pulitzer-winning classic on childhood, empathy, and standing up for justice.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/to-kill-a-mockingbird.jpg",
+    "language": "english",
+    "tier_requirement": "plus",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 4500,
+    "rating_average": 4.95,
+    "ratings_count": 4580,
+    "publication_year": 1960,
+    "tags": [
+      "classic",
+      "justice",
+      "courtroom",
+      "childhood",
+      "empathy",
+      "english"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "Maycomb County",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2250,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Atticus in the Courtroom",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2250,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: To Kill a Mockingbird\nAuthor: Harper Lee | Category: Classic Literature\nLanguage: English\nSetting & Atmosphere: 1930s sleepy Alabama town, front porches, Southern courtroom\nMood & Feelings: Heartfelt, moral, compassionate, nostalgic yet poignant\nThemes: Racial injustice, moral courage, innocence, empathy\nSynopsis: Young Scout Finch grows up watching her father Atticus courageously defend an innocent man against prejudice.\nBilingual Context (টু কিল আ মকিংবার্ড): ক্লাসিক সাহিত্য কালজয়ী উপন্যাস বাংলা ও বিশ্বসাহিত্য classic literature masterpiece\nTags: classic, justice, courtroom, childhood, empathy, english"
+  },
+  {
+    "title": "1984",
+    "title_bengali": "নাইন্টিন এইটি ফোর",
+    "slug": "nineteen-eighty-four",
+    "author": {
+      "name": "George Orwell",
+      "slug": "george-orwell",
+      "bio": "George Orwell (1903–1950) was an English novelist famed for his prophetic warnings against totalitarianism.",
+      "born_year": 1903,
+      "died_year": 1950,
+      "era": "20th-Century Classic"
+    },
+    "categorySlug": "classic-literature",
+    "narrator_name": "Simon Prebble",
+    "description": "In the grim superstate of Oceania under the ever-watching eyes of Big Brother and the Thought Police, quiet clerk Winston Smith dares to commit thoughtcrime by keeping a secret diary and falling in forbidden love.",
+    "short_description": "Orwell's haunting classic on surveillance, truth, and the fight for free thought.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/1984.jpg",
+    "language": "english",
+    "tier_requirement": "free",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 4400,
+    "rating_average": 4.93,
+    "ratings_count": 4920,
+    "publication_year": 1949,
+    "tags": [
+      "dystopia",
+      "classic",
+      "surveillance",
+      "orwell",
+      "politics",
+      "english"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "Big Brother Is Watching",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2200,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Room 101",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2200,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: 1984\nAuthor: George Orwell | Category: Classic Literature\nLanguage: English\nSetting & Atmosphere: Bleak Airstrip One, telescreens, Ministry of Truth, shadowy London streets\nMood & Feelings: Chilling, claustrophobic, thought-provoking, intense political tension\nThemes: Totalitarian surveillance, propaganda, Newspeak, rebellion, truth\nSynopsis: Winston Smith rebels quietly against Big Brother's all-seeing regime in Orwell's unforgettable cautionary masterpiece.\nBilingual Context (নাইন্টিন এইটি ফোর): ক্লাসিক সাহিত্য কালজয়ী উপন্যাস বাংলা ও বিশ্বসাহিত্য classic literature masterpiece\nTags: dystopia, classic, surveillance, orwell, politics, english"
+  },
+  {
+    "title": "Srikanto",
+    "title_bengali": "শ্রীকান্ত",
+    "slug": "srikanto",
+    "author": {
+      "name": "Sarat Chandra Chattopadhyay",
+      "slug": "sarat-chandra-chattopadhyay",
+      "bio": "Sarat Chandra Chattopadhyay (1876–1938) was one of Bengal's most beloved novelists.",
+      "born_year": 1876,
+      "died_year": 1938,
+      "era": "Bengal Renaissance & Modernism"
+    },
+    "categorySlug": "classic-literature",
+    "narrator_name": "Soumitra Chatterjee",
+    "description": "A wandering observer with a compassionate heart, Srikanto drifts from moonlit boat rides with his fearless friend Indranath to Burma's misty hills, encountering unforgettable souls like Rajlakshmi and Abhaya along the way.",
+    "short_description": "Sarat Chandra's lyrical semi-autobiographical classic of wanderlust, friendship, and human compassion.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/srikanto.jpg",
+    "language": "bangla",
+    "tier_requirement": "free",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 4800,
+    "rating_average": 4.92,
+    "ratings_count": 3180,
+    "publication_year": 1917,
+    "tags": [
+      "srikanto",
+      "classic",
+      "bengali",
+      "wanderlust",
+      "friendship",
+      "শ্রীকান্ত",
+      "শরৎচন্দ্র"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "Midnight Boats with Indranath",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2400,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Rajlakshmi's Grace",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2400,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: Srikanto (শ্রীকান্ত)\nAuthor: Sarat Chandra Chattopadhyay | Category: Classic Literature\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: Moonlit Bengal rivers, rural villages, Rangoon steamer, quiet temples\nMood & Feelings: Reflective, compassionate, adventurous, bittersweet warmth, শ্রীকান্ত, শরৎচন্দ্র\nThemes: Wanderlust, boyhood friendship, empathy for outcasts, unspoken devotion\nSynopsis: Wanderer Srikanto shares unforgettable memories of his fearless friend Indranath and the women who shaped his soul."
+  },
+  {
+    "title": "Putul Nacher Itikatha",
+    "title_bengali": "পুতুলনাচের ইতিকথা",
+    "slug": "putul-nacher-itikatha",
+    "author": {
+      "name": "Manik Bandyopadhyay",
+      "slug": "manik-bandyopadhyay",
+      "bio": "Manik Bandyopadhyay (1908–1956) was a pioneer of modernist psychological and social realism in Bengali fiction.",
+      "born_year": 1908,
+      "died_year": 1956,
+      "era": "Modern Bengali Realism"
+    },
+    "categorySlug": "classic-literature",
+    "narrator_name": "Debshankar Halder",
+    "description": "Returning to his sleepy village of Gaodia, city-educated doctor Shashi hopes to escape—only to find himself tangled in village superstitions, unspoken desires, and the inescapable strings of fate like puppets on a stage.",
+    "short_description": "Manik Bandyopadhyay's landmark psychological masterpiece on fate, rural realism, and human desire.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/putul-nacher-itikatha.jpg",
+    "language": "bangla",
+    "tier_requirement": "plus",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 4200,
+    "rating_average": 4.89,
+    "ratings_count": 1960,
+    "publication_year": 1936,
+    "tags": [
+      "realism",
+      "philosophy",
+      "classic",
+      "village",
+      "manik bandyopadhyay",
+      "পুতুলনাচের ইতিকথা",
+      "মানিক বন্দ্যোপাধ্যায়"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "Return to Gaodia",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2100,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Strings of Fate",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2100,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: Putul Nacher Itikatha (পুতুলনাচের ইতিকথা)\nAuthor: Manik Bandyopadhyay | Category: Classic Literature\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: Muddy rural Bengal village Gaodia, monsoon ponds, quiet clinic\nMood & Feelings: Philosophical, existential, raw realism, deeply introspective, জীবনমুখী উপন্যাস\nThemes: Fate vs free will, human puppetry, rural superstition, repressed emotion\nSynopsis: Village doctor Shashi struggles to understand life's meaning as neighbors and loved ones dance to unseen strings of circumstance."
+  },
+  {
+    "title": "The Adventures of Sherlock Holmes",
+    "title_bengali": "শার্লক হোমসের অভিযান",
+    "slug": "the-adventures-of-sherlock-holmes",
+    "author": {
+      "name": "Arthur Conan Doyle",
+      "slug": "arthur-conan-doyle",
+      "bio": "Sir Arthur Conan Doyle (1859–1930) created the world's most iconic consulting detective, Sherlock Holmes.",
+      "born_year": 1859,
+      "died_year": 1930,
+      "era": "Victorian Detective Fiction"
+    },
+    "categorySlug": "mystery-detective",
+    "narrator_name": "Stephen Fry",
+    "description": "Step into 221B Baker Street amidst Victorian London's swirling fog. Together with Dr. Watson, brilliant detective Sherlock Holmes unravels twelve iconic mysteries—from royal blackmail in Bohemia to the chilling speckled band.",
+    "short_description": "The timeless Baker Street mysteries of deductive genius Sherlock Holmes and Dr. Watson.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/the-adventures-of-sherlock-holmes.jpg",
+    "language": "english",
+    "tier_requirement": "free",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 4600,
+    "rating_average": 4.95,
+    "ratings_count": 5100,
+    "publication_year": 1892,
+    "tags": [
+      "sherlock holmes",
+      "detective",
+      "mystery",
+      "london",
+      "victorian",
+      "deduction",
+      "english"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "A Scandal in Bohemia",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2300,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "The Adventure of the Speckled Band",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2300,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: The Adventures of Sherlock Holmes\nAuthor: Arthur Conan Doyle | Category: Mystery & Detective\nLanguage: English\nSetting & Atmosphere: Foggy Victorian London, 221B Baker Street, horse-drawn hansom cabs, gas lamps\nMood & Feelings: Clever, atmospheric, investigative suspense, classic puzzle mystery\nThemes: Forensic deduction, disguise, royal intrigue, friendship between Holmes and Watson\nSynopsis: Consulting detective Sherlock Holmes solves Victorian London's most baffling crimes through razor-sharp observation.\nBilingual Context (শার্লক হোমসের অভিযান): গোয়েন্দা রহস্য খুন তদন্ত থ্রিলার mystery detective crime investigation whodunit\nTags: sherlock holmes, detective, mystery, london, victorian, deduction, english"
+  },
+  {
+    "title": "The Silent Patient",
+    "title_bengali": "দ্য সাইলেন্ট পেশেন্ট",
+    "slug": "the-silent-patient",
+    "author": {
+      "name": "Alex Michaelides",
+      "slug": "alex-michaelides",
+      "bio": "Alex Michaelides is a bestselling psychological thriller author and screenwriter.",
+      "born_year": 1977,
+      "died_year": null,
+      "era": "Contemporary Psychological Thriller"
+    },
+    "categorySlug": "mystery-detective",
+    "narrator_name": "Jack Hawkins",
+    "description": "Famous painter Alicia Berenson shoots her husband five times in the face—and never speaks another word. Six years later, forensic psychotherapist Theo Faber becomes obsessed with unlocking her silence and uncovering the shocking truth.",
+    "short_description": "A chilling psychological thriller with one of modern fiction's sharpest twists.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/the-silent-patient.jpg",
+    "language": "english",
+    "tier_requirement": "premium",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 4100,
+    "rating_average": 4.88,
+    "ratings_count": 3740,
+    "publication_year": 2019,
+    "tags": [
+      "psychological thriller",
+      "mystery",
+      "twist",
+      "crime",
+      "suspense",
+      "english"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "The Night of the Murder",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2000,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "The Grove Diary",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2100,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: The Silent Patient\nAuthor: Alex Michaelides | Category: Mystery & Detective\nLanguage: English\nSetting & Atmosphere: Secure forensic psychiatric unit in London, artist's sunlit studio, therapy sessions\nMood & Feelings: Eerie, addictive, dark psychological suspense, shocking twist\nThemes: Obsession, trauma, unreliable memory, murder mystery\nSynopsis: A criminal psychotherapist risks everything to make a mute murderess speak—until the final truth shatters everything.\nBilingual Context (দ্য সাইলেন্ট পেশেন্ট): গোয়েন্দা রহস্য খুন তদন্ত থ্রিলার mystery detective crime investigation whodunit\nTags: psychological thriller, mystery, twist, crime, suspense, english"
+  },
+  {
+    "title": "Murder on the Orient Express",
+    "title_bengali": "মার্ডার অন দ্য ওরিয়েন্ট এক্সপ্রেস",
+    "slug": "murder-on-the-orient-express",
+    "author": {
+      "name": "Agatha Christie",
+      "slug": "agatha-christie",
+      "bio": "Dame Agatha Christie (1890–1976) is the bestselling mystery novelist of all time, creator of Hercule Poirot.",
+      "born_year": 1890,
+      "died_year": 1976,
+      "era": "Golden Age Mystery"
+    },
+    "categorySlug": "mystery-detective",
+    "narrator_name": "Kenneth Branagh",
+    "description": "Stranded in a mountain snowdrift aboard the luxurious Orient Express, Belgian detective Hercule Poirot investigates a midnight stabbing in a locked compartment—where every single passenger has an alibi and a secret.",
+    "short_description": "Hercule Poirot's legendary locked-room train murder mystery trapped in the snow.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/murder-on-the-orient-express.jpg",
+    "language": "english",
+    "tier_requirement": "plus",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 3900,
+    "rating_average": 4.92,
+    "ratings_count": 4100,
+    "publication_year": 1934,
+    "tags": [
+      "agatha christie",
+      "poirot",
+      "whodunit",
+      "train",
+      "mystery",
+      "detective",
+      "english"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "The Snowdrift at Midnight",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1950,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Twelve Suspects, One Truth",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1950,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: Murder on the Orient Express\nAuthor: Agatha Christie | Category: Mystery & Detective\nLanguage: English\nSetting & Atmosphere: 1930s luxury sleeper train trapped in heavy snow, dining car, locked compartments\nMood & Feelings: Cozy yet tense classic whodunit, glamorous puzzle intrigue\nThemes: Locked-room murder, hidden pasts, justice vs law, Hercule Poirot\nSynopsis: With the Orient Express snowbound, Hercule Poirot interviews a carriage full of suspicious aristocrats to solve a midnight murder.\nBilingual Context (মার্ডার অন দ্য ওরিয়েন্ট এক্সপ্রেস): গোয়েন্দা রহস্য খুন তদন্ত থ্রিলার mystery detective crime investigation whodunit\nTags: agatha christie, poirot, whodunit, train, mystery, detective, english"
+  },
+  {
+    "title": "Gone Girl",
+    "title_bengali": "গন গার্ল",
+    "slug": "gone-girl",
+    "author": {
+      "name": "Gillian Flynn",
+      "slug": "gillian-flynn",
+      "bio": "Gillian Flynn is an acclaimed American thriller writer known for dark, razor-sharp suspense.",
+      "born_year": 1971,
+      "died_year": null,
+      "era": "Contemporary Thriller"
+    },
+    "categorySlug": "mystery-detective",
+    "narrator_name": "Julia Whelan",
+    "description": "On his fifth wedding anniversary, Nick Dunne comes home to find his clever, beautiful wife Amy missing—and signs of a violent struggle. Under intense media scrutiny, every clue points straight at Nick, until Amy's hidden diary reveals a chilling game.",
+    "short_description": "A razor-sharp domestic mystery thriller of disappearance, media frenzy, and dark marriage secrets.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/gone-girl.jpg",
+    "language": "english",
+    "tier_requirement": "premium",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 4400,
+    "rating_average": 4.85,
+    "ratings_count": 3560,
+    "publication_year": 2012,
+    "tags": [
+      "thriller",
+      "mystery",
+      "missing person",
+      "suspense",
+      "psychological",
+      "english"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "The Fifth Anniversary",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2200,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Diary of Amazing Amy",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2200,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: Gone Girl\nAuthor: Gillian Flynn | Category: Mystery & Detective\nLanguage: English\nSetting & Atmosphere: Quiet Missouri river town, suburban living room, police press conferences\nMood & Feelings: Darkly gripping, cynical, shocking suspense, domestic thriller\nThemes: Unreliable narrators, media manipulation, marriage secrets, framing\nSynopsis: When Amy Dunne vanishes on her anniversary, her husband becomes prime suspect number one in a twisted psychological cat-and-mouse game.\nBilingual Context (গন গার্ল): গোয়েন্দা রহস্য খুন তদন্ত থ্রিলার mystery detective crime investigation whodunit\nTags: thriller, mystery, missing person, suspense, psychological, english"
+  },
+  {
+    "title": "Kiriti Roy: Kalo Bhramar",
+    "title_bengali": "কিরীটী রায়: কালো ভ্রমর",
+    "slug": "kiriti-roy-kalo-bhramar",
+    "author": {
+      "name": "Nihar Ranjan Gupta",
+      "slug": "nihar-ranjan-gupta",
+      "bio": "Nihar Ranjan Gupta (1911–1986) was a physician and popular Bengali crime novelist who created detective Kiriti Roy.",
+      "born_year": 1911,
+      "died_year": 1986,
+      "era": "Modern Bengali Crime Fiction"
+    },
+    "categorySlug": "mystery-detective",
+    "narrator_name": "Sabyasachi Chakrabarty",
+    "description": "Dressed in crisp velvet and puffing a curved pipe, sleuth Kiriti Roy faces his deadliest nemesis: Kalo Bhramar, a shadowy criminal mastermind of disguise and poison who taunts Kolkata police before every strike.",
+    "short_description": "Noir Bengali detective thriller pitting sleuth Kiriti Roy against master criminal Kalo Bhramar.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/kiriti-roy-kalo-bhramar.jpg",
+    "language": "bangla",
+    "tier_requirement": "plus",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 4000,
+    "rating_average": 4.9,
+    "ratings_count": 2480,
+    "publication_year": 1957,
+    "tags": [
+      "kiriti roy",
+      "detective",
+      "noir",
+      "crime",
+      "mystery",
+      "কিরীটী রায়",
+      "কালো ভ্রমর",
+      "গোয়েন্দা"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "Shadow of the Black Hornet",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2000,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Midnight Duel in Kolkata",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2000,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: Kiriti Roy: Kalo Bhramar (কিরীটী রায়: কালো ভ্রমর)\nAuthor: Nihar Ranjan Gupta | Category: Mystery & Detective\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: Foggy 1950s Kolkata streets, Howrah Bridge shadows, forensic laboratory\nMood & Feelings: Dark noir suspense, mastermind cat-and-mouse thrill, গোয়েন্দা কিরীটী\nThemes: Criminal mastermind, disguise, forensic chemistry, relentless pursuit\nSynopsis: Detective Kiriti Roy hunts the elusive arch-criminal Kalo Bhramar across Kolkata's misty underworld."
+  },
+  {
+    "title": "Dracula",
+    "title_bengali": "ড্রাকুলা",
+    "slug": "dracula",
+    "author": {
+      "name": "Bram Stoker",
+      "slug": "bram-stoker",
+      "bio": "Bram Stoker (1847–1912) was an Irish author who defined gothic vampire horror with Dracula.",
+      "born_year": 1847,
+      "died_year": 1912,
+      "era": "Victorian Gothic"
+    },
+    "categorySlug": "supernatural-horror",
+    "narrator_name": "Tim Curry",
+    "description": "When young solicitor Jonathan Harker travels to a remote castle high in the Carpathian Mountains, he discovers his charming host Count Dracula is an ancient undead predator—setting off a terrifying race to save London.",
+    "short_description": "The timeless gothic horror masterpiece of Count Dracula's dark shadow over London.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/dracula.jpg",
+    "language": "english",
+    "tier_requirement": "free",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 4700,
+    "rating_average": 4.89,
+    "ratings_count": 3910,
+    "publication_year": 1897,
+    "tags": [
+      "vampire",
+      "gothic",
+      "horror",
+      "dracula",
+      "scary",
+      "classic",
+      "english"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "Castle Dracula",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2350,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Van Helsing's Hunt",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2350,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: Dracula\nAuthor: Bram Stoker | Category: Supernatural & Horror\nLanguage: English\nSetting & Atmosphere: Transylvanian mountain castle, howling wolves, foggy London graveyards, candlelit chambers\nMood & Feelings: Gothic dread, eerie vampire horror, dark nocturnal suspense\nThemes: Immortality, blood curse, superstition vs science, Van Helsing\nSynopsis: Jonathan Harker and Professor Van Helsing confront the ancient vampire Count Dracula before he spreads darkness across London.\nBilingual Context (ড্রাকুলা): ভৌতিক ভূতের গল্প অলৌকিক ভয় গা-ছমছমে horror ghost supernatural haunted scary\nTags: vampire, gothic, horror, dracula, scary, classic, english"
+  },
+  {
+    "title": "Frankenstein",
+    "title_bengali": "ফ্র্যাঙ্কেনস্টাইন",
+    "slug": "frankenstein",
+    "author": {
+      "name": "Mary Shelley",
+      "slug": "mary-shelley",
+      "bio": "Mary Shelley (1797–1851) pioneered gothic science-horror at age nineteen with Frankenstein.",
+      "born_year": 1797,
+      "died_year": 1851,
+      "era": "Romantic Gothic"
+    },
+    "categorySlug": "supernatural-horror",
+    "narrator_name": "Dan Stevens",
+    "description": "Obsessed with conquering death, brilliant scientist Victor Frankenstein breathes life into a patchwork creature—only to recoil in horror at his creation, sparking a tragic, haunting pursuit across icy Arctic wastes.",
+    "short_description": "Mary Shelley's haunting gothic horror on forbidden science, isolation, and tragic creation.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/frankenstein.jpg",
+    "language": "english",
+    "tier_requirement": "free",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 3900,
+    "rating_average": 4.87,
+    "ratings_count": 3320,
+    "publication_year": 1818,
+    "tags": [
+      "gothic",
+      "horror",
+      "monster",
+      "science",
+      "classic",
+      "english"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "The Spark of Life",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1950,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Pursuit Across the Ice",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1950,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: Frankenstein\nAuthor: Mary Shelley | Category: Supernatural & Horror\nLanguage: English\nSetting & Atmosphere: Stormy Geneva laboratory, Alpine glaciers, frozen Arctic sea\nMood & Feelings: Haunting, tragic gothic dread, philosophical horror\nThemes: Hubris of science, loneliness, creator and monster, responsibility\nSynopsis: Victor Frankenstein's quest to defeat death unleashes a tragic, rejected creature who haunts him to the ends of the Earth.\nBilingual Context (ফ্র্যাঙ্কেনস্টাইন): ভৌতিক ভূতের গল্প অলৌকিক ভয় গা-ছমছমে horror ghost supernatural haunted scary\nTags: gothic, horror, monster, science, classic, english"
+  },
+  {
+    "title": "The Shining",
+    "title_bengali": "দ্য শাইনিং",
+    "slug": "the-shining",
+    "author": {
+      "name": "Stephen King",
+      "slug": "stephen-king",
+      "bio": "Stephen King is the undisputed modern master of psychological and supernatural horror.",
+      "born_year": 1947,
+      "died_year": null,
+      "era": "Contemporary Horror"
+    },
+    "categorySlug": "supernatural-horror",
+    "narrator_name": "Campbell Scott",
+    "description": "Hired as winter caretaker of the isolated, snowbound Overlook Hotel, struggling writer Jack Torrance brings his wife and psychic young son Danny—only for the hotel's malevolent ghosts to awaken inside the blizzard.",
+    "short_description": "Snowbound haunted-hotel psychological terror from the master of modern horror.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/the-shining.jpg",
+    "language": "english",
+    "tier_requirement": "premium",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 4800,
+    "rating_average": 4.93,
+    "ratings_count": 4410,
+    "publication_year": 1977,
+    "tags": [
+      "horror",
+      "haunted",
+      "stephen king",
+      "scary",
+      "ghosts",
+      "winter",
+      "english"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "Closing Day at the Overlook",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2400,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Room 217",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2400,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: The Shining\nAuthor: Stephen King | Category: Supernatural & Horror\nLanguage: English\nSetting & Atmosphere: Snowbound Colorado mountain resort Overlook Hotel, empty corridors, Room 217, blizzard\nMood & Feelings: Claustrophobic terror, creeping madness, terrifying ghost horror\nThemes: Haunted hotel, psychic ability, isolation, family under siege\nSynopsis: Cut off by winter blizzards, a caretaker's family is stalked by the sinister spirits of the Overlook Hotel.\nBilingual Context (দ্য শাইনিং): ভৌতিক ভূতের গল্প অলৌকিক ভয় গা-ছমছমে horror ghost supernatural haunted scary\nTags: horror, haunted, stephen king, scary, ghosts, winter, english"
+  },
+  {
+    "title": "Mexican Gothic",
+    "title_bengali": "মেক্সিকান গথিক",
+    "slug": "mexican-gothic",
+    "author": {
+      "name": "Silvia Moreno-Garcia",
+      "slug": "silvia-moreno-garcia",
+      "bio": "Silvia Moreno-Garcia is an acclaimed Mexican-Canadian author of lush gothic horror and fantasy.",
+      "born_year": 1981,
+      "died_year": null,
+      "era": "Contemporary Gothic Horror"
+    },
+    "categorySlug": "supernatural-horror",
+    "narrator_name": "Frankie Corzo",
+    "description": "After receiving a frantic letter from her newlywed cousin begging for help, glamorous socialite Noemí Taboada travels to High Place—a decaying, mist-shrouded mansion in the Mexican countryside hiding terrifying ancestral secrets.",
+    "short_description": "A lush, eerie haunted-mansion gothic horror set in mist-shrouded 1950s Mexico.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/mexican-gothic.jpg",
+    "language": "english",
+    "tier_requirement": "plus",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 4000,
+    "rating_average": 4.82,
+    "ratings_count": 2390,
+    "publication_year": 2020,
+    "tags": [
+      "gothic",
+      "horror",
+      "haunted mansion",
+      "mystery",
+      "creepy",
+      "english"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "Arrival at High Place",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2000,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Whispers in the Walls",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2000,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: Mexican Gothic\nAuthor: Silvia Moreno-Garcia | Category: Supernatural & Horror\nLanguage: English\nSetting & Atmosphere: 1950s misty Mexican countryside, decaying Victorian manor High Place, moldy walls, nightmare visions\nMood & Feelings: Creepy, lushly atmospheric, unsettling gothic suspense\nThemes: Ancestral curses, haunted mansion, fierce heroine, biological horror\nSynopsis: Glamour meets creeping terror as Noemí uncovers the grotesque secret keeping her cousin trapped inside High Place.\nBilingual Context (মেক্সিকান গথিক): ভৌতিক ভূতের গল্প অলৌকিক ভয় গা-ছমছমে horror ghost supernatural haunted scary\nTags: gothic, horror, haunted mansion, mystery, creepy, english"
+  },
+  {
+    "title": "Bhoot Samagra: Midnight Tales",
+    "title_bengali": "ভূত সমগ্র",
+    "slug": "bhoot-samagra-midnight-tales",
+    "author": {
+      "name": "Shirshendu Mukhopadhyay",
+      "slug": "shirshendu-mukhopadhyay",
+      "bio": "Shirshendu Mukhopadhyay is a beloved Bengali author famed for both eerie and charming ghost stories.",
+      "born_year": 1935,
+      "died_year": null,
+      "era": "Modern Bengali Literature"
+    },
+    "categorySlug": "supernatural-horror",
+    "narrator_name": "Mir Afsar Ali",
+    "description": "From mischievous spirits hiding in old Kolkata attics to lonely village ghosts who just want a cup of tea, Shirshendu Mukhopadhyay's midnight tales blend spooky Bengali chills with unmistakable warmth and wit.",
+    "short_description": "Atmospheric, witty, and spooky Bengali ghost stories from Shirshendu Mukhopadhyay.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/bhoot-samagra-midnight-tales.jpg",
+    "language": "bangla",
+    "tier_requirement": "free",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 3500,
+    "rating_average": 4.91,
+    "ratings_count": 3040,
+    "publication_year": 1995,
+    "tags": [
+      "ghost",
+      "horror",
+      "bengali",
+      "spooky",
+      "ভূতের গল্প",
+      "ভূত সমগ্র",
+      "শীর্ষেন্দু",
+      "bhooter golpo"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "The Attic Guest",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1750,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "The Midnight Banyan",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1750,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: Bhoot Samagra: Midnight Tales (ভূত সমগ্র)\nAuthor: Shirshendu Mukhopadhyay | Category: Supernatural & Horror\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: Old Kolkata rooftops, misty village lanes, creaking wooden staircases\nMood & Feelings: Spooky yet charming, eerie midnight chills, ভূতের গল্প, bhooter golpo, voy\nThemes: Friendly and eerie Bengali ghosts, village folklore, nostalgia\nSynopsis: A captivating collection of atmospheric Bengali ghost stories mixing midnight chills with heartwarming humor."
+  },
+  {
+    "title": "Harry Potter and the Sorcerer's Stone",
+    "title_bengali": "হ্যারি পটার অ্যান্ড দ্য সোরসারার্স স্টোন",
+    "slug": "harry-potter-and-the-sorcerers-stone",
+    "author": {
+      "name": "J.K. Rowling",
+      "slug": "jk-rowling",
+      "bio": "J.K. Rowling is the world-renowned British author of the Harry Potter wizarding series.",
+      "born_year": 1965,
+      "died_year": null,
+      "era": "Modern Fantasy"
+    },
+    "categorySlug": "magical-realism",
+    "narrator_name": "Stephen Fry",
+    "description": "Rescued from a cupboard under the stairs on his eleventh birthday, orphan Harry Potter discovers he is a wizard and boards the Hogwarts Express—entering a magical castle of flying broomsticks, secret corridors, true friendship, and dark destiny.",
+    "short_description": "The enchanting wizarding classic of Hogwarts, magic, friendship, and Harry Potter's destiny.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/harry-potter-and-the-sorcerer's-stone.jpg",
+    "language": "english",
+    "tier_requirement": "plus",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 5200,
+    "rating_average": 4.98,
+    "ratings_count": 6400,
+    "publication_year": 1997,
+    "tags": [
+      "harry potter",
+      "magic",
+      "wizard",
+      "hogwarts",
+      "fantasy",
+      "friendship",
+      "english"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "The Boy Who Lived",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1700,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Platform Nine and Three-Quarters",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1750,
+        "is_preview": false
+      },
+      {
+        "chapter_number": 3,
+        "title": "The Mirror of Erised",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1750,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: Harry Potter and the Sorcerer's Stone\nAuthor: J.K. Rowling | Category: Magical Realism\nLanguage: English\nSetting & Atmosphere: Hogwarts Castle, candlelit Great Hall, Diagon Alley, Hogwarts Express steam train\nMood & Feelings: Magical wonder, cozy warmth, exciting fantasy adventure, friendship\nThemes: Wizarding school, loyalty, courage, chosen destiny, good vs evil\nSynopsis: Young Harry Potter enters Hogwarts School of Witchcraft and Wizardry, making lifelong friends Ron and Hermione while uncovering a dark plot.\nBilingual Context (হ্যারি পটার অ্যান্ড দ্য সোরসারার্স স্টোন): রূপকথা জাদু ফ্যান্টাসি কল্পনা ম্যাজিক fantasy magic fairy-tale surreal wonder\nTags: harry potter, magic, wizard, hogwarts, fantasy, friendship, english"
+  },
+  {
+    "title": "The Hobbit",
+    "title_bengali": "দ্য হবিট",
+    "slug": "the-hobbit",
+    "author": {
+      "name": "J.R.R. Tolkien",
+      "slug": "jrr-tolkien",
+      "bio": "J.R.R. Tolkien (1892–1973) was an English philologist and the father of modern high fantasy.",
+      "born_year": 1892,
+      "died_year": 1973,
+      "era": "Classic Fantasy"
+    },
+    "categorySlug": "magical-realism",
+    "narrator_name": "Andy Serkis",
+    "description": "Comfort-loving hobbit Bilbo Baggins is swept out of his cozy Shire hobbit-hole by wizard Gandalf and thirteen dwarves on an epic quest across Middle-earth to reclaim the Lonely Mountain's treasure from the dragon Smaug.",
+    "short_description": "Bilbo Baggins's cozy-turned-epic fantasy quest with wizards, dwarves, riddles, and a dragon.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/the-hobbit.jpg",
+    "language": "english",
+    "tier_requirement": "free",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 4900,
+    "rating_average": 4.95,
+    "ratings_count": 5200,
+    "publication_year": 1937,
+    "tags": [
+      "fantasy",
+      "hobbit",
+      "tolkien",
+      "dragon",
+      "quest",
+      "magic",
+      "english"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "An Unexpected Party",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2450,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Riddles in the Dark",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2450,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: The Hobbit\nAuthor: J.R.R. Tolkien | Category: Magical Realism\nLanguage: English\nSetting & Atmosphere: Green Shire hills, misty goblin caves, Mirkwood forest, Lonely Mountain dragon lair\nMood & Feelings: Cozy, enchanting, heroic adventure, fairytale wonder\nThemes: Unexpected courage, greed vs fellowship, riddles, dragon Smaug\nSynopsis: Homebody Bilbo Baggins joins Gandalf and dwarves on a legendary quest to reclaim a treasure guarded by a fierce dragon.\nBilingual Context (দ্য হবিট): রূপকথা জাদু ফ্যান্টাসি কল্পনা ম্যাজিক fantasy magic fairy-tale surreal wonder\nTags: fantasy, hobbit, tolkien, dragon, quest, magic, english"
+  },
+  {
+    "title": "The Midnight Library",
+    "title_bengali": "দ্য মিডনাইট লাইব্রেরি",
+    "slug": "the-midnight-library",
+    "author": {
+      "name": "Matt Haig",
+      "slug": "matt-haig",
+      "bio": "Matt Haig is a British author celebrated for uplifting, philosophical fiction on mental health and hope.",
+      "born_year": 1975,
+      "died_year": null,
+      "era": "Contemporary Magical Realism"
+    },
+    "categorySlug": "magical-realism",
+    "narrator_name": "Carey Mulligan",
+    "description": "Between life and death lies a magical infinite library where every book lets Nora Seed step into a different life she could have lived—giving her a chance to undo her regrets and discover what truly makes life worth living.",
+    "short_description": "An uplifting magical-realism story about second chances, regret, and discovering life's meaning.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/the-midnight-library.jpg",
+    "language": "english",
+    "tier_requirement": "plus",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 3800,
+    "rating_average": 4.86,
+    "ratings_count": 3420,
+    "publication_year": 2020,
+    "tags": [
+      "magical realism",
+      "hope",
+      "mental health",
+      "alternate lives",
+      "uplifting",
+      "english"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "The Library Between Worlds",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1900,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "The Book of Regrets",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1900,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: The Midnight Library\nAuthor: Matt Haig | Category: Magical Realism\nLanguage: English\nSetting & Atmosphere: Endless glowing emerald library floating at midnight between life and death\nMood & Feelings: Comforting, philosophical, hopeful, emotional healing for sadness\nThemes: Regret, parallel lives, mental wellness, gratitude, second chances\nSynopsis: Nora Seed enters a magical library where each book lets her test an alternate version of her own life.\nBilingual Context (দ্য মিডনাইট লাইব্রেরি): রূপকথা জাদু ফ্যান্টাসি কল্পনা ম্যাজিক fantasy magic fairy-tale surreal wonder\nTags: magical realism, hope, mental health, alternate lives, uplifting, english"
+  },
+  {
+    "title": "The Alchemist",
+    "title_bengali": "দ্য আলকেমিস্ট",
+    "slug": "the-alchemist",
+    "author": {
+      "name": "Paulo Coelho",
+      "slug": "paulo-coelho",
+      "bio": "Paulo Coelho is a Brazilian lyricist and novelist whose fable The Alchemist inspired millions worldwide.",
+      "born_year": 1947,
+      "died_year": null,
+      "era": "Contemporary Fable"
+    },
+    "categorySlug": "magical-realism",
+    "narrator_name": "Jeremy Irons",
+    "description": "Andalusian shepherd boy Santiago follows a recurring dream of treasure to the Egyptian pyramids—meeting desert mystics, an Englishman, and a wise alchemist who teach him to listen to his heart and follow his Personal Legend.",
+    "short_description": "A luminous spiritual fable about following your dreams across the Sahara desert.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/the-alchemist.jpg",
+    "language": "english",
+    "tier_requirement": "free",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 3200,
+    "rating_average": 4.9,
+    "ratings_count": 5800,
+    "publication_year": 1988,
+    "tags": [
+      "inspiration",
+      "fable",
+      "spirituality",
+      "desert",
+      "dreams",
+      "philosophy",
+      "english"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "The Shepherd's Dream",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1600,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Across the Sahara",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1600,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: The Alchemist\nAuthor: Paulo Coelho | Category: Magical Realism\nLanguage: English\nSetting & Atmosphere: Spanish pastures, Tangier markets, golden Sahara desert oasis, Egyptian pyramids\nMood & Feelings: Inspiring, spiritual, peaceful, motivating life wisdom\nThemes: Personal Legend, destiny, omens, following your dreams\nSynopsis: Young shepherd Santiago journeys to Egypt in search of treasure, discovering the universe conspires to help those who pursue their dreams.\nBilingual Context (দ্য আলকেমিস্ট): রূপকথা জাদু ফ্যান্টাসি কল্পনা ম্যাজিক fantasy magic fairy-tale surreal wonder\nTags: inspiration, fable, spirituality, desert, dreams, philosophy, english"
+  },
+  {
+    "title": "One Hundred Years of Solitude",
+    "title_bengali": "নিঃসঙ্গতার একশ বছর",
+    "slug": "one-hundred-years-of-solitude",
+    "author": {
+      "name": "Gabriel García Márquez",
+      "slug": "gabriel-garcia-marquez",
+      "bio": "Gabriel García Márquez (1927–2014) was a Nobel Prize-winning master of magical realism.",
+      "born_year": 1927,
+      "died_year": 2014,
+      "era": "Latin American Boom"
+    },
+    "categorySlug": "magical-realism",
+    "narrator_name": "John Lee",
+    "description": "In the mythical jungle town of Macondo, seven generations of the Buendía family experience miracles, civil wars, flying carpets, and rains of yellow flowers in a sweeping tapestry of memory and fate.",
+    "short_description": "The Nobel Prize-winning magical realism saga of the Buendía family in mythical Macondo.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/one-hundred-years-of-solitude.jpg",
+    "language": "english",
+    "tier_requirement": "premium",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 5000,
+    "rating_average": 4.91,
+    "ratings_count": 2890,
+    "publication_year": 1967,
+    "tags": [
+      "magical realism",
+      "nobel",
+      "family saga",
+      "classic",
+      "literary",
+      "english"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "The Founding of Macondo",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2500,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Rain of Yellow Flowers",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2500,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: One Hundred Years of Solitude\nAuthor: Gabriel García Márquez | Category: Magical Realism\nLanguage: English\nSetting & Atmosphere: Mythical tropical town Macondo, ancestral courtyard, rains of yellow blossoms\nMood & Feelings: Hypnotic, poetic, mythic, sweeping family tragedy\nThemes: Cyclical time, solitude, magic woven into daily life, generational memory\nSynopsis: The rise and fall of the Buendía dynasty across a century of miracles and heartbreak in Macondo.\nBilingual Context (নিঃসঙ্গতার একশ বছর): রূপকথা জাদু ফ্যান্টাসি কল্পনা ম্যাজিক fantasy magic fairy-tale surreal wonder\nTags: magical realism, nobel, family saga, classic, literary, english"
+  },
+  {
+    "title": "Red Rising",
+    "title_bengali": "রেড রাইজিং",
+    "slug": "red-rising",
+    "author": {
+      "name": "Pierce Brown",
+      "slug": "pierce-brown",
+      "bio": "Pierce Brown is a #1 New York Times bestselling sci-fi author celebrated for the Red Rising saga.",
+      "born_year": 1988,
+      "died_year": null,
+      "era": "Contemporary Sci-Fi"
+    },
+    "categorySlug": "dystopian-sci-fi",
+    "narrator_name": "Tim Gerard Reynolds",
+    "description": "Darrow is a Red—a lowly Helldiver mining beneath the surface of Mars—until a brutal betrayal reveals humanity's caste Society is built on lies. Rebuilt as a Gold warrior, Darrow infiltrates their elite military academy to shatter the empire from within.",
+    "short_description": "An explosive Martian caste rebellion of tactical warfare, brotherhood, and revolution.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/red-rising.jpg",
+    "language": "english",
+    "tier_requirement": "premium",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 4700,
+    "rating_average": 4.95,
+    "ratings_count": 4650,
+    "publication_year": 2014,
+    "tags": [
+      "red rising",
+      "sci-fi",
+      "dystopian",
+      "mars",
+      "rebellion",
+      "action",
+      "english"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "Helldiver of Lykos",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2350,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "The Institute",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2350,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: Red Rising\nAuthor: Pierce Brown | Category: Dystopian Sci-Fi\nLanguage: English\nSetting & Atmosphere: Underground Martian mines, terraformed Mars citadels, elite military battleground Institute\nMood & Feelings: Adrenaline-pumping, fierce rebellion, brutal tactical sci-fi, emotional fury\nThemes: Caste oppression, undercover infiltration, revolution, brotherhood\nSynopsis: Miner Darrow disguises himself as one of Mars's ruthless Gold rulers to ignite a revolution from inside their deadliest academy.\nBilingual Context (রেড রাইজিং): কল্পবিজ্ঞান মহাকাশ ভবিষ্যৎ ডিস্টোপিয়া রোবট এআই sci-fi science-fiction space dystopia future\nTags: red rising, sci-fi, dystopian, mars, rebellion, action, english"
+  },
+  {
+    "title": "Dune",
+    "title_bengali": "ডিউন",
+    "slug": "dune",
+    "author": {
+      "name": "Frank Herbert",
+      "slug": "frank-herbert",
+      "bio": "Frank Herbert (1920–1986) wrote Dune, the bestselling science fiction epic in history.",
+      "born_year": 1920,
+      "died_year": 1986,
+      "era": "Classic Sci-Fi"
+    },
+    "categorySlug": "dystopian-sci-fi",
+    "narrator_name": "Scott Brick",
+    "description": "On the harsh desert planet Arrakis—the sole source of the universe's priceless spice melange—young Paul Atreides must survive political betrayal, giant sandworms, and fierce desert Fremen warriors to fulfill a galactic prophecy.",
+    "short_description": "The monumental galactic epic of desert politics, sandworms, and destiny on Arrakis.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/dune.jpg",
+    "language": "english",
+    "tier_requirement": "premium",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 5400,
+    "rating_average": 4.96,
+    "ratings_count": 5900,
+    "publication_year": 1965,
+    "tags": [
+      "dune",
+      "sci-fi",
+      "space",
+      "desert",
+      "politics",
+      "epic",
+      "english"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "Arrakis: The Desert Planet",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2700,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Walk Without Rhythm",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2700,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: Dune\nAuthor: Frank Herbert | Category: Dystopian Sci-Fi\nLanguage: English\nSetting & Atmosphere: Scorching desert planet Arrakis, colossal sandworms, galactic imperial courts, spice dunes\nMood & Feelings: Grand, mythic, politically tense, awe-inspiring sci-fi epic\nThemes: Ecology, empire, prophecy, survival, House Atreides\nSynopsis: Betrayed by galactic rivals, Paul Atreides flees into the Arrakis desert and rises among the Fremen to reshape the universe.\nBilingual Context (ডিউন): কল্পবিজ্ঞান মহাকাশ ভবিষ্যৎ ডিস্টোপিয়া রোবট এআই sci-fi science-fiction space dystopia future\nTags: dune, sci-fi, space, desert, politics, epic, english"
+  },
+  {
+    "title": "Project Hail Mary",
+    "title_bengali": "প্রজেক্ট হেইল মেরি",
+    "slug": "project-hail-mary",
+    "author": {
+      "name": "Andy Weir",
+      "slug": "andy-weir",
+      "bio": "Andy Weir is an American novelist known for gripping, scientifically grounded space thrillers.",
+      "born_year": 1972,
+      "died_year": null,
+      "era": "Contemporary Sci-Fi"
+    },
+    "categorySlug": "dystopian-sci-fi",
+    "narrator_name": "Ray Porter",
+    "description": "Ryland Grace wakes up alone on a spacecraft millions of miles from Earth with zero memory of his name—and slowly realizes he is humanity's last hope to stop a sun-eating microbe, aided by an unforgettable alien engineer.",
+    "short_description": "An irresistible deep-space mystery of amnesia, science, and unlikely interstellar friendship.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/project-hail-mary.jpg",
+    "language": "english",
+    "tier_requirement": "plus",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 4600,
+    "rating_average": 4.97,
+    "ratings_count": 5120,
+    "publication_year": 2021,
+    "tags": [
+      "sci-fi",
+      "space",
+      "alien",
+      "friendship",
+      "science",
+      "mystery",
+      "english"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "Waking in Deep Space",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2300,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "First Contact at Tau Ceti",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2300,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: Project Hail Mary\nAuthor: Andy Weir | Category: Dystopian Sci-Fi\nLanguage: English\nSetting & Atmosphere: Interstellar spaceship Hail Mary, Tau Ceti star system, zero-gravity lab\nMood & Feelings: Uplifting, thrilling, clever scientific wonder, heartwarming friendship\nThemes: Extinction crisis, amnesia mystery, alien cooperation, sacrifice\nSynopsis: An amnesiac astronaut teams up with a brilliant alien companion to save both their dying stars.\nBilingual Context (প্রজেক্ট হেইল মেরি): কল্পবিজ্ঞান মহাকাশ ভবিষ্যৎ ডিস্টোপিয়া রোবট এআই sci-fi science-fiction space dystopia future\nTags: sci-fi, space, alien, friendship, science, mystery, english"
+  },
+  {
+    "title": "Dark Matter",
+    "title_bengali": "ডার্ক ম্যাটার",
+    "slug": "dark-matter",
+    "author": {
+      "name": "Blake Crouch",
+      "slug": "blake-crouch",
+      "bio": "Blake Crouch is a bestselling sci-fi thriller writer known for mind-bending multiverse stories.",
+      "born_year": 1978,
+      "died_year": null,
+      "era": "Contemporary Sci-Fi Thriller"
+    },
+    "categorySlug": "dystopian-sci-fi",
+    "narrator_name": "Jon Lindstrom",
+    "description": "Abducted on a rainy Chicago night, physics professor Jason Dessen wakes up in a parallel world where his wife is not his wife, his son was never born, and he is a celebrated genius—launching a frantic race across realities to get home.",
+    "short_description": "A breathless multiverse sci-fi thriller about identity, choices, and fighting to return to family.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/dark-matter.jpg",
+    "language": "english",
+    "tier_requirement": "plus",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 3900,
+    "rating_average": 4.88,
+    "ratings_count": 3480,
+    "publication_year": 2016,
+    "tags": [
+      "multiverse",
+      "sci-fi",
+      "thriller",
+      "quantum",
+      "parallel world",
+      "english"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "The Box in Chicago",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1950,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Infinite Doors",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1950,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: Dark Matter\nAuthor: Blake Crouch | Category: Dystopian Sci-Fi\nLanguage: English\nSetting & Atmosphere: Rainy Chicago streets, quantum superposition corridor, infinite alternate realities\nMood & Feelings: Fast-paced, mind-bending suspense, emotional urgency\nThemes: Multiverse, roads not taken, family love, identity\nSynopsis: Kidnapped into an alternate reality, Jason Dessen fights through endless parallel worlds to reunite with his true family.\nBilingual Context (ডার্ক ম্যাটার): কল্পবিজ্ঞান মহাকাশ ভবিষ্যৎ ডিস্টোপিয়া রোবট এআই sci-fi science-fiction space dystopia future\nTags: multiverse, sci-fi, thriller, quantum, parallel world, english"
+  },
+  {
+    "title": "Polatak Toofan",
+    "title_bengali": "পলাতক তুফান",
+    "slug": "polatak-toofan",
+    "author": {
+      "name": "Jagadish Chandra Bose",
+      "slug": "jagadish-chandra-bose",
+      "bio": "Sir Jagadish Chandra Bose (1858–1937) was a legendary Bengali polymath, physicist, and pioneer of Bengali science fiction.",
+      "born_year": 1858,
+      "died_year": 1937,
+      "era": "Bengal Renaissance Science"
+    },
+    "categorySlug": "dystopian-sci-fi",
+    "narrator_name": "Koushik Sen",
+    "description": "Long before modern geoengineering, Bengali scientist Jagadish Chandra Bose imagined a thrilling maritime adventure in the Bay of Bengal where a curious bottle of hair oil miraculously calms a raging ocean cyclone.",
+    "short_description": "One of the earliest Bengali science-fiction tales: taming a fierce Bay of Bengal cyclone with physics.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/polatak-toofan.jpg",
+    "language": "bangla",
+    "tier_requirement": "free",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 2600,
+    "rating_average": 4.85,
+    "ratings_count": 1580,
+    "publication_year": 1896,
+    "tags": [
+      "sci-fi",
+      "jagadish chandra bose",
+      "cyclone",
+      "physics",
+      "classic",
+      "পলাতক তুফান",
+      "কল্পবিজ্ঞান"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "Storm in the Bay of Bengal",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1300,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "The Tamed Tempest",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1300,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: Polatak Toofan (পলাতক তুফান)\nAuthor: Jagadish Chandra Bose | Category: Dystopian Sci-Fi\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: Stormy Bay of Bengal steamship, Victorian scientific instruments, raging sea cyclone\nMood & Feelings: Clever, vintage scientific wonder, thrilling maritime curiosity, কল্পবিজ্ঞান\nThemes: Surface tension physics, weather control, early Bengali science fiction\nSynopsis: A pioneering Bengali sci-fi story where scientific ingenuity tames a devastating ocean storm."
+  },
+  {
+    "title": "Founders Unfiltered: Global Tech",
+    "title_bengali": "ফাউন্ডার্স আনফিল্টার্ড",
+    "slug": "founders-unfiltered-global-tech",
+    "author": {
+      "name": "GolpoBook Studio",
+      "slug": "golpobook-studio",
+      "bio": "GolpoBook Studio produces original English and bilingual podcasts on tech, philosophy, and true crime.",
+      "born_year": null,
+      "died_year": null,
+      "era": "Contemporary Audio"
+    },
+    "categorySlug": "podcasts",
+    "narrator_name": "Tariq & Maya",
+    "description": "Unscripted studio conversations with software founders, AI engineers, and product designers sharing what really went wrong, how they shipped their first product, and what's next in global tech.",
+    "short_description": "Candid English tech podcast featuring real founder stories on AI, startups, and product craft.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/founders-unfiltered-global-tech.jpg",
+    "language": "english",
+    "tier_requirement": "free",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 3000,
+    "rating_average": 4.83,
+    "ratings_count": 1240,
+    "publication_year": 2026,
+    "tags": [
+      "podcast",
+      "tech",
+      "ai",
+      "founders",
+      "startups",
+      "interviews",
+      "english"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "Ep 01: Shipping AI Products Fast",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1500,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Ep 02: Lessons from Failed Launches",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1500,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: Founders Unfiltered: Global Tech\nAuthor: GolpoBook Studio | Category: Podcasts\nLanguage: English\nSetting & Atmosphere: Modern podcast studio, glowing microphones, candid tech founder roundtable\nMood & Feelings: Energetic, insightful, inspiring, career-focused podcast\nThemes: AI engineering, startup grit, product launches, software leadership\nSynopsis: Honest conversations with builders and founders on launching tech products and navigating AI.\nBilingual Context (ফাউন্ডার্স আনফিল্টার্ড): পডকাস্ট আড্ডা আলোচনা ইন্টারভিউ টকশো podcast talk-show interview discussion\nTags: podcast, tech, ai, founders, startups, interviews, english"
+  },
+  {
+    "title": "True Crime South Asia",
+    "title_bengali": "ট্রু ক্রাইম সাউথ এশিয়া",
+    "slug": "true-crime-south-asia",
+    "author": {
+      "name": "GolpoBook Investigates",
+      "slug": "golpobook-investigates",
+      "bio": "GolpoBook Investigates produces deeply researched true-crime and mystery audio documentaries.",
+      "born_year": null,
+      "died_year": null,
+      "era": "Contemporary Audio"
+    },
+    "categorySlug": "podcasts",
+    "narrator_name": "Zoya Khan",
+    "description": "An atmospheric investigative audio series revisiting South Asia's most baffling unsolved cases, forensic breakthroughs, and forgotten courtroom dramas.",
+    "short_description": "Gripping English true-crime podcast investigating South Asia's most baffling unsolved mysteries.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/true-crime-south-asia.jpg",
+    "language": "english",
+    "tier_requirement": "plus",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 3200,
+    "rating_average": 4.9,
+    "ratings_count": 1890,
+    "publication_year": 2026,
+    "tags": [
+      "podcast",
+      "true crime",
+      "mystery",
+      "investigative",
+      "detective",
+      "english"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "Ep 01: The Missing Heiress",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1600,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Ep 02: Clues in the Archive",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1600,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: True Crime South Asia\nAuthor: GolpoBook Investigates | Category: Podcasts\nLanguage: English\nSetting & Atmosphere: Late-night investigative desk, archived case files, forensic audio documentary\nMood & Feelings: Gripping, suspenseful, eerie, binge-worthy true crime podcast\nThemes: Unsolved mysteries, investigative journalism, forensics, justice\nSynopsis: Deep-dive audio journalism unpacking famous unsolved crimes and dramatic investigations across South Asia.\nBilingual Context (ট্রু ক্রাইম সাউথ এশিয়া): পডকাস্ট আড্ডা আলোচনা ইন্টারভিউ টকশো podcast talk-show interview discussion\nTags: podcast, true crime, mystery, investigative, detective, english"
+  },
+  {
+    "title": "Late Night Philosophy",
+    "title_bengali": "লেট নাইট ফিলোসফি",
+    "slug": "late-night-philosophy",
+    "author": {
+      "name": "MindCast",
+      "slug": "mindcast",
+      "bio": "MindCast creates calm, reflective English podcasts on philosophy, Stoicism, and mindful living.",
+      "born_year": null,
+      "died_year": null,
+      "era": "Contemporary Audio"
+    },
+    "categorySlug": "podcasts",
+    "narrator_name": "Julian Vance",
+    "description": "Unwind after a long day with calm, thoughtful conversations on Stoicism, meaning, creative solitude, and how ancient wisdom helps us stay grounded in a hyper-connected world.",
+    "short_description": "Calm late-night English podcast exploring Stoicism, meaning, and peaceful living.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/late-night-philosophy.jpg",
+    "language": "english",
+    "tier_requirement": "free",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 2800,
+    "rating_average": 4.87,
+    "ratings_count": 1640,
+    "publication_year": 2026,
+    "tags": [
+      "podcast",
+      "philosophy",
+      "stoicism",
+      "calm",
+      "night",
+      "mindfulness",
+      "english"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "Ep 01: Marcus Aurelius on Calm",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1400,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Ep 02: The Art of Slowing Down",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1400,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: Late Night Philosophy\nAuthor: MindCast | Category: Podcasts\nLanguage: English\nSetting & Atmosphere: Quiet midnight lamp, warm tea, calm contemplative audio studio\nMood & Feelings: Peaceful, calming, thoughtful, philosophical comfort before sleep\nThemes: Stoicism, mental clarity, letting go of anxiety, meaning of life\nSynopsis: Gentle late-night philosophical essays and conversations designed to quiet an overthinking mind.\nBilingual Context (লেট নাইট ফিলোসফি): পডকাস্ট আড্ডা আলোচনা ইন্টারভিউ টকশো podcast talk-show interview discussion\nTags: podcast, philosophy, stoicism, calm, night, mindfulness, english"
+  },
+  {
+    "title": "Science Weekly Explained",
+    "title_bengali": "সায়েন্স উইকলি",
+    "slug": "science-weekly-explained",
+    "author": {
+      "name": "Orbit Audio",
+      "slug": "orbit-audio",
+      "bio": "Orbit Audio breaks down astrophysics, AI, and biology into clear, exciting podcast episodes.",
+      "born_year": null,
+      "died_year": null,
+      "era": "Contemporary Science Audio"
+    },
+    "categorySlug": "podcasts",
+    "narrator_name": "Dr. Samira Patel",
+    "description": "Curious about black holes, quantum computing, or how our brains form memories? Science Weekly Explained turns complex breakthroughs into vivid, easy-to-follow 20-minute audio journeys.",
+    "short_description": "Bite-sized English science podcast unpacking space, AI, physics, and the human brain.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/science-weekly-explained.jpg",
+    "language": "english",
+    "tier_requirement": "free",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 2700,
+    "rating_average": 4.84,
+    "ratings_count": 1410,
+    "publication_year": 2026,
+    "tags": [
+      "podcast",
+      "science",
+      "space",
+      "physics",
+      "ai",
+      "curiosity",
+      "english"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "Ep 01: Inside a Black Hole",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1350,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Ep 02: How Memory Works",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1350,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: Science Weekly Explained\nAuthor: Orbit Audio | Category: Podcasts\nLanguage: English\nSetting & Atmosphere: Modern science broadcast studio, cosmic wonder, curiosity-driven explainers\nMood & Feelings: Curious, mind-expanding, clear, engaging science podcast\nThemes: Astrophysics, black holes, neuroscience, artificial intelligence\nSynopsis: Accessible, exciting weekly breakdowns of the universe's biggest scientific discoveries.\nBilingual Context (সায়েন্স উইকলি): পডকাস্ট আড্ডা আলোচনা ইন্টারভিউ টকশো podcast talk-show interview discussion\nTags: podcast, science, space, physics, ai, curiosity, english"
+  },
+  {
+    "title": "Bangla Sahitya Adda",
+    "title_bengali": "বাংলা সাহিত্য আড্ডা",
+    "slug": "bangla-sahitya-adda",
+    "author": {
+      "name": "GolpoBook Originals",
+      "slug": "golpobook-originals",
+      "bio": "GolpoBook Originals produces immersive Bengali cultural roundtables and literary podcasts.",
+      "born_year": null,
+      "died_year": null,
+      "era": "Contemporary Audio"
+    },
+    "categorySlug": "podcasts",
+    "narrator_name": "Anirban & Shreya",
+    "description": "Pull up a chair at a lively Dhaka-Kolkata literary adda unpacking the hidden backstories behind Rabindranath Tagore's songs, Kazi Nazrul's fiery verse, and Humayun Ahmed's unforgettable characters.",
+    "short_description": "Warm Bengali literary podcast discussing Tagore, Nazrul, and modern Bangla storytelling.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/bangla-sahitya-adda.jpg",
+    "language": "bangla",
+    "tier_requirement": "free",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 3100,
+    "rating_average": 4.89,
+    "ratings_count": 1520,
+    "publication_year": 2026,
+    "tags": [
+      "podcast",
+      "literature",
+      "bangla",
+      "adda",
+      "tagore",
+      "nazrul",
+      "সাহিত্য",
+      "আড্ডা",
+      "পডকাস্ট"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "Ep 01: Secrets of Tagore's Songs",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1550,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Ep 02: Remembering Humayun's Himu",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1550,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: Bangla Sahitya Adda (বাংলা সাহিত্য আড্ডা)\nAuthor: GolpoBook Originals | Category: Podcasts\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: Cozy bookshop coffeehouse, warm evening literary discussion, Bengali culture\nMood & Feelings: Warm, nostalgic, intellectually joyful, আড্ডা, বাংলা সাহিত্য, পডকাস্ট\nThemes: Rabindranath Tagore, Kazi Nazrul Islam, Humayun Ahmed, Bengali literary heritage\nSynopsis: Friendly hosts share fascinating anecdotes and debates about Bengal's greatest writers and timeless characters."
+  },
+  {
+    "title": "Start With Why",
+    "title_bengali": "স্টার্ট উইথ হোয়াই",
+    "slug": "start-with-why",
+    "author": {
+      "name": "Simon Sinek",
+      "slug": "simon-sinek",
+      "bio": "Simon Sinek is an author and inspirational speaker famed for the Golden Circle leadership framework.",
+      "born_year": 1973,
+      "died_year": null,
+      "era": "Contemporary Business & Leadership"
+    },
+    "categorySlug": "e-learning",
+    "narrator_name": "Simon Sinek",
+    "description": "Why are some leaders and companies endlessly inspiring while others struggle? Simon Sinek reveals the Golden Circle framework—showing how great organizations think, act, and communicate from the inside out, starting with purpose.",
+    "short_description": "Simon Sinek's landmark leadership guide on purpose-driven work and inspiring action.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/start-with-why.jpg",
+    "language": "english",
+    "tier_requirement": "plus",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 4000,
+    "rating_average": 4.91,
+    "ratings_count": 4320,
+    "publication_year": 2009,
+    "tags": [
+      "leadership",
+      "business",
+      "self-help",
+      "purpose",
+      "motivation",
+      "start with why",
+      "english"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "The Golden Circle",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2000,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "How Leaders Inspire Action",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2000,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: Start With Why\nAuthor: Simon Sinek | Category: E-Learning\nLanguage: English\nSetting & Atmosphere: Leadership keynotes, innovative startups, Apple & Wright Brothers case studies\nMood & Feelings: Motivating, clarifying, purpose-driven, inspiring business wisdom\nThemes: Golden Circle, purpose over profit, authentic leadership, inspiring teams\nSynopsis: Discover why knowing your deeper 'Why' transforms leadership, marketing, and long-term career fulfillment.\nBilingual Context (স্টার্ট উইথ হোয়াই): আত্মউন্নয়ন স্বনির্ভরতা অনুপ্রেরণা শিক্ষা ব্যবসা অভ্যাস মনোযোগ নেতৃত্ব self-help personal-development productivity habits focus motivation leadership business learning\nTags: leadership, business, self-help, purpose, motivation, start with why, english"
+  },
+  {
+    "title": "Atomic Habits",
+    "title_bengali": "অ্যাটমিক হ্যাবিটস",
+    "slug": "atomic-habits",
+    "author": {
+      "name": "James Clear",
+      "slug": "james-clear",
+      "bio": "James Clear is a leading habits researcher and author of the global #1 bestseller Atomic Habits.",
+      "born_year": 1986,
+      "died_year": null,
+      "era": "Contemporary Self-Development"
+    },
+    "categorySlug": "e-learning",
+    "narrator_name": "James Clear",
+    "description": "No matter your goals, Atomic Habits offers a proven system for getting 1% better every day. Learn how tiny behavioral shifts compound into extraordinary results—and how to break bad habits for good.",
+    "short_description": "The #1 practical guide to building good habits, breaking bad ones, and getting 1% better daily.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/atomic-habits.jpg",
+    "language": "english",
+    "tier_requirement": "free",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 4200,
+    "rating_average": 4.96,
+    "ratings_count": 6800,
+    "publication_year": 2018,
+    "tags": [
+      "habits",
+      "self-help",
+      "productivity",
+      "self-development",
+      "focus",
+      "english"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "The Surprising Power of 1%",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2100,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "The Four Laws of Behavior Change",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2100,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: Atomic Habits\nAuthor: James Clear | Category: E-Learning\nLanguage: English\nSetting & Atmosphere: Practical daily routines, science-backed behavioral psychology\nMood & Feelings: Empowering, practical, motivating, clear step-by-step self-improvement\nThemes: 1% daily improvement, identity-based habits, environment design, discipline\nSynopsis: A practical blueprint for transforming your daily routines through tiny, sustainable habit loops.\nBilingual Context (অ্যাটমিক হ্যাবিটস): আত্মউন্নয়ন স্বনির্ভরতা অনুপ্রেরণা শিক্ষা ব্যবসা অভ্যাস মনোযোগ নেতৃত্ব self-help personal-development productivity habits focus motivation leadership business learning\nTags: habits, self-help, productivity, self-development, focus, english"
+  },
+  {
+    "title": "Deep Work",
+    "title_bengali": "ডিপ ওয়ার্ক",
+    "slug": "deep-work",
+    "author": {
+      "name": "Cal Newport",
+      "slug": "cal-newport",
+      "bio": "Cal Newport is a computer science professor and bestselling author on focus and digital minimalism.",
+      "born_year": 1982,
+      "died_year": null,
+      "era": "Contemporary Productivity"
+    },
+    "categorySlug": "e-learning",
+    "narrator_name": "Jeff Bottoms",
+    "description": "In an age of endless notifications and shallow busywork, the ability to focus without distraction is becoming rare and priceless. Cal Newport lays out four rules to train your mind for deep, meaningful cognitive output.",
+    "short_description": "Rules for focused success and beating distraction in a hyper-connected world.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/deep-work.jpg",
+    "language": "english",
+    "tier_requirement": "plus",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 3800,
+    "rating_average": 4.88,
+    "ratings_count": 3450,
+    "publication_year": 2016,
+    "tags": [
+      "focus",
+      "study",
+      "productivity",
+      "self-help",
+      "career",
+      "english"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "Deep Work Is Valuable",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1900,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Quit Social Media & Embrace Boredom",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1900,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: Deep Work\nAuthor: Cal Newport | Category: E-Learning\nLanguage: English\nSetting & Atmosphere: Quiet study desk, distraction-free creative sanctuary, academic rigor\nMood & Feelings: Sharp, disciplined, motivating for students and engineers\nThemes: Concentration, quitting distractions, deliberate practice, meaningful work\nSynopsis: Learn how to protect your attention span and produce high-value creative and technical work.\nBilingual Context (ডিপ ওয়ার্ক): আত্মউন্নয়ন স্বনির্ভরতা অনুপ্রেরণা শিক্ষা ব্যবসা অভ্যাস মনোযোগ নেতৃত্ব self-help personal-development productivity habits focus motivation leadership business learning\nTags: focus, study, productivity, self-help, career, english"
+  },
+  {
+    "title": "Sapiens: A Brief History of Humankind",
+    "title_bengali": "সেপিয়েন্স",
+    "slug": "sapiens-a-brief-history-of-humankind",
+    "author": {
+      "name": "Yuval Noah Harari",
+      "slug": "yuval-noah-harari",
+      "bio": "Yuval Noah Harari is a historian and bestselling author exploring humanity's past and future.",
+      "born_year": 1976,
+      "died_year": null,
+      "era": "Contemporary Non-Fiction"
+    },
+    "categorySlug": "e-learning",
+    "narrator_name": "Derek Perkins",
+    "description": "How did an insignificant ape come to rule planet Earth, build cities, invent money, and split the atom? Yuval Noah Harari weaves biology, history, and economics into an unforgettable tour of human civilization.",
+    "short_description": "A sweeping, eye-opening audio journey through 70,000 years of human history.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/sapiens-a-brief-history-of-humankind.jpg",
+    "language": "english",
+    "tier_requirement": "premium",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 5100,
+    "rating_average": 4.94,
+    "ratings_count": 5300,
+    "publication_year": 2011,
+    "tags": [
+      "history",
+      "science",
+      "non-fiction",
+      "humanity",
+      "education",
+      "english"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "The Cognitive Revolution",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2550,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "The Scientific Revolution",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2550,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: Sapiens: A Brief History of Humankind\nAuthor: Yuval Noah Harari | Category: E-Learning\nLanguage: English\nSetting & Atmosphere: From prehistoric savannas to ancient empires and modern laboratories\nMood & Feelings: Mind-expanding, intellectual, fascinating big-picture history\nThemes: Cognitive revolution, agriculture, money, empires, future of AI\nSynopsis: Explore how shared stories allowed Homo sapiens to conquer the world and shape modern society.\nBilingual Context (সেপিয়েন্স): আত্মউন্নয়ন স্বনির্ভরতা অনুপ্রেরণা শিক্ষা ব্যবসা অভ্যাস মনোযোগ নেতৃত্ব self-help personal-development productivity habits focus motivation leadership business learning\nTags: history, science, non-fiction, humanity, education, english"
+  },
+  {
+    "title": "Durgeshnandini",
+    "title_bengali": "দুর্গেশনন্দিনী",
+    "slug": "durgeshnandini",
+    "author": {
+      "name": "Bankim Chandra Chattopadhyay",
+      "slug": "bankim-chandra-chattopadhyay",
+      "bio": "Bankim Chandra Chattopadhyay (1838–1894) was a towering pioneer of the Bengali historical novel.",
+      "born_year": 1838,
+      "died_year": 1894,
+      "era": "Bengal Renaissance"
+    },
+    "categorySlug": "historical-liberation-war",
+    "narrator_name": "Koushik Sen",
+    "description": "Amidst the fierce 16th-century Mughal-Pathan battles across Bengal's border fortresses, gallant young Rajput commander Jagat Singh falls in love with Tilottama, daughter of the Garh Mandaran chieftain—testing honor, war, and devotion.",
+    "short_description": "Bengal's first great historical romance of medieval fortresses, chivalry, and Mughal-Pathan wars.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/durgeshnandini.jpg",
+    "language": "bangla",
+    "tier_requirement": "free",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 4400,
+    "rating_average": 4.88,
+    "ratings_count": 2310,
+    "publication_year": 1865,
+    "tags": [
+      "historical",
+      "fortress",
+      "war",
+      "romance",
+      "bankim",
+      "দুর্গেশনন্দিনী",
+      "ইতিহাস"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "Storm Over Garh Mandaran",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2200,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Honor and Devotion",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2200,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: Durgeshnandini (দুর্গেশনন্দিনী)\nAuthor: Bankim Chandra Chattopadhyay | Category: Historical & Liberation War\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: Medieval stone fortress Garh Mandaran, Bengal riverbanks, torchlit battle camps\nMood & Feelings: Grand historical drama, chivalry, fierce loyalty and romance, ঐতিহাসিক উপন্যাস\nThemes: Mughal-Pathan conflict, fortress siege, honor, tragic devotion\nSynopsis: A sweeping 16th-century Bengali historical epic blending battlefield valor with forbidden love."
+  },
+  {
+    "title": "Agni Bina & Bidrohi Chronicles",
+    "title_bengali": "অগ্নিবীণা ও বিদ্রোহী",
+    "slug": "agni-bina-bidrohi-chronicles",
+    "author": {
+      "name": "Kazi Nazrul Islam",
+      "slug": "kazi-nazrul-islam",
+      "bio": "Kazi Nazrul Islam (1899–1976), Bangladesh's National Poet, ignited anti-colonial resistance with his fiery verse.",
+      "born_year": 1899,
+      "died_year": 1976,
+      "era": "Rebel Poet Era"
+    },
+    "categorySlug": "historical-liberation-war",
+    "narrator_name": "Bratati Bandyopadhyay",
+    "description": "Experience the thunderous rhythm and fearless spirit of Kazi Nazrul Islam's Agni Bina—an audio chronicle uniting his immortal rebel poems with the untold historical story of resistance against colonial oppression.",
+    "short_description": "The fiery anti-colonial spirit and immortal rebel verse of National Poet Kazi Nazrul Islam.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/agni-bina-%26-bidrohi-chronicles.jpg",
+    "language": "bangla",
+    "tier_requirement": "free",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 3300,
+    "rating_average": 4.95,
+    "ratings_count": 3420,
+    "publication_year": 1922,
+    "tags": [
+      "nazrul",
+      "rebel",
+      "freedom",
+      "poetry",
+      "history",
+      "কাজী নজরুল",
+      "অগ্নিবীণা",
+      "বিদ্রোহী"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "Bidrohi: The Rebel Awakens",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1650,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Breaking the Chains",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1650,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: Agni Bina & Bidrohi Chronicles (অগ্নিবীণা ও বিদ্রোহী)\nAuthor: Kazi Nazrul Islam | Category: Historical & Liberation War\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: 1920s anti-colonial Bengal, fiery rallies, thunderous poetic recitations\nMood & Feelings: Passionate, fearless, rebellious courage, inspiring patriotism, বিদ্রোহী কবিতা\nThemes: Freedom from tyranny, equality, youth revolution, National Poet of Bangladesh\nSynopsis: A stirring audio tribute to Kazi Nazrul Islam's revolutionary Agni Bina and the courage that shaped Bengal."
+  },
+  {
+    "title": "The Nightingale",
+    "title_bengali": "দ্য নাইটিঙ্গেল",
+    "slug": "the-nightingale",
+    "author": {
+      "name": "Kristin Hannah",
+      "slug": "kristin-hannah",
+      "bio": "Kristin Hannah is a #1 New York Times bestselling author of deeply emotional historical fiction.",
+      "born_year": 1960,
+      "died_year": null,
+      "era": "Contemporary Historical Fiction"
+    },
+    "categorySlug": "historical-liberation-war",
+    "narrator_name": "Polly Stone",
+    "description": "In 1939 Nazi-occupied France, two very different sisters—quiet Vianne and rebellious Isabelle—choose separate, dangerous paths of resistance, risking everything to shelter hunted children and guide downed pilots to freedom.",
+    "short_description": "An unforgettable wartime story of two sisters' extraordinary courage in occupied France.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/the-nightingale.jpg",
+    "language": "english",
+    "tier_requirement": "premium",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 4900,
+    "rating_average": 4.96,
+    "ratings_count": 4720,
+    "publication_year": 2015,
+    "tags": [
+      "ww2",
+      "war",
+      "resistance",
+      "sisters",
+      "historical",
+      "emotional",
+      "english"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "Shadows Over Carriveau",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2450,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Across the Pyrenees",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2450,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: The Nightingale\nAuthor: Kristin Hannah | Category: Historical & Liberation War\nLanguage: English\nSetting & Atmosphere: Occupied French village, snowy Pyrenees mountains, wartime underground resistance\nMood & Feelings: Deeply emotional, heroic, heartbreaking sacrifice, inspiring sisterhood\nThemes: World War II resistance, women's wartime bravery, survival, love\nSynopsis: Two French sisters risk their lives in different ways to resist occupation and save innocent lives during World War II.\nBilingual Context (দ্য নাইটিঙ্গেল): ইতিহাস মুক্তিযুদ্ধ ১৯৭১ স্বাধীনতা যুদ্ধ সংগ্রাম history liberation-war war rebellion freedom\nTags: ww2, war, resistance, sisters, historical, emotional, english"
+  },
+  {
+    "title": "All the Light We Cannot See",
+    "title_bengali": "অল দ্য লাইট উই ক্যাননট সি",
+    "slug": "all-the-light-we-cannot-see",
+    "author": {
+      "name": "Anthony Doerr",
+      "slug": "anthony-doerr",
+      "bio": "Anthony Doerr is a Pulitzer Prize-winning American novelist celebrated for luminous prose.",
+      "born_year": 1973,
+      "died_year": null,
+      "era": "Contemporary Historical Fiction"
+    },
+    "categorySlug": "historical-liberation-war",
+    "narrator_name": "Zach Appelman",
+    "description": "In occupied France, a blind French girl named Marie-Laure flees Paris with her father carrying a legendary museum gem, while a gifted German orphan boy is swept into the war—their paths converging in the walled seaside town of Saint-Malo.",
+    "short_description": "A Pulitzer Prize-winning wartime tale of resilience, radio waves, and hope in the darkest hours.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/all-the-light-we-cannot-see.jpg",
+    "language": "english",
+    "tier_requirement": "plus",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 4700,
+    "rating_average": 4.93,
+    "ratings_count": 4180,
+    "publication_year": 2014,
+    "tags": [
+      "pulitzer",
+      "ww2",
+      "historical",
+      "radio",
+      "courage",
+      "english"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "The Walled City of Saint-Malo",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2350,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Voices on the Radio",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2350,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: All the Light We Cannot See\nAuthor: Anthony Doerr | Category: Historical & Liberation War\nLanguage: English\nSetting & Atmosphere: Paris Natural History Museum, walled coastal town Saint-Malo, secret attic radio\nMood & Feelings: Luminous, poignant, bittersweet wartime compassion and wonder\nThemes: Innocence in war, science and music, moral awakening, survival\nSynopsis: The lives of a blind French girl and a gentle German radio prodigy intersect amidst the siege of Saint-Malo.\nBilingual Context (অল দ্য লাইট উই ক্যাননট সি): ইতিহাস মুক্তিযুদ্ধ ১৯৭১ স্বাধীনতা যুদ্ধ সংগ্রাম history liberation-war war rebellion freedom\nTags: pulitzer, ww2, historical, radio, courage, english"
+  },
+  {
+    "title": "1971: Echoes of Freedom",
+    "title_bengali": "১৯৭১: স্বাধীনতার প্রতিধ্বনি",
+    "slug": "1971-echoes-of-freedom",
+    "author": {
+      "name": "Tariq Ali",
+      "slug": "tariq-ali-historian",
+      "bio": "Tariq Ali is a Dhaka-born historian documenting the oral testimonies of Bangladesh's 1971 Liberation War.",
+      "born_year": 1962,
+      "died_year": null,
+      "era": "Bangladesh Historical Chronicle"
+    },
+    "categorySlug": "historical-liberation-war",
+    "narrator_name": "Nabila Chowdhury",
+    "description": "Bringing together rare radio dispatches, student testimonies, and firsthand accounts of the 1971 Mukti Bahini, 1971: Echoes of Freedom offers an accessible English historical chronicle of how a nation won its independence.",
+    "short_description": "An English audio chronicle of courage, resistance, and the birth of Bangladesh in 1971.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/1971-echoes-of-freedom.jpg",
+    "language": "english",
+    "tier_requirement": "free",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 3600,
+    "rating_average": 4.92,
+    "ratings_count": 2150,
+    "publication_year": 2024,
+    "tags": [
+      "1971",
+      "bangladesh",
+      "liberation war",
+      "history",
+      "freedom",
+      "muktijuddho",
+      "english"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "Voice of Swadhin Bangla Betar",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1800,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Victory at Suhrawardy Udyan",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1800,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: 1971: Echoes of Freedom\nAuthor: Tariq Ali | Category: Historical & Liberation War\nLanguage: English\nSetting & Atmosphere: 1971 Dhaka, Padma river crossings, Swadhin Bangla Betar Kendra radio broadcasts\nMood & Feelings: Inspiring, dignified, deeply patriotic, historical truth\nThemes: Bangladesh Liberation War 1971, Mukti Bahini courage, independence\nSynopsis: A vivid English historical narrative tracing the ordinary citizens and freedom fighters who birthed Bangladesh in 1971.\nBilingual Context (১৯৭১: স্বাধীনতার প্রতিধ্বনি): ইতিহাস মুক্তিযুদ্ধ ১৯৭১ স্বাধীনতা যুদ্ধ সংগ্রাম history liberation-war war rebellion freedom\nTags: 1971, bangladesh, liberation war, history, freedom, muktijuddho, english"
+  },
+  {
+    "title": "Pride and Prejudice",
+    "title_bengali": "প্রাইড অ্যান্ড প্রেজুডিস",
+    "slug": "pride-and-prejudice",
+    "author": {
+      "name": "Jane Austen",
+      "slug": "jane-austen",
+      "bio": "Jane Austen (1775–1817) was an iconic English novelist famed for witty social commentary and romance.",
+      "born_year": 1775,
+      "died_year": 1817,
+      "era": "Regency Classic"
+    },
+    "categorySlug": "romance-drama",
+    "narrator_name": "Rosamund Pike",
+    "description": "Sharp-witted Elizabeth Bennet clashes at first sight with the proud, aloof Mr. Darcy at a country ball—sparking a classic battle of misunderstandings, family chaos, and unforgettable romance.",
+    "short_description": "Jane Austen's sparkling Regency classic of wit, pride, and slow-burn love.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/pride-and-prejudice.jpg",
+    "language": "english",
+    "tier_requirement": "free",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 4400,
+    "rating_average": 4.94,
+    "ratings_count": 5120,
+    "publication_year": 1813,
+    "tags": [
+      "romance",
+      "classic",
+      "jane austen",
+      "wit",
+      "love",
+      "english"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "The Meryton Assembly",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2200,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Pemberley",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2200,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: Pride and Prejudice\nAuthor: Jane Austen | Category: Romance & Drama\nLanguage: English\nSetting & Atmosphere: English countryside estates, candlelit Regency ballrooms, Pemberley gardens\nMood & Feelings: Witty, charming, heartwarming slow-burn romance\nThemes: First impressions, class pride, intellectual banter, true love\nSynopsis: Independent Elizabeth Bennet and proud Mr. Darcy overcome prejudice and misunderstandings to find lasting love.\nBilingual Context (প্রাইড অ্যান্ড প্রেজুডিস): প্রেম ভালোবাসা বিরহ নাটকীয় রোমান্টিক উপন্যাস romance love heartbreak tragedy drama\nTags: romance, classic, jane austen, wit, love, english"
+  },
+  {
+    "title": "Normal People",
+    "title_bengali": "নরমাল পিপল",
+    "slug": "normal-people",
+    "author": {
+      "name": "Sally Rooney",
+      "slug": "sally-rooney",
+      "bio": "Sally Rooney is an acclaimed Irish author celebrated for intimate portraits of modern love and youth.",
+      "born_year": 1991,
+      "died_year": null,
+      "era": "Contemporary Literary Drama"
+    },
+    "categorySlug": "romance-drama",
+    "narrator_name": "Aoife McMahon",
+    "description": "From a small town in western Ireland to Trinity College Dublin, Marianne and Connell circle in and out of each other's lives—bound by an undeniable connection yet separated by unspoken insecurities and growing pains.",
+    "short_description": "An intimate, emotionally raw modern romance about two people growing up together and apart.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/normal-people.jpg",
+    "language": "english",
+    "tier_requirement": "plus",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 3800,
+    "rating_average": 4.83,
+    "ratings_count": 2940,
+    "publication_year": 2018,
+    "tags": [
+      "modern romance",
+      "drama",
+      "college",
+      "emotional",
+      "relationship",
+      "english"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "Sligo High School",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1900,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Trinity College Nights",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1900,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: Normal People\nAuthor: Sally Rooney | Category: Romance & Drama\nLanguage: English\nSetting & Atmosphere: Rainy Irish coastal town, Trinity College Dublin dorms, late-night conversations\nMood & Feelings: Intimate, bittersweet, vulnerable, realistic modern heartbreak and tenderness\nThemes: Miscommunication, class differences, first love, mental vulnerability\nSynopsis: Marianne and Connell navigate university, heartbreak, and an unbreakable bond across years of change.\nBilingual Context (নরমাল পিপল): প্রেম ভালোবাসা বিরহ নাটকীয় রোমান্টিক উপন্যাস romance love heartbreak tragedy drama\nTags: modern romance, drama, college, emotional, relationship, english"
+  },
+  {
+    "title": "The Song of Achilles",
+    "title_bengali": "দ্য সং অব অ্যাকিলিস",
+    "slug": "the-song-of-achilles",
+    "author": {
+      "name": "Madeline Miller",
+      "slug": "madeline-miller",
+      "bio": "Madeline Miller is an Orange Prize-winning author famous for lyrical retellings of Greek myth.",
+      "born_year": 1978,
+      "died_year": null,
+      "era": "Contemporary Mythic Drama"
+    },
+    "categorySlug": "romance-drama",
+    "narrator_name": "Frazer Douglas",
+    "description": "Exiled young prince Patroclus forms an unbreakable bond with radiant warrior Achilles—growing from golden days in Greece to the tragic, blood-soaked shores of Troy where prophecy demands a devastating price.",
+    "short_description": "A lush, heartbreaking mythic romance of devotion, destiny, and the Trojan War.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/the-song-of-achilles.jpg",
+    "language": "english",
+    "tier_requirement": "premium",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 4500,
+    "rating_average": 4.96,
+    "ratings_count": 4890,
+    "publication_year": 2011,
+    "tags": [
+      "romance",
+      "tragedy",
+      "mythology",
+      "sad",
+      "heartbreak",
+      "lyrical",
+      "english"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "Mount Pelion",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2250,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Shores of Troy",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2250,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: The Song of Achilles\nAuthor: Madeline Miller | Category: Romance & Drama\nLanguage: English\nSetting & Atmosphere: Sun-drenched Aegean shores, Mount Pelion forests, tents outside ancient Troy\nMood & Feelings: Lyrical, deeply romantic, devastatingly sad, unforgettable emotional cry\nThemes: Fierce devotion, fate vs fame, Trojan War tragedy, unconditional love\nSynopsis: Patroclus tells the moving story of his lifelong love for Achilles, from peaceful youth to the tragedy of Troy.\nBilingual Context (দ্য সং অব অ্যাকিলিস): প্রেম ভালোবাসা বিরহ নাটকীয় রোমান্টিক উপন্যাস romance love heartbreak tragedy drama\nTags: romance, tragedy, mythology, sad, heartbreak, lyrical, english"
+  },
+  {
+    "title": "Chokher Bali",
+    "title_bengali": "চোখের বালি",
+    "slug": "chokher-bali",
+    "author": {
+      "name": "Rabindranath Tagore",
+      "slug": "rabindranath-tagore",
+      "bio": "Rabindranath Tagore (1861–1941) was a Nobel Prize-winning polymath, poet, and novelist.",
+      "born_year": 1861,
+      "died_year": 1941,
+      "era": "Bengal Renaissance"
+    },
+    "categorySlug": "romance-drama",
+    "narrator_name": "Debshankar Halder",
+    "description": "Sharp-minded, educated, and widowed young, Binodini enters a traditional Calcutta household where forbidden attraction, wounded pride, and simmering jealousy shatter relationships between Mahendra, Asha, and Behari.",
+    "short_description": "Tagore's bold psychological drama of forbidden passion, widowhood, and domestic intrigue.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/chokher-bali.jpg",
+    "language": "bangla",
+    "tier_requirement": "plus",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 4300,
+    "rating_average": 4.92,
+    "ratings_count": 2870,
+    "publication_year": 1903,
+    "tags": [
+      "tagore",
+      "drama",
+      "romance",
+      "psychological",
+      "classic",
+      "চোখের বালি",
+      "রবীন্দ্রনাথ"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "Binodini Arrives",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2150,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "Letters and Shadows",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 2150,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: Chokher Bali (চোখের বালি)\nAuthor: Rabindranath Tagore | Category: Romance & Drama\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: 1900s Kolkata courtyard mansion, slatted wooden verandas, quiet Benares ghats\nMood & Feelings: Intense psychological drama, forbidden longing, complex emotional tension, চোখের বালি\nThemes: Widowhood, repressed desire, jealousy, women's agency, forgiveness\nSynopsis: Brilliant young widow Binodini disrupts a traditional Kolkata family, exposing hidden passions and emotional truths."
+  },
+  {
+    "title": "Rajani",
+    "title_bengali": "রজনী",
+    "slug": "rajani",
+    "author": {
+      "name": "Bankim Chandra Chattopadhyay",
+      "slug": "bankim-chandra-chattopadhyay",
+      "bio": "Bankim Chandra Chattopadhyay (1838–1894) was a towering pioneer of the Bengali novel.",
+      "born_year": 1838,
+      "died_year": 1894,
+      "era": "Bengal Renaissance"
+    },
+    "categorySlug": "romance-drama",
+    "narrator_name": "Soumitra Chatterjee",
+    "description": "Blind since birth, young flower-seller Rajani experiences colonial Kolkata through the fragrance of night jasmine and the voices of strangers—until an unexpected inheritance and quiet devotion transform her world.",
+    "short_description": "A tender, sensory Bengali drama of a blind flower-seller's courage, grace, and quiet romance.",
+    "cover_image_url": "https://nouowqkpnkmogsdpqdiu.supabase.co/storage/v1/object/public/platform-covers/rajani.jpg",
+    "language": "bangla",
+    "tier_requirement": "free",
+    "is_featured": false,
+    "is_published": true,
+    "total_duration_seconds": 3700,
+    "rating_average": 4.86,
+    "ratings_count": 1790,
+    "publication_year": 1877,
+    "tags": [
+      "romance",
+      "drama",
+      "classic",
+      "bankim",
+      "jasmine",
+      "রজনী",
+      "বঙ্কিমচন্দ্র"
+    ],
+    "chapters": [
+      {
+        "chapter_number": 1,
+        "title": "Scent of Night Jasmine",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1850,
+        "is_preview": true
+      },
+      {
+        "chapter_number": 2,
+        "title": "New Light",
+        "audio_storage_path": "demo/sample-chapter.mp3",
+        "duration_seconds": 1850,
+        "is_preview": false
+      }
+    ],
+    "semanticDocument": "Title: Rajani (রজনী)\nAuthor: Bankim Chandra Chattopadhyay | Category: Romance & Drama\nLanguage: Bengali (বাংলা)\nSetting & Atmosphere: Twilight Kolkata flower markets, fragrance of white rajonigondha jasmine, colonial gardens\nMood & Feelings: Gentle, tender, sensory warmth, heartfelt classic romance, রজনী\nThemes: Blindness and inner vision, dignity, unexpected love, redemption\nSynopsis: A blind young flower-seller navigates love, wealth, and self-discovery in Victorian Kolkata."
   }
 ]

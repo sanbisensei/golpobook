@@ -21,26 +21,70 @@ import { InspectorPlayer } from "@/components/audio/inspector-player";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
-export function BrowseFeed({ initialCategories = [], initialAudiobooks = [] }) {
+export function BrowseFeed({ initialCategories = [], initialAudiobooks = [], userPreferences = null }) {
   const [selectedCategory, setSelectedCategory] = useState("Everything");
+  const hasOnboarding = Boolean(userPreferences?.onboarding_completed);
+  const [onlyPreferredLanguages, setOnlyPreferredLanguages] = useState(hasOnboarding);
   
-  // Default selected book is the featured book, or the first available book
-  const defaultBook = initialAudiobooks.find((b) => b.isFeatured) || initialAudiobooks[0] || null;
+  // Score books against the user's onboarding taste profile
+  const scoreBookForUser = useCallback((book) => {
+    if (!userPreferences) return 0;
+    let score = 0;
+    const prefLangs = userPreferences.preferred_languages || [];
+    const prefCatIds = userPreferences.preferred_category_ids || [];
+    const interests = (userPreferences.listening_interests || []).map((i) => i.toLowerCase());
+    const contentPref = userPreferences.content_preference || "both";
+
+    if (prefLangs.includes(book.language)) score += 4;
+    if (book.categoryId && prefCatIds.includes(book.categoryId)) score += 4;
+
+    const tagText = `${(book.tags || []).join(" ")} ${book.categorySlug || ""} ${book.category || ""}`.toLowerCase();
+    for (const interest of interests) {
+      if (tagText.includes(interest) || (interest === "self-development" && book.categorySlug === "e-learning") || (interest === "science" && book.categorySlug === "dystopian-sci-fi")) {
+        score += 1.5;
+      }
+    }
+
+    if (contentPref === "podcasts" && book.categorySlug === "podcasts") score += 2;
+    if (contentPref === "audiobooks" && book.categorySlug !== "podcasts") score += 1.5;
+
+    return score;
+  }, [userPreferences]);
+
+  // Personalized ranking of catalog
+  const personalizedBooks = hasOnboarding
+    ? [...initialAudiobooks].sort((a, b) => scoreBookForUser(b) - scoreBookForUser(a) || b.reviewsCount - a.reviewsCount)
+    : initialAudiobooks;
+
+  // Default selected book is the top personalized pick (if onboarded) or featured book
+  const defaultBook = (hasOnboarding ? personalizedBooks[0] : initialAudiobooks.find((b) => b.isFeatured)) || initialAudiobooks[0] || null;
   const [selectedBook, setSelectedBook] = useState(defaultBook);
 
-  // Filter books based on active category
-  const filteredBooks =
-    selectedCategory === "Everything"
-      ? initialAudiobooks
-      : initialAudiobooks.filter((b) =>
-          b.category?.toLowerCase() === selectedCategory.toLowerCase() ||
-          b.categorySlug?.toLowerCase() === selectedCategory.toLowerCase()
-        );
+  // Filter books based on active category and optional language preference toggle
+  const prefLangs = userPreferences?.preferred_languages || [];
+  const filteredBooks = initialAudiobooks.filter((b) => {
+    const matchesCategory =
+      selectedCategory === "Everything" ||
+      b.category?.toLowerCase() === selectedCategory.toLowerCase() ||
+      b.categorySlug?.toLowerCase() === selectedCategory.toLowerCase();
+    const matchesLanguage =
+      !onlyPreferredLanguages || prefLangs.length === 0 || prefLangs.includes(b.language);
+    return matchesCategory && matchesLanguage;
+  });
 
-  const featuredBook = initialAudiobooks.find((b) => b.isFeatured) || initialAudiobooks[0] || null;
+  const featuredBook = (hasOnboarding ? personalizedBooks[0] : initialAudiobooks.find((b) => b.isFeatured)) || initialAudiobooks[0] || null;
+
+  // Put user's favorite categories first in the pill strip when onboarded
+  const sortedCategories = hasOnboarding && userPreferences?.preferred_category_ids?.length
+    ? [...initialCategories].sort((a, b) => {
+        const aFav = userPreferences.preferred_category_ids.includes(a.id) ? 1 : 0;
+        const bFav = userPreferences.preferred_category_ids.includes(b.id) ? 1 : 0;
+        return bFav - aFav;
+      })
+    : initialCategories;
 
   // Active category names for pill strip
-  const categoryPills = ["Everything", ...initialCategories.map((c) => c.name)];
+  const categoryPills = ["Everything", ...sortedCategories.map((c) => c.name)];
 
   const pillContainerRef = useRef(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -166,9 +210,61 @@ export function BrowseFeed({ initialCategories = [], initialAudiobooks = [] }) {
               </div>
             </section>
 
-            {/* Featured Editorial Spotlight Banner */}
+            {/* 1. RECOMMENDED FOR YOU (First section after onboarding!) */}
+            {filteredBooks.length > 0 && (
+              <section className="mb-10">
+                <div className="flex flex-wrap items-baseline justify-between gap-2 mb-4 border-b-[1.5px] border-ink pb-2">
+                  <div className="flex items-center gap-2">
+                    <Sparkles className="size-5 text-terracotta" />
+                    <h3 className="font-heading text-base md:text-lg font-bold tracking-tight text-foreground uppercase">
+                      {hasOnboarding && selectedCategory === "Everything"
+                        ? userPreferences?.listening_time === "night"
+                          ? "Recommended For Your Night"
+                          : userPreferences?.listening_time === "morning"
+                          ? "Recommended For Your Morning"
+                          : "Recommended For You"
+                        : selectedCategory === "Everything"
+                        ? "Recommended For You"
+                        : `${selectedCategory} Picks`}
+                    </h3>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    {hasOnboarding && prefLangs.length > 0 && (
+                      <button
+                        type="button"
+                        onClick={() => setOnlyPreferredLanguages((v) => !v)}
+                        className="px-2.5 py-0.5 rounded-md border border-ink bg-canary/50 hover:bg-canary font-mono text-[10px] font-bold uppercase cursor-pointer transition-colors"
+                      >
+                        {onlyPreferredLanguages ? `My Languages (${prefLangs.join(", ")})` : "All Languages"}
+                      </button>
+                    )}
+                    {hasOnboarding && (
+                      <Link href="/onboarding" className="font-mono text-xs text-terracotta hover:underline tracking-wider">
+                        Edit Taste
+                      </Link>
+                    )}
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-4">
+                  {(hasOnboarding && selectedCategory === "Everything"
+                    ? personalizedBooks.filter((b) => !onlyPreferredLanguages || prefLangs.length === 0 || prefLangs.includes(b.language)).slice(0, 4)
+                    : filteredBooks.slice(0, 4)
+                  ).map((book) => (
+                    <AudiobookCard
+                      key={book.id}
+                      book={book}
+                      isSelected={selectedBook?.id === book.id}
+                      onSelect={(b) => setSelectedBook(b)}
+                    />
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {/* 2. EDITOR'S CHOICE (Spotlight Banner) */}
             {featuredBook && (
-              <section className="mb-8">
+              <section className="mb-10">
                 <div className="border-[1.5px] border-ink bg-card p-5 md:p-6 rounded-xl shadow-hard-md hover:shadow-hard-lg transition-all duration-200 flex flex-col md:flex-row gap-6 items-center">
                   <div className="w-32 md:w-44 aspect-[2/3] relative bg-muted border-[1.5px] border-ink rounded-lg overflow-hidden shadow-hard-xs hover:-translate-x-0.5 hover:-translate-y-1 hover:shadow-hard-sm transition-all duration-200 shrink-0">
                     <Image
@@ -180,14 +276,14 @@ export function BrowseFeed({ initialCategories = [], initialAudiobooks = [] }) {
                       className="object-cover"
                     />
                     <div className="absolute top-2 left-2">
-                      <Badge variant="secondary">EDITORIAL CHOICE</Badge>
+                      <Badge variant="secondary">EDITOR&apos;S CHOICE</Badge>
                     </div>
                   </div>
 
                   <div className="flex-1 flex flex-col items-start justify-center">
                     <div className="flex items-center gap-2 mb-1.5">
                       <span className="font-mono text-xs uppercase tracking-wider text-terracotta font-bold">
-                        Audiobook of the Week
+                        Editor&apos;s Choice Spotlight
                       </span>
                       <span className="text-muted-foreground">•</span>
                       <span className="font-mono text-xs text-muted-foreground">
@@ -266,22 +362,22 @@ export function BrowseFeed({ initialCategories = [], initialAudiobooks = [] }) {
               </div>
             ) : (
               <>
-                {/* Popular Audiobooks Grid */}
+                {/* 3. TRENDING IN BANGLADESH */}
                 <section className="mb-10">
-                  <div className="flex items-baseline justify-between mb-4 border-b-[1.5px] border-ink pb-2">
+                  <div className="flex flex-wrap items-baseline justify-between gap-2 mb-4 border-b-[1.5px] border-ink pb-2">
                     <div className="flex items-center gap-2">
                       <TrendingUp className="size-5 text-terracotta" />
                       <h3 className="font-heading text-base md:text-lg font-bold tracking-tight text-foreground uppercase">
-                        Popular in Bangladesh
+                        Trending in Bangladesh
                       </h3>
                     </div>
-                    <span className="font-mono text-xs text-muted-foreground tracking-wider">
-                      {filteredBooks.length} titles
-                    </span>
+                    <Link href="/audiobooks" className="font-mono text-xs text-terracotta hover:underline tracking-wider">
+                      Browse All {initialAudiobooks.length} Titles →
+                    </Link>
                   </div>
 
                   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-4">
-                    {filteredBooks.slice(0, 4).map((book) => (
+                    {filteredBooks.slice(0, 8).map((book) => (
                       <AudiobookCard
                         key={book.id}
                         book={book}
@@ -294,9 +390,9 @@ export function BrowseFeed({ initialCategories = [], initialAudiobooks = [] }) {
 
                 {/* AI Story Discovery Banner */}
                 <section className="mb-10">
-                  <div className="border-[1.5px] border-ink bg-canary p-5 md:p-6 shadow-hard-md hover:shadow-hard-lg transition-all duration-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+                  <div className="border-[1.5px] border-ink bg-canary p-5 md:p-6 rounded-xl shadow-hard-md hover:shadow-hard-lg transition-all duration-200 flex flex-col sm:flex-row items-center justify-between gap-4">
                     <div className="flex items-start gap-3">
-                      <div className="size-10 bg-terracotta text-white flex items-center justify-center border-[1.5px] border-ink shadow-hard-xs shrink-0 mt-0.5">
+                      <div className="size-10 bg-terracotta text-white flex items-center justify-center border-[1.5px] border-ink rounded-lg shadow-hard-xs shrink-0 mt-0.5">
                         <Sparkles className="size-5 fill-white" />
                       </div>
                       <div>
@@ -314,30 +410,36 @@ export function BrowseFeed({ initialCategories = [], initialAudiobooks = [] }) {
 
                     <Link
                       href="/story-finder"
-                      className="w-full sm:w-auto px-5 py-2.5 bg-terracotta text-white font-sans text-xs font-bold uppercase tracking-wider border-[1.5px] border-ink shadow-hard-xs hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-hard-sm active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all duration-150 text-center shrink-0"
+                      className="w-full sm:w-auto px-5 py-2.5 bg-terracotta text-white font-sans text-xs font-bold uppercase tracking-wider border-[1.5px] border-ink rounded-lg shadow-hard-xs hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-hard-sm active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all duration-150 text-center shrink-0"
                     >
                       Try Story Finder
                     </Link>
                   </div>
                 </section>
 
-                {/* Recommended Audiobooks Grid */}
-                {filteredBooks.length > 4 && (
+                {/* Recommended / Explore More Grid */}
+                {filteredBooks.length > 8 && (
                   <section className="mb-10">
                     <div className="flex items-baseline justify-between mb-4 border-b-[1.5px] border-ink pb-2">
                       <div className="flex items-center gap-2">
                         <Headphones className="size-5 text-terracotta" />
                         <h3 className="font-heading text-base md:text-lg font-bold tracking-tight text-foreground uppercase">
-                          Recommended For You
+                          {hasOnboarding ? "More Recommendations" : "Recommended For You"}
                         </h3>
                       </div>
-                      <span className="font-mono text-xs text-muted-foreground tracking-wider">
-                        curated selection
-                      </span>
+                      {hasOnboarding ? (
+                        <Link href="/onboarding" className="font-mono text-xs text-terracotta hover:underline tracking-wider">
+                          Edit Taste Profile
+                        </Link>
+                      ) : (
+                        <span className="font-mono text-xs text-muted-foreground tracking-wider">
+                          curated selection
+                        </span>
+                      )}
                     </div>
 
                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-4">
-                      {filteredBooks.slice(4, 8).map((book) => (
+                      {filteredBooks.slice(8, 20).map((book) => (
                         <AudiobookCard
                           key={book.id}
                           book={book}

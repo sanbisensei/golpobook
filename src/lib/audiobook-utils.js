@@ -38,6 +38,8 @@ export function mapAudiobookRecord(b) {
     coverUrl: b.cover_image_url || "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=800",
     category: b.category?.name || "Literature",
     categorySlug: b.category?.slug || null,
+    categoryId: b.category_id || b.category?.id || null,
+    language: b.language || "bangla",
     currentChapter: firstChapter ? firstChapter.title : "Chapter 1",
     chapterDuration: firstChapter ? formatChapterDuration(firstChapter.duration_seconds) : "25:00",
     tier: b.tier_requirement,

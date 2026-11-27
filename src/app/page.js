@@ -20,7 +20,22 @@ async function HomeDataLoader() {
 
   const categories = categoriesData || [];
 
-  // 2. Fetch published audiobooks with joined author, category, and chapters
+  // 2. Fetch authenticated user's onboarding preferences (if signed in)
+  let userPreferences = null;
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (user) {
+    const { data: prefs } = await supabase
+      .from("user_preferences")
+      .select("preferred_languages, preferred_category_ids, listening_interests, listening_time, content_preference, onboarding_completed")
+      .eq("user_id", user.id)
+      .maybeSingle();
+    userPreferences = prefs || null;
+  }
+
+  // 3. Fetch published audiobooks with joined author, category, and chapters
   const { data: audiobooksData } = await supabase
     .from("audiobooks")
     .select(`
@@ -33,6 +48,7 @@ async function HomeDataLoader() {
       short_description,
       cover_image_url,
       language,
+      category_id,
       tier_requirement,
       is_featured,
       is_published,
@@ -54,6 +70,7 @@ async function HomeDataLoader() {
     <BrowseFeed
       initialCategories={categories}
       initialAudiobooks={audiobooks}
+      userPreferences={userPreferences}
     />
   );
 }
